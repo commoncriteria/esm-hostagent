@@ -1,18 +1,18 @@
-Protection Profile for ESM Host Agent
+Protection Profile for Host Agent
 ===============
 
-This repository hosts the draft version of the Protection Profile for Endpoint Detection and Response based on the 
-[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/esm-edr/esm-hostagent-esr.html) for this technology class of 
+This repository hosts the draft version of the Protection Profile for Host Agent based on the 
+[Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 
 ## Draft Version
 
-* [Protection Profile for ESM Host Agent](https://commoncriteria.github.io/pp/esm-edr/esm-hostagent-release.html) (html)
-* [Protection Profile for ESM Host Agent](https://commoncriteria.github.io/pp/esm-edr/esm-hostagent-release.pdf) (pdf)
+* [Protection Profile for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html) (html)
+* [Protection Profile for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.pdf) (pdf)
 
 ## Release Version
-* Protection Profile for ESM Host Agent (coming soon)
+* Protection Profile for Host Agent (coming soon)
 
 ## Contributing
 
