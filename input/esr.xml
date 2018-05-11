@@ -25,11 +25,12 @@
 		subtleties not apparent in the “bulleted” high level statements.
 	</section>
 	<section title="Use Cases" id="usecases">
-		The host agent performs actions and collects data from endpoint devices to enable the detection and remediation of potentially
-		malicious endpoint system activity.
+		The Host Agent is responsible for receiving commands from a management server and send host data back to a 
+		management server.
 		<ul>
-			<li>Continuously records, analyzes, or reports significant events occurring on managed systems.</li>
-			<li>Facilitates automatic identification, reporting, and investigation of potential malicious activity.</li>
+			<li>Collect Host data for transition to a management server</li>
+			<li>Recieve commands from a management server and take action on those commands</li>
+			<li>Cache data during periods without network connectivity</li>
 		</ul>
 	</section>
 
@@ -47,33 +48,13 @@
 			<li>An attacker is assumed to attempt attacks from the following vantage points:
 				<ul>
 					<li>The network across which the application engages in communication, both actively
-					and passively.</li>
+						and passively.</li>
 					<li>The platform on which the application is installed, though as an unprivileged
-					subject.</li>
+						subject.</li>
 				</ul>
 			</li>
 			<li>An attacker has an arbitrary amount of time to analyze the behavior of the application,
-			its interaction with its host device or platform, and/or the data it transmits over the network.</li>
-		</ul>
-		<p/> The attacker is expected to engage in the following general classes of attack: <!-- added in order to allow for rather direct flow to Threats section in PP -->
-		<ul>
-			<li> Network eavesdropping, in which an attacker may monitor and gain access to data
-			exchanged between the product and other endpoints. </li>
-			<li> Network attack, in which an attacker may initiate malicious communications with the
-			product or alter communications between the product and other endpoints. </li>
-			<li> Local attack, in which an attacker has gained the ability to execute code on the
-			system, which may be used to escalate privilege or access data without
-			authorization. </li>
-			<li> Limited physical access attack, in which an attacker may attempt to access data on
-			the system by virtue of being physically present for a limited period of time. This
-			limited physical access does not include attacks in which the attacker could
-			disassemble the system to gain access to its storage media or manipulate the product's
-			underlying hardware and firmware. Systems used for working remotely, such as laptops
-			and tablets, for which an attacker could gain longer physical access to, should
-			apply additional protections that are provided by products evaluated against other
-			Protection Profiles (e.g. FDE cPP). </li>
-			<li> Persistence, in which an attacker has already exploited the system and wishes to
-			maintain presence on the system. </li>
+				its interaction with its host device or platform, and/or the data it transmits over the network.</li>
 		</ul>
 	</section>
 	
@@ -97,39 +78,33 @@
 			This is where the authors explicitly state english requirements
 			that this class of product must satisfy. 
 	        -->
+		<li>The Host Agent shall use established encryption techniques (hashing, signing, etc)</li>
+		<li>The Host Agent shall ensure encryption of all data in transit to and from any host agents using TLS or HTTPS</li>
+		<li>The Host Agent shall be capable of handling periods without network connectivity</li>
+		
 	</section>
 
 	<section title="Assumptions" id="assumptions">
-	  Simply put, this section presents the aspects of the product and 
-	  its	intended environment that can be assumed to hold true. This 
-	  will provide additional scope on the resulting PP.
-
-	  The following assumptions are made for the operating system product and its operational
-	  environment: <ul>
-			<li>The underlying platform is physically protected, to a large extent. The hardware
-				that the product manages is secured by defensive measures that make physical attacks
-				impractical for most attackers. At the same time, casual passersby might attempt to
-				trivially access the system. </li>
-			<li>The product implements some security-relevant functionality that does not require
-				evaluation (e.g., network time synchronization, process scheduling, and virtual
-				memory management including process separation). </li>
-			<li>Depending on configuration and capability, the product may or may not be: <ul>
-					<li>configuration-managed by the enterprise</li>
-					<li>bound to directory services to support multi-user login</li> </ul>
-			</li>
-			<li> The product runs application software developed by a third-party. The applications are
-				not intentionally developed to be malicious, but can contain inadvertent coding
-				errors. These errors introduce risk that control of an application may be seized by
-				a malicious entity. The product shall confine these applications within the originally
-				designated operating environment. </li>
-			<li>The platform is connected to a network. For purposes of sending/receiving data, to
-				include software updates, the platform is connected to other entities. Other
+		Simply put, this section presents the aspects of the product and its intended environment that
+		can be assumed to hold true. This will provide additional scope on the resulting protection profile.
+		<br/>
+		The following assumptions are made for the Host Agent and its operational
+		environment:
+		<ul>
+			<li>The Host Agent is connected to a network. For purposes of sending/receiving data host agent data. Other
 				entities on the network are not inherently trustable. </li>
 			<li>Administrators are not malicious in nature.</li>
-			<li> Users are not malicious in nature, though they may inadvertently or intentionally engage in risky behavior. </li>
+			<li>Users are not malicious in nature, though they may inadvertently or intentionally engage in risky behavior.</li>
 		</ul>
 	</section>
 
+	<section title="Objective Requirements" id="objective">
+		<ul>
+			<li>
+			
+			</li>
+		</ul>
+	</section>
 
 	<section title="Optional Extensions" id="extensions"> 
 		Additional security functionality that may
@@ -141,14 +116,7 @@
 	</section>
 
 	<section title="Outside the TOE's Scope" id="outsidescope">
-	  <!--
-			This is where the authors explicitly state things they do not want 
-			to be considered for inclusion in an evaluation against a 
-			resulting PP.  Items expressed here could include threats, 
-			functions or capabilities that would require assurance activities 
-			that are too subjective, or specific expertise not available in the
-			evaluation facilities expected to assess products against the PP 
-	  -->
+
 		The following list contains items that are explicitly out-of-scope for any evaluation
 		against the product PP <ul>
 			<li>Malicious, Highly-Privileged Administrators - Highly-privileged administrators
@@ -162,8 +130,7 @@
 			<li>Platform - The product PP shall not address the hardware or firmware of its underlying
 				platform to include the boot sequence before control is handed off to the product. That
 				the platform itself is virtual or physical is irrelevant to any evaluations. </li>
-			<li>Applications - The product PP shall not address applications that are not delivered as
-				part of the product installation process. </li>
+			<li>Operating System - The product PP shall not address the underlying operating system</li>
 		</ul>
 	</section>
 </ESR>
