@@ -35,12 +35,11 @@
 	</section>
 
 	<section title="Resources to be protected" id="resourcesprotected">
-    	<ul>
-			<li>Sensitive data collected or produced by the host agent in memory or in storage.</li>
-			<li>Credentials for authentication to or from management servers.</li>
+    	  <ul>
+	        <li>Sensitive data collected or produced by the host agent in memory or in storage.</li>
     		<li>Cryptographic key material used to perform secure communications with management servers.</li>
     		<li>Sensitive data in transit to or from management servers.</li>
-		</ul>
+	  </ul>
 	</section>
 
 	<section title="Attacker access" id="attackeraccess"> 
@@ -81,6 +80,7 @@
 		<li>The Host Agent shall use established encryption techniques (hashing, signing, etc)</li>
 		<li>The Host Agent shall ensure encryption of all data in transit to and from any host agents using TLS or HTTPS</li>
 		<li>The Host Agent shall be capable of handling periods without network connectivity</li>
+		<li>The Host Agent shall store Host Agent audit records in the platform-provided audit storage.</li>
 		
 	</section>
 
@@ -119,18 +119,7 @@
 
 		The following list contains items that are explicitly out-of-scope for any evaluation
 		against the product PP <ul>
-			<li>Malicious, Highly-Privileged Administrators - Highly-privileged administrators
-				acting maliciously can disable most, if not all, security protections on the product.
-				Additionally procedural controls that are out of scope of this document should be
-				considered to help highlight administrator accounts acting suspiciously.</li>
-			<li>Zero Days - The disclosure of recently published vulnerabilities (Zero Days) should
-				not be used as a reason to fail an product undergoing evaluation.</li>
-			<li>Unofficial Versions - Non-vendor supplied install images often contain added
-				functionality and may weaken the normal operating functionality of the product</li>
-			<li>Platform - The product PP shall not address the hardware or firmware of its underlying
-				platform to include the boot sequence before control is handed off to the product. That
-				the platform itself is virtual or physical is irrelevant to any evaluations. </li>
-			<li>Operating System - The product PP shall not address the underlying operating system</li>
+			<li>The operating system on which the Host Agent executes</li>
 		</ul>
 	</section>
 </ESR>
