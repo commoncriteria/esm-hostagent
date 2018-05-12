@@ -1,5 +1,8 @@
 Protection Profile for Host Agent
 ===============
+[![Build Status](https://travis-ci.org/commoncriteria/esm-hostagent.svg?branch=master)](https://travis-ci.org/commoncriteria/esm-hostagent)
+[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/esm-hostagent.svg?maxAge=2592000)](https://github.com/commoncriteria/esm-hostagent/issues) 
+![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the Protection Profile for Host Agent based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-esr.html) for this technology class of 
