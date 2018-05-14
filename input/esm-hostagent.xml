@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-<PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile Host Agent"
-    xmlns:h="http://www.w3.org/1999/xhtml">
+<PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile for Host Agent"
+  xmlns:h="http://www.w3.org/1999/xhtml">
   
   <PPReference title="PP Reference">
     <ReferenceTable>
       <PPTitle>Protection Profile for Host Agent</PPTitle>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2018-08-04</PPPubDate>
+      <PPPubDate>2018-07-14</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1R4</CCVersion>
       <Keywords>Host Agent, ESM</Keywords>
@@ -22,19 +22,17 @@
 
   <RevisionHistory>
     <entry>
-      <version>Round 1</version>
-      <date>2018-05-11</date>
-      <subject>First draft of version 1.0 for comment</subject>
+      <version>1.0</version>
+      <date>2018-07-14</date>
+      <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
 
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> The scope of this Protection Profile (PP) is to
-      describe the security functionality of operating systems in terms of <cite linkend="bibCC"/>
+      describe the security functionality of a Host Agent in terms of <cite linkend="bibCC"/>
       and to define functional and assurance requirements for such products.
-      An operating system is software that manages computer hardware and software
-      resources, and provides common services for application programs. The hardware
-      it manages may be physical or virtual.
+      
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. 
@@ -88,8 +86,8 @@
           </entry>
          <entry>
            <term>Host Agent</term>
-           <description>Software that executes on endpoints to collect data or execute actions
-             set to it from a management server.
+           <description>Software that executes on endpoints to collect data or execute commands
+             sent to it from a management server.
            </description>
          </entry>
         </glossary>
@@ -105,9 +103,13 @@
       address the security problems in at least the following use cases. These use cases are intentionally
       very broad, as many specific use cases exist for an operating system. These use cases may also
       overlap with one another.  An operating system's functionality may even be effectively extended by
-      privileged applications installed onto it.  However, these are out of scope of this PP. <usecases>
-        <usecase title="End User Devices" id="enduserdevices">
+      privileged applications installed onto it.  However, these are out of scope of this PP. 
+      <usecases>
+        <usecase title="Endpoint Host Agent" id="hostagent">
           <description>
+             Application software that runs on endpoints to collect data for
+             a management server or recieve commands from a management server to 
+             execute on the endpoint.
           </description>
         </usecase>
       </usecases>
@@ -131,15 +133,15 @@
           conformant with this one, or extended by the <abbr linkend="ST"/>) not defined in this PP
           or a PP conformant to this one. 
           <h:br/>
-		  Some components in this Protection Profile have a dependency on
-		  other components.  In accordance with <cite linkend="bibCC"/> Part 1, <appref linkend="satisfiedreqs"/> 
+          Some components in this Protection Profile have a dependency on
+          other components.  In accordance with <cite linkend="bibCC"/> Part 1, <appref linkend="satisfiedreqs"/> 
           includes justifications for those cases where the PP does not explicitly contain the component
-		  upon which there is a dependency.
+          upon which there is a dependency.
         </description>
       </cclaim>
       <cclaim id="CC Conformance Claims">
         <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
-          Version 3.1, Revision 4.<cite linkend="bibCC"/>.</description>
+          Version 3.1, Revision 5.<cite linkend="bibCC"/>.</description>
       </cclaim>
       <cclaim id="PP Claim">
         <description>This PP does not claim conformance to any other Protection
@@ -151,8 +153,8 @@
     </cclaims>
   </chapter>
   <chapter title="Security Problem Definition" id="spd">The security problem is described in terms
-    of the threats that the <abbr linkend="OS"/> is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the <abbr linkend="OS"/>
+    of the threats that the Host Agent is expected to address, assumptions about the
+    operational environment, and any organizational security policies that the Host Agent
     is expected to enforce. <section title="Threats" id="threats">
       <threats>
         <threat id="T.QQQQ">
@@ -252,18 +254,16 @@
       Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
       components. 
 
-      <!-- Note: Every SFR must have a status = "threshold" or "optional" or "sel-based" or "objective" -->
-      <subsection title="QQQQ" id="QQQQ">
-        <f-component id="QQQ_QQQ.1" name="QQQQQ" >
-          <f-element id="QQQ_QQQ.1.1">
-            <title> 
-            </title>
-            <note role="application"></note>
-            <aactivity>
-	    </aactivity>
-          </f-element>
-        </f-component>
+      <subsection title="Security Audit (FAU)" id="fau">
       </subsection>
+      
+      <subsection title="Protection of the TSF (FPT)" id="fpt">
+      </subsection>
+      
+      <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+      </subsection>
+      
+      
     </section>
     
   </chapter>
