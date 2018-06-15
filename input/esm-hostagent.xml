@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-
 <PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile for Host Agent"
   xmlns:h="http://www.w3.org/1999/xhtml">
   
@@ -198,7 +196,7 @@
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
         <SO id="O.ACCOUNTABILITY">
-          <description> Conformant <abbr linkend="OS"/>s ensure that information exists that allows
+          <description>Conformant <abbr linkend="OS"/>s ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the operating system and discover its cause.  Gathering event information and immediately 
             transmitting it to another system can also enable incident response in the event
@@ -209,21 +207,21 @@
     </section>
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
-      environment assist the <abbr linkend="OS"/> in correctly providing its security functionality.
+      environment assist the Host Agent in correctly providing its security functionality.
       These track with the assumptions about the environment. <SOEs>
         <SOE id="OE.PLATFORM">
-          <description>The <abbr linkend="OS"/> relies on being installed on trusted
+          <description>The Host Agent relies on being installed on trusted
             hardware.</description>
         </SOE>
         <SOE id="OE.PROPER_USER">
-          <description> The user of the <abbr linkend="OS"/> is not willfully negligent or hostile,
+          <description> The user of the Host Agent is not willfully negligent or hostile,
             and uses the software within compliance of the applied enterprise security policy.
             Standard user accounts are provisioned in accordance with the least privilege model.
             Users requiring higher levels of access should have a separate account dedicated for
             that use. </description>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
-          <description> The administrator of the <abbr linkend="OS"/> is not careless, willfully
+          <description> The administrator of the Host Agent is not careless, willfully
             negligent or hostile, and administers the OS within compliance of the applied enterprise
             security policy. </description>
         </SOE>
@@ -233,7 +231,7 @@
       <InsertSPDCorrespondence/></section>
   </chapter>
   <chapter title="Security Requirements" id="req">This chapter describes the security requirements
-    which have to be fulfilled by the <abbr linkend="OS"/>. Those requirements comprise functional
+    which have to be fulfilled by the Host Agent. Those requirements comprise functional
     components from Part 2 and assurance components from Part 3 of <cite linkend="bibCC"/>. The
     following notations are used: <h:ul>
       <h:li>
@@ -253,8 +251,8 @@
 
     <section title="Security Functional Requirements" id="SFRs">The Security Functional Requirements
       included in this section are derived from Part 2 of the Common Criteria for Information
-      Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
-      components. 
+      Technology Security Evaluation, Version 3.1, Revision 5, with additional extended functional
+      components.
 
       <subsection title="Security Audit (FAU)" id="fau">
        
@@ -412,7 +410,6 @@
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
       </subsection>
       
-      
     </section>
     
   </chapter>
@@ -462,16 +459,16 @@
       <entry id="bibCC">
         <tag>CC</tag>
         <description>Common Criteria for Information Technology Security Evaluation - <h:ul>
-            <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part
-                1: Introduction and General Model</h:a>, CCMB-2012-09-001, Version 3.1 Revision 4,
-              September 2012.</h:li>
-            <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part
-                2: Security Functional Components</h:a>, CCMB-2012-09-002, Version 3.1 Revision 4,
-              September 2012.</h:li>
-            <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part
-                3: Security Assurance Components</h:a>, CCMB-2012-09-003, Version 3.1 Revision 4,
-              September 2012.</h:li>
-          </h:ul></description>
+          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
+            1: Introduction and General Model</h:a>, CCMB-2017-04-001, Version 3.1 Revision 5,
+            April 2017.</h:li>
+          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
+            2: Security Functional Components</h:a>, CCMB-2017-04-002, Version 3.1 Revision 5,
+            April 2017.</h:li>
+          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
+            3: Security Assurance Components</h:a>, CCMB-2017-04-003, Version 3.1 Revision 5,
+            April 2017.</h:li>
+        </h:ul></description>
       </entry>
       <entry id="bibCEM">
         <tag>CEM</tag>
@@ -499,6 +496,12 @@
             >Reporting Incidents Involving Personally Identifiable Information and Incorporating the
             Cost for Security in Agency Information Technology Investments</h:a>, OMB M-06-19, July
           12, 2006. </description>
+      </entry>
+      <entry id="bibAppPP">
+        <tag>AppPP</tag>
+        <description>
+          <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Application Software</h:a>
+        </description>
       </entry>
       <entry id="bibEDR">
         <tag>ESM EDR PP</tag>
