@@ -81,7 +81,7 @@
 		<li>The Host Agent shall ensure encryption of all data in transit to and from any host agents using TLS or HTTPS</li>
 		<li>The Host Agent shall be capable of handling periods without network connectivity</li>
 		<li>The Host Agent shall store Host Agent audit records in the platform-provided audit storage.</li>
-		
+		<li>The Host Agent shall audit basic startup/shutdown and enrollment state events</li>
 	</section>
 
 	<section title="Assumptions" id="assumptions">

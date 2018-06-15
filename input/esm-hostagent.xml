@@ -255,9 +255,156 @@
       components. 
 
       <subsection title="Security Audit (FAU)" id="fau">
+       
+        <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
+          <f-element id="fau_gen.1.1">
+            <title> 
+              The <h:b>Host Agent</h:b> shall be able to generate an audit record of the following auditable events: 
+              <h:ol type='a'>
+                <h:li>Start-up and shut-down of the Host Agent;</h:li>
+                <h:li>Enrollment status with an Enterprise Mangement System</h:li>
+                <h:li><assignable>other specifically defined auditable events</assignable></h:li>
+              </h:ol>
+              .
+            </title>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the auditable events.  The evaluator shall
+                check to make sure that every audit event type selected in the ST
+                is included.
+              </h:p>
+              <h:p>
+                The evaluator shall test the Host Agent's ability to correctly generate
+                audit records by having the TOE generate audit records for the
+                events listed in the ST.  This should include all instance types
+                of an event specified.  
+                When verifying the test results, the evaluator shall ensure the
+                audit records generated during testing match the format specified
+                in the administrative guide, and that the fields in each audit
+                record have the proper entries.
+              </h:p>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_gen.1.2">
+            <title> The <h:b>Host Agent</h:b> shall record within each audit record at least the following information: 
+              <h:ol type='a'>
+                <h:li>Date and time of the event, type of event, subject identity (if applicable),
+                  and outcome (success or failure) of the event; and </h:li>
+                <h:li>For each audit event type, based on the auditable event
+                  definitions of the functional components included in the PP/ST,
+                  <assignable>other audit relevant information</assignable>
+                </h:li>
+              </h:ol>
+              .
+            </title>
+            <note role="application">
+              The term <h:i>subject</h:i> here is understood to be the user that the process
+              is acting on behalf of.  If no auditable event definitions of 
+              functional components are provided, then no additional audit-relevant information 
+              is required.
+            </note>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that it provides a format
+                for audit records. Each audit record format type must be covered,
+                along with a brief description of each field. The evaluator shall
+                ensure that the fields contains the information required. 
+              </h:p>
+              <h:p>
+                The evaluator shall test the OS's ability to correctly generate
+                audit records by having the TOE generate audit records for the
+                events listed in the ST.
+                The evaluator shall
+                ensure the audit records generated during testing match the
+                format specified in the administrative guide, and that the fields
+                in each audit record provide the required information.
+              </h:p>
+            </aactivity>
+          </f-element>
+        </f-component>
+      
+        <f-component id="fau_sto.1" name="Audit Data Storage">
+          <f-element id="fau_sto.1.1">
+            <title> 
+              The <h:b>Host Agent</h:b> shall store audit events in the platform provided 
+              logging mechanism.
+            </title>
+            <note role="application">
+              The term <h:i>audit events</h:i> here is understood to be only the set of events
+              defined in FAU_GEN.1. If the job of this Host Agent is to generate or collect events for 
+              an enterprise management server it is not expected that those events will be stored
+              in the platform provided logging mechanism.
+            </note>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that the list of auditable events are stored in the platform provided logging 
+                mechanism.
+              </h:p>
+              <h:p>
+                The evaluator shall test the Host Agent's ability to correctly generate
+                audit records by having the TOE generate audit records for the
+                events listed in the ST.  This should include all instance types
+                of an event specified.  
+                When verifying the test results, the evaluator shall ensure the
+                audit records generated during testing are stored in the platform provided logging
+                mechanism. On Linux based platform this would be in var/logs. On a Windows based 
+                platform this would be the Windows Event Log.
+              </h:p>
+            </aactivity>
+          </f-element>
+       
+        </f-component>
+        
+        <f-component id="fau_QUE.1" name="Queue Audit Data">
+          <f-element id="fau_QUE.1.1">
+            <title> 
+              The <h:b>Host Agent</h:b> shall queue alerts if the trusted channel is not available
+            </title>
+            <note role="application">
+              The term <h:i>alerts</h:i> here is understood to be any type of collected endpoint data
+              destine for an enterprise security management (ESM) server. To met this requirement Host Agents must be
+              capabile of locally caching or queing data destine for an ESM server during peroids of network
+              disconnectivity.
+            </note>
+            <aactivity>
+              The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
+              from the network for a period of 2 hours to simulate a network connectively failure. The evaluator shall
+              run some executable programs and reboot the machine during the 2 hour to generate some Host Agent data.
+              The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
+              that the missing data from the 2 hour windows is available.
+            </aactivity>
+          </f-element>
+          
+        </f-component>
+        
       </subsection>
       
-      <subsection title="Protection of the TSF (FPT)" id="fpt">
+      <subsection title="Security Management (FMT)" id="fmt">
+        
+        <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update">
+          <f-element id="FMT_POL_EXT.1.1">
+            <title>The <h:b>Host Agent</h:b> shall only accept policies and policy updates 
+              that are digitally signed by the Enterprise.
+            </title>
+            <note role="application">
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+          <f-element id="FMT_POL_EXT.1.2">
+            <title>The <h:b>Host Agent</h:b> shall validate the certificate before install 
+              or executing new policies or policy updates.
+            </title>
+            <note role="application">
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+          
+        </f-component>
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
