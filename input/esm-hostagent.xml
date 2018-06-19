@@ -6,7 +6,7 @@
   
   <PPReference title="PP Reference">
     <ReferenceTable>
-      <PPTitle>Protection Profile for Host Agent</PPTitle>
+      <PPTitle>Extended Package for Host Agent</PPTitle>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
       <PPPubDate>2018-07-14</PPPubDate>
@@ -33,8 +33,7 @@
       describe the security functionality of a Host Agent in terms of <cite linkend="bibCC"/>
       and to define functional and assurance requirements for such products. This EP 
       is not complete in itself, but rather extends the Protection Profile for 
-      Application Software <cite linkend="AppPP"/> or the Protection Profile for 
-      General Purpose Operating Systems <cite linkend="OSPP"/>. The combined requirements 
+      Application Software <cite linkend="bibAppPP"/>. The combined requirements 
       in this Host Agent EP is met to be paired with an evaluation using 
       an Enterprise Security Mangement (ESM) Protection Profile. The ESM PP covers the security 
       functionality needed on the backend server or cloud service, and the paired Host Agent EP
@@ -130,9 +129,9 @@
         <figure entity="images/Host_Agent.jpg" title="Figure 1: Host Agent TOE " id="toe"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
-        The TOE platform consists of a General Purpose Operating System or a Mobile Device 
-        Operating System, or an Execution Environment on top of which the Host Agent 
-        software executes.
+        The TOE platform consists of a General Purpose Operating System, a Mobile Device 
+        Operating System, a Network Device Operating System, or an Execution Environment on top of which 
+        the Host Agent software executes.
       </subsection>
     </section>
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
@@ -141,53 +140,46 @@
       overlap with one another.  An operating system's functionality may even be effectively extended by
       privileged applications installed onto it.  However, these are out of scope of this PP. 
       <usecases>
-        <usecase title="Endpoint Host Agent" id="hostagent">
-          <description>
-             Application software that runs on endpoints to collect data for
-             a management server or recieve commands from a management server to 
-             execute on the endpoint.
+        <usecase title="Communication" id="comms">
+          <description>The Host Agent allows for communication interactively or
+            non-interactively with other Enterprise Security Management (ESM) software over a communications channel.
+            Example communications include but are not limited to; recieving policy, sending data and running tasks 
+            or commands.
           </description>
         </usecase>
       </usecases>
     </section>
   </chapter>
-  <chapter title="Conformance Claims" id="ccl">
+
+  <chapter title="Conformance Claims" id="conf">
     <cclaims>
       <cclaim id="Conformance Statement">
-        <description> To be conformant to this PP, a <abbr linkend="ST"/> must demonstrate Exact
-          Conformance, a subset of Strict Conformance as defined in <cite linkend="bibCC"/> Part 1
-          (ASE_CCL). The <abbr linkend="ST"/> must include all components in this PP that are: <h:ul>
-            <h:li>unconditional (which are always required)</h:li>
-            <h:li>selection-based (which are required when certain <h:i>selections</h:i> are chosen in the
+        <description> The Protection Profile for Application Software (App PP) defines the baseline
+          Security Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for
+          application software products. This EP serves to extend the App PP baseline with
+          additional SFRs and associated Assurance Activities specific to an email client. Assurance
+          Activities are the actions that the evaluator performs in order to determine an email
+          client’s compliance to the SFRs.<h:br/> This EP conforms to Common Criteria <cite
+            linkend="bibCC"/> for Information Technology Security Evaluation, Version 3.1, Revision
+          4. It is CC Part 2 extended and CC Part 3 conformant. In order to be conformant to this
+          EP, the ST must include all components in this EP and the associated App PP that are:
+          <h:ul><h:li>unconditional (which are always required)</h:li>
+            <h:li>selection-based (which are required when certain selections are chosen in the
               unconditional requirements)</h:li>
-          </h:ul>and may include components that are <h:ul>
-            <h:li>optional or</h:li>
-            <h:li>objective.</h:li>
-          </h:ul>
-          <InsertAppendixExplainer/> The <abbr linkend="ST"/> may iterate any of these components,
-          but it must not include any additional component (e.g. from CC Part 2 or 3 or a PP not
-          conformant with this one, or extended by the <abbr linkend="ST"/>) not defined in this PP
-          or a PP conformant to this one. 
-          <h:br/>
-          Some components in this Protection Profile have a dependency on
-          other components.  In accordance with <cite linkend="bibCC"/> Part 1, <appref linkend="satisfiedreqs"/> 
-          includes justifications for those cases where the PP does not explicitly contain the component
-          upon which there is a dependency.
-        </description>
-      </cclaim>
-      <cclaim id="CC Conformance Claims">
-        <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
-          Version 3.1, Revision 5.<cite linkend="bibCC"/>.</description>
-      </cclaim>
-      <cclaim id="PP Claim">
-        <description>This PP does not claim conformance to any other Protection
-          Profile.</description>
-      </cclaim>
-      <cclaim id="Package Claim">
-        <description>This PP does not claim conformance to any packages.</description>
+          </h:ul> and may include optional and/or objective components that are desirable but not
+          required for conformance. </description>
       </cclaim>
     </cclaims>
+    <section title="How to Use This Extended Package" id="howto"> As an EP of the <cite
+      linkend="bibAppPP"/>, it is expected that the content of both this EP and the <cite
+        linkend="bibAppPP"/> be appropriately combined in the context of each product-specific
+      Security Target. This EP has been specifically defined such that there should be no difficulty
+      or ambiguity in so doing. An ST must identify the applicable versions of the <cite
+        linkend="bibAppPP"/> (see http://www.niap-ccevs.org/pp/ for the current version) and this EP
+      in its conformance claims. When requirements are referenced from the <cite linkend="bibAppPP"
+      />, a short notation is included. </section>
   </chapter>
+
   <chapter title="Security Problem Definition" id="spd">The security problem is described in terms
     of the threats that the Host Agent is expected to address, assumptions about the
     operational environment, and any organizational security policies that the Host Agent
