@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-<PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile for Host Agent"
+<PP xmlns="https://niap-ccevs.org/cc/v1" name="Extended Package for Host Agent"
   xmlns:h="http://www.w3.org/1999/xhtml">
   
   <PPReference title="PP Reference">
@@ -29,10 +29,17 @@
   </RevisionHistory>
 
   <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> The scope of this Protection Profile (PP) is to
+    <section title="Overview" id="ppoverview"> The scope of this Extended Package is to
       describe the security functionality of a Host Agent in terms of <cite linkend="bibCC"/>
-      and to define functional and assurance requirements for such products.
-      
+      and to define functional and assurance requirements for such products. This EP 
+      is not complete in itself, but rather extends the Protection Profile for 
+      Application Software <cite linkend="AppPP"/> or the Protection Profile for 
+      General Purpose Operating Systems <cite linkend="OSPP"/>. The combined requirements 
+      in this Host Agent EP is met to be paired with an evaluation using 
+      an Enterprise Security Mangement (ESM) Protection Profile. The ESM PP covers the security 
+      functionality needed on the backend server or cloud service, and the paired Host Agent EP
+      covers the security functionality needed on the endpoint device (desktop, mobile device, 
+      etc.).
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. 
@@ -85,18 +92,47 @@
             </description>
           </entry>
          <entry>
-           <term>Host Agent</term>
-           <description>Software that executes on endpoints to collect data or execute commands
-             sent to it from a management server.
+           <term>Endpoint</term>
+           <description>A computing device that runs a General Purpose Operating System 
+             or a Mobile Device Operating System. Endpoints can 
+             include desktops, servers, and mobile devices.
            </description>
+         </entry>
+         <entry>
+           <term><abbr title="Enterprise Security Management">ESM</abbr></term>
+           <description>
+             A enterprise management portal hosted on a server or cloud serivce that provides 
+             support for security management, information flows, reporting, policy, and data analytics 
+             in complex enterprise envrionments.
+           </description>
+         </entry>
+         <entry>
+           <term>Host Agent</term>
+           <description>Software that executes on endpoints to collect data about the endpoint,
+             execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
+             or service. An example command sent to an endpoint could be to enforce a policy from an 
+             ESM, or to collect some files, or to run an OS command.
+           </description>
+         </entry>
+         <entry>
+           <term><abbr title="Operating System">OS</abbr></term>
+           <description> Software that manages physical and logical resources and provides services
+             for applications.</description>
          </entry>
         </glossary>
     </section>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary">
+        The TOE boundary encompasses the endpoint Host Agent and all modules and libraries bundled with
+        the Host Agent. The communications channel with other Host Agents, or an ESM server, or cloud 
+        service are within the scope of evaluation. The platform operating system or execution envrionment
+        is outside the scope of a Host Agent evaluation.
         <figure entity="images/Host_Agent.jpg" title="Figure 1: Host Agent TOE " id="toe"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
+        The TOE platform consists of a General Purpose Operating System or a Mobile Device 
+        Operating System, or an Execution Environment on top of which the Host Agent 
+        software executes.
       </subsection>
     </section>
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
@@ -333,9 +369,9 @@
             </title>
             <note role="application">
               The term <h:i>audit events</h:i> here is understood to be only the set of events
-              defined in FAU_GEN.1. If the job of this Host Agent is to generate or collect events for 
-              an enterprise management server it is not expected that those events will be stored
-              in the platform provided logging mechanism.
+              defined in <linkref linkend="FAU_GEN.1"/>. If the job of this Host Agent is to generate
+              or collect events for an enterprise security management server it is not expected 
+              that those events will be stored in the platform provided logging mechanism.
             </note>
             <aactivity>
               <h:p>
@@ -358,21 +394,27 @@
        
         </f-component>
         
-        <f-component id="fau_QUE.1" name="Queue Audit Data">
-          <f-element id="fau_QUE.1.1">
+        <f-component id="fau_cha.1" name="Cache Host Agent Collected Data">
+          <f-element id="fau_cha.1.1">
             <title> 
-              The <h:b>Host Agent</h:b> shall queue alerts if the trusted channel is not available
+              The <h:b>Host Agent</h:b> shall cache collected data on 
+              <selectables>
+                <selectable>persistant storage</selectable>
+                <selectable>non-persistant storage
+                </selectable>
+              </selectables>
+              if the trusted channel is not available.
             </title>
             <note role="application">
-              The term <h:i>alerts</h:i> here is understood to be any type of collected endpoint data
-              destine for an enterprise security management (ESM) server. To met this requirement Host Agents must be
+              The term <h:i>collected data</h:i> here is understood to be any type of collected endpoint data by the Host Agent
+              destine for an enterprise security management (ESM) server. To met this requirement a Host Agent must be
               capabile of locally caching or queing data destine for an ESM server during peroids of network
-              disconnectivity.
+              disconnectivity. In a future revision the selection of non-persistant storage will be removed from this PP.
             </note>
             <aactivity>
               The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
               from the network for a period of 2 hours to simulate a network connectively failure. The evaluator shall
-              run some executable programs and reboot the machine during the 2 hour to generate some Host Agent data.
+              run some executable programs during the 2 hour time frame to generate some Host Agent data.
               The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
               that the missing data from the 2 hour windows is available.
             </aactivity>
@@ -384,10 +426,43 @@
       
       <subsection title="Security Management (FMT)" id="fmt">
         
+        <f-component id="FMT_SMF.1(1)"
+          name="Specification of Management Functions (Remote Configuration of Host Agent)">
+          <f-element id="FMT_SMF.1.1(1)">
+            <title>The <h:b>Host Agent</h:b> shall be capable of the
+              following management functions:
+              <h:br/>
+              <management-function-set default="O">
+                <manager id="a">Administrator</manager>
+                <management-function>
+                  <text>
+                    Configure the frequency for sending host agent data to an ESM
+                  </text>
+                  <M ref="a"/>
+                </management-function>
+                <management-function>
+                  <text>
+                    Assign a label or tag to categorize individual endpoint systems
+                  </text>
+                  <M ref="a"/>
+                </management-function>
+              </management-function-set>
+            </title>
+            <note role="application"> This requirement captures all the configuration functionality
+              the <abbr linkend="TSF"/> provides the administrator to configure the Host Agent. The
+              frequency for sending data to an ESM can be specified as a time value, but does not have
+              to be. A value like Aggressive, Normal, Low Bandwidth is a measure of control of frequency and meets
+              the requirement.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update">
           <f-element id="FMT_POL_EXT.1.1">
             <title>The <h:b>Host Agent</h:b> shall only accept policies and policy updates 
-              that are digitally signed by the Enterprise.
+              that are digitally signed by the ESM.
             </title>
             <note role="application">
             </note>
@@ -408,6 +483,46 @@
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+        
+        <f-component id="ftp_ptp_ext.1" name="Protection of Peer-to-Peer Data in Transit">
+          <f-element id="ftp_ptp_ext.1.1">
+            <title>The Host Agent shall 
+              <selectables linebreak="yes">
+                <selectable>not directly transmit any data </selectable>
+                <selectable>encrypt all transmitted data with
+                  <selectables>
+                    <selectable id="sel_sen_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
+                    <selectable id="sel_sen_tlsc">cryptographic protocol(s) implemented via FCS-specified service</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>
+              between itself and another Host Agent.
+            </title>
+            <note role="application">
+               This requirement is designed to protection the communications with other Host Agents 
+               in a peer-to-peer scenario where Host Agents are sending/reciving data from each other.
+               If "encrypts all transmitted data with TLS" is selected the appropriate TLSC and TLSS requirements
+               must be included in the ST. If "encrypts all transmitted data with cryptographic 
+               protocol(s) implemented via FCS-specified service
+               is selected then minimally the fcs_cop.1(1), and fcs_ckm_ext.1.1 must be include with the proper
+               selections.
+            </note>  
+            <aactivity>
+              The evaluator shall perform the following tests.
+              <testlist>
+                <test>
+                  The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
+                  while capturing packets from the Host Agent. The evaluator shall verify from the packet
+                  capture that the traffic is 
+                  encrypted with <h:abbr title="Transport Layer Security">TLS</h:abbr> or 
+                  in accordance with the selections in the <abbr title="Security Target" linkend="ST">ST
+                  </abbr>.
+                </test>
+              </testlist>
+            </aactivity>
+          </f-element>
+        </f-component>
+      
       </subsection>
       
     </section>
@@ -501,13 +616,6 @@
         <tag>AppPP</tag>
         <description>
           <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Application Software</h:a>
-        </description>
-      </entry>
-      <entry id="bibEDR">
-        <tag>ESM EDR PP</tag>
-        <description>
-          <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?id=403">Protection Profile for
-            ESM EDR, Version 1.0, July 2018</h:a>
         </description>
       </entry>
     </bibliography>
