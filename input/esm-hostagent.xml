@@ -346,20 +346,18 @@
               </selectables> 
               shall record within each audit record at least the following information: 
               <h:ol type='a'>
-                <h:li>Date and time of the event, type of event, subject identity (if applicable),
-                  and outcome (success or failure) of the event; and </h:li>
-                <h:li>For each audit event type, based on the auditable event
-                  definitions of the functional components included in the PP/ST,
-                  <assignable>other audit relevant information</assignable>
-                </h:li>
+                <h:li>date and time of the event,</h:li>
+                <h:li>type of event,</h:li>
+                <h:li>subject identity,</h:li>
+                <h:li>(success or failure) of the event, if relevant,</h:li>
+                <h:li><assignable>other audit relevant information</assignable></h:li>
               </h:ol>
               .
             </title>
             <note role="application">
-              The term <h:i>subject</h:i> here is understood to be the user that the process
-              is acting on behalf of.  If no auditable event definitions of 
-              functional components are provided, then no additional audit-relevant information 
-              is required.
+              All audits must contain at least the information mentioned in FAU_GEN.1.2,
+              but may contain more information. The term <h:i>subject</h:i> here is understood 
+              to be the user that the process is acting on behalf of.  
             </note>
             <aactivity>
               <h:p>
