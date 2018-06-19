@@ -491,7 +491,8 @@
                 <selectable>Host Agent</selectable>
                 <selectable>Host Agent Platform</selectable>
               </selectables> 
-              shall only accept policies and policy updates that are digitally signed by the ESM.
+              shall only accept policies and policy updates that are digitally signed by the ESM
+              system.
             </title>
             <note role="application">
               The intent of this requirement is to cryptographically tie any policy updates or
@@ -504,6 +505,28 @@
             </aactivity>
           </f-element>        
         </f-component>
+      
+        <f-component id="FMT_UNR_EXT.1" name="User Unenrollment Prevention">
+          <f-element id="FMT_UNR_EXT.1.1">
+            <title>The 
+              <selectables>
+                <selectable>Host Agent</selectable>
+                <selectable>Host Agent Platform</selectable>
+              </selectables> 
+              shall enforce a mechanism to prevent unpriviledge users of the platform from
+              unenrolling the Host Agent with the ESM system.
+            </title>
+            <note role="application">
+              Unenrolling is the action of transitioning from the enrolled state to the
+              unenrolled state. Preventing unpriviledged users from unenrolling the Host Agent
+              provides assurance that the enterprise can manage connected endpoints. 
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>        
+        </f-component>
+        
+      
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
