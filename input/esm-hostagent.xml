@@ -422,13 +422,13 @@
         <f-component id="fau_cha.1" name="Cache Host Agent Collected Data">
           <f-element id="fau_cha.1.1">
             <title> 
-              The <h:b>Host Agent</h:b> shall cache collected data on 
+              The <h:b>Host Agent</h:b> shall cache collected data for a minimum of 72 hours on 
               <selectables>
                 <selectable>persistant storage</selectable>
                 <selectable>non-persistant storage
                 </selectable>
               </selectables>
-              if the trusted channel is not available for a minimum of 72 hours.
+              if the trusted channel is not available.
             </title>
             <note role="application">
               The term <h:i>collected data</h:i> here is understood to be any type of collected endpoint data by the Host Agent
@@ -453,7 +453,7 @@
         
         <f-component id="FMT_SMF.1(1)"
           name="Specification of Management Functions (Remote Configuration of Host Agent)">
-          <f-element id="FMT_SMF.1.1(1)">
+          <f-element id="FMT_SMF.1.2(1)">
             <title>The <h:b>Host Agent</h:b> shall be capable of the
               following management functions:
               <h:br/>
