@@ -146,8 +146,18 @@
         service. The platform operating system or execution environment
         upon which the Host Agent is executing is outside the scope of a Host Agent evaluation. The figures
         below show some sample Host Agents but are not inclusive of every possible Host Agent design. 
-        <figure entity="images/Host_Agent.jpg" title="Host Agent TOE " id="toe"/>
-        <figure entity="images/Host_Agent.jpg" title="Host Agent TOE " id="toe"/>
+                
+        <h:table>
+          <h:tr>
+            <h:td>
+              <figure entity="images/Host_Agent.jpg" title="Sample Host Agent TOE" id="toe"/>
+            </h:td>
+            <h:td>
+              <figure entity="images/Host_Agent.jpg" title="Sample Host Agent TOE" id="toe"/>
+            </h:td>
+          </h:tr>
+        </h:table>
+        
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
         The TOE platform consists of a General Purpose Operating System, a Mobile Device 
