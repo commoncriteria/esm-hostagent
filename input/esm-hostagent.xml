@@ -367,7 +367,7 @@
                 is included.
               </h:p>
               <h:p>
-                The evaluator shall test the Host Agent's ability to correctly generate
+                The evaluator shall test the Host Agents ability to correctly generate
                 audit records by having the TOE generate audit records for the
                 events listed in the ST.  This should include all instance types
                 of an event specified.  
@@ -408,7 +408,7 @@
                 ensure that the fields contains the information required. 
               </h:p>
               <h:p>
-                The evaluator shall test the OS's ability to correctly generate
+                The evaluator shall test the Host Agents ability to correctly generate
                 audit records by having the TOE generate audit records for the
                 events listed in the ST.
                 The evaluator shall
@@ -443,14 +443,16 @@
                 mechanism.
               </h:p>
               <h:p>
-                The evaluator shall test the Host Agent's ability to correctly generate
+                The evaluator shall test the Host Agents ability to correctly generate
                 audit records by having the TOE generate audit records for the
                 events listed in the ST.  This should include all instance types
                 of an event specified.  
                 When verifying the test results, the evaluator shall ensure the
                 audit records generated during testing are stored in the platform provided logging
-                mechanism. On Linux based platform this would be in var/logs. On a Windows based 
-                platform this would be the Windows Event Log.
+                mechanism. 
+                <h:br/>
+                On Linux based platforms this would be in var/logs. On Windows based 
+                platforms this would be the Windows Event Log.
               </h:p>
             </aactivity>
           </f-element>
@@ -478,11 +480,13 @@
               under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensative data.
             </note>
             <aactivity>
-              The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
-              from the network for a period of 72 hours to simulate a network connectively failure. The evaluator shall
-              run some executable programs during the 72 hour time frame to generate some Host Agent data.
+              The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
+              from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
+              exercise some behaviors on the endpoint during the 72 hour time frame to generate some Host Agent data.
+              Example behaviors could be running programs, performing some authentications, installing/uninstalling some
+              other unrelated software.
               The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
-              that the missing data from the 72 hour windows is available.
+              that the missing data from the 72 hour time frame is available on the ESM management portal.
             </aactivity>
           </f-element>
           
@@ -521,6 +525,18 @@
               the requirement.
             </note>
             <aactivity>
+              The evaluator shall verify that every management function 
+              mandated by the EP is described in the operational guidance and that the description 
+              contains the information required to perform the management duties associated with the 
+              management function. 
+              <testlist>
+                <test>
+                  The evaluator shall test the ability to configure the Host Agent and test each option selected 
+                  from above. The evaluator is expected to test these functions in all the ways in which 
+                  the <abbr title="Security Target" linkend="ST">ST</abbr> and guidance documentation state
+                  the configuration can be managed.
+                </test>
+              </testlist>
             </aactivity>
           </f-element>
         </f-component>
@@ -532,7 +548,7 @@
                 <selectable>Host Agent</selectable>
                 <selectable>Host Agent Platform</selectable>
               </selectables> 
-              shall only accept policies and policy updates that are digitally signed by the ESM
+              shall only accept policies or commands that are digitally signed by the ESM
               system.
             </title>
             <note role="application">
@@ -542,7 +558,26 @@
               and/or FTP_PTP_EXT.1.1.
             </note>
             <aactivity>
-              
+              The evaluator shall ensure that the TSS
+              describes how the candidate policies or commands are sent to the Host Agent; the
+              processing associated with verifying the digital signature of the policies or
+              commands; and the actions that take place for successful (signature was
+              verified) and unsuccessful (signature could not be verified) cases. The
+              software components that are performing the processing must also be
+              identified in the TSS and verified by the evaluators (this could be the Host Agent
+              or the underlying platform).
+              <testlist>
+                <test>
+                  The evaluator shall perform or wait for a policy update or commands 
+                  from an ESM Server to be sent to a Host Agent. The evaluator shall verify the
+                  policy or command is signed and is provided to the Host Agent. The evaluator shall
+                  verify the Host Agent accepts the digitally signed policy.
+                  <h:br/>
+                  The execution of this test may require some configuration or a test version of either
+                  the Host Agent of the ESM system in order to view the incoming policy or command
+                  and verify that the content is digitally signed.
+                </test>
+              </testlist>
             </aactivity>
           </f-element>        
         </f-component>
@@ -563,11 +598,20 @@
               provides assurance that the enterprise can manage connected endpoints. 
             </note>
             <aactivity>
+              <testlist>
+                The evaluator shall ensure that the TSS describes the mechanism used to
+                prevent users from unenrolling the Host Agent.
+               <test>
+                 The evaluator shall attempt to unenroll the Host Agent from the ESM system
+                 as an unpriviledge user and verify that the attempt fails. This could be 
+                 performed by trying to uninstall the Host Agent, and trying to kill the running
+                 Host Agent process.
+               </test>
+              </testlist>
             </aactivity>
           </f-element>        
         </f-component>
         
-      
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
