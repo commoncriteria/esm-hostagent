@@ -112,7 +112,7 @@
          </entry>
          <entry>
            <term>Host Agent</term>
-           <description>A logial piece of software that executes on endpoints to collect data about the endpoint,
+           <description>A logical piece of software that executes on endpoints to collect data about the endpoint,
              execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
              or service. An example command sent to an endpoint could be to enforce a policy from an 
              ESM, or to collect some files, or to run an OS command.
