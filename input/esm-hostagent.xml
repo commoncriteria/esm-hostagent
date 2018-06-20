@@ -458,6 +458,9 @@
               destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
               capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
               dis-connectivity. In a future revision the selection of non-persistent storage will be removed from this PP.
+              <br />
+              The <h:i>collected data</h:i> being cached by a Host Agent is considered sensative data and thus falls
+              under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensative data.
             </note>
             <aactivity>
               The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
