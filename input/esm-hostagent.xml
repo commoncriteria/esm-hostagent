@@ -235,39 +235,43 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.DATA_RECORDER">
-          <description>Conformant <abbr linkend="OS"/>s ensure that information exists that allows
+        <SO id="O.ACCOUNTABILITY">
+          <description>Conformant Host Agents ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
-            the operating system and discover its cause.  Gathering event information and immediately 
-            transmitting it to another system can also enable incident response in the event
-            of system compromise.</description>
+            the Host Agent.</description>
           <component-refer ref="fau_gen.1"/>
+          <component-refer ref="FAU_STO.1"/>
         </SO>
         <SO id="O.DATA_RECORDER">
           <description>
-            
+            Conformant Host Agents ensure that collected information is cached or queued during periods
+            when the trusted channel is not available. This will prevent data loss of Host Agent data.
           </description>
           <component-refer ref="FAU_CHA.1"/>
         </SO>
         <SO id="O.INTEGRITY">
           <description>
-            
+            Conformant Host Agents will ensure the integrity of policy and/or commands sent to 
+            the Host Agent and also leverage execution environment or platform-based mitigations
+            to protect the Host Agent.
           </description>
           <component-refer ref="FMT_POL_EXT.1"/>
+          <component-refer ref="FMT_UNR_EXT.1"/>
         </SO>
         <SO id="O.MANAGEMENT">
-          <description>To facilitate management by the enterprise, conformant <abbr
-            linkend="TOE"/>s provide consistent and supported interfaces for their
+          <description>To facilitate management by the enterprise, conformant Host Agents
+            provide consistent and supported interfaces for their
             security-relevant configuration and maintenance.
           </description>
           <component-refer ref="FMT_SMF.1"/>
         </SO>
         <SO id="O.PROTECTED_COMMS">
           <description> To address both passive (eavesdropping) and active (packet modification)
-            network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">
-            TOE</abbr>s will use a trusted channel for sending and recieving data.
+            network attack threats, conformant Host Agents will use a trusted channel 
+            for sending and recieving data.
           </description>
-          <component-refer ref="FTP_PTP_EXT.1"/>
+          <component-refer ref="FTP_DIT_EXT.1"/>
+          <component-refer ref="FTP_DIT_EXT.2"/>
         </SO>
       </SOs>
     </section>
@@ -548,8 +552,37 @@
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
         
-        <f-component id="ftp_ptp_ext.1" name="Protection of Peer-to-Peer Data in Transit">
-          <f-element id="ftp_ptp_ext.1.1">
+        <f-component id="ftp_dit_ext.1" name="Protection of Data in Transit (Refinement)">
+          <f-element id="ftp_dit_ext.1.1">
+            <title>The Host Agent shall 
+              <selectables linebreak="yes">
+                <selectable>encrypt all transmitted sensitive data with
+                  <selectables>
+                    <selectable id="sel_all_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
+                    <selectable id="sel_all_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
+                  </selectables>
+                </selectable>
+                <selectable>encrypt all transmitted data with
+                  <selectables>
+                    <selectable id="sel_sen_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
+                    <selectable id="sel_sen_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>
+              between itself and another trusted IT product.
+            </title>
+            <note role="application">
+              This SFR was modified from its original definition in the Base-PP to limit certain
+              selections for a Host Agent.
+            </note>  
+            <aactivity>
+              See the Base-PP for Assurance Activities
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
+          <f-element id="ftp_dit_ext.2.1">
             <title>The Host Agent shall 
               <selectables linebreak="yes">
                 <selectable>not directly transmit any data </selectable>
