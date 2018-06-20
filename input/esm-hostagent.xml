@@ -35,7 +35,7 @@
       is not complete in itself, but rather extends the Protection Profile for 
       Application Software <cite linkend="bibAppPP"/>. The combined requirements 
       in this Host Agent EP is met to be paired with an evaluation using 
-      an Enterprise Security Mangement (ESM) Protection Profile. The ESM PP covers the security 
+      an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
       functionality needed on the backend server or cloud service, and the paired Host Agent EP
       covers the security functionality needed on the endpoint device (desktop, mobile device, 
       etc.).
@@ -105,9 +105,9 @@
          <entry>
            <term><abbr title="Enterprise Security Management">ESM</abbr></term>
            <description>
-             A enterprise management portal hosted on a server or cloud serivce that provides 
+             A enterprise management portal hosted on a server or cloud service that provides 
              support for security management, information flows, reporting, policy, and data analytics 
-             in complex enterprise envrionments.
+             in complex enterprise environments.
            </description>
          </entry>
          <entry>
@@ -140,7 +140,7 @@
       <subsection title="TOE Boundary" id="TOEboundary">
         The TOE boundary encompasses the endpoint Host Agent and all modules and libraries bundled with
         the Host Agent. The communications channel with other Host Agents, or an ESM server, or cloud 
-        service are within the scope of evaluation. The platform operating system or execution envrionment
+        service are within the scope of evaluation. The platform operating system or execution environment
         is outside the scope of a Host Agent evaluation.
         <figure entity="images/Host_Agent.jpg" title="Host Agent TOE " id="toe"/>
       </subsection>
@@ -159,7 +159,7 @@
         <usecase title="Communication" id="comms">
           <description>The Host Agent allows for communication interactively or
             non-interactively with other Enterprise Security Management (ESM) software over a communications channel.
-            Example communications include but are not limited to; recieving policy, sending data and running tasks 
+            Example communications include but are not limited to; receiving policy, sending data and running tasks 
             or commands.
           </description>
         </usecase>
@@ -202,12 +202,14 @@
     is expected to enforce. <section title="Threats" id="threats">
       <threats>
         <threat id="T.DATA_LOSS">
-          <description>An Host Agent be susseptable to data loss during periods of disconnectiveity
-            from an Enterprise Security Management (ESM) system. 
+          <description>A Host Agent can be susceptible to data loss during periods when connectiveity
+            to the Enterprise Security Management (ESM) system is not present. 
           </description>
           <objective-refer ref="O.DATA_LOSS">
             <rationale>The threat T.DATA_LOSS is countered by O.DATA_RECORDER as this
-              provides for caching of data by a Host Agent during periods of disconnectivity from an ESM system.</rationale>
+              provides for caching of data by a Host Agent during periods when not connected to the ESM 
+              system.
+            </rationale>
           </objective-refer>
         </threat>
       </threats>
@@ -268,7 +270,7 @@
         <SO id="O.PROTECTED_COMMS">
           <description> To address both passive (eavesdropping) and active (packet modification)
             network attack threats, conformant Host Agents will use a trusted channel 
-            for sending and recieving data.
+            for sending and receiving data.
           </description>
           <component-refer ref="FTP_DIT_EXT.1"/>
           <component-refer ref="FTP_DIT_EXT.2"/>
@@ -337,7 +339,7 @@
               <h:ol type='a'>
                 <h:li>Start-up and shut-down of the Host Agent;</h:li>
                 <h:li>Change in enrollment state of a Host Agent;</h:li>
-                <h:li>Onboarding status with an Enterprise Mangement System (Success/Failure);</h:li>
+                <h:li>Onboarding status with an Enterprise Management System (Success/Failure);</h:li>
                 <h:li><assignable>other specifically defined auditable events</assignable></h:li>
               </h:ol>
               .
@@ -445,17 +447,17 @@
             <title> 
               The <h:b>Host Agent</h:b> shall cache collected data for a minimum of 72 hours on 
               <selectables>
-                <selectable>persistant storage</selectable>
-                <selectable>non-persistant storage
+                <selectable>persistent  storage</selectable>
+                <selectable>non-persistent  storage
                 </selectable>
               </selectables>
               if the trusted channel is not available.
             </title>
             <note role="application">
               The term <h:i>collected data</h:i> here is understood to be any type of collected endpoint data by the Host Agent
-              destine for an enterprise security management (ESM) server. To met this requirement a Host Agent must be
-              capabile of locally caching or queing data for a minimum of 72 hours (3 days) during peroids of network
-              disconnectivity. In a future revision the selection of non-persistant storage will be removed from this PP.
+              destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
+              capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
+              dis-connectivity. In a future revision the selection of non-persistent storage will be removed from this PP.
             </note>
             <aactivity>
               The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
@@ -539,7 +541,7 @@
             </title>
             <note role="application">
               Unenrolling is the action of transitioning from the enrolled state to the
-              unenrolled state. Preventing unpriviledged users from unenrolling the Host Agent
+              unenrolled state. Preventing unprivileged users from unenrolling the Host Agent
               provides assurance that the enterprise can manage connected endpoints. 
             </note>
             <aactivity>
@@ -597,7 +599,7 @@
             </title>
             <note role="application">
                This requirement is designed to protection the communications with other Host Agents 
-               in a peer-to-peer scenario where Host Agents are sending/reciving data from each other.
+               in a peer-to-peer scenario where Host Agents are sending/receiving data from each other.
                If "encrypts all transmitted data with TLS" is selected the appropriate TLSC and TLSS requirements
                must be included in the ST. If "encrypts all transmitted data with cryptographic 
                protocol(s) implemented via FCS-specified service
