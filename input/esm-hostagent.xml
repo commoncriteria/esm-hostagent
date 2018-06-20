@@ -142,7 +142,7 @@
         the Host Agent. The communications channel with other Host Agents, or an ESM server, or cloud 
         service are within the scope of evaluation. The platform operating system or execution envrionment
         is outside the scope of a Host Agent evaluation.
-        <figure entity="images/Host_Agent.jpg" title="Figure 1: Host Agent TOE " id="toe"/>
+        <figure entity="images/Host_Agent.jpg" title="Host Agent TOE " id="toe"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
         The TOE platform consists of a General Purpose Operating System, a Mobile Device 
