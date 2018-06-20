@@ -206,21 +206,15 @@
             from an Enterprise Security Management (ESM) system. 
           </description>
           <objective-refer ref="O.DATA_LOSS">
-            <rationale>The threat T.DATA_LOSS is countered by O.CACHE_DATA as this
-              provides for caching of data by a Host Agent.</rationale>
+            <rationale>The threat T.DATA_LOSS is countered by O.DATA_RECORDER as this
+              provides for caching of data by a Host Agent during periods of disconnectivity from an ESM system.</rationale>
           </objective-refer>
         </threat>
       </threats>
     </section>
     <section title="Assumptions" id="assumptions">
       <assumptions>
-        <assumption id="A.QQQQ">
-          <description> The product relies QQQQ its execution. This underlying platform is out of scope of this PP. </description>
-          <objective-refer ref="OE.PLATFORM">
-            <rationale> The operational environment objective OE.PLATFORM is realized through
-              A.PLATFORM. </rationale>
-          </objective-refer>
-        </assumption>
+        Reference the Protection Profile for Application Software <cite linkend="bibAppPP"/> for Assumptions.
       </assumptions>
     </section>
 <!--    <section title="Organizational Security Policies" id="OSPs">
@@ -241,13 +235,39 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.ACCOUNTABILITY">
+        <SO id="O.DATA_RECORDER">
           <description>Conformant <abbr linkend="OS"/>s ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the operating system and discover its cause.  Gathering event information and immediately 
             transmitting it to another system can also enable incident response in the event
             of system compromise.</description>
           <component-refer ref="fau_gen.1"/>
+        </SO>
+        <SO id="O.DATA_RECORDER">
+          <description>
+            
+          </description>
+          <component-refer ref="FAU_CHA.1"/>
+        </SO>
+        <SO id="O.INTEGRITY">
+          <description>
+            
+          </description>
+          <component-refer ref="FMT_POL_EXT.1"/>
+        </SO>
+        <SO id="O.MANAGEMENT">
+          <description>To facilitate management by the enterprise, conformant <abbr
+            linkend="TOE"/>s provide consistent and supported interfaces for their
+            security-relevant configuration and maintenance.
+          </description>
+          <component-refer ref="FMT_SMF.1"/>
+        </SO>
+        <SO id="O.PROTECTED_COMMS">
+          <description> To address both passive (eavesdropping) and active (packet modification)
+            network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">
+            TOE</abbr>s will use a trusted channel for sending and recieving data.
+          </description>
+          <component-refer ref="FTP_PTP_EXT.1"/>
         </SO>
       </SOs>
     </section>
@@ -256,20 +276,19 @@
       environment assist the Host Agent in correctly providing its security functionality.
       These track with the assumptions about the environment. <SOEs>
         <SOE id="OE.PLATFORM">
-          <description>The Host Agent relies on being installed on trusted
-            hardware.</description>
+          <description>The Host Agent relies on being installed on a trusted
+            platfrom.</description>
         </SOE>
         <SOE id="OE.PROPER_USER">
           <description> The user of the Host Agent is not willfully negligent or hostile,
             and uses the software within compliance of the applied enterprise security policy.
-            Standard user accounts are provisioned in accordance with the least privilege model.
-            Users requiring higher levels of access should have a separate account dedicated for
-            that use. </description>
+           </description>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
           <description> The administrator of the Host Agent is not careless, willfully
             negligent or hostile, and administers the OS within compliance of the applied enterprise
-            security policy. </description>
+            security policy. 
+          </description>
         </SOE>
       </SOEs></section>
     <section title="Security Objectives Rationale" id="SOR">This section describes how the
