@@ -112,7 +112,7 @@
          </entry>
          <entry>
            <term>Host Agent</term>
-           <description>Software that executes on endpoints to collect data about the endpoint,
+           <description>A logial piece of software that executes on endpoints to collect data about the endpoint,
              execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
              or service. An example command sent to an endpoint could be to enforce a policy from an 
              ESM, or to collect some files, or to run an OS command.
@@ -138,10 +138,15 @@
     </section>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary">
-        The TOE boundary encompasses the endpoint Host Agent and all modules and libraries bundled with
-        the Host Agent. The communications channel with other Host Agents, or an ESM server, or cloud 
-        service are within the scope of evaluation. The platform operating system or execution environment
-        is outside the scope of a Host Agent evaluation.
+        The term Host Agent is the logical representation of all the software from the TOE
+        vendor the represents the functionality of a Host Agent. The boundary for the Host Agent includes 
+        all processes, all modules and libraries bundled with the Host Agent.  The Host 
+        Agent can run as daemons or services on the platform but is not required too.
+        The TOE boundary includes the communications channel with other Host Agents, an ESM server, or a cloud 
+        service. The platform operating system or execution environment
+        upon which the Host Agent is executing is outside the scope of a Host Agent evaluation. The figures
+        below show some sample Host Agents but are not inclusive of every possible Host Agent design. 
+        <figure entity="images/Host_Agent.jpg" title="Host Agent TOE " id="toe"/>
         <figure entity="images/Host_Agent.jpg" title="Host Agent TOE " id="toe"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
