@@ -475,7 +475,7 @@
       <subsection title="Security Management (FMT)" id="fmt">
         
         <f-component id="FMT_SMF.1(1)"
-          name="Specification of Management Functions (Remote Configuration of Host Agent)">
+          name="Specification of Management Functions (Configuration of Host Agent)">
           <f-element id="FMT_SMF.1.2(1)">
             <title>The <h:b>Host Agent</h:b> shall be capable of the
               following management functions:
