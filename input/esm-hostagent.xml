@@ -153,7 +153,7 @@
               <figure entity="images/Host_Agent.jpg" title="Sample Host Agent TOE" id="toe"/>
             </h:td>
             <h:td>
-              <figure entity="images/Host_Agent.jpg" title="Sample Host Agent TOE" id="toe"/>
+              <figure entity="images/Host_Agent_sample.jpg" title="Sample Host Agent TOE" id="toe"/>
             </h:td>
           </h:tr>
         </h:table>
@@ -475,7 +475,8 @@
               destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
               capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
               dis-connectivity. In a future revision the selection of non-persistent storage will be removed from this PP.
-              <h:br />
+              <h:br/>
+              <h:br/>
               The <h:i>collected data</h:i> being cached by a Host Agent is considered sensative data and thus falls
               under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensative data.
             </note>
@@ -572,6 +573,7 @@
                   from an ESM Server to be sent to a Host Agent. The evaluator shall verify the
                   policy or command is signed and is provided to the Host Agent. The evaluator shall
                   verify the Host Agent accepts the digitally signed policy.
+                  <h:br/>
                   <h:br/>
                   The execution of this test may require some configuration or a test version of either
                   the Host Agent of the ESM system in order to view the incoming policy or command
