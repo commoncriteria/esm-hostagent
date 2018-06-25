@@ -475,11 +475,7 @@
               destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
               capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
               dis-connectivity. In a future revision the selection of non-persistent storage will be removed from this PP.
-              <h:br/>
-              <h:br/>
-              The <h:i>collected data</h:i> being cached by a Host Agent is considered sensative data and thus falls
-              under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensative data.
-            </note>
+             </note>
             <aactivity>
               The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
               from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
@@ -490,6 +486,29 @@
               that the missing data from the 72 hour time frame is available on the ESM management portal.
             </aactivity>
           </f-element>
+          
+          <f-element id="fau_cha.1.2">
+            <title> 
+              The <h:b>Host Agent</h:b> shall treat locally cached data as
+              <selectables>
+                <selectable>sensative data</selectable>
+                <selectable>not sensative data
+                </selectable>
+              </selectables>
+              .
+            </title>
+            <note role="application">
+              The <h:i>collected data</h:i> being cached by a Host Agent is considered sensative data and thus falls
+              under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensative data if "sensative data"
+              is selected in this requirement. For some classes of ESM products data can be cached locally and not
+              considered sensative, such as data already present as part of the OS platform (example event logs, ip 
+              address, process lists).               
+            </note>
+            <aactivity>
+         
+            </aactivity>
+          </f-element>
+          
           
         </f-component>
         
