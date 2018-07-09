@@ -615,8 +615,10 @@
               </management-function-set>
             </title>
             <note role="application"> This requirement captures all the configuration functionality
-              the <abbr linkend="TSF"/> provides the administrator to configure the Host Agent. The
-              frequency for sending data to an ESM can be specified as a time value, but does not have
+              the <abbr linkend="TSF"/> provides the administrator to configure the Host Agent. The configuration of
+              these management functions can be achieved by either local configuration of the Host Agent or by 
+              remote configuration using the ESM management software.
+              The frequency for sending data to an ESM can be specified as a time value, but does not have
               to be. A value like Aggressive, Normal, Low Bandwidth is a measure of control of frequency and meets
               the requirement.
             </note>
