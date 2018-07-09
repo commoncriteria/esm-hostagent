@@ -10,7 +10,7 @@
       <PPTitle>Extended Package for Host Agent</PPTitle>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2018-07-14</PPPubDate>
+      <PPPubDate>2018-07-16</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1R4</CCVersion>
       <Keywords>Host Agent, ESM</Keywords>
@@ -114,6 +114,12 @@
            </description>
          </entry>
          <entry>
+           <term><abbr title="Endpoint Detection and Response">EDR</abbr> System</term>
+           <description>A system that analyzes collected EDR Host Agent data for detecting, 
+             investigating, and remediating unauthorized activities on endpoints. 
+           </description>
+         </entry>
+         <entry>
            <term>Host Agent</term>
            <description>A logical piece of software that executes on endpoints to collect data about the endpoint,
              execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
@@ -124,7 +130,8 @@
          <entry>
            <term>Onboarding</term>
            <description>The processes of taking an endpoint from the Unenrolled State to the
-             Enrolled State. The act of initial provisioning with an ESM.
+             Enrolled State. The act of initial provisioning with an ESM. The term onboarding
+             can be used interchangeably with the term enrollment in the context of a Host Agent.
            </description>
          </entry>
          <entry>
