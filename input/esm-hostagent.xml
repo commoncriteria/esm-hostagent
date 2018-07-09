@@ -34,11 +34,13 @@
       and to define functional and assurance requirements for such products. This EP 
       is not complete in itself, but rather extends the Protection Profile for 
       Application Software <cite linkend="bibAppPP"/>. The combined requirements 
-      in this Host Agent EP is met to be paired with an evaluation using 
+      in this Host Agent EP with the Application Software PP is met to be paired with an evaluation using 
       an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
-      functionality needed on the backend server or cloud service, and the paired Host Agent EP
+      functionality needed on the server or cloud service, and the paired Host Agent EP
       covers the security functionality needed on the endpoint device (desktop, mobile device, 
-      etc.).
+      etc.). At this time only the ESM EDR PP is published and ready for use with this Host Agent EP. Future
+      version of this Host Agent EP will include requirements for other classes of Enterprise Security 
+      Management software.
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. 
@@ -141,12 +143,15 @@
         The term Host Agent is the logical representation of all the software from the TOE
         vendor the represents the functionality of a Host Agent. The boundary for the Host Agent includes 
         all processes, all modules and libraries bundled with the Host Agent.  The Host 
-        Agent can run as daemons or services on the platform but is not required too.
+        Agent can run as daemons or services on the platform but is not required too. The Host Agent is
+        not expected to have a local or remote Graphic User Interface (GUI) for administration but having 
+        such an interface is not precuded by this EP. It is expected that Host Agents will be managed by
+        their associated ESM Server. 
         The TOE boundary includes the communications channel with other Host Agents, an ESM server, or a cloud 
         service. The platform operating system or execution environment
         upon which the Host Agent is executing is outside the scope of a Host Agent evaluation. The figures
         below show some sample Host Agents but are not inclusive of every possible Host Agent design. 
-                
+               
         <h:table>
           <h:tr>
             <h:td>
@@ -459,8 +464,39 @@
        
         </f-component>
         
-        <f-component id="fau_cha.1" name="Cache Host Agent Collected Data">
-          <f-element id="fau_cha.1.1">
+        
+        
+      </subsection>
+      
+      <subsection title="Host Agent (FHA)" id="fha">
+       
+        <f-component id="fha_had.1" name="Host Agent Declaration">
+          <f-element id="fha_had.1.1">
+            <title> 
+              The Host Agent shall operate with the following ESM(s) Software;
+              <selectables>
+                <selectable id="AGT_EDR">Endpoint Detection and Response</selectable>
+              </selectables> 
+              .
+            </title>
+            <note role="application">
+              Future revision of this Host Agent EP will add additional selections to this requirement
+              but at this time only Endpoint Detection and Response can be selected and evaluated with 
+              this EP.
+            </note>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that the Host Agent product under evaluation matches with the type of
+                ESM under evaluation.
+              </h:p>
+            </aactivity>
+          </f-element>    
+        </f-component>
+        
+        <f-component id="fha_cha.1" name="Cache Host Agent Collected Data" status="sel-based">
+          <selection-depends req="fha_had.1.1" ids="AGT_EDR"/>
+          <f-element id="fha_cha.1.1">
             <title> 
               The <h:b>Host Agent</h:b> shall cache collected data for a minimum of 72 hours on 
               <selectables>
@@ -475,7 +511,7 @@
               destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
               capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
               dis-connectivity. In a future revision the selection of non-persistent storage will be removed from this PP.
-             </note>
+            </note>
             <aactivity>
               The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
               from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
@@ -487,29 +523,60 @@
             </aactivity>
           </f-element>
           
-          <f-element id="fau_cha.1.2">
+          <f-element id="fha_cha.1.2">
             <title> 
               The <h:b>Host Agent</h:b> shall treat locally cached data as
               <selectables>
-                <selectable>sensative data</selectable>
-                <selectable>not sensative data
+                <selectable>sensitive  data</selectable>
+                <selectable>not sensitive  data
                 </selectable>
               </selectables>
               .
             </title>
             <note role="application">
-              The <h:i>collected data</h:i> being cached by a Host Agent is considered sensative data and thus falls
-              under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensative data if "sensative data"
+              The <h:i>collected data</h:i> being cached by a Host Agent is considered sensitive  data and thus falls
+              under the FDP_DAR_EXT.1 requirement from the Base PP for encryption of sensitive  data if "sensitive  data"
               is selected in this requirement. For some classes of ESM products data can be cached locally and not
-              considered sensative, such as data already present as part of the OS platform (example event logs, ip 
+              considered sensitive , such as data already present as part of the OS platform (example event logs, ip 
               address, process lists).               
             </note>
             <aactivity>
-         
+              
             </aactivity>
           </f-element>
           
           
+        </f-component>
+        
+        <f-component id="fha_col_ext.1" name="Collected Audit" status="sel-based">
+          <selection-depends req="fha_had.1.1" ids="AGT_EDR"/>
+          <f-element id="fha_col_ext.1.1">
+            <title>The Host Agent shall collect the following minimum set of
+              endpoint event data: <h:ol type="a">
+                <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
+                <h:li>Privileged and unprivileged endpoint account login activity</h:li>
+                <h:li>Process creation</h:li>
+                <h:li>Libraries and modules loaded by processes</h:li>
+                <h:li>Network connection activity, including destination IP</h:li>
+                <h:li>Files created on persistant storage</h:li>
+                <h:li><assignable>other host data</assignable></h:li>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the minimum
+              set of endpoint data that the Host Agent for an ESM EDR system must be capable of 
+              collecting. This requirement only applies to Host Agents used with the EDR PP per
+              the selection from <linkref linkend="fha_had.1.1"/>.
+            </note>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the collectable types of endpoint event data.  
+                The evaluator shall
+                check to make sure that every endpoint event data type selected in the ST
+                is included in the administrative guidance.
+              </h:p>
+            </aactivity>
+          </f-element>
         </f-component>
         
       </subsection>
@@ -561,21 +628,22 @@
           </f-element>
         </f-component>
         
-        <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update">
+        <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update" status="objective">
           <f-element id="FMT_POL_EXT.1.1">
             <title>The 
               <selectables>
                 <selectable>Host Agent</selectable>
                 <selectable>Host Agent Platform</selectable>
               </selectables> 
-              shall only accept policies or commands that are digitally signed by the ESM
-              system.
+              shall only accept policies or commands that are digitally signed
             </title>
             <note role="application">
               The intent of this requirement is to cryptographically tie any policy updates or
               commends sent to the Host Agent as being from the Enterprise. This is not to 
               protect the policies in transit as they are already protected by FTP_DIT_EXT.1.1
-              and/or FTP_PTP_EXT.1.1.
+              and/or FTP_PTP_EXT.1.1. The digital signature used to sign policies or commands
+              must be selected in FCS_COP.1.1(3). The use of this requirement makes FCS_COP.1.1(3)
+              from the base Application Software PP a mandatory requirement.
             </note>
             <aactivity>
               The evaluator shall ensure that the TSS
@@ -671,11 +739,7 @@
             <title>The Host Agent shall 
               <selectables linebreak="yes">
                 <selectable>not directly transmit any data </selectable>
-                <selectable>encrypt all transmitted data with
-                  <selectables>
-                    <selectable id="sel_sen_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
-                    <selectable id="sel_sen_tlsc">cryptographic protocol(s) implemented via FCS-specified service</selectable>
-                  </selectables>
+                <selectable>encrypt all transmitted data with TLS
                 </selectable>
               </selectables>
               between itself and another Host Agent.
@@ -684,10 +748,7 @@
                This requirement is designed to protection the communications with other Host Agents 
                in a peer-to-peer scenario where Host Agents are sending/receiving data from each other.
                If "encrypts all transmitted data with TLS" is selected the appropriate TLSC and TLSS requirements
-               must be included in the ST. If "encrypts all transmitted data with cryptographic 
-               protocol(s) implemented via FCS-specified service
-               is selected then minimally the fcs_cop.1(1), and fcs_ckm_ext.1.1 must be include with the proper
-               selections.
+               must be included in the ST.
             </note>  
             <aactivity>
               The evaluator shall perform the following tests.
