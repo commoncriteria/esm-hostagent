@@ -24,7 +24,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2018-07-14</date>
+      <date>2018-07-16</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
@@ -39,7 +39,7 @@
       an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
       functionality needed on the server or cloud service, and the paired Host Agent EP
       covers the security functionality needed on the endpoint device (desktop, mobile device, 
-      etc.). At this time only the ESM <cite linkend="bibEDRPP"/> is published and ready for use with
+      etc.). At this time only the ESM <cite linkend="bibEDRPP"/> PP is published and ready for use with
       this Host Agent EP. Future
       versions of this Host Agent EP will include requirements for other classes of Enterprise Security 
       Management software.
@@ -575,7 +575,8 @@
             </title>
             <note role="application">The intent of this requirement is to specify the minimum
               set of endpoint data that the Host Agent for an ESM EDR system must be capable of 
-              collecting. This requirement only applies to Host Agents used with the EDR PP per
+              collecting. This requirement only applies to Host Agents used with the 
+              <cite linkend="bibEDRPP"/> PP per
               the selection from <linkref linkend="FHA_HAD_EXT.1"/>.
             </note>
             <aactivity>
@@ -875,7 +876,7 @@
         </description>
       </entry>
       <entry id="bibEDRPP">
-        <tag>EDR PP</tag>
+        <tag>EDR</tag>
         <description>
           <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Endpoint Detection and Response</h:a>
         </description>
