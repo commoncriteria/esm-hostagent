@@ -565,7 +565,7 @@
             <note role="application">The intent of this requirement is to specify the minimum
               set of endpoint data that the Host Agent for an ESM EDR system must be capable of 
               collecting. This requirement only applies to Host Agents used with the EDR PP per
-              the selection from <linkref linkend="fha_had.1.1"/>.
+              the selection from <linkref linkend="FHA_HAD.1"/>.
             </note>
             <aactivity>
               <h:p>
