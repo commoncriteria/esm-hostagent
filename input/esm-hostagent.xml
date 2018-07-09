@@ -269,7 +269,7 @@
           <description>Conformant Host Agents ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the Host Agent.</description>
-          <component-refer ref="fau_gen.1"/>
+          <component-refer ref="FAU_GEN.1"/>
           <component-refer ref="FAU_STO.1"/>
         </SO>
         <SO id="O.DATA_RECORDER">
@@ -277,7 +277,8 @@
             Conformant Host Agents ensure that collected information is cached or queued during periods
             when the trusted channel is not available. This will prevent data loss of Host Agent data.
           </description>
-          <component-refer ref="FAU_CHA.1"/>
+          <component-refer ref="FHA_CHA_EXT.1"/>
+          <component-refer ref="FHA_COL_EXT.1"/>
         </SO>
         <SO id="O.INTEGRITY">
           <description>
@@ -478,8 +479,8 @@
       
       <subsection title="Host Agent (FHA)" id="fha">
        
-        <f-component id="fha_had.1" name="Host Agent Declaration">
-          <f-element id="fha_had.1.1">
+        <f-component id="fha_had_ext.1" name="Host Agent Declaration">
+          <f-element id="fha_had_ext.1.1">
             <title> 
               The Host Agent shall operate with the following ESM Software;
               <selectables>
@@ -503,9 +504,9 @@
           </f-element>    
         </f-component>
         
-        <f-component id="fha_cha.1" name="Cache Host Agent Collected Data" status="sel-based">
-          <selection-depends req="fha_had.1.1" ids="AGT_EDR"/>
-          <f-element id="fha_cha.1.1">
+        <f-component id="fha_cha_ext.1" name="Cache Host Agent Collected Data" status="sel-based">
+          <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
+          <f-element id="fha_cha_ext.1.1">
             <title> 
               The <h:b>Host Agent</h:b> shall cache collected data for a minimum of 72 hours on 
               <selectables>
@@ -532,7 +533,7 @@
             </aactivity>
           </f-element>
           
-          <f-element id="fha_cha.1.2">
+          <f-element id="fha_cha_ext.1.2">
             <title> 
               The <h:b>Host Agent</h:b> shall treat locally cached data as
               <selectables>
@@ -558,7 +559,7 @@
         </f-component>
         
         <f-component id="fha_col_ext.1" name="Collected Audit" status="sel-based">
-          <selection-depends req="fha_had.1.1" ids="AGT_EDR"/>
+          <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
           <f-element id="fha_col_ext.1.1">
             <title>The Host Agent shall collect the following minimum set of
               endpoint event data: <h:ol type="a">
@@ -574,7 +575,7 @@
             <note role="application">The intent of this requirement is to specify the minimum
               set of endpoint data that the Host Agent for an ESM EDR system must be capable of 
               collecting. This requirement only applies to Host Agents used with the EDR PP per
-              the selection from <linkref linkend="FHA_HAD.1"/>.
+              the selection from <linkref linkend="FHA_HAD_EXT.1"/>.
             </note>
             <aactivity>
               <h:p>
