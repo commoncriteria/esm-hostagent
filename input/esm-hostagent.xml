@@ -39,7 +39,8 @@
       an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
       functionality needed on the server or cloud service, and the paired Host Agent EP
       covers the security functionality needed on the endpoint device (desktop, mobile device, 
-      etc.). At this time only the ESM EDR PP is published and ready for use with this Host Agent EP. Future
+      etc.). At this time only the ESM <cite linkend="bibEDRPP"/> is published and ready for use with
+      this Host Agent EP. Future
       versions of this Host Agent EP will include requirements for other classes of Enterprise Security 
       Management software.
     </section>
@@ -871,6 +872,12 @@
         <tag>AppPP</tag>
         <description>
           <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Application Software</h:a>
+        </description>
+      </entry>
+      <entry id="bibEDRPP">
+        <tag>EDR PP</tag>
+        <description>
+          <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Endpoint Detection and Response</h:a>
         </description>
       </entry>
     </bibliography>
