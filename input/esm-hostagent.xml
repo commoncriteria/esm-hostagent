@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
+
 <PP xmlns="https://niap-ccevs.org/cc/v1" name="Extended Package for Host Agent"
   xmlns:h="http://www.w3.org/1999/xhtml">
   
@@ -235,9 +236,9 @@
       </threats>
     </section>
     <section title="Assumptions" id="assumptions">
-      <assumptions>
+      <h:p>
         Reference the Protection Profile for Application Software <cite linkend="bibAppPP"/> for Assumptions.
-      </assumptions>
+      </h:p>
     </section>
 <!--    <section title="Organizational Security Policies" id="OSPs">
       <OSPs>
@@ -476,6 +477,7 @@
               The Host Agent shall operate with the following ESM Software;
               <selectables>
                 <selectable id="AGT_EDR">Endpoint Detection and Response</selectable>
+                <selectable></selectable>
               </selectables> 
               .
             </title>
