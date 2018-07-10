@@ -231,7 +231,7 @@
     is expected to enforce. <section title="Threats" id="threats">
       <threats>
         <threat id="T.DATA_LOSS">
-          <description>A Host Agent can be susceptible to data loss during periods when connectiveity
+          <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the Enterprise Security Management (ESM) system is not present. 
           </description>
           <objective-refer ref="O.DATA_LOSS">
@@ -313,7 +313,7 @@
       These track with the assumptions about the environment. <SOEs>
         <SOE id="OE.PLATFORM">
           <description>The Host Agent relies on being installed on a trusted
-            platfrom.</description>
+            platform.</description>
         </SOE>
         <SOE id="OE.PROPER_USER">
           <description> The user of the Host Agent is not willfully negligent or hostile,
@@ -569,7 +569,7 @@
                 <h:li>Process creation</h:li>
                 <h:li>Libraries and modules loaded by processes</h:li>
                 <h:li>Network connection activity, including destination IP</h:li>
-                <h:li>Files created on persistant storage</h:li>
+                <h:li>Files created on persistent storage</h:li>
                 <h:li><assignable>other host data</assignable></h:li>
               </h:ol>
             </title>
@@ -692,7 +692,7 @@
                 <selectable>Host Agent</selectable>
                 <selectable>Host Agent Platform</selectable>
               </selectables> 
-              shall enforce a mechanism to prevent unpriviledge users of the platform from
+              shall enforce a mechanism to prevent unprivileged users of the platform from
               unenrolling the Host Agent with the ESM system.
             </title>
             <note role="application">
