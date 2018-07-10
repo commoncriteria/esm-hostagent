@@ -521,7 +521,7 @@
               The term <h:i>collected data</h:i> here is understood to be any type of collected endpoint data by the Host Agent
               destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
               capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
-              dis-connectivity. In a future revision the selection of non-persistent storage will be removed from this PP.
+              dis-connectivity. In a future revision the selection of non-persistent storage will be removed.
             </note>
             <aactivity>
               The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
@@ -739,11 +739,11 @@
               between itself and another trusted IT product.
             </title>
             <note role="application">
-              This SFR was modified from its original definition in the Base-PP to limit certain
-              selections for a Host Agent.
+              This requirement was modified from its original definition in the 
+              base PP (<cite linkend="bibAppPP"/>) to limit certain selections for a Host Agent.
             </note>  
             <aactivity>
-              See the Base-PP for Assurance Activities
+              See the Application Software <cite linkend="bibAppPP"/> for Assurance Activities
             </aactivity>
           </f-element>
         </f-component>
