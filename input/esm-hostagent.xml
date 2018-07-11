@@ -202,9 +202,9 @@
         <description> The Protection Profile for Application Software (App PP) defines the baseline
           Security Functional Requirements (SFRs) and Security Assurance Requirements (SARs) for
           application software products. This EP serves to extend the App PP baseline with
-          additional SFRs and associated Assurance Activities specific to an email client. Assurance
-          Activities are the actions that the evaluator performs in order to determine an email
-          client’s compliance to the SFRs.<h:br/> This EP conforms to Common Criteria <cite
+          additional SFRs and associated Assurance Activities specific to a Host Agent. Assurance
+          Activities are the actions that the evaluator performs in order to determine a Host
+          Agent’s compliance to the SFRs.<h:br/> This EP conforms to Common Criteria <cite
             linkend="bibCC"/> for Information Technology Security Evaluation, Version 3.1, Revision
           4. It is CC Part 2 extended and CC Part 3 conformant. In order to be conformant to this
           EP, the ST must include all components in this EP and the associated App PP that are:
