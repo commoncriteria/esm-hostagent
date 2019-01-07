@@ -1,21 +1,21 @@
-Protection Profile for Host Agent
+Protection Profile Module for Host Agent
 ===============
 [![Build Status](https://travis-ci.org/commoncriteria/esm-hostagent.svg?branch=master)](https://travis-ci.org/commoncriteria/esm-hostagent)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/esm-hostagent.svg?maxAge=2592000)](https://github.com/commoncriteria/esm-hostagent/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
-This repository hosts the draft version of the Protection Profile for Host Agent based on the 
+This repository hosts the draft version of the Protection Profile Module for Host Agent based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 
 ## Draft Version
 
-* [Protection Profile for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html) (html)
-* [Protection Profile for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.pdf) (pdf)
+* [Protection Profile Module for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html) (html)
+* [Protection Profile Module for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.pdf) (pdf)
 
 ## Release Version
-* Protection Profile for Host Agent (coming soon)
+* Protection Profile Module for Host Agent (coming soon)
 
 ## Contributing
 
