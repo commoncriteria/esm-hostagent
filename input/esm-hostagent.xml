@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="..\transforms\module2html.xsl"?>
-
-<?xml-model href="../../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Module xmlns="https://niap-ccevs.org/cc/v1"
     xmlns:h="http://www.w3.org/1999/xhtml"
     name="Host Agent"
@@ -493,9 +492,7 @@
           </f-element>
        
         </f-component>
-        
-        
-        
+            
       </subsection>
       
       <subsection title="Host Agent (FHA)" id="fha">
@@ -520,11 +517,14 @@
               this EP.
             </note>
             <aactivity>
-              <h:p>
-                The evaluator shall check the administrative guide and ensure
-                that the Host Agent product under evaluation matches with the type of
-                ESM under evaluation.
-              </h:p>
+              
+              <TSS/> 
+              The evaluator shall check the administrative guide and ensure
+              that the Host Agent product under evaluation matches with the type of
+              ESM under evaluation.
+              <Guidance/>   
+              <Tests/>
+
             </aactivity>
           </f-element>    
         </f-component>
@@ -552,13 +552,21 @@
               dis-connectivity. In a future revision the selection of non-persistent storage will be removed.
             </note>
             <aactivity>
-              The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
-              from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
-              exercise some behaviors on the endpoint during the 72 hour time frame to generate some Host Agent data.
-              Example behaviors could be running programs, performing some authentications, installing/uninstalling some
-              other unrelated software.
-              The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
-              that the missing data from the 72 hour time frame is available on the ESM management portal.
+              
+              <TSS/> 
+              <Guidance/>   
+              <Tests/>The evaluator will perform the following test:
+              <h:ul>
+                <h:li>Test 1: The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
+                  from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
+                  exercise some behaviors on the endpoint during the 72 hour time frame to generate some Host Agent data.
+                  Example behaviors could be running programs, performing some authentications, installing/uninstalling some
+                  other unrelated software.
+                  The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
+                  that the missing data from the 72 hour time frame is available on the ESM management portal.
+                </h:li>
+              </h:ul>
+             
             </aactivity>
           </f-element>
                
@@ -589,13 +597,16 @@
               the selection from <linkref linkend="FHA_HAD_EXT.1"/>.
             </note>
             <aactivity>
-              <h:p>
-                The evaluator shall check the administrative guide and ensure
-                that it lists all of the collectable types of endpoint event data.  
-                The evaluator shall
-                check to make sure that every endpoint event data type selected in the ST
-                is included in the administrative guidance.
-              </h:p>
+              
+              <TSS/> 
+              The evaluator shall check the administrative guide and ensure
+              that it lists all of the collectable types of endpoint event data.  
+              The evaluator shall
+              check to make sure that every endpoint event data type selected in the ST
+              is included in the administrative guidance. 
+              <Guidance/>   
+              <Tests/>
+              
             </aactivity>
           </f-element>
         </f-component>
@@ -604,8 +615,11 @@
       
       <subsection title="Security Management (FMT)" id="fmt">
         
-        <f-component id="FMT_SMF.1(1)"
-          name="Specification of Management Functions (Configuration of Host Agent)">
+        <f-component id="FMT_SMF.1(1)" name="Specification of Management Functions (Configuration of Host Agent)">
+          <consistency-rationale>
+            This SFR defines a specific set of management functions for an email client.
+            It does not impact the AppSoftware PP functionality.
+          </consistency-rationale>
           <f-element id="FMT_SMF.1.2(1)">
             <title>The <h:b>Host Agent</h:b> shall be capable of the
               following management functions:
@@ -635,23 +649,31 @@
               the requirement.
             </note>
             <aactivity>
+              
+              <TSS/> 
               The evaluator shall verify that every management function 
               mandated by the EP is described in the operational guidance and that the description 
               contains the information required to perform the management duties associated with the 
               management function. 
-              <testlist>
-                <test>
-                  The evaluator shall test the ability to configure the Host Agent and test each option selected 
+              <Guidance/>   
+              <Tests/>The evaluator will perform the following test:
+              <h:ul>
+                <h:li>Test 1: The evaluator shall test the ability to configure the Host Agent and test each option selected 
                   from above. The evaluator is expected to test these functions in all the ways in which 
                   the <abbr title="Security Target" linkend="ST">ST</abbr> and guidance documentation state
                   the configuration can be managed.
-                </test>
-              </testlist>
+                </h:li>
+              </h:ul>
+             
             </aactivity>
           </f-element>
         </f-component>
         
         <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update" status="objective">
+          <consistency-rationale>
+            This SFR defines protections for the integrity of commands sent to the Host Agent.
+            It does not impact the AppSoftware PP functionality.
+          </consistency-rationale>
           <f-element id="FMT_POL_EXT.1.1">
             <title>The 
               <selectables>
@@ -669,6 +691,7 @@
               from the base Application Software PP a mandatory requirement.
             </note>
             <aactivity>
+              
               The evaluator shall ensure that the TSS
               describes how the candidate policies or commands are sent to the Host Agent; the
               processing associated with verifying the digital signature of the policies or
@@ -677,9 +700,11 @@
               software components that are performing the processing must also be
               identified in the TSS and verified by the evaluators (this could be the Host Agent
               or the underlying platform).
-              <testlist>
-                <test>
-                  The evaluator shall perform or wait for a policy update or commands 
+              <TSS/> 
+              <Guidance/>   
+              <Tests/>The evaluator will perform the following test:
+              <h:ul>
+                <h:li>Test 1: The evaluator shall perform or wait for a policy update or commands 
                   from an ESM Server to be sent to a Host Agent. The evaluator shall verify the
                   policy or command is signed and is provided to the Host Agent. The evaluator shall
                   verify the Host Agent accepts the digitally signed policy.
@@ -688,8 +713,9 @@
                   The execution of this test may require some configuration or a test version of either
                   the Host Agent of the ESM system in order to view the incoming policy or command
                   and verify that the content is digitally signed.
-                </test>
-              </testlist>
+                </h:li>
+              </h:ul>
+              
             </aactivity>
           </f-element>        
         </f-component>
@@ -710,16 +736,20 @@
               provides assurance that the enterprise can manage connected endpoints. 
             </note>
             <aactivity>
-              <testlist>
-                The evaluator shall ensure that the TSS describes the mechanism used to
-                prevent users from unenrolling the Host Agent.
-               <test>
-                 The evaluator shall attempt to unenroll the Host Agent from the ESM system
-                 as an unpriviledge user and verify that the attempt fails. This could be 
-                 performed by trying to uninstall the Host Agent, and trying to kill the running
-                 Host Agent process.
-               </test>
-              </testlist>
+                 
+               The evaluator shall ensure that the TSS describes the mechanism used to
+               prevent users from unenrolling the Host Agent.
+              <TSS/> 
+              <Guidance/>   
+              <Tests/>The evaluator will perform the following test:
+              <h:ul>
+                <h:li>Test 1: The evaluator shall attempt to unenroll the Host Agent from the ESM system
+                  as an unpriviledge user and verify that the attempt fails. This could be 
+                  performed by trying to uninstall the Host Agent, and trying to kill the running
+                  Host Agent process.
+                </h:li>
+              </h:ul>
+              
             </aactivity>
           </f-element>        
         </f-component>
@@ -729,6 +759,10 @@
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
         
         <f-component id="ftp_dit_ext.1" name="Protection of Data in Transit (Refinement)">
+          <consistency-rationale>
+            This SFR defines the type of audit for a Host Agent that shall be logged.
+            It does not impact the AppSoftware PP functionality.
+          </consistency-rationale>
           <f-element id="ftp_dit_ext.1.1">
             <title>The Host Agent shall 
               <selectables linebreak="yes">
@@ -752,7 +786,11 @@
               base PP (<cite linkend="bibAppPP"/>) to limit certain selections for a Host Agent.
             </note>  
             <aactivity>
-              See the Application Software <cite linkend="bibAppPP"/> for Assurance Activities
+              
+              <TSS/> 
+              <Guidance/>   
+              <Tests/>
+              
             </aactivity>
           </f-element>
         </f-component>
