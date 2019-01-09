@@ -105,7 +105,7 @@
          <entry>
            <term>Enrolled State</term>
            <description>The state in which an endpoint with a running Host Agent is managed by an ESM.
-             Also, refered to as Onboarding.
+             Also, referred to as Onboarding.
            </description>
          </entry>
           <entry>
@@ -143,7 +143,7 @@
          <entry>
            <term>Unenrolled State</term>
            <description>The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
-             Also, refered to as Offboarding.
+             Also, referred to as Offboarding.
            </description>
          </entry>
         </glossary>
@@ -572,9 +572,9 @@
               <h:ul>
                 <h:li>Test 1: The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
                   from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
-                  exercise some behaviors on the endpoint during the 72 hour time frame to generate some Host Agent data.
-                  Example behaviors could be running programs, performing some authentications, installing/uninstalling some
-                  other unrelated software.
+                  exercise behaviors on the endpoint during the 72 hour time frame to generate Host Agent data.
+                  Example behaviors could be running programs, performing some authentications, installing/uninstalling 
+                  software, or sample test cases provided by the vendor to generate Host Agent data.
                   The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
                   that the missing data from the 72 hour time frame is available on the ESM management portal.
                 </h:li>
@@ -612,14 +612,13 @@
             <aactivity>
               
               <TSS/> 
-             
               <Guidance/> 
               The evaluator shall check the administrative guide and ensure
               that it lists all of the collectable types of endpoint event data.  
               The evaluator shall check to make sure that every endpoint event 
-              data type selected in the ST is included in the administrative guidance.
+              type listed in the ST is included in the administrative guidance.
               <Tests/>
-              
+           
             </aactivity>
           </f-element>
         </f-component>
@@ -768,9 +767,8 @@
               <Tests/>The evaluator will perform the following test:
               <h:ul>
                 <h:li>Test 1: The evaluator shall attempt to unenroll the Host Agent from the ESM system
-                  as an unpriviledge user and verify that the attempt fails. This could be 
-                  performed by trying to uninstall the Host Agent, and trying to kill the running
-                  Host Agent process.
+                  as an unpriviledge user and verify that the attempt fails, by trying to kill the process
+                  or stop the Service or Daemon that is running the Host Agent.
                 </h:li>
               </h:ul>
               
@@ -794,12 +792,14 @@
                   <selectables>
                     <selectable id="sel_all_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
                     <selectable id="sel_all_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
+                    <selectable id="sel_all_dtls"><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr> (as client)</selectable>
                   </selectables>
                 </selectable>
                 <selectable>encrypt all transmitted data with
                   <selectables>
                     <selectable id="sel_sen_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
                     <selectable id="sel_sen_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
+                    <selectable id="sel_sen_dtls"><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr> (as client)</selectable>
                   </selectables>
                 </selectable>
               </selectables>
@@ -873,10 +873,14 @@
       <con-op-en>
         This PP-Module does not define any objectives for the TOE's operational environment. 
       </con-op-en>
-    
+   
     </base-pp>
     
     <man-sfrs/>
+    
+    <opt-sfrs></opt-sfrs>
+    <sel-sfrs></sel-sfrs>
+    <obj-sfrs></obj-sfrs>
     
   </chapter>
 
