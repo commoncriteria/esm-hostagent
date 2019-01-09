@@ -31,7 +31,7 @@
       and to define functional and assurance requirements for such products. This EP 
       is not complete in itself, but rather extends the Protection Profile for 
       Application Software <cite linkend="bibAppPP"/>. The combined requirements 
-      in this Host Agent EP with the Application Software PP is met to be paired with an evaluation using 
+      in this Host Agent EP with the Application Software PP is meant to be paired with an evaluation using 
       an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
       functionality needed on the server or cloud service, and the paired Host Agent EP
       covers the security functionality needed on the endpoint device (desktop, mobile device, 
@@ -105,6 +105,7 @@
          <entry>
            <term>Enrolled State</term>
            <description>The state in which an endpoint with a running Host Agent is managed by an ESM.
+             Also, refered to as Onboarding.
            </description>
          </entry>
          <entry>
@@ -130,13 +131,6 @@
            </description>
          </entry>
          <entry>
-           <term>Onboarding</term>
-           <description>The processes of taking an endpoint from the Unenrolled State to the
-             Enrolled State. The act of initial provisioning with an ESM. The term onboarding
-             can be used interchangeably with the term enrollment in the context of a Host Agent.
-           </description>
-         </entry>
-         <entry>
            <term><abbr title="Operating System">OS</abbr></term>
            <description> Software that manages physical and logical resources and provides services
              for applications.</description>
@@ -144,6 +138,7 @@
          <entry>
            <term>Unenrolled State</term>
            <description>The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
+             Also, refered to as Offboarding.
            </description>
          </entry>
         </glossary>
@@ -152,7 +147,7 @@
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary">
         The term Host Agent is the logical representation of all the software from the TOE
-        vendor the represents the functionality of a Host Agent. The boundary for the Host Agent includes 
+        vendor that represents the functionality of a Host Agent. The boundary for the Host Agent includes 
         all processes, all modules and libraries bundled with the Host Agent.  The Host 
         Agent can run as daemons or services on the platform but is not required too. The Host Agent is
         not expected to have a local or remote Graphical User Interface (GUI) for administration but having 
@@ -241,10 +236,20 @@
           <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the Enterprise Security Management (ESM) system is not present. 
           </description>
-          <objective-refer ref="O.DATA_LOSS">
+          <objective-refer ref="O.DATA_RECORDER">
             <rationale>The threat T.DATA_LOSS is countered by O.DATA_RECORDER as this
               provides for caching of data by a Host Agent during periods when not connected to the ESM 
               system.
+            </rationale>
+          </objective-refer>
+        </threat>
+        <threat id="T.TAMPER">
+          <description>A Host Agent can be susceptible to tamper by unpriveldge users who may try to uninstall
+            or distrubte the Host Agents ability to funtion properly
+          </description>
+          <objective-refer ref="O.ACCOUNTABILITY">
+            <rationale>The threat T.TAMPER is countered by O.ACCOUNTABILITY and O.INTEGRITY which protect
+              the Host Agent and report artifact up to the ESM system that could help to discover tampering.
             </rationale>
           </objective-refer>
         </threat>
@@ -505,17 +510,12 @@
           </consistency-rationale>
           <f-element id="fha_had_ext.1.1">
             <title> 
-              The Host Agent shall operate with the following ESM Software;
-              <selectables>
-                <selectable id="AGT_EDR">Endpoint Detection and Response</selectable>
-                <selectable></selectable>
-              </selectables> 
-              .
+              The Host Agent shall operate with the following ESM Software; Endpoint Detection and Response.
             </title>
             <note role="application">
               Future revisions of this Host Agent EP will add additional selections to this requirement
-              but at this time only Endpoint Detection and Response can be selected and evaluated with 
-              this EP.
+              but at this time only Endpoint Detection and Response can be evaluated with 
+              this Module.
             </note>
             <aactivity>
               
