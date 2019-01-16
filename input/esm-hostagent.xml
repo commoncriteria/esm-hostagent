@@ -154,9 +154,9 @@
         The term Host Agent is the logical representation of all the software from the TOE
         vendor that represents the functionality of a Host Agent. The boundary for the Host Agent includes 
         all processes, all modules and libraries bundled with the Host Agent.  The Host 
-        Agent can run as daemons or services on the platform but is not required too. The Host Agent is
+        Agent can run as a daemon or service on the platform but is not required to. The Host Agent is
         not expected to have a local or remote Graphical User Interface (GUI) for administration but having 
-        such an interface is not precluded by this EP. It is expected that Host Agents will be managed by
+        such an interface is not precluded by this Module. It is expected that Host Agents will be managed by
         their associated ESM Server or the underlying platform. 
         The TOE boundary includes the communications channel with other Host Agents, an ESM server, or a cloud 
         service. The platform operating system or execution environment
@@ -206,17 +206,17 @@
             The Protection Profile for Application Software (<cite linkend="bibAppPP"/>)
             defines the baseline Security Functional Requirements (SFRs) and Security Assurance
             Requirements (SARs) for application software products. This <abbr linkend="PP-Module"/> serves to
-            extend the ApSo PP baseline with additional SFRs and associated Evaluation Activities
-            specific to an email client.
+            extend the AppSo PP baseline with additional SFRs and associated Evaluation Activities
+            specific to a Host Agent.
             Evaluation Activities are the actions that the evaluator
             performs in order to determine an email client's compliance to the SFRs.
           </h:p>
           <h:p>
             This <abbr linkend="PP-Module"/> conforms to Common Criteria <cite linkend="bibCC"/> for Information
-            Technology Security Evaluation, Version 3.1, Revision 4. It is CC Part 2 extended and CC
+            Technology Security Evaluation, Version 3.1, Revision 5. It is CC Part 2 extended and CC
             Part 3 conformant. In order to be conformant to this <abbr linkend="PP-Module"/>, the <abbr
               linkend="ST"/> must include all components in this <abbr linkend="PP-Module"/> and the
-            associated ApSo PP that are: <h:ul><h:li>unconditional (which are always required)</h:li>
+            associated AppSo PP that are: <h:ul><h:li>unconditional (which are always required)</h:li>
               <h:li>selection-based (which are required when certain selections are chosen in the
                 unconditional requirements)</h:li>
             </h:ul> and may include optional and/or objective components that are desirable but not
@@ -250,7 +250,7 @@
         </threat>
         <threat id="T.TAMPER">
           <description>A Host Agent can be susceptible to tamper by unpriveldge users who may try to uninstall
-            or distrubte the Host Agents ability to funtion properly
+            or disrupt the Host Agents ability to funtion properly.
           </description>
           <objective-refer ref="O.ACCOUNTABILITY">
             <rationale>The threat T.TAMPER is countered by O.ACCOUNTABILITY and O.INTEGRITY which protect
@@ -307,7 +307,7 @@
             provide consistent and supported interfaces for their
             security-relevant configuration and maintenance.
           </description>
-          <component-refer ref="FMT_SMF.1"/>
+          <component-refer ref="FMT_SMF.1(1)"/>
           <consistency-rationale>
             This objective is consistent with <base-name/>.
           </consistency-rationale>
@@ -364,7 +364,7 @@
     
     <base-pp 
       product="application"
-      name="Application Software" short="ApSo" 
+      name="Application Software" short="AppSo" 
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&amp;id=394"
       xmlurl="https://raw.githubusercontent.com/commoncriteria/application/c51970161d3a47fe8a7c23552f372745a638ba7d/input/application.xml">
       <modified-sfrs/>
@@ -531,12 +531,18 @@
           </consistency-rationale>
           <f-element id="fha_had_ext.1.1">
             <title> 
-              The Host Agent shall operate with the following ESM Software; Endpoint Detection and Response.
+              The Host Agent shall operate with the following ESM Software; 
+              <selectables>
+                <selectable id="AGT_EDR">Endpoint Detection and Response (EDR)</selectable>
+                <selectable id="AGT_SM">Systems Management</selectable>
+                <selectable id="AGT_AUD">Audit Server</selectable>
+              </selectables>
             </title>
             <note role="application">
-              Future revisions of this Host Agent EP will add additional selections to this requirement
-              but at this time only Endpoint Detection and Response can be evaluated with 
-              this Module.
+              Select the appropriate management system that is intended to be paired with 
+              this Host Agent. Currently, a NIAP PP only exists for EDR. By selecting EDR 
+              the additional <linkref linkend="FHA_CHA_EXT.1"/> and <linkref linkend="FHA_COL_EXT.1"/>
+              requirements shall be included in the ST. 
             </note>
             <aactivity>
               
