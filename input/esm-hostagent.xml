@@ -464,12 +464,12 @@
           </f-element>
         </f-component>
       
-        <f-component id="fau_sto.1" name="Audit Data Storage">
+        <f-component id="fau_sto_ext.1" name="Audit Data Storage">
           <consistency-rationale>
             This SFR defines how audit data for a Host Agent shall be stored.
             It does not impact the AppSoftware PP functionality.
           </consistency-rationale>
-          <f-element id="fau_sto.1.1">
+          <f-element id="fau_sto_ext.1.1">
             <title> 
               The
               <selectables>
