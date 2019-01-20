@@ -24,24 +24,23 @@
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
-
+  
   <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> The scope of this Extended Package is to
-      describe the security functionality of a Host Agent in terms of <cite linkend="bibCC"/>
-      and to define functional and assurance requirements for such products. This EP 
+    <section title="Overview" id="ppoverview"> The scope of this PP-Module is to
+      describe the security functionality of a Host Agent in terms of <abbr linkend="CC"/>
+      and to define functional and assurance requirements for such products. This Module 
       is not complete in itself, but rather extends the Protection Profile for 
       Application Software <cite linkend="bibAppPP"/>. The combined requirements 
-      in this Host Agent EP with the Application Software PP is meant to be paired with an evaluation using 
+      in this Host Agent Module with the Application Software PP is meant to be paired with an evaluation using 
       an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
-      functionality needed on the server or cloud service, and the paired Host Agent EP
+      functionality needed on the server or cloud service, and the paired Host Agent Module
       covers the security functionality needed on the endpoint device (desktop, mobile device, 
       etc.). At this time only the ESM <cite linkend="bibEDRPP"/> PP is published and ready for use with
-      this Host Agent EP. Future
-      versions of this Host Agent EP will include requirements for other classes of Enterprise Security 
+      this Host Agent Module. Future
+      versions of this Module will include requirements for other classes of Enterprise Security 
       Management software.
     </section>
-    <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
-      technology terms used in this Protection Profile. 
+    <section title="Terms" id="glossary">
       <subsection title="Common Criteria Terms">
        <glossary>
           <entry>
