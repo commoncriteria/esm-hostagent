@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="..\transforms\module2html.xsl"?>
-
-<?xml-model href="../../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Module xmlns="https://niap-ccevs.org/cc/v1"
     xmlns:h="http://www.w3.org/1999/xhtml"
     name="Host Agent"
@@ -58,6 +57,12 @@
             <description>An implementation-independent set of security requirements for a category
               of products.</description>
           </entry>
+         <entry>
+           <term><abbr title="Protection Profile Module">PP-Module</abbr></term>
+           <description>An implementation-independent statement of security needs for a TOE type 
+             complementary to one or more Base Protection Profiles.
+           </description>
+         </entry>
           <entry>
             <term><abbr title="Security Target">ST</abbr></term>
             <description>A set of implementation-dependent security requirements for a specific
@@ -914,6 +919,20 @@
       <description>
         <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Endpoint Detection and Response</h:a>
       </description>
+    </entry>
+    <entry id="bibCC">
+      <tag>CC</tag>
+      <description>Common Criteria for Information Technology Security Evaluation - <h:ul>
+        <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
+          1: Introduction and General Model</h:a>, CCMB-2012-09-001, Version 3.1 Revision 5,
+          September 2012.</h:li>
+        <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
+          2: Security Functional Components</h:a>, CCMB-2012-09-002, Version 3.1 Revision 5,
+          September 2012.</h:li>
+        <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
+          3: Security Assurance Components</h:a>, CCMB-2012-09-003, Version 3.1 Revision 5,
+          September 2012.</h:li>
+      </h:ul></description>
     </entry>
   </bibliography>
   
