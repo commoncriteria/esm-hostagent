@@ -801,7 +801,7 @@
         </f-element>
       </f-component>
       <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
-        <selection-depends req="fha_had_ext.1.2" ids="AGT_ARC"/>
+        <selection-depends req="fha_had_ext.1.2" ids="AGT_PEER"/>
         <consistency-rationale>
           This SFR defines the communication channel for Host Agents communicating with other Host Agents.
           It does not impact the AppSoftware PP functionality.
