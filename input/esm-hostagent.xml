@@ -697,8 +697,6 @@
         
       </subsection>
       
-      <subsection title="Trusted Path/Channels (FTP)" id="ftp">
-      </subsection>
       
       </additional-sfrs>
       
@@ -807,12 +805,7 @@
           It does not impact the AppSoftware PP functionality.
         </consistency-rationale>
         <f-element id="ftp_dit_ext.2.1">
-          <title>The Host Agent shall 
-            <selectables linebreak="yes">
-              <selectable>not directly transmit any data </selectable>
-              <selectable>encrypt all transmitted data with TLS
-              </selectable>
-            </selectables>
+          <title>The Host Agent shall encrypt all transmitted data with TLS 
             between itself and another Host Agent.
           </title>
           <note role="application">
