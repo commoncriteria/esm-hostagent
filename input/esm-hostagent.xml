@@ -11,7 +11,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-01-07</PPPubDate>
+      <PPPubDate>2019-01-20</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -523,7 +523,8 @@
        
         <f-component id="fha_had_ext.1" name="Host Agent Declaration">
           <consistency-rationale>
-            This SFR defines the type of software the Host Agent is intended to operate with.
+            This SFR defines the type of software the Host Agent is intended to operate 
+            and communicate with.
             It does not impact the AppSoftware PP functionality.
           </consistency-rationale>
           <f-element id="fha_had_ext.1.1">
@@ -561,6 +562,37 @@
 
             </aactivity>
           </f-element>    
+          <f-element id="fha_had_ext.1.2">
+            <title> 
+              The Host Agent shall restrict network communications to; 
+              <selectables linebreak="yes">
+                <selectable id="AGT_MGMT">a managemement server</selectable>
+                <selectable id="AGT_PEER">another Host Agent</selectable>
+              </selectables>
+            </title>
+            <note role="application">
+              By selecting another host agent 
+              the additional <linkref linkend="FTP_DIT_EXT.2"/>
+              requirements must be included in the ST for peer-to-peer communication. 
+            </note>
+            <aactivity>
+              
+              <TSS/> 
+              
+              <Guidance/>
+              
+              <Tests/>The evaluator will perform the following test:
+              <h:ul>
+                <h:li>Test 1: While the Host Agent is running, the evaluator shall sniff 
+                  network traffic ignoring all non-application associated traffic 
+                  and verify that any network communications witnessed are documented in the TSS 
+                </h:li>
+              </h:ul>
+              
+              
+            </aactivity>
+          </f-element>    
+          
         </f-component>
 
       </subsection>
@@ -606,7 +638,7 @@
  
               <Guidance/>   
               The evaluator shall verify that every management function 
-              mandated by the EP is described in the operational guidance and that the description 
+              mandated by the PP-Module is described in the operational guidance and that the description 
               contains the information required to perform the management duties associated with the 
               management function.
               
@@ -666,85 +698,6 @@
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
-        
-        <f-component id="ftp_dit_ext.1" name="Protection of Data in Transit (Refinement)">
-          <consistency-rationale>
-            This SFR defines the type of audit for a Host Agent that shall be logged.
-            It does not impact the AppSoftware PP functionality.
-          </consistency-rationale>
-          <f-element id="ftp_dit_ext.1.1">
-            <title>The Host Agent shall 
-              <selectables linebreak="yes">
-                <selectable>encrypt all transmitted sensitive data with
-                  <selectables>
-                    <selectable id="sel_all_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
-                    <selectable id="sel_all_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
-                    <selectable id="sel_all_dtls"><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr> (as client)</selectable>
-                  </selectables>
-                </selectable>
-                <selectable>encrypt all transmitted data with
-                  <selectables>
-                    <selectable id="sel_sen_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
-                    <selectable id="sel_sen_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> (as client)</selectable>
-                    <selectable id="sel_sen_dtls"><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr> (as client)</selectable>
-                  </selectables>
-                </selectable>
-              </selectables>
-              between itself and another trusted IT product.
-            </title>
-            <note role="application">
-              This requirement was modified from its original definition in the 
-              base PP (<cite linkend="bibAppPP"/>) to limit certain selections for a Host Agent.
-            </note>  
-            <aactivity>
-              
-              <TSS/> 
-              <Guidance/>   
-              <Tests/>
-              
-            </aactivity>
-          </f-element>
-        </f-component>
-        
-        <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
-          <consistency-rationale>
-            This SFR defines the communication channel for Host Agents communicating with other Host Agents.
-            It does not impact the AppSoftware PP functionality.
-          </consistency-rationale>
-          <f-element id="ftp_dit_ext.2.1">
-            <title>The Host Agent shall 
-              <selectables linebreak="yes">
-                <selectable>not directly transmit any data </selectable>
-                <selectable>encrypt all transmitted data with TLS
-                </selectable>
-              </selectables>
-              between itself and another Host Agent.
-            </title>
-            <note role="application">
-               This requirement is designed to protection the communications with other Host Agents 
-               in a peer-to-peer scenario where Host Agents are sending/receiving data from each other.
-               If "encrypts all transmitted data with TLS" is selected the appropriate TLSC and TLSS requirements
-               must be included in the ST.
-            </note>  
-            <aactivity>
-              
-              <TSS/> 
-              <Guidance/>   
-              <Tests/>The evaluator will perform the following test:
-              <h:ul>
-                <h:li>Test 1: The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
-                  while capturing packets from the Host Agent. The evaluator shall verify from the packet
-                  capture that the traffic is 
-                  encrypted with <h:abbr title="Transport Layer Security">TLS</h:abbr> or 
-                  in accordance with the selections in the <abbr title="Security Target" linkend="ST">ST
-                  </abbr>.
-                </h:li>
-              </h:ul>
-              
-            </aactivity>
-          </f-element>
-        </f-component>
-      
       </subsection>
       
       </additional-sfrs>
@@ -847,6 +800,46 @@
           </aactivity>
         </f-element>
       </f-component>
+      <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
+        <selection-depends req="fha_had_ext.1.2" ids="AGT_ARC"/>
+        <consistency-rationale>
+          This SFR defines the communication channel for Host Agents communicating with other Host Agents.
+          It does not impact the AppSoftware PP functionality.
+        </consistency-rationale>
+        <f-element id="ftp_dit_ext.2.1">
+          <title>The Host Agent shall 
+            <selectables linebreak="yes">
+              <selectable>not directly transmit any data </selectable>
+              <selectable>encrypt all transmitted data with TLS
+              </selectable>
+            </selectables>
+            between itself and another Host Agent.
+          </title>
+          <note role="application">
+            This requirement is designed to protection the communications with other Host Agents 
+            in a peer-to-peer scenario where Host Agents are sending/receiving data from each other.
+            If "encrypts all transmitted data with TLS" is selected the appropriate TLSC and TLSS requirements
+            must be included in the ST.
+          </note>  
+          <aactivity>
+            
+            <TSS/> 
+            <Guidance/>   
+            <Tests/>The evaluator will perform the following test:
+            <h:ul>
+              <h:li>Test 1: The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
+                while capturing packets from the Host Agent. The evaluator shall verify from the packet
+                capture that the traffic is 
+                encrypted with <h:abbr title="Transport Layer Security">TLS</h:abbr> or 
+                in accordance with the selections in the <abbr title="Security Target" linkend="ST">ST
+                </abbr>.
+              </h:li>
+            </h:ul>
+            
+          </aactivity>
+        </f-element>
+      </f-component>
+
     </sel-sfrs>
     
     <obj-sfrs>
