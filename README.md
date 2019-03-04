@@ -1,6 +1,6 @@
 Protection Profile Module for Host Agent
 ===============
-[![Build Status](https://travis-ci.org/commoncriteria/esm-hostagent.svg?branch=master)](https://travis-ci.org/commoncriteria/esm-hostagent)
+[![Build Status](https://travis-ci.com/commoncriteria/esm-hostagent.svg?branch=master)](https://travis-ci.com/commoncriteria/esm-hostagent)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/esm-hostagent.svg?maxAge=2592000)](https://github.com/commoncriteria/esm-hostagent/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
