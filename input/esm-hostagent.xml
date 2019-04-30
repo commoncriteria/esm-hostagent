@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="..\transforms\module2html.xsl"?>
+
 <?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
 <Module xmlns="https://niap-ccevs.org/cc/v1"
     xmlns:h="http://www.w3.org/1999/xhtml"
     name="Host Agent"
@@ -153,6 +155,7 @@
         </glossary>
       </subsection>
     </section>
+    
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary">
         The term Host Agent is the logical representation of all the software from the TOE
@@ -185,6 +188,7 @@
         the Host Agent software executes.
       </subsection>
     </section>
+    
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
       address the security problems in at least the following use cases. These use cases are intentionally
       very broad, as many specific use cases exist for an operating system. These use cases may also
@@ -368,12 +372,13 @@
     
     <base-pp 
       product="application"
+      version="1.3"
       name="Application Software" short="AppSo" 
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&amp;id=394"
       xmlurl="https://raw.githubusercontent.com/commoncriteria/application/c51970161d3a47fe8a7c23552f372745a638ba7d/input/application.xml">
       <modified-sfrs/>
       <additional-sfrs>
-        
+
       <subsection title="Security Audit (FAU)" id="fau">
        
         <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
@@ -409,14 +414,16 @@
               check to make sure that every audit event type selected in the ST
               is included.
               
-              <Tests/>The evaluator will perform the following tests:
-              <h:ul>
-                <h:li>Test 1: The evaluator shall test the Host Agents ability to correctly generate
-                  audit records by having the Host Agent generate audit records for the
-                  events listed in the ST.
-                </h:li>
-              </h:ul>
-                
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall test the Host Agents ability to correctly generate
+                    audit records by having the Host Agent generate audit records for the
+                    events listed in the ST.
+                  </test>
+                </testlist>
+              </Tests>
+             
             </aactivity>
           </f-element>
           <f-element id="fau_gen.1.2">
@@ -452,17 +459,21 @@
               along with a brief description of each field. The evaluator shall
               ensure that the fields contains the information required.
               
-              <Tests/>The evaluator will perform the following tests:
-              <h:ul>
-                <h:li>Test 1: The evaluator shall test the Host Agents ability to correctly generate
-                  audit records by having the Host Agenmt generate audit records for the
-                  events listed in the ST.
-                  The evaluator shall
-                  ensure the audit records generated during testing match the
-                  format specified in the administrative guide, and that the fields
-                  in each audit record provide the required information.
-                </h:li>
-              </h:ul>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall test the Host Agents ability to correctly generate
+                    audit records by having the Host Agenmt generate audit records for the
+                    events listed in the ST.
+                  </test>
+                  <test>
+                    The evaluator shall
+                    ensure the audit records generated during testing match the
+                    format specified in the administrative guide, and that the fields
+                    in each audit record provide the required information.
+                  </test>
+                </testlist>
+              </Tests>
                 
             </aactivity>
           </f-element>
@@ -497,20 +508,22 @@
               that the list of auditable events are stored in the platform provided logging 
               mechanism.
               
-              <Tests/>The evaluator will perform the following tests:
-              <h:ul>
-                <h:li>Test 1:  The evaluator shall test the Host Agents ability to correctly generate
-                  audit records by having the TOE generate audit records for the
-                  events listed in the ST.  This should include all instance types
-                  of an event specified.  
-                  When verifying the test results, the evaluator shall ensure the
-                  audit records generated during testing are stored in the platform provided logging
-                  mechanism. 
-                  <h:br/>
-                  On Linux based platforms this would be in var/logs. On Windows based 
-                  platforms this would be the Windows Event Log.
-                </h:li>
-              </h:ul>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall test the Host Agents ability to correctly generate
+                    audit records by having the TOE generate audit records for the
+                    events listed in the ST.  This should include all instance types
+                    of an event specified.  
+                    When verifying the test results, the evaluator shall ensure the
+                    audit records generated during testing are stored in the platform provided logging
+                    mechanism. 
+                    <h:br/>
+                    On Linux based platforms this would be in var/logs. On Windows based 
+                    platforms this would be the Windows Event Log.
+                  </test>
+                </testlist>
+              </Tests>
           
             </aactivity>
           </f-element>
@@ -551,15 +564,16 @@
               that the Host Agent product under evaluation matches with the type of
               ESM under evaluation.
               
-              <Tests/>The evaluator will perform the following test for EDR's:
-              <h:ul>
-                <h:li>Test 1: The evaluator shall install the Host Agent and enroll it with the EDR 
-                  management system. The evaluator shall verify that enrollment was successful and 
-                  that Host Agent is communicating with the EDR.
-                </h:li>
-              </h:ul>
-              
-
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall install the Host Agent and enroll it with the EDR 
+                    management system. The evaluator shall verify that enrollment was successful and 
+                    that Host Agent is communicating with the EDR.
+                  </test>
+                </testlist>
+              </Tests>
+  
             </aactivity>
           </f-element>    
           <f-element id="fha_had_ext.1.2">
@@ -581,14 +595,15 @@
               
               <Guidance/>
               
-              <Tests/>The evaluator will perform the following test:
-              <h:ul>
-                <h:li>Test 1: While the Host Agent is running, the evaluator shall sniff 
-                  network traffic ignoring all non-application associated traffic 
-                  and verify that any network communications witnessed are documented in the TSS 
-                </h:li>
-              </h:ul>
-              
+              <Tests>
+                <testlist>
+                  <test>
+                    While the Host Agent is running, the evaluator shall sniff 
+                    network traffic ignoring all non-application associated traffic 
+                    and verify that any network communications witnessed are documented in the TSS.
+                  </test>
+                </testlist>
+              </Tests>
               
             </aactivity>
           </f-element>    
@@ -642,14 +657,16 @@
               contains the information required to perform the management duties associated with the 
               management function.
               
-              <Tests/>The evaluator will perform the following test:
-              <h:ul>
-                <h:li>Test 1: The evaluator shall test the ability to configure the Host Agent and test each option selected 
-                  from above. The evaluator is expected to test these functions in all the ways in which 
-                  the <abbr title="Security Target" linkend="ST">ST</abbr> and guidance documentation state
-                  the configuration can be managed.
-                </h:li>
-              </h:ul>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall test the ability to configure the Host Agent and test each option selected 
+                    from above. The evaluator is expected to test these functions in all the ways in which 
+                    the <abbr title="Security Target" linkend="ST">ST</abbr> and guidance documentation state
+                    the configuration can be managed.
+                  </test>
+                </testlist>
+              </Tests>
              
             </aactivity>
           </f-element>
@@ -675,21 +692,22 @@
               provides assurance that the enterprise can manage connected endpoints. 
             </note>
             <aactivity>
-                 
-             
+                         
               <TSS/>
               The evaluator shall ensure that the TSS describes the mechanism used to
               prevent users from unenrolling the Host Agent.
               
               <Guidance/>   
               
-              <Tests/>The evaluator will perform the following test:
-              <h:ul>
-                <h:li>Test 1: The evaluator shall attempt to unenroll the Host Agent from the ESM system
-                  as an unpriviledge user and verify that the attempt fails, by trying to kill the process
-                  or stop the Service or Daemon that is running the Host Agent.
-                </h:li>
-              </h:ul>
+              <Tests>
+                <testlist>
+                  <test>
+                    The evaluator shall attempt to unenroll the Host Agent from the ESM system
+                    as an unpriviledge user and verify that the attempt fails, by trying to kill the process
+                    or stop the Service or Daemon that is running the Host Agent.
+                  </test>
+                </testlist>
+              </Tests>
               
             </aactivity>
           </f-element>        
@@ -719,6 +737,7 @@
     <opt-sfrs></opt-sfrs>
     
     <sel-sfrs>
+     <subsection title="Host Agent (FHA)" id="fha">
       <f-component id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
         <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
         <consistency-rationale>
@@ -744,23 +763,27 @@
           <aactivity>
             
             <TSS/> 
-            <Guidance/>   
-            <Tests/>The evaluator will perform the following test:
-            <h:ul>
-              <h:li>Test 1: The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
-                from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
-                exercise behaviors on the endpoint during the 72 hour time frame to generate Host Agent data.
-                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
-                software, or sample test cases provided by the vendor to generate Host Agent data.
-                The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
-                that the missing data from the 72 hour time frame is available on the ESM management portal.
-              </h:li>
-            </h:ul>
+            <Guidance/>  
+            
+            <Tests>
+              <testlist>
+                <test>
+                  The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
+                  from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
+                  exercise behaviors on the endpoint during the 72 hour time frame to generate Host Agent data.
+                  Example behaviors could be running programs, performing some authentications, installing/uninstalling 
+                  software, or sample test cases provided by the vendor to generate Host Agent data.
+                  The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
+                  that the missing data from the 72 hour time frame is available on the ESM management portal.
+                </test>
+              </testlist>
+            </Tests>
             
           </aactivity>
         </f-element>
         
       </f-component>  
+      
       <f-component id="fha_col_ext.1" name="Collected Audit" >
         <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
         <consistency-rationale>
@@ -798,6 +821,9 @@
           </aactivity>
         </f-element>
       </f-component>
+     </subsection>
+      
+     <subsection title="Trusted Path/Channels (FTP)" id="ftp">
       <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
         <selection-depends req="fha_had_ext.1.2" ids="AGT_PEER"/>
         <consistency-rationale>
@@ -818,24 +844,29 @@
             
             <TSS/> 
             <Guidance/>   
-            <Tests/>The evaluator will perform the following test:
-            <h:ul>
-              <h:li>Test 1: The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
-                while capturing packets from the Host Agent. The evaluator shall verify from the packet
-                capture that the traffic is 
-                encrypted with <h:abbr title="Transport Layer Security">TLS</h:abbr> or 
-                in accordance with the selections in the <abbr title="Security Target" linkend="ST">ST
-                </abbr>.
-              </h:li>
-            </h:ul>
+            
+            <Tests>
+              <testlist>
+                <test>
+                  The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
+                  while capturing packets from the Host Agent. The evaluator shall verify from the packet
+                  capture that the traffic is 
+                  encrypted with <h:abbr title="Transport Layer Security">TLS</h:abbr> or 
+                  in accordance with the selections in the <abbr title="Security Target" linkend="ST">ST
+                  </abbr>.
+                </test>
+              </testlist>
+            </Tests>
             
           </aactivity>
         </f-element>
       </f-component>
-
+     </subsection>
+      
     </sel-sfrs>
     
     <obj-sfrs>
+     <subsection title="Security Management (FMT)" id="fmt">
       <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update">
         <consistency-rationale>
           This SFR defines protections for the integrity of commands sent to the Host Agent.
@@ -871,23 +902,27 @@
             
             <Guidance/>   
             
-            <Tests/>The evaluator will perform the following test:
-            <h:ul>
-              <h:li>Test 1: The evaluator shall perform or wait for a policy update or commands 
-                from an ESM Server to be sent to a Host Agent. The evaluator shall verify the
-                policy or command is signed and is provided to the Host Agent. The evaluator shall
-                verify the Host Agent accepts the digitally signed policy.
-                <h:br/>
-                <h:br/>
-                The execution of this test may require some configuration or a test version of either
-                the Host Agent of the ESM system in order to view the incoming policy or command
-                and verify that the content is digitally signed.
-              </h:li>
-            </h:ul>
-            
+            <Tests>
+              <testlist>
+                <test>
+                  The evaluator shall perform or wait for a policy update or commands 
+                  from an ESM Server to be sent to a Host Agent. The evaluator shall verify the
+                  policy or command is signed and is provided to the Host Agent. The evaluator shall
+                  verify the Host Agent accepts the digitally signed policy.
+                  <h:br/>
+                  <h:br/>
+                  The execution of this test may require some configuration or a test version of either
+                  the Host Agent of the ESM system in order to view the incoming policy or command
+                  and verify that the content is digitally signed.
+                </test>
+              </testlist>
+            </Tests>
+  
+           
           </aactivity>
         </f-element>        
       </f-component>
+     </subsection>
     </obj-sfrs>
     
   </chapter>
