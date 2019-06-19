@@ -257,8 +257,8 @@
           </objective-refer>
         </threat>
         <threat id="T.TAMPER">
-          <description>A Host Agent can be susceptible to tamper by unpriveldge users who may try to uninstall
-            or disrupt the Host Agents ability to funtion properly.
+          <description>A Host Agent can be susceptible to tamper by unprivileged users who may try to uninstall
+            or disrupt the Host Agents ability to function properly.
           </description>
           <objective-refer ref="O.ACCOUNTABILITY">
             <rationale>The threat T.TAMPER is countered by O.ACCOUNTABILITY and O.INTEGRITY which protect
@@ -482,7 +482,7 @@
                 <testlist>
                   <test>
                     The evaluator shall test the Host Agents ability to correctly generate
-                    audit records by having the Host Agenmt generate audit records for the
+                    audit records by having the Host Agent generate audit records for the
                     events listed in the ST.
                   </test>
                   <test>
@@ -599,7 +599,7 @@
             <title> 
               The Host Agent shall restrict network communications to; 
               <selectables linebreak="yes">
-                <selectable id="AGT_MGMT">a managemement server</selectable>
+                <selectable id="AGT_MGMT">a management server</selectable>
                 <selectable id="AGT_PEER">another Host Agent</selectable>
               </selectables>
             </title>
@@ -722,7 +722,7 @@
                 <testlist>
                   <test>
                     The evaluator shall attempt to unenroll the Host Agent from the ESM system
-                    as an unpriviledge user and verify that the attempt fails, by trying to kill the process
+                    as an unprivileged user and verify that the attempt fails, by trying to kill the process
                     or stop the Service or Daemon that is running the Host Agent.
                   </test>
                 </testlist>
