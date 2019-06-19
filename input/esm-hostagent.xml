@@ -379,7 +379,27 @@
       <modified-sfrs/>
       <additional-sfrs>
 
-      <subsection title="Security Audit (FAU)" id="fau">
+     
+      
+      
+      </additional-sfrs>
+      
+      <con-toe>
+        If this PP-Module is used to extend the Application Software PP, the TOE type for the overall TOE is still an
+        Software-based Application. The TOE boundary is simply extended to include the Host Agent functionality 
+        that is built into the Application so that additional security functionality is claimed within the scope of the TOE.
+      </con-toe>
+    
+      <con-sec-prob/>
+      <con-obj/>
+      <con-op-en>
+        This PP-Module does not define any objectives for the TOE's operational environment. 
+      </con-op-en>
+   
+    </base-pp>
+    
+	  <man-sfts>
+		   <subsection title="Security Audit (FAU)" id="fau">
        
         <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
           <consistency-rationale>
@@ -714,24 +734,6 @@
         </f-component>
         
       </subsection>
-      
-      
-      </additional-sfrs>
-      
-      <con-toe>
-        If this PP-Module is used to extend the Application Software PP, the TOE type for the overall TOE is still an
-        Software-based Application. The TOE boundary is simply extended to include the Host Agent functionality 
-        that is built into the Application so that additional security functionality is claimed within the scope of the TOE.
-      </con-toe>
-    
-      <con-sec-prob/>
-      <con-obj/>
-      <con-op-en>
-        This PP-Module does not define any objectives for the TOE's operational environment. 
-      </con-op-en>
-   
-    </base-pp>
-    
     <man-sfrs/>
     
     <opt-sfrs></opt-sfrs>
