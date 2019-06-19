@@ -398,7 +398,7 @@
    
     </base-pp>
     
-	  <man-sfts>
+	  <man-sfrs>
 		   <subsection title="Security Audit (FAU)" id="fau">
        
         <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
@@ -734,7 +734,7 @@
         </f-component>
         
       </subsection>
-    <man-sfrs/>
+    </man-sfrs>
     
     <opt-sfrs></opt-sfrs>
     
