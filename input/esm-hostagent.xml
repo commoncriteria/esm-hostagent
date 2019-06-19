@@ -425,8 +425,7 @@
               API's available from the platform if needed to generate the audit events.
             </note>
             <aactivity>
-           
-              <TSS/>
+           <TSS>There are no TSS activities for this requirement.</TSS>
             
               <Guidance/>
               The evaluator shall check the administrative guide and ensure
@@ -470,7 +469,7 @@
             </note>
             <aactivity>
               
-              <TSS/>
+              <TSS>There are no TSS activities for this requirement.</TSS>
                
               <Guidance/>
               The evaluator shall check the administrative guide and ensure
@@ -521,7 +520,7 @@
             </note>
             <aactivity>
               
-              <TSS/>
+             <TSS>There are no TSS activities for this requirement.</TSS>
               
               <Guidance/>
               The evaluator shall check the administrative guide and ensure
@@ -577,7 +576,7 @@
             </note>
             <aactivity>
               
-              <TSS/> 
+              <TSS>There are no TSS activities for this requirement.</TSS>
               
               <Guidance/>   
               The evaluator shall check the administrative guide and ensure
@@ -611,9 +610,9 @@
             </note>
             <aactivity>
               
-              <TSS/> 
+              <TSS>There are no TSS activities for this requirement.</TSS>
               
-              <Guidance/>
+              <Guidance>There are is no associated guidance for this requirement.</Guidance>
               
               <Tests>
                 <testlist>
@@ -669,7 +668,7 @@
             </note>
             <aactivity>
               
-              <TSS/> 
+              <TSS>There are no TSS activities for this requirement.</TSS>
  
               <Guidance/>   
               The evaluator shall verify that every management function 
@@ -717,7 +716,7 @@
               The evaluator shall ensure that the TSS describes the mechanism used to
               prevent users from unenrolling the Host Agent.
               
-              <Guidance/>   
+              <Guidance>There is no associated guidance for this requirement.</Guidance> 
               
               <Tests>
                 <testlist>
@@ -764,8 +763,8 @@
           </note>
           <aactivity>
             
-            <TSS/> 
-            <Guidance/>  
+            <TSS>There are no TSS activities for this requirement.</TSS>
+            <Guidance>There is no associated guidance for this requirement.</Guidance>
             
             <Tests>
               <testlist>
@@ -812,7 +811,7 @@
           </note>
           <aactivity>
             
-            <TSS/> 
+            <TSS>There are no TSS activities for this requirement.</TSS>
             <Guidance/> 
             The evaluator shall check the administrative guide and ensure
             that it lists all of the collectable types of endpoint event data.  
@@ -844,8 +843,8 @@
           </note>  
           <aactivity>
             
-            <TSS/> 
-            <Guidance/>   
+            <TSS>There are no TSS activities for this requirement.</TSS>
+            <Guidance>There is no associated guidance for this requirement.</Guidance> 
             
             <Tests>
               <testlist>
@@ -902,7 +901,7 @@
             identified in the TSS and verified by the evaluators (this could be the Host Agent
             or the underlying platform).
             
-            <Guidance/>   
+            <Guidance>There is no associated guidance for this requirement.</Guidance>
             
             <Tests>
               <testlist>
