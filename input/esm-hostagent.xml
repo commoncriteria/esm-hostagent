@@ -173,10 +173,10 @@
         <h:table>
           <h:tr>
             <h:td>
-              <figure entity="images/Host_Agent.jpg" title="Sample Host Agent TOE" id="toe"/>
+              <figure entity="images/Host_Agent_sample.png" title="Sample Host Agent TOE" id="toe"/>
             </h:td>
             <h:td>
-              <figure entity="images/Host_Agent_sample.jpg" title="Sample Host Agent TOE" id="toe"/>
+              <figure entity="images/Host_Agent_sample2.png" title="Sample Host Agent TOE" id="toe"/>
             </h:td>
           </h:tr>
         </h:table>
