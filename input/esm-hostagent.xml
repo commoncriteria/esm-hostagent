@@ -638,7 +638,7 @@
             This SFR defines a specific set of management functions for an email client.
             It does not impact the AppSoftware PP functionality.
           </consistency-rationale>
-          <f-element id="FMT_SMF.1.2(1)">
+          <f-element id="FMT_SMF.1.1(1)">
             <title>The <h:b>Host Agent</h:b> shall be capable of the
               following management functions:
               <h:br/>
