@@ -403,12 +403,12 @@
 	  <man-sfrs>
 		   <subsection title="Security Audit (FAU)" id="fau">
        
-        <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
+        <f-component id="fau_gen.1/HA" name="Audit Data Generation (Refined)">
           <consistency-rationale>
             This SFR defines the type of audit for a Host Agent that shall be logged.
             It does not impact the AppPP functionality.
           </consistency-rationale>
-          <f-element id="fau_gen.1.1">
+          <f-element id="fau_gen.1.1/HA">
             <title> 
               The Host Agent shall generate an audit record of the following auditable events: 
               <h:ol type='a'>
@@ -447,7 +447,7 @@
              
             </aactivity>
           </f-element>
-          <f-element id="fau_gen.1.2">
+          <f-element id="fau_gen.1.2/HA">
             <title> The 
               <selectables>
                 <selectable>Host Agent</selectable>
