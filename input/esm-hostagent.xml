@@ -245,6 +245,8 @@
     is expected to enforce. 
     <section title="Threats" id="threats">
       <threats>
+	Note that this PP-Module does not repeat the threats identified in the [AppPP], though they all apply given the conformance and hence dependence of this PP-Module on the [AppPP].
+	      
         <threat id="T.DATA_LOSS">
           <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the Enterprise Security Management (ESM) system is not present. 
