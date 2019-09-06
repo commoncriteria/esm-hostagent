@@ -243,11 +243,11 @@
     of the threats that the Host Agent is expected to address, assumptions about the
     operational environment, and any organizational security policies that the Host Agent
     is expected to enforce. 
-    <section title="Threats" id="threats">
+    <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the [AppPP], though they all apply given the conformance and hence dependence of this PP-Module on the [AppPP].
+      
+      
       <threats>
-	Note that this PP-Module does not repeat the threats identified in the [AppPP], though they all apply given the conformance and hence dependence of this PP-Module on the [AppPP].
-	      
-        <threat id="T.DATA_LOSS">
+	      <threat id="T.DATA_LOSS">
           <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the Enterprise Security Management (ESM) system is not present. 
           </description>
@@ -675,7 +675,7 @@
               The evaluator shall verify that every management function 
               mandated by the PP-Module is described in the operational guidance and that the description 
               contains the information required to perform the management duties associated with the 
-              management function.<Guidance/>
+              management function.</Guidance>
               
               <Tests>
                 <testlist>
@@ -715,7 +715,7 @@
                          
               <TSS>
               The evaluator shall ensure that the TSS describes the mechanism used to
-              prevent users from unenrolling the Host Agent.<TSS/>
+              prevent users from unenrolling the Host Agent.</TSS>
               
               <Guidance>There is no associated guidance for this requirement.</Guidance> 
               
@@ -817,7 +817,7 @@
             The evaluator shall check the administrative guide and ensure
             that it lists all of the collectable types of endpoint event data.  
             The evaluator shall check to make sure that every endpoint event 
-            type listed in the ST is included in the administrative guidance.<Guidance/> 
+            type listed in the ST is included in the administrative guidance.</Guidance> 
             <Tests/>
             
           </aactivity>
