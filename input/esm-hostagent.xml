@@ -834,8 +834,8 @@
           It does not impact the AppPP functionality.
         </consistency-rationale>
         <f-element id="ftp_dit_ext.2.1">
-          <title>The Host Agent shall encrypt all transmitted data with TLS 
-            between itself and another Host Agent.
+          <title>The Host Agent shall encrypt all transmitted data with TLS as defined in the TLS package 
+		  between itself and another Host Agent.
           </title>
           <note role="application">
             This requirement is designed to protection the communications with other Host Agents 
