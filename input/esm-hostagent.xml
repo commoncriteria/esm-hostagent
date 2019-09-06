@@ -427,7 +427,7 @@
               API's available from the platform if needed to generate the audit events.
             </note>
             <aactivity>
-           <TSS>There are no TSS activities for this requirement.</TSS>
+           <TSS>The evaluator shall verify the TSS lists all records that are recorded.</TSS>
             
               <Guidance/>
               The evaluator shall check the administrative guide and ensure
@@ -471,7 +471,7 @@
             </note>
             <aactivity>
               
-              <TSS>There are no TSS activities for this requirement.</TSS>
+              <TSS>The evaluator shall verify that the TSS lists all the types of events and all audit information that the TOE records.</TSS>
                
               <Guidance/>
               The evaluator shall check the administrative guide and ensure
@@ -522,7 +522,7 @@
             </note>
             <aactivity>
               
-             <TSS>There are no TSS activities for this requirement.</TSS>
+             <TSS>The evaluator shall verify the TSS contains details of where all audit data is stored.</TSS>
               
               <Guidance/>
               The evaluator shall check the administrative guide and ensure
@@ -578,12 +578,11 @@
             </note>
             <aactivity>
               
-              <TSS>There are no TSS activities for this requirement.</TSS>
+              <TSS>The evaluator shall verify the TSS lists all classes of products the host agent is designed to function with.</TSS>
               
               <Guidance/>   
               The evaluator shall check the administrative guide and ensure
-              that the Host Agent product under evaluation matches with the type of
-              ESM under evaluation.
+              that guidence exists for enrollment with all compatible ESM products.
               
               <Tests>
                 <testlist>
@@ -670,13 +669,13 @@
             </note>
             <aactivity>
               
-              <TSS>There are no TSS activities for this requirement.</TSS>
+              <TSS>The evaluator shall verify the TSS contains all frequencies for sending host agent data to an ESM and all labels that are permitted..</TSS>
  
-              <Guidance/>   
+              <Guidance>   
               The evaluator shall verify that every management function 
               mandated by the PP-Module is described in the operational guidance and that the description 
               contains the information required to perform the management duties associated with the 
-              management function.
+              management function.<Guidance/>
               
               <Tests>
                 <testlist>
@@ -714,9 +713,9 @@
             </note>
             <aactivity>
                          
-              <TSS/>
+              <TSS>
               The evaluator shall ensure that the TSS describes the mechanism used to
-              prevent users from unenrolling the Host Agent.
+              prevent users from unenrolling the Host Agent.<TSS/>
               
               <Guidance>There is no associated guidance for this requirement.</Guidance> 
               
@@ -765,8 +764,8 @@
           </note>
           <aactivity>
             
-            <TSS>There are no TSS activities for this requirement.</TSS>
-            <Guidance>There is no associated guidance for this requirement.</Guidance>
+            <TSS>The evalutator shall verify the TSS details how must data is cached and any rules that would effect data caching..</TSS>
+            <Guidance>The evalutor shall verify that any configuration options related to data caching is listed in the guidance.</Guidance>
             
             <Tests>
               <testlist>
@@ -813,12 +812,12 @@
           </note>
           <aactivity>
             
-            <TSS>There are no TSS activities for this requirement.</TSS>
-            <Guidance/> 
+            <TSS>The evaluator shall verify the TSS contains a full list of endpoint data that can be collected.</TSS>
+            <Guidance> 
             The evaluator shall check the administrative guide and ensure
             that it lists all of the collectable types of endpoint event data.  
             The evaluator shall check to make sure that every endpoint event 
-            type listed in the ST is included in the administrative guidance.
+            type listed in the ST is included in the administrative guidance.<Guidance/> 
             <Tests/>
             
           </aactivity>
@@ -845,8 +844,10 @@
           </note>  
           <aactivity>
             
-            <TSS>There are no TSS activities for this requirement.</TSS>
-            <Guidance>There is no associated guidance for this requirement.</Guidance> 
+            <TSS>The evaluator shall verify that the TSS contains a description of all data transmitted to other Host Agents and 
+		    that all such data is protected by TLS.</TSS>
+            <Guidance>The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
+		    to other Host Agents is protected by TLS.</Guidance> 
             
             <Tests>
               <testlist>
