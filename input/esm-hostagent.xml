@@ -243,7 +243,7 @@
     of the threats that the Host Agent is expected to address, assumptions about the
     operational environment, and any organizational security policies that the Host Agent
     is expected to enforce. 
-    <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the [AppPP], though they all apply given the conformance and hence dependence of this PP-Module on the [AppPP].
+    <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the <cite linkend="bibAppPP"/>, though they all apply given the conformance and hence dependence of this PP-Module on the <cite linkend="bibAppPP"/>.
       
       
       <threats>
@@ -276,6 +276,10 @@
     </section>
   </chapter>
   
+  
+  <!-- SME: right now not all objectives in the Module are mapped to threats because the template requires these
+  to be defined with respect to the threats. Some objectives in the Module mitigate threats inherited from the Base-PP
+  and are not restated in the Module. As a result the mappings are incomplete. This will need to be resolved. -->
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
@@ -284,9 +288,10 @@
             administrators to discover unintentional issues with the configuration and operation of
             the Host Agent.</description>
           <component-refer ref="FAU_GEN.1"/>
-          <component-refer ref="FAU_STO.1"/>
+          <component-refer ref="FAU_STO_EXT.1"/>
           <consistency-rationale>
-            This objective is consistent with <base-name/>.
+            This objective relates to the TOE's generation and storage of audit data. This functionality is defined by the PP-Module
+            and does not affect the ability of the TOE to enforce the Base-PP's security objectives.
           </consistency-rationale>
         </SO>
         <SO id="O.DATA_RECORDER">
@@ -294,10 +299,12 @@
             Conformant Host Agents ensure that collected information is cached or queued during periods
             when the trusted channel is not available. This will prevent data loss of Host Agent data.
           </description>
-          <component-refer ref="FHA_CHA_EXT.1"/>
-          <component-refer ref="FHA_COL_EXT.1"/>
+          <component-refer ref="FHA_CHA_EXT.1 (selection-based)"/>
+          <component-refer ref="FHA_COL_EXT.1 (selection-based)"/>
+          <component-refer ref="FHA_HAD_EXT.1"/>
           <consistency-rationale>
-            This objective is consistent with <base-name/>.
+            This objective relates to the availability of data collected by the TSF. This data is specified to ESM Host Agent
+            functionailty and does not affect the functionality defined by the Base-PP.
           </consistency-rationale>
         </SO>
         <SO id="O.INTEGRITY">
@@ -306,10 +313,11 @@
             the Host Agent and also leverage execution environment or platform-based mitigations
             to protect the Host Agent.
           </description>
-          <component-refer ref="FMT_POL_EXT.1"/>
+          <component-refer ref="FMT_POL_EXT.1 (objective)"/>
           <component-refer ref="FMT_UNR_EXT.1"/>
           <consistency-rationale>
-            This objective is consistent with <base-name/>.
+            This objective is that same as the Base-PP objective of the same name. This PP-Module extends the objective
+            by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
         <SO id="O.MANAGEMENT">
@@ -319,7 +327,8 @@
           </description>
           <component-refer ref="FMT_SMF.1(1)"/>
           <consistency-rationale>
-            This objective is consistent with <base-name/>.
+            This objective is that same as the Base-PP objective of the same name. This PP-Module extends the objective
+            by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
         <SO id="O.PROTECTED_COMMS">
@@ -327,10 +336,11 @@
             network attack threats, conformant Host Agents will use a trusted channel 
             for sending and receiving data.
           </description>
-          <component-refer ref="FTP_DIT_EXT.1"/>
-          <component-refer ref="FTP_DIT_EXT.2"/>
+          <component-refer ref="FTP_DIT_EXT.1 (from Base-PP)"/>
+          <component-refer ref="FTP_DIT_EXT.2 (selection-based)"/>
           <consistency-rationale>
-            This objective is consistent with <base-name/>.
+            This objective is that same as the Base-PP objective of the same name. This PP-Module extends the objective
+            by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
       </SOs>
@@ -387,9 +397,9 @@
       </additional-sfrs>
       
       <con-toe>
-        If this PP-Module is used to extend the Application Software PP, the TOE type for the overall TOE is still an
-        Software-based Application. The TOE boundary is simply extended to include the Host Agent functionality 
-        that is built into the Application so that additional security functionality is claimed within the scope of the TOE.
+        If this PP-Module is used to extend the Application Software PP, the TOE type for the overall TOE is still a
+        software-based application. The TOE boundary is simply extended to include the Host Agent functionality 
+        that is built into the application so that additional security functionality is claimed within the scope of the TOE.
       </con-toe>
     
       <con-sec-prob/>
@@ -398,17 +408,24 @@
         This PP-Module does not define any objectives for the TOE's operational environment. 
       </con-op-en>
    
+      <con-mod id="T.DATA_LOSS">This threat relates to the unavailability of data that is collected by the ESM Host Agent.
+      This relates to functionality defined by the PP-Module and does not interfere with the functionality described by the Base-PP.</con-mod>
+      <con-mod id="T.TAMPER">This threat is an extension of the T.LOCAL_ATTACK threat defined by the Base-PP. The threat 
+      of tampering as applied to the PP-Module exists in addition to the local attacks that are possible on the capabilities
+      defined by the Base-PP.</con-mod>
+   
     </base-pp>
     
 	  <man-sfrs>
 		   <subsection title="Security Audit (FAU)" id="fau">
        
-        <f-component id="fau_gen.1/HA" name="Audit Data Generation (Refined)">
+       <!-- SME: this was changed from FAU_GEN.1/HA because the iteration convention defines the (1) notation
+       and that is a fixed part of the module template. -->
+        <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
           <consistency-rationale>
-            This SFR defines the type of audit for a Host Agent that shall be logged.
-            It does not impact the AppPP functionality.
+            The Base-PP does not define an audit mechanism for its own functionality. This function does not interfere with the Base-PP.
           </consistency-rationale>
-          <f-element id="fau_gen.1.1/HA">
+          <f-element id="fau_gen.1.1">
             <title> 
               The Host Agent shall generate an audit record of the following auditable events: 
               <h:ol type='a'>
@@ -447,7 +464,7 @@
              
             </aactivity>
           </f-element>
-          <f-element id="fau_gen.1.2/HA">
+          <f-element id="fau_gen.1.2">
             <title> The 
               <selectables>
                 <selectable>Host Agent</selectable>
@@ -499,12 +516,21 @@
             </aactivity>
           </f-element>
         </f-component>
+		     
+		     <ext-comp-def fam-id="FAU_STO_EXT" title="Audit Data Storage">
+		       <mod-def>Components in this family define requirements for the location and method of audit storage.</mod-def>
+		     </ext-comp-def>
       
         <f-component id="fau_sto_ext.1" name="Audit Data Storage">
           <consistency-rationale>
-            This SFR defines how audit data for a Host Agent shall be stored.
-            It does not impact the AppPP functionality.
+            The Base-PP does not define an audit mechanism for its own functionality. This function does not interfere with the Base-PP.
           </consistency-rationale>
+          
+          <comp-lev> requires either the TOE or its platform to store audit data using the platform's logging mechanism.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          
           <f-element id="fau_sto_ext.1.1">
             <title> 
               The
@@ -553,14 +579,27 @@
             
       </subsection>
       
+      <!-- SME: note that FHA is an extended class. To satisfy APE_ECD, there should also be a definition for the
+      class itself and not just the components in it. I don't know if there is currently a way to do that in the template
+      so it has been left out for now. -->
       <subsection title="Host Agent (FHA)" id="fha">
+        
+        <ext-comp-def fam-id="FHA_HAD_EXT" title="Host Agent Declaration">
+          <mod-def>Components in this family define requirements for the ESM functionality that the TOE is compatible with.</mod-def>
+        </ext-comp-def>
        
         <f-component id="fha_had_ext.1" name="Host Agent Declaration">
           <consistency-rationale>
             This SFR defines the type of software the Host Agent is intended to operate 
-            and communicate with.
-            It does not impact the AppPP functionality.
+            and communicate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
           </consistency-rationale>
+          
+          <comp-lev> requires the TOE to be compatible with one or more types of ESM capabilities and to identify how
+            its network communications are restricted in support of that compatibility.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          
           <f-element id="fha_had_ext.1.1">
             <title> 
               The Host Agent shall operate with the following ESM Software; 
@@ -636,8 +675,7 @@
         
         <f-component id="FMT_SMF.1(1)" name="Specification of Management Functions (Configuration of Host Agent)">
           <consistency-rationale>
-            This SFR defines a specific set of management functions for an email client.
-            It does not impact the AppPP functionality.
+            This SFR defines management functions for the SFRs defined in this PP-Module. It does not affect the management functions defined in the Base-PP.
           </consistency-rationale>
           <f-element id="FMT_SMF.1.1(1)">
             <title>The <h:b>Host Agent</h:b> shall be capable of the
@@ -692,11 +730,21 @@
           </f-element>
         </f-component>
         
+        <ext-comp-def fam-id="FMT_UNR_EXT" title="User Unenrollment Prevention">
+          <mod-def>Components in this family define requirements for ensuring that an unprivileged user
+           cannot remove the TOE from management by another ESM component.</mod-def>
+        </ext-comp-def>
+        
         <f-component id="FMT_UNR_EXT.1" name="User Unenrollment Prevention">
           <consistency-rationale>
-            This SFR defines protections to prevent users from tampering with the Host Agent.
-            It does not impact the AppPP functionality.
+            This SFR defines protections to prevent users from tampering with the Host Agent. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
           </consistency-rationale>
+          
+          <comp-lev> requires the TSF to prevent its unenrollment by an unauthorized user.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          
           <f-element id="FMT_UNR_EXT.1.1">
             <title>The 
               <selectables>
@@ -740,12 +788,23 @@
     
     <sel-sfrs>
      <subsection title="Host Agent (FHA)" id="fha">
+       
+       <ext-comp-def fam-id="FHA_CHA_EXT" title="Cache Host Agent Collected Data">
+         <mod-def>Components in this family define requirements for the location and duration of storage for its collected data.</mod-def>
+       </ext-comp-def>
+       
       <f-component id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
         <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
         <consistency-rationale>
-          This SFR defines how the Host Agent shall cache data locally.
-          It does not impact the AppPP functionality.
+          This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
+        
+        <comp-lev> requires either the TOE or its platform to store audit data using the platform's logging mechanism.</comp-lev>
+        <management>No specific management functions are identified.</management>
+        <audit>There are no auditable events foreseen.</audit>
+        <dependencies>FHA_COL_EXT.1 Collected Audit<h:br/>
+          FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
+        
         <f-element id="fha_cha_ext.1.1">
           <title> 
             The <h:b>Host Agent</h:b> shall cache collected data for a minimum of 72 hours on 
@@ -785,13 +844,23 @@
         </f-element>
         
       </f-component>  
+       
+       <ext-comp-def fam-id="FHA_COL_EXT" title="Collected Audit">
+         <mod-def>Components in this family define requirements for the collection of data the TOE collects from 
+           its operational environment as audit data.</mod-def>
+       </ext-comp-def>
       
       <f-component id="fha_col_ext.1" name="Collected Audit" >
         <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
         <consistency-rationale>
-          This SFR defines the type of software the Host Agent is intended to operate with.
-          It does not impact the AppPP functionality.
+          This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
+        
+        <comp-lev> requires the TOE to collect a specified set of data from its operational environment.</comp-lev>
+        <management>No specific management functions are identified.</management>
+        <audit>There are no auditable events foreseen.</audit>
+        <dependencies>FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
+        
         <f-element id="fha_col_ext.1.1">
           <title>The Host Agent shall collect the following minimum set of
             endpoint event data: <h:ol type="a">
@@ -826,12 +895,26 @@
      </subsection>
       
      <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+       
+       <ext-comp-def fam-id="FTP_DIT_EXT" title="Protection of Data in Transit">
+         <mod-def>This family is defined in the <cite linkend="bibAppPP"/>. This PP-Module adds a component
+         to the existing family definition.</mod-def>
+       </ext-comp-def>
+       
       <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
         <selection-depends req="fha_had_ext.1.2" ids="AGT_PEER"/>
         <consistency-rationale>
-          This SFR defines the communication channel for Host Agents communicating with other Host Agents.
-          It does not impact the AppPP functionality.
+          This SFR defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
+        
+        <comp-lev> requires the TSF to secure data in transit between itself and another ESM Host Agent using TLS.</comp-lev>
+        <management>No specific management functions are identified.</management>
+        <audit>There are no auditable events foreseen.</audit>
+        <dependencies>FCS_TLS_EXT.1 TLS Protocol <h:br/>
+          [FCS_TLSC_EXT.1 TLS Client Protocol OR <h:br/>
+          FCS_TLSS_EXT.1 TLS Server Protocol] <h:br/>
+          FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
+        
         <f-element id="ftp_dit_ext.2.1">
           <title>The Host Agent shall encrypt all transmitted data with TLS as defined in the TLS package 
 		  between itself and another Host Agent.
@@ -871,24 +954,35 @@
     
     <obj-sfrs>
      <subsection title="Security Management (FMT)" id="fmt">
+       
+       <ext-comp-def fam-id="FMT_POL_EXT" title="Trusted Policy Update">
+         <mod-def>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</mod-def>
+       </ext-comp-def>
+       
       <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update">
         <consistency-rationale>
-          This SFR defines protections for the integrity of commands sent to the Host Agent.
-          It does not impact the AppPP functionality.
+          This SFR defines protections for the integrity of commands sent to the Host Agent. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
+        
+        <!-- SME: note that FCS_COP.1 could be considered for a dependency here but was not included since a Host Agent TOE may rely on the platform to provide the digital signature service. -->
+        <comp-lev> requires the TSF to reject any unsigned management policies or commands sent to it.</comp-lev>
+        <management>No specific management functions are identified.</management>
+        <audit>There are no auditable events foreseen.</audit>
+        <dependencies>No dependencies.</dependencies>
+        
         <f-element id="FMT_POL_EXT.1.1">
           <title>The 
             <selectables>
               <selectable>Host Agent</selectable>
               <selectable>Host Agent Platform</selectable>
             </selectables> 
-            shall only accept policies or commands that are digitally signed
+            shall only accept policies or commands that are digitally signed.
           </title>
           <note role="application">
             The intent of this requirement is to cryptographically tie any policy updates or
             commends sent to the Host Agent as being from the Enterprise. This is not to 
             protect the policies in transit as they are already protected by FTP_DIT_EXT.1.1
-            and/or FTP_PTP_EXT.1.1. The digital signature used to sign policies or commands
+            and/or FTP_PTP_EXT.2.1. The digital signature used to sign policies or commands
             must be selected in FCS_COP.1.1(3). The use of this requirement makes FCS_COP.1.1(3)
             from the base AppPP a mandatory requirement.
           </note>
