@@ -214,7 +214,7 @@
             The Protection Profile for Application Software (<cite linkend="bibAppPP"/>)
             defines the baseline Security Functional Requirements (SFRs) and Security Assurance
             Requirements (SARs) for application software products. This <abbr linkend="PP-Module"/> serves to
-            extend the AppPP baseline with additional SFRs and associated Evaluation Activities
+            extend the App PP baseline with additional SFRs and associated Evaluation Activities
             specific to a Host Agent.
             Evaluation Activities are the actions that the evaluator
             performs in order to determine an email client's compliance to the SFRs.
@@ -224,7 +224,7 @@
             Technology Security Evaluation, Version 3.1, Revision 5. It is CC Part 2 extended and CC
             Part 3 conformant. In order to be conformant to this <abbr linkend="PP-Module"/>, the <abbr
               linkend="ST"/> must include all components in this <abbr linkend="PP-Module"/> and the
-            associated AppPP that are: <h:ul><h:li>unconditional (which are always required)</h:li>
+            associated Base-PP that are: <h:ul><h:li>unconditional (which are always required)</h:li>
               <h:li>selection-based (which are required when certain selections are chosen in the
                 unconditional requirements)</h:li>
             </h:ul> and may include optional and/or objective components that are desirable but not
@@ -290,7 +290,7 @@
           <component-refer ref="FAU_GEN.1"/>
           <component-refer ref="FAU_STO_EXT.1"/>
           <consistency-rationale>
-            This objective relates to the TOE's generation and storage of audit data. This functionality is defined by the PP-Module
+            This objective relates to the TOE's generation and storage of audit data that is used to detect potential configuration or operational issues on host systems. This functionality is defined by the PP-Module
             and does not affect the ability of the TOE to enforce the Base-PP's security objectives.
           </consistency-rationale>
         </SO>
@@ -316,7 +316,7 @@
           <component-refer ref="FMT_POL_EXT.1 (objective)"/>
           <component-refer ref="FMT_UNR_EXT.1"/>
           <consistency-rationale>
-            This objective is that same as the Base-PP objective of the same name. This PP-Module extends the objective
+            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
@@ -327,7 +327,7 @@
           </description>
           <component-refer ref="FMT_SMF.1(1)"/>
           <consistency-rationale>
-            This objective is that same as the Base-PP objective of the same name. This PP-Module extends the objective
+            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
@@ -339,7 +339,7 @@
           <component-refer ref="FTP_DIT_EXT.1 (from Base-PP)"/>
           <component-refer ref="FTP_DIT_EXT.2 (selection-based)"/>
           <consistency-rationale>
-            This objective is that same as the Base-PP objective of the same name. This PP-Module extends the objective
+            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
@@ -408,7 +408,7 @@
         This PP-Module does not define any objectives for the TOE's operational environment. 
       </con-op-en>
    
-      <con-mod id="T.DATA_LOSS">This threat relates to the unavailability of data that is collected by the ESM Host Agent.
+      <con-mod id="T.DATA_LOSS">This threat relates to the loss of data that is collected by the ESM Host Agent.
       This relates to functionality defined by the PP-Module and does not interfere with the functionality described by the Base-PP.</con-mod>
       <con-mod id="T.TAMPER">This threat is an extension of the T.LOCAL_ATTACK threat defined by the Base-PP. The threat 
       of tampering as applied to the PP-Module exists in addition to the local attacks that are possible on the capabilities
@@ -735,7 +735,7 @@
            cannot remove the TOE from management by another ESM component.</mod-def>
         </ext-comp-def>
         
-        <f-component id="FMT_UNR_EXT.1" name="User Unenrollment Prevention">
+        <f-component id="fmt_unr_ext.1" name="User Unenrollment Prevention">
           <consistency-rationale>
             This SFR defines protections to prevent users from tampering with the Host Agent. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
           </consistency-rationale>
@@ -959,16 +959,16 @@
          <mod-def>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</mod-def>
        </ext-comp-def>
        
-      <f-component id="FMT_POL_EXT.1" name="Trusted Policy Update">
+      <f-component id="fmt_pol_ext.1" name="Trusted Policy Update">
         <consistency-rationale>
           This SFR defines protections for the integrity of commands sent to the Host Agent. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
         
-        <!-- SME: note that FCS_COP.1 could be considered for a dependency here but was not included since a Host Agent TOE may rely on the platform to provide the digital signature service. -->
+        
         <comp-lev> requires the TSF to reject any unsigned management policies or commands sent to it.</comp-lev>
         <management>No specific management functions are identified.</management>
         <audit>There are no auditable events foreseen.</audit>
-        <dependencies>No dependencies.</dependencies>
+        <dependencies>FCS_COP.1 Cryptographic Operation</dependencies>
         
         <f-element id="FMT_POL_EXT.1.1">
           <title>The 
@@ -982,9 +982,9 @@
             The intent of this requirement is to cryptographically tie any policy updates or
             commends sent to the Host Agent as being from the Enterprise. This is not to 
             protect the policies in transit as they are already protected by FTP_DIT_EXT.1.1
-            and/or FTP_PTP_EXT.2.1. The digital signature used to sign policies or commands
+            and/or FTP_DIT_EXT.2.1. The digital signature used to sign policies or commands
             must be selected in FCS_COP.1.1(3). The use of this requirement makes FCS_COP.1.1(3)
-            from the base AppPP a mandatory requirement.
+            from the Base-PP a mandatory requirement.
           </note>
           <aactivity>
             
