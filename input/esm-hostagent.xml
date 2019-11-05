@@ -41,120 +41,79 @@
       versions of this Module will include requirements for other classes of Enterprise Security 
       Management software.
     </section>
-    <section title="Terms" id="glossary">
-      <subsection title="Common Criteria Terms">
-       <glossary>
-          <entry>
-            <term><abbr title="Common Criteria">CC</abbr></term>
-            <description>Common Criteria for Information Technology Security
-              Evaluation.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Common Evaluation Methodology">CEM</abbr></term>
-            <description>Common Evaluation Methodology for Information Technology Security
-              Evaluation.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Protection Profile">PP</abbr></term>
-            <description>An implementation-independent set of security requirements for a category
-              of products.</description>
-          </entry>
-         <entry>
-           <term><abbr title="Protection Profile Module">PP-Module</abbr></term>
-           <description>An implementation-independent statement of security needs for a TOE type 
-             complementary to one or more Base Protection Profiles.
-           </description>
-         </entry>
-          <entry>
-            <term><abbr title="Security Target">ST</abbr></term>
-            <description>A set of implementation-dependent security requirements for a specific
-              product.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Target of Evaluation">TOE</abbr></term>
-            <description>
-	      The product under evaluation. In this case, the Operating System as described in section 
-	      <xref linkend="TOEboundary"/> and its
-              supporting documentation.
-	    </description>
-          </entry>
-          <entry>
-            <term><abbr title="TOE Security Functionality">TSF</abbr></term>
-            <description>The security functionality of the product under evaluation.</description>
-          </entry>
-          <entry>
-            <term><abbr title="TOE Summary Specification">TSS</abbr></term>
-            <description>A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
-                linkend="ST"/>. </description>
-          </entry>
-          <entry>
-            <term><abbr title="Security Functional Requirement">SFR</abbr></term>
-            <description>A requirement for security enforcement by the <abbr linkend="TOE"/>.
-            </description>
-          </entry>
-          <entry>
-            <term><abbr title="Security Assurance Requirement">SAR</abbr></term>
-            <description>A requirement to assure the security of the <abbr linkend="TOE"/>.
-            </description>
-          </entry>
-       </glossary>
-      </subsection>
-      <subsection title="Technical Terms">
-        <glossary>
-         <entry>
-           <term>Endpoint</term>
-           <description>A computing device that runs a General Purpose Operating System 
-             or a Mobile Device Operating System. Endpoints can 
-             include desktops, servers, and mobile devices.
-           </description>
-         </entry>
-         <entry>
-           <term>Enrolled State</term>
-           <description>The state in which an endpoint with a running Host Agent is managed by an ESM.
-             Also, referred to as Onboarding.
-           </description>
-         </entry>
-          <entry>
-            <term>Enrollment</term>
-            <description>The process of transitioning an endpoint from an unenrolled to an enrolled state.
-            </description>
-          </entry>
-         <entry>
-           <term><abbr title="Enterprise Security Management">ESM</abbr></term>
-           <description>
-             A enterprise security management application hosted on a server or cloud service that provides 
-             support for security management, information flows, reporting, policy, and data analytics 
-             in complex enterprise environments.
-           </description>
-         </entry>
-         <entry>
-           <term><abbr title="Endpoint Detection and Response">EDR</abbr> System</term>
-           <description>A system that analyzes collected EDR Host Agent data for detecting, 
-             investigating, and remediating unauthorized activities on endpoints. 
-           </description>
-         </entry>
-         <entry>
-           <term>Host Agent</term>
-           <description>A logical piece of software that executes on endpoints to collect data about the endpoint,
-             execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
-             or service. An example command sent to an endpoint could be to enforce a policy from an 
-             ESM, or to collect some files, or to run an OS command.
-           </description>
-         </entry>
-         <entry>
-           <term><abbr title="Operating System">OS</abbr></term>
-           <description> Software that manages physical and logical resources and provides services
-             for applications.</description>
-         </entry>
-         <entry>
-           <term>Unenrolled State</term>
-           <description>The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
-             Also, referred to as Offboarding.
-           </description>
-         </entry>
-        </glossary>
-      </subsection>
-    </section>
+    <tech-terms>
+      <term full="Common Criteria" abbr="CC">Common Criteria for Information Technology Security
+        Evaluation.</term>
+          
+      <term full="Common Evaluation Methodology" abbr="CEM">Common Evaluation Methodology for Information Technology Security
+        Evaluation.</term>
+          
+      <term full="Protection Profile" abbr="PP">An implementation-independent set of security requirements for a category
+        of products</term>
+          
+      <term full="Protection Profile Module" abbr="PP-Module">An implementation-independent statement of security needs for a TOE type 
+        complementary to one or more Base Protection Profiles.</term>
+         
+      <term full="Security Target" abbr="ST">A set of implementation-dependent security requirements for a specific
+        product.</term>
+          
+      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the Operating System as described in section 
+        <xref linkend="TOEboundary"/> and its
+        supporting documentation.</term>
+	      
+	    
+      <term full="TOE Security Functionality" abbr="TSF">The security functionality of the product under evaluation.</term>
+          
+      <term full="TOE Summary Specification" abbr="TSS">A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
+        linkend="ST"/>.</term>
+          
+        
+      <term full="Security Functional Requirement" abbr="SFR">A requirement for security enforcement by the <abbr linkend="TOE"/>.</term>
+          
+          
+      <term full="Security Assurance Requirement" abbr="SAR">A requirement to assure the security of the <abbr linkend="TOE"/>.
+      </term>
+      
+      <term full="Endpoint">A computing device that runs a General Purpose Operating System 
+        or a Mobile Device Operating System. Endpoints can 
+        include desktops, servers, and mobile devices.
+      </term>
+           
+      <term full="Enrolled State">The state in which an endpoint with a running Host Agent is managed by an ESM.
+        Also, referred to as Onboarding.
+      </term>
+           
+      <term full="Enrollment">The process of transitioning an endpoint from an unenrolled to an enrolled state.
+      </term>
+            
+      <term full="Enterprise Security Management" abbr="ESM">A enterprise security management application hosted on a server or cloud service that provides 
+        support for security management, information flows, reporting, policy, and data analytics 
+        in complex enterprise environments.
+      </term>
+           
+             
+      <term full="Endpoint Detection and Response" abbr="EDR">A system that analyzes collected EDR Host Agent data for detecting, 
+        investigating, and remediating unauthorized activities on endpoints. 
+      </term>
+           
+      <term full="Host Agent">A logical piece of software that executes on endpoints to collect data about the endpoint,
+        execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
+        or service. An example command sent to an endpoint could be to enforce a policy from an 
+        ESM, or to collect some files, or to run an OS command.
+      </term>
+           
+      <term full="Operating System" abbr="OS">Software that manages physical and logical resources and provides services
+        for applications.
+      </term>
+           
+      
+      <term full="Unenrolled State">The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
+        Also, referred to as Offboarding.
+      </term>
+           
+    
+      
+    </tech-terms>
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary">
@@ -287,8 +246,7 @@
           <description>Conformant Host Agents ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the Host Agent.</description>
-          <component-refer ref="FAU_GEN.1"/>
-          <component-refer ref="FAU_STO_EXT.1"/>
+          <addressed-by>FAU_GEN.1, FAU_STO_EXT.1</addressed-by>
           <consistency-rationale>
             This objective relates to the TOE's generation and storage of audit data that is used to detect potential configuration or operational issues on host systems. This functionality is defined by the PP-Module
             and does not affect the ability of the TOE to enforce the Base-PP's security objectives.
@@ -299,9 +257,7 @@
             Conformant Host Agents ensure that collected information is cached or queued during periods
             when the trusted channel is not available. This will prevent data loss of Host Agent data.
           </description>
-          <component-refer ref="FHA_CHA_EXT.1 (selection-based)"/>
-          <component-refer ref="FHA_COL_EXT.1 (selection-based)"/>
-          <component-refer ref="FHA_HAD_EXT.1"/>
+          <addressed-by>FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based), FHA_HAD_EXT.1</addressed-by>
           <consistency-rationale>
             This objective relates to the availability of data collected by the TSF. This data is specified to ESM Host Agent
             functionailty and does not affect the functionality defined by the Base-PP.
@@ -313,8 +269,7 @@
             the Host Agent and also leverage execution environment or platform-based mitigations
             to protect the Host Agent.
           </description>
-          <component-refer ref="FMT_POL_EXT.1 (objective)"/>
-          <component-refer ref="FMT_UNR_EXT.1"/>
+          <addressed-by>FMT_POL_EXT.1 (objective), FMT_UNR_EXT.1</addressed-by>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
@@ -325,7 +280,7 @@
             provide consistent and supported interfaces for their
             security-relevant configuration and maintenance.
           </description>
-          <component-refer ref="FMT_SMF.1(1)"/>
+          <addressed-by>FMT_SMF.1(1)</addressed-by>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
@@ -336,8 +291,7 @@
             network attack threats, conformant Host Agents will use a trusted channel 
             for sending and receiving data.
           </description>
-          <component-refer ref="FTP_DIT_EXT.1 (from Base-PP)"/>
-          <component-refer ref="FTP_DIT_EXT.2 (selection-based)"/>
+          <addressed-by>FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)</addressed-by>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
