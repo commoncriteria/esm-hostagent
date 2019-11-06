@@ -13,7 +13,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-01-20</PPPubDate>
+      <PPPubDate>2019-11-06</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -21,7 +21,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2019-01-07</date>
+      <date>2019-11-06</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
@@ -30,8 +30,8 @@
     <section title="Overview" id="ppoverview"> The scope of this PP-Module is to
       describe the security functionality of a Host Agent in terms of <abbr linkend="CC"/>
       and to define functional and assurance requirements for such products. This Module 
-      is not complete in itself, but rather extends the Protection Profile for 
-      Application Software <cite linkend="bibAppPP"/>. The combined requirements 
+      is not complete in itself, but rather uses the Protection Profile for 
+      Application Software <cite linkend="bibAppPP"/> as a Base-PP. The combined requirements 
       in this Host Agent Module with the Application Software PP is meant to be paired with an evaluation using 
       an Enterprise Security Management (ESM) Protection Profile. The ESM PP covers the security 
       functionality needed on the server or cloud service, and the paired Host Agent Module
@@ -57,7 +57,7 @@
       <term full="Security Target" abbr="ST">A set of implementation-dependent security requirements for a specific
         product.</term>
           
-      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the Operating System as described in section 
+      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the Host Agent as described in section 
         <xref linkend="TOEboundary"/> and its
         supporting documentation.</term>
 	      
@@ -74,8 +74,7 @@
       <term full="Security Assurance Requirement" abbr="SAR">A requirement to assure the security of the <abbr linkend="TOE"/>.
       </term>
       
-      <term full="Endpoint">A computing device that runs a General Purpose Operating System 
-        or a Mobile Device Operating System. Endpoints can 
+      <term full="Endpoint">A computing device that runs a general purpose OS, mobile device OS, or network device OS. Endpoints can 
         include desktops, servers, and mobile devices.
       </term>
            
@@ -96,10 +95,10 @@
         investigating, and remediating unauthorized activities on endpoints. 
       </term>
            
-      <term full="Host Agent">A logical piece of software that executes on endpoints to collect data about the endpoint,
-        execute commands sent to the endpoint from an Enterprise Security Management (ESM) server
+      <term full="Host Agent">A logical piece of software that executes on endpoints to collect data about the endpoint and
+        executes commands sent to the endpoint from an Enterprise Security Management (ESM) server
         or service. An example command sent to an endpoint could be to enforce a policy from an 
-        ESM, or to collect some files, or to run an OS command.
+        ESM, to collect some files, or to run an OS command.
       </term>
            
       <term full="Operating System" abbr="OS">Software that manages physical and logical resources and provides services
@@ -118,12 +117,12 @@
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="TOEboundary">
         The term Host Agent is the logical representation of all the software from the TOE
-        vendor that represents the functionality of a Host Agent. The boundary for the Host Agent includes 
+        vendor that represents its functionality. The boundary for the Host Agent includes 
         all processes, all modules and libraries bundled with the Host Agent.  The Host 
         Agent can run as a daemon or service on the platform but is not required to. The Host Agent is
         not expected to have a local or remote Graphical User Interface (GUI) for administration but having 
         such an interface is not precluded by this Module. It is expected that Host Agents will be managed by
-        their associated ESM Server or the underlying platform. 
+        their associated ESM server or the underlying platform. 
         The TOE boundary includes the communications channel with other Host Agents, an ESM server, or a cloud 
         service. The platform operating system or execution environment
         upon which the Host Agent is executing is outside the scope of a Host Agent evaluation. The figures
@@ -142,8 +141,8 @@
         
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
-        The TOE platform consists of a General Purpose Operating System, a Mobile Device 
-        Operating System, a Network Device Operating System, or an Execution Environment on top of which 
+        The TOE platform consists of a general purpose OS, a mobile device 
+        OS, a network device OS, or an Execution Environment on top of which 
         the Host Agent software executes.
       </subsection>
     </section>
@@ -183,8 +182,8 @@
             Technology Security Evaluation, Version 3.1, Revision 5. It is CC Part 2 extended and CC
             Part 3 conformant. In order to be conformant to this <abbr linkend="PP-Module"/>, the <abbr
               linkend="ST"/> must include all components in this <abbr linkend="PP-Module"/> and the
-            associated Base-PP that are: <h:ul><h:li>unconditional (which are always required)</h:li>
-              <h:li>selection-based (which are required when certain selections are chosen in the
+            associated Base-PP that are: <h:ul><h:li>Unconditional (which are always required)</h:li>
+              <h:li>Selection-based (which are required when certain selections are chosen in the
                 unconditional requirements)</h:li>
             </h:ul> and may include optional and/or objective components that are desirable but not
             required for conformance. 
@@ -218,8 +217,8 @@
           </objective-refer>
         </threat>
         <threat id="T.TAMPER">
-          <description>A Host Agent can be susceptible to tamper by unprivileged users who may try to uninstall
-            or disrupt the Host Agents ability to function properly.
+          <description>A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall
+            or disrupt the Host Agent's ability to function properly.
           </description>
           <objective-refer ref="O.ACCOUNTABILITY">
             <rationale>The threat T.TAMPER is countered by O.ACCOUNTABILITY and O.INTEGRITY which protect
@@ -231,6 +230,33 @@
     </section>
     <section id="Assumptions" title="Assumptions">
       <assumptions>
+        
+        <assumption id="A.PLATFORM">
+          <description>The TOE relies upon a trustworthy computing platform for its execution. 
+            This includes the underlying platform and whatever runtime environment it provides to the TOE.</description>
+          <objective-refer ref="OE.PLATFORM">
+            <rationale>The operational environment objective OE.PLATFORM is realized through
+              A.PLATFORM.</rationale>
+          </objective-refer>
+        </assumption>
+        
+        <assumption id="A.PROPER_USER">
+          <description>The user of the application software is not willfully negligent or hostile, 
+            and uses the software in compliance with the applied enterprise security policy.</description>
+          <objective-refer ref="OE.PROPER_USER">
+            <rationale>The eperational environment objective OE.PROPER_USER is realized through
+              A.PROPER_USER.</rationale>
+          </objective-refer>
+        </assumption>
+        
+        <assumption id="A.PROPER_ADMIN">
+          <description>The administrator of the application software is not careless, willfully negligent or hostile, 
+            and administers the software in compliance with the applied enterprise security policy.</description>
+          <objective-refer ref="OE.PROPER_ADMIN">
+            <rationale>The operational environment objective OE.PROPER_ADMIN is realized through
+              A.PROPER_ADMIN.</rationale>
+          </objective-refer>
+        </assumption>
       </assumptions>
     </section>
   </chapter>
@@ -426,11 +452,11 @@
               </selectables> 
               shall record within each audit record at least the following information: 
               <h:ol type='a'>
-                <h:li>date and time of the event,</h:li>
-                <h:li>type of event,</h:li>
-                <h:li>subject identity,</h:li>
-                <h:li>(success or failure) of the event, if relevant,</h:li>
-                <h:li><assignable>other audit relevant information</assignable></h:li>
+                <h:li>Date and time of the event,</h:li>
+                <h:li>Type of event,</h:li>
+                <h:li>Subject identity,</h:li>
+                <h:li>(Success or failure) of the event, if relevant,</h:li>
+                <h:li><assignable>Other audit relevant information</assignable></h:li>
               </h:ol>
               .
             </title>
@@ -522,6 +548,8 @@
                     <h:br/>
                     On Linux based platforms this would be in var/logs. On Windows based 
                     platforms this would be the Windows Event Log.
+                    <h:br/>
+                    No specific locations are defined for other platforms.
                   </test>
                 </testlist>
               </Tests>
@@ -571,7 +599,7 @@
             </note>
             <aactivity>
               
-              <TSS>The evaluator shall verify the TSS lists all classes of products the host agent is designed to function with.</TSS>
+              <TSS>The evaluator shall verify the TSS lists all classes of products the Host Agent is designed to function with.</TSS>
               
               <Guidance/>   
               The evaluator shall check the administrative guide and ensure
@@ -598,7 +626,7 @@
               </selectables>
             </title>
             <note role="application">
-              By selecting another host agent 
+              By selecting another Host Agent 
               the additional <linkref linkend="FTP_DIT_EXT.2"/>
               requirements must be included in the ST for peer-to-peer communication. 
             </note>
@@ -639,7 +667,7 @@
                 <manager id="a">Administrator</manager>
                 <management-function>
                   <text>
-                    Configure the frequency for sending host agent data to an ESM
+                    Configure the frequency for sending Host Agent data to an ESM
                   </text>
                   <M ref="a"/>
                 </management-function>
@@ -661,7 +689,7 @@
             </note>
             <aactivity>
               
-              <TSS>The evaluator shall verify the TSS contains all frequencies for sending host agent data to an ESM and all labels that are permitted..</TSS>
+              <TSS>The evaluator shall verify the TSS contains all frequencies for sending Host Agent data to an ESM and all labels that are permitted..</TSS>
  
               <Guidance>   
               The evaluator shall verify that every management function 
@@ -761,7 +789,7 @@
         
         <f-element id="fha_cha_ext.1.1">
           <title> 
-            The <h:b>Host Agent</h:b> shall cache collected data for a minimum of 72 hours on 
+            The <h:b>Host Agent</h:b> shall cache collected data for a minimum of <assignable>value greater than 72</assignable> hours on 
             <selectables>
               <selectable>persistent  storage</selectable>
               <selectable>non-persistent  storage
@@ -772,7 +800,7 @@
           <note role="application">
             The term <h:i>collected data</h:i> here is understood to be any type of collected endpoint data by the Host Agent
             destine for an enterprise security management (ESM) server. To meet this requirement a Host Agent must be
-            capable of locally caching or queuing data for a minimum of 72 hours (3 days) during periods of network
+            capable of locally caching or queuing data for a minimum value that is greater than 72 hours (3 days) during periods of network
             dis-connectivity. In a future revision the selection of non-persistent storage will be removed.
           </note>
           <aactivity>
@@ -784,7 +812,8 @@
               <testlist>
                 <test>
                   The evaluator shall test the Host Agents ability to cache data by disconnecting the endpoint
-                  from the network for a period of 72 hours to simulate a network connectivity failure. The evaluator shall
+                  from the network for a period of 72 hours to simulate a network connectivity failure, 
+                  these should be actual hours not via changing system time. The evaluator shall
                   exercise behaviors on the endpoint during the 72 hour time frame to generate Host Agent data.
                   Example behaviors could be running programs, performing some authentications, installing/uninstalling 
                   software, or sample test cases provided by the vendor to generate Host Agent data.
@@ -824,7 +853,7 @@
               <h:li>Libraries and modules loaded by processes</h:li>
               <h:li>Network connection activity, including destination IP</h:li>
               <h:li>Files created on persistent storage</h:li>
-              <h:li><assignable>other host data</assignable></h:li>
+              <h:li><assignable>Other host data</assignable></h:li>
             </h:ol>
           </title>
           <note role="application">The intent of this requirement is to specify the minimum
@@ -841,6 +870,8 @@
             that it lists all of the collectable types of endpoint event data.  
             The evaluator shall check to make sure that every endpoint event 
             type listed in the ST is included in the administrative guidance.</Guidance> 
+            <Tests>
+              The evalutator shall review the items collected by the Host Agent and verify all items in the minimum set are included.
             <Tests/>
             
           </aactivity>
@@ -958,7 +989,7 @@
               <testlist>
                 <test>
                   The evaluator shall perform or wait for a policy update or commands 
-                  from an ESM Server to be sent to a Host Agent. The evaluator shall verify the
+                  from an ESM server to be sent to a Host Agent. The evaluator shall verify the
                   policy or command is signed and is provided to the Host Agent. The evaluator shall
                   verify the Host Agent accepts the digitally signed policy.
                   <h:br/>
@@ -966,6 +997,9 @@
                   The execution of this test may require some configuration or a test version of either
                   the Host Agent of the ESM system in order to view the incoming policy or command
                   and verify that the content is digitally signed.
+                </test>
+                <test>
+                  The evaluator shall alter a policy update or command and verify the Host Agent rejects the altered policy.
                 </test>
               </testlist>
             </Tests>
@@ -992,20 +1026,6 @@
       <description>
         <h:a href="https://www.niap-ccevs.org/pp/">Protection Profile for Endpoint Detection and Response</h:a>
       </description>
-    </entry>
-    <entry id="bibCC">
-      <tag>CC</tag>
-      <description>Common Criteria for Information Technology Security Evaluation - <h:ul>
-        <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
-          1: Introduction and General Model</h:a>, CCMB-2012-09-001, Version 3.1 Revision 5,
-          September 2012.</h:li>
-        <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
-          2: Security Functional Components</h:a>, CCMB-2012-09-002, Version 3.1 Revision 5,
-          September 2012.</h:li>
-        <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
-          3: Security Assurance Components</h:a>, CCMB-2012-09-003, Version 3.1 Revision 5,
-          September 2012.</h:li>
-      </h:ul></description>
     </entry>
   </bibliography>
   
