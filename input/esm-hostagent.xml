@@ -60,8 +60,8 @@
       <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the Host Agent as described in section 
         <xref linkend="TOEboundary"/> and its
         supporting documentation.</term>
-	      
-	    
+          
+        
       <term full="TOE Security Functionality" abbr="TSF">The security functionality of the product under evaluation.</term>
           
       <term full="TOE Summary Specification" abbr="TSS">A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
@@ -115,7 +115,7 @@
     </tech-terms>
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      <subsection title="TOE Boundary" id="TOEboundary">
+      <subsection title="TOE Boundary" id="toeboundary">
         The term Host Agent is the logical representation of all the software from the TOE
         vendor that represents its functionality. The boundary for the Host Agent includes 
         all processes, all modules and libraries bundled with the Host Agent.  The Host 
@@ -205,7 +205,7 @@
       
       
       <threats>
-	      <threat id="T.DATA_LOSS">
+          <threat id="T.DATA_LOSS">
           <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the Enterprise Security Management (ESM) system is not present. 
           </description>
@@ -396,8 +396,8 @@
    
     </base-pp>
     
-	  <man-sfrs>
-		   <subsection title="Security Audit (FAU)" id="fau">
+      <man-sfrs>
+           <subsection title="Security Audit (FAU)" id="fau">
        
        <!-- SME: this was changed from FAU_GEN.1/HA because the iteration convention defines the (1) notation
        and that is a fixed part of the module template. -->
@@ -426,7 +426,7 @@
             <aactivity>
            <TSS>The evaluator shall verify the TSS lists all records that are recorded.</TSS>
             
-              <Guidance/>
+              <Guidance>
               The evaluator shall check the administrative guide and ensure
               that it lists all of the auditable events.  The evaluator shall
               check to make sure that every audit event type selected in the ST
@@ -442,7 +442,8 @@
                 </testlist>
               </Tests>
              
-            </aactivity>
+            </Guidance>
+</aactivity>
           </f-element>
           <f-element id="fau_gen.1.2">
             <title> The 
@@ -470,7 +471,7 @@
               
               <TSS>The evaluator shall verify that the TSS lists all the types of events and all audit information that the TOE records.</TSS>
                
-              <Guidance/>
+              <Guidance>
               The evaluator shall check the administrative guide and ensure
               that it provides a format
               for audit records. Each audit record format type must be covered,
@@ -493,13 +494,14 @@
                 </testlist>
               </Tests>
                 
-            </aactivity>
+            </Guidance>
+</aactivity>
           </f-element>
         </f-component>
-		     
-		     <ext-comp-def fam-id="FAU_STO_EXT" title="Audit Data Storage">
-		       <mod-def>Components in this family define requirements for the location and method of audit storage.</mod-def>
-		     </ext-comp-def>
+             
+             <ext-comp-def fam-id="FAU_STO_EXT" title="Audit Data Storage">
+               <mod-def>Components in this family define requirements for the location and method of audit storage.</mod-def>
+             </ext-comp-def>
       
         <f-component id="fau_sto_ext.1" name="Audit Data Storage">
           <consistency-rationale>
@@ -530,7 +532,7 @@
               
              <TSS>The evaluator shall verify the TSS contains details of where all audit data is stored.</TSS>
               
-              <Guidance/>
+              <Guidance>
               The evaluator shall check the administrative guide and ensure
               that the list of auditable events are stored in the platform provided logging 
               mechanism.
@@ -554,7 +556,8 @@
                 </testlist>
               </Tests>
           
-            </aactivity>
+            </Guidance>
+</aactivity>
           </f-element>
        
         </f-component>
@@ -601,7 +604,7 @@
               
               <TSS>The evaluator shall verify the TSS lists all classes of products the Host Agent is designed to function with.</TSS>
               
-              <Guidance/>   
+              <Guidance>   
               The evaluator shall check the administrative guide and ensure
               that guidence exists for enrollment with all compatible ESM products.
               
@@ -615,7 +618,8 @@
                 </testlist>
               </Tests>
   
-            </aactivity>
+            </Guidance>
+</aactivity>
           </f-element>    
           <f-element id="fha_had_ext.1.2">
             <title> 
@@ -872,7 +876,7 @@
             type listed in the ST is included in the administrative guidance.</Guidance> 
             <Tests>
               The evalutator shall review the items collected by the Host Agent and verify all items in the minimum set are included.
-            <Tests/>
+            </Tests>
             
           </aactivity>
         </f-element>
@@ -902,7 +906,7 @@
         
         <f-element id="ftp_dit_ext.2.1">
           <title>The Host Agent shall encrypt all transmitted data with TLS as defined in the TLS package 
-		  between itself and another Host Agent.
+          between itself and another Host Agent.
           </title>
           <note role="application">
             This requirement is designed to protection the communications with other Host Agents 
@@ -913,9 +917,9 @@
           <aactivity>
             
             <TSS>The evaluator shall verify that the TSS contains a description of all data transmitted to other Host Agents and 
-		    that all such data is protected by TLS.</TSS>
+            that all such data is protected by TLS.</TSS>
             <Guidance>The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
-		    to other Host Agents is protected by TLS.</Guidance> 
+            to other Host Agents is protected by TLS.</Guidance> 
             
             <Tests>
               <testlist>
@@ -973,7 +977,7 @@
           </note>
           <aactivity>
             
-            <TSS/>
+            <TSS>
             The evaluator shall ensure that the TSS describes how the candidate 
             policies or commands are sent to the Host Agent; the
             processing associated with verifying the digital signature of the policies or
@@ -1005,7 +1009,8 @@
             </Tests>
   
            
-          </aactivity>
+          </TSS>
+</aactivity>
         </f-element>        
       </f-component>
      </subsection>
