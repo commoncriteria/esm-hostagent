@@ -42,76 +42,97 @@
       Management software.
     </section>
     <tech-terms>
-      <term full="Common Criteria" abbr="CC">Common Criteria for Information Technology Security
-        Evaluation.</term>
-          
-      <term full="Common Evaluation Methodology" abbr="CEM">Common Evaluation Methodology for Information Technology Security
-        Evaluation.</term>
-          
-      <term full="Protection Profile" abbr="PP">An implementation-independent set of security requirements for a category
-        of products</term>
-          
-      <term full="Protection Profile Module" abbr="PP-Module">An implementation-independent statement of security needs for a TOE type 
-        complementary to one or more Base Protection Profiles.</term>
-         
-      <term full="Security Target" abbr="ST">A set of implementation-dependent security requirements for a specific
-        product.</term>
-          
-      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the Host Agent as described in section 
-        <xref linkend="TOEboundary"/> and its
-        supporting documentation.</term>
-          
-        
-      <term full="TOE Security Functionality" abbr="TSF">The security functionality of the product under evaluation.</term>
-          
-      <term full="TOE Summary Specification" abbr="TSS">A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
-        linkend="ST"/>.</term>
-          
-        
-      <term full="Security Functional Requirement" abbr="SFR">A requirement for security enforcement by the <abbr linkend="TOE"/>.</term>
-          
-          
-      <term full="Security Assurance Requirement" abbr="SAR">A requirement to assure the security of the <abbr linkend="TOE"/>.
+      <term abbr="AES" full="Advanced Encryption Standard"/>
+      <term abbr="ANSI" full="American National Standards Institute"/>
+      <term abbr="API" full="Application Programming Interface"/>
+      <term abbr="ASLR" full="Address Space Layout Randomization"/>
+      <term abbr="CESG" full="Communications-Electronics Security Group"/>
+      <term abbr="CMC" full="Certificate Management over CMS"/>
+      <term abbr="CMS" full="Cryptographic Message Syntax"/>
+      <term abbr="CN" full="Common Names"/>
+      <term abbr="CRL" full="Certificate Revocation List"/>
+      <term abbr="CSA" full="Computer Security Act"/>
+      <term abbr="DEP" full="Data Execution Prevention"/>
+      <term abbr="DES" full="Data Encryption Standard"/>
+      <term abbr="DHE" full="Diffie-Hellman Ephemeral"/>
+      <term abbr="DNS" full="Domain Name System"/>
+      <term abbr="DRBG" full="Deterministic Random Bit Generator"/>
+      <term abbr="DSS" full="Digital Signature Standard"/>
+      <term abbr="DT" full="Date/Time Vector"/>
+      <term abbr="DTLS" full="Datagram Transport Layer Security"/>
+      <term abbr="EAP" full="Extensible Authentication Protocol"/>
+      <term abbr="ECDHE" full="Elliptic Curve Diffie-Hellman Ephemeral"/>
+      <term abbr="ECDSA" full="Elliptic Curve Digital Signature Algorithm"/>
+      <term abbr="FIPS" full="Federal Information Processing Standards"/>
+      <term full="Endpoint">A computing device that runs a general purpose OS, mobile device OS, or network device OS. Endpoints can 
+      include desktops, servers, and mobile devices.
       </term>
       
-      <term full="Endpoint">A computing device that runs a general purpose OS, mobile device OS, or network device OS. Endpoints can 
-        include desktops, servers, and mobile devices.
-      </term>
-           
       <term full="Enrolled State">The state in which an endpoint with a running Host Agent is managed by an ESM.
-        Also, referred to as Onboarding.
+      Also, referred to as Onboarding.
       </term>
-           
+      
       <term full="Enrollment">The process of transitioning an endpoint from an unenrolled to an enrolled state.
       </term>
-            
+      
       <term full="Enterprise Security Management" abbr="ESM">A enterprise security management application hosted on a server or cloud service that provides 
-        support for security management, information flows, reporting, policy, and data analytics 
-        in complex enterprise environments.
+      support for security management, information flows, reporting, policy, and data analytics 
+      in complex enterprise environments.
       </term>
-           
-             
+      
+      
       <term full="Endpoint Detection and Response" abbr="EDR">A system that analyzes collected EDR Host Agent data for detecting, 
-        investigating, and remediating unauthorized activities on endpoints. 
+      investigating, and remediating unauthorized activities on endpoints. 
       </term>
-           
       <term full="Host Agent">A logical piece of software that executes on endpoints to collect data about the endpoint and
-        executes commands sent to the endpoint from an Enterprise Security Management (ESM) server
-        or service. An example command sent to an endpoint could be to enforce a policy from an 
-        ESM, to collect some files, or to run an OS command.
+      executes commands sent to the endpoint from an Enterprise Security Management (ESM) server
+      or service. An example command sent to an endpoint could be to enforce a policy from an 
+      ESM, to collect some files, or to run an OS command.
       </term>
-           
+
+      <term abbr="HMAC" full="Hash-based Message Authentication Code"/>
+      <term abbr="HTTP" full="Hypertext Transfer Protocol"/>
+      <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
+      <term abbr="IETF" full="Internet Engineering Task Force"/>
+      <term abbr="IP" full="Internet Protocol"/>
+      <term abbr="ISO" full="International Organization for Standardization"/>
+      <term abbr="IT" full="Information Technology"/>
+      <term abbr="ITSEF" full="Information Technology Security Evaluation Facility"/>
+      
+      <term abbr="NIAP" full="National Information Assurance Partnership"/>
+      <term abbr="NIST" full="National Institute of Standards and Technology"/>
+      <term abbr="OCSP" full="Online Certificate Status Protocol"/>
+      <term abbr="OID" full="Object Identifier"/>
+      <term abbr="OMB" full="Office of Management and Budget"/>
+      
       <term full="Operating System" abbr="OS">Software that manages physical and logical resources and provides services
-        for applications.
+      for applications.
       </term>
-           
+      
+      <term abbr="PII" full="Personally Identifiable Information"/>
+      <term abbr="PKI" full="Public Key Infrastructure"/>
+      <term abbr="PP" full="Protection Profile"/>
+      <term abbr="RBG" full="Random Bit Generator"/>
+      <term abbr="RFC" full="Request for Comment"/>
+      <term abbr="RNG" full="Random Number Generator"/>
+      <term abbr="RNGVS" full="Random Number Generator Validation System"/>
+      <term abbr="SAN" full="Subject Alternative Name"/>
+      <term abbr="SAR" full="Security Assurance Requirement"/>
+      <term abbr="SFR" full="Security Functional Requirement"/>
+      <term abbr="SHA" full="Secure Hash Algorithm"/>
+      <term abbr="S/MIME" full="Secure/Multi-purpose Internet Mail Extensions"/>
+      <term abbr="SIP" full="Session Initiation Protocol"/>
+      <term abbr="SWID" full="Software Identification"/>
       
       <term full="Unenrolled State">The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
-        Also, referred to as Offboarding.
+      Also, referred to as Offboarding.
       </term>
-           
-    
-      
+      <term abbr="TLS" full="Transport Layer Security"/>
+      <term abbr="URI" full="Uniform Resource Identifier"/>
+      <term abbr="URL" full="Uniform Resource Locator"/>
+      <term abbr="USB" full="Universal Serial Bus"/>
+      <term abbr="XCCDF" full="eXtensible Configuration Checklist Description Format"/>
+      <term abbr="XOR" full="Exclusive Or"/>
     </tech-terms>
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
@@ -306,7 +327,7 @@
             provide consistent and supported interfaces for their
             security-relevant configuration and maintenance.
           </description>
-          <addressed-by>FMT_SMF.1(1)</addressed-by>
+          <addressed-by>FMT_SMF.1/1</addressed-by>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
@@ -405,7 +426,7 @@
           <consistency-rationale>
             The Base-PP does not define an audit mechanism for its own functionality. This function does not interfere with the Base-PP.
           </consistency-rationale>
-          <f-element id="fau_gen.1.1">
+          <f-element>
             <title> 
               The Host Agent shall generate an audit record of the following auditable events: 
               <h:ol type='a'>
@@ -445,7 +466,7 @@
             </Guidance>
 </aactivity>
           </f-element>
-          <f-element id="fau_gen.1.2">
+          <f-element id="fel-audit-rec">
             <title> The 
               <selectables>
                 <selectable>Host Agent</selectable>
@@ -462,7 +483,7 @@
               .
             </title>
             <note role="application">
-              All audits must contain at least the information mentioned in FAU_GEN.1.2,
+              All audits must contain at least the information mentioned in <linkref linkend="fel-audit-rec"/>,
               but may contain more information. The term <h:i>subject</h:i> here is understood 
               to be the user that the process is acting on behalf of. The subject identity can
               be blank if not applicable for a given process.
@@ -513,7 +534,7 @@
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
           
-          <f-element id="fau_sto_ext.1.1">
+          <f-element>
             <title> 
               The
               <selectables>
@@ -585,7 +606,7 @@
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
           
-          <f-element id="fha_had_ext.1.1">
+          <f-element id="fil-decl"><!--fha_had_ext.1.1">-->
             <title> 
               The Host Agent shall operate with the following ESM Software; 
               <selectables linebreak="yes">
@@ -621,7 +642,7 @@
             </Guidance>
 </aactivity>
           </f-element>    
-          <f-element id="fha_had_ext.1.2">
+          <f-element id="fil-age-net"> <!--fha_had_ext.1.2">-->
             <title> 
               The Host Agent shall restrict network communications to; 
               <selectables linebreak="yes">
@@ -659,11 +680,12 @@
       
       <subsection title="Security Management (FMT)" id="fmt">
         
-        <f-component id="FMT_SMF.1(1)" name="Specification of Management Functions (Configuration of Host Agent)">
+        <f-component id="fmt_smf.1" iteration="1"
+		     name="Specification of Management Functions (Configuration of Host Agent)">
           <consistency-rationale>
             This SFR defines management functions for the SFRs defined in this PP-Module. It does not affect the management functions defined in the Base-PP.
           </consistency-rationale>
-          <f-element id="FMT_SMF.1.1(1)">
+          <f-element><!-- id="FMT_SMF.1.1(1)">-->
             <title>The <h:b>Host Agent</h:b> shall be capable of the
               following management functions:
               <h:br/>
@@ -731,7 +753,7 @@
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
           
-          <f-element id="FMT_UNR_EXT.1.1">
+          <f-element>
             <title>The 
               <selectables>
                 <selectable>Host Agent</selectable>
@@ -780,7 +802,7 @@
        </ext-comp-def>
        
       <f-component id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
-        <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
+        <selection-depends req="fil-decl" ids="AGT_EDR"/>
         <consistency-rationale>
           This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
@@ -791,7 +813,7 @@
         <dependencies>FHA_COL_EXT.1 Collected Audit<h:br/>
           FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
         
-        <f-element id="fha_cha_ext.1.1">
+        <f-element>
           <title> 
             The <h:b>Host Agent</h:b> shall cache collected data for a minimum of <assignable>value greater than 72</assignable> hours on 
             <selectables>
@@ -838,7 +860,7 @@
        </ext-comp-def>
       
       <f-component id="fha_col_ext.1" name="Collected Audit" >
-        <selection-depends req="fha_had_ext.1.1" ids="AGT_EDR"/>
+        <selection-depends req="fil-decl" ids="AGT_EDR"/>
         <consistency-rationale>
           This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
@@ -848,7 +870,7 @@
         <audit>There are no auditable events foreseen.</audit>
         <dependencies>FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
         
-        <f-element id="fha_col_ext.1.1">
+        <f-element>
           <title>The Host Agent shall collect the following minimum set of
             endpoint event data: <h:ol type="a">
               <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
@@ -891,7 +913,7 @@
        </ext-comp-def>
        
       <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
-        <selection-depends req="fha_had_ext.1.2" ids="AGT_PEER"/>
+        <selection-depends req="fil-age-net" ids="AGT_PEER"/>
         <consistency-rationale>
           This SFR defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
@@ -904,7 +926,7 @@
           FCS_TLSS_EXT.1 TLS Server Protocol] <h:br/>
           FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
         
-        <f-element id="ftp_dit_ext.2.1">
+        <f-element>
           <title>The Host Agent shall encrypt all transmitted data with TLS as defined in the TLS package 
           between itself and another Host Agent.
           </title>
@@ -959,7 +981,7 @@
         <audit>There are no auditable events foreseen.</audit>
         <dependencies>FCS_COP.1 Cryptographic Operation</dependencies>
         
-        <f-element id="FMT_POL_EXT.1.1">
+        <f-element>
           <title>The 
             <selectables>
               <selectable>Host Agent</selectable>
@@ -1034,239 +1056,6 @@
     </entry>
   </bibliography>
   
-  <acronyms>
-      <entry>
-        <term>AES</term>
-        <description>Advanced Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>ANSI</term>
-        <description>American National Standards Institute</description>
-      </entry>
-      <entry>
-        <term>API</term>
-        <description>Application Programming Interface</description>
-      </entry>
-      <entry>
-        <term>ASLR</term>
-        <description>Address Space Layout Randomization</description>
-      </entry>
-      <entry>
-        <term>CESG</term>
-        <description>Communications-Electronics Security Group</description>
-      </entry>
-      <entry>
-        <term>CMC</term>
-        <description>Certificate Management over CMS</description>
-      </entry>
-      <entry>
-        <term>CMS</term>
-        <description>Cryptographic Message Syntax</description>
-      </entry>
-      <entry>
-        <term>CN</term>
-        <description>Common Names</description>
-      </entry>
-      <entry>
-        <term>CRL</term>
-        <description>Certificate Revocation List</description>
-      </entry>
-      <entry>
-        <term>CSA</term>
-        <description>Computer Security Act</description>
-      </entry>
-      <entry>
-        <term>DEP</term>
-        <description>Data Execution Prevention</description>
-      </entry>
-      <entry>
-        <term>DES</term>
-        <description>Data Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>DHE</term>
-        <description>Diffie-Hellman Ephemeral</description>
-      </entry>
-      <entry>
-        <term>DNS</term>
-        <description>Domain Name System</description>
-      </entry>
-      <entry>
-        <term>DRBG</term>
-        <description>Deterministic Random Bit Generator</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>DT</term>
-        <description>Date/Time Vector</description>
-      </entry>
-      <entry>
-        <term>DTLS</term>
-        <description>Datagram Transport Layer Security</description>
-      </entry>
-      <entry>
-        <term>EAP</term>
-        <description>Extensible Authentication Protocol</description>
-      </entry>
-      <entry>
-        <term>ECDHE</term>
-        <description>Elliptic Curve Diffie-Hellman Ephemeral</description>
-      </entry>
-      <entry>
-        <term>ECDSA</term>
-        <description>Elliptic Curve Digital Signature Algorithm</description>
-      </entry>
-      <entry>
-        <term>FIPS</term>
-        <description>Federal Information Processing Standards</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>HMAC</term>
-        <description>Hash-based Message Authentication Code</description>
-      </entry>
-      <entry>
-        <term>HTTP</term>
-        <description>Hypertext Transfer Protocol</description>
-      </entry>
-      <entry>
-        <term>HTTPS</term>
-        <description>Hypertext Transfer Protocol Secure</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>IETF</term>
-        <description>Internet Engineering Task Force</description>
-      </entry>
-      <entry>
-        <term>IP</term>
-        <description>Internet Protocol</description>
-      </entry>
-      <entry>
-        <term>ISO</term>
-        <description>International Organization for Standardization</description>
-      </entry>
-      <entry>
-        <term>IT</term>
-        <description>Information Technology</description>
-      </entry>
-      <entry>
-        <term>ITSEF</term>
-        <description>Information Technology Security Evaluation Facility</description>
-      </entry>
-      <entry>
-        <term>NIAP</term>
-        <description>National Information Assurance Partnership</description>
-      </entry>
-      <entry>
-        <term>NIST</term>
-        <description>National Institute of Standards and Technology</description>
-      </entry>
-      <entry>
-        <term>OCSP</term>
-        <description>Online Certificate Status Protocol</description>
-      </entry>
-      <entry>
-        <term>OID</term>
-        <description>Object Identifier</description>
-      </entry>
-      <entry>
-        <term>OMB</term>
-        <description>Office of Management and Budget</description>
-      </entry>
-      <entry>
-        <term>OS</term>
-        <description>Operating System</description>
-      </entry>
-      <entry>
-        <term>PII</term>
-        <description>Personally Identifiable Information</description>
-      </entry>
-      <entry>
-        <term>PKI</term>
-        <description>Public Key Infrastructure</description>
-      </entry>
-      <entry>
-        <term>PP</term>
-        <description>Protection Profile</description>
-      </entry>
-      <entry>
-        <term>RBG</term>
-        <description>Random Bit Generator</description>
-      </entry>
-      <entry>
-        <term>RFC</term>
-        <description>Request for Comment</description>
-      </entry>
-      <entry>
-        <term>RNG</term>
-        <description>Random Number Generator</description>
-      </entry>
-      <entry>
-        <term>RNGVS</term>
-        <description>Random Number Generator Validation System</description>
-      </entry>
-      <entry>
-        <term>SAN</term>
-        <description>Subject Alternative Name</description>
-      </entry>
-      <entry>
-        <term>SAR</term>
-        <description>Security Assurance Requirement</description>
-      </entry>
-      <entry>
-        <term>SFR</term>
-        <description>Security Functional Requirement</description>
-      </entry>
-      <entry>
-        <term>SHA</term>
-        <description>Secure Hash Algorithm</description>
-      </entry>
-      <entry>
-        <term>S/MIME</term>
-        <description>Secure/Multi-purpose Internet Mail Extensions</description>
-      </entry>
-      <entry>
-        <term>SIP</term>
-        <description>Session Initiation Protocol</description>
-      </entry>
-      <entry>
-        <term>SWID</term>
-        <description>Software Identification</description>
-      </entry>
-      <entry>
-        <term>TLS</term>
-        <description>Transport Layer Security</description>
-      </entry>
-      <entry>
-        <term>URI</term>
-        <description>Uniform Resource Identifier</description>
-      </entry>
-      <entry>
-        <term>URL</term>
-        <description>Uniform Resource Locator</description>
-      </entry>
-      <entry>
-        <term>USB</term>
-        <description>Universal Serial Bus</description>
-      </entry>
-      <entry>
-        <term>XCCDF</term>
-        <description>eXtensible Configuration Checklist Description Format</description>
-      </entry>
-      <entry>
-        <term>XOR</term>
-        <description>Exclusive Or</description>
-      </entry>
-    </acronyms>
+  <acronyms/>
   
 </Module>
