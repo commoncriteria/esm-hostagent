@@ -504,11 +504,6 @@
               <Tests>
                 <testlist>
                   <test>
-                    The evaluator shall test the Host Agents ability to correctly generate
-                    audit records by having the Host Agent generate audit records for the
-                    events listed in the ST.
-                  </test>
-                  <test>
                     The evaluator shall
                     ensure the audit records generated during testing match the
                     format specified in the administrative guide, and that the fields
