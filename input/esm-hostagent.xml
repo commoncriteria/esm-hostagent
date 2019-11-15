@@ -28,7 +28,7 @@
   
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> The scope of this PP-Module is to
-      describe the security functionality of a Host Agent in terms of <abbr linkend="CC"/>
+      describe the security functionality of a Host Agent in terms of CC
       and to define functional and assurance requirements for such products. This Module 
       is not complete in itself, but rather uses the Protection Profile for 
       Application Software <cite linkend="bibAppPP"/> as a Base-PP. The combined requirements 
@@ -192,17 +192,17 @@
           <h:p>
             The Protection Profile for Application Software (<cite linkend="bibAppPP"/>)
             defines the baseline Security Functional Requirements (SFRs) and Security Assurance
-            Requirements (SARs) for application software products. This <abbr linkend="PP-Module"/> serves to
+            Requirements (SARs) for application software products. This PP-Module serves to
             extend the App PP baseline with additional SFRs and associated Evaluation Activities
             specific to a Host Agent.
             Evaluation Activities are the actions that the evaluator
             performs in order to determine an email client's compliance to the SFRs.
           </h:p>
           <h:p>
-            This <abbr linkend="PP-Module"/> conforms to Common Criteria <cite linkend="bibCC"/> for Information
+            This PP-Module conforms to Common Criteria <cite linkend="bibCC"/> for Information
             Technology Security Evaluation, Version 3.1, Revision 5. It is CC Part 2 extended and CC
-            Part 3 conformant. In order to be conformant to this <abbr linkend="PP-Module"/>, the <abbr
-              linkend="ST"/> must include all components in this <abbr linkend="PP-Module"/> and the
+            Part 3 conformant. In order to be conformant to this PP-Module, the ST
+	    must include all components in this PP-Module and the
             associated Base-PP that are: <h:ul><h:li>Unconditional (which are always required)</h:li>
               <h:li>Selection-Based (which are required when certain selections are chosen in the
                 unconditional requirements)</h:li>
@@ -498,6 +498,8 @@
               for audit records. Each audit record format type must be covered,
               along with a brief description of each field. The evaluator shall
               ensure that the fields contains the information required.
+                
+            </Guidance>
               
               <Tests>
                 <testlist>
@@ -514,8 +516,6 @@
                   </test>
                 </testlist>
               </Tests>
-                
-            </Guidance>
 </aactivity>
           </f-element>
         </f-component>
@@ -545,7 +545,7 @@
             </title>
             <note role="application">
               The term <h:i>audit events</h:i> here is understood to be only the set of events
-              defined in <linkref linkend="FAU_GEN.1"/>. If the job of this Host Agent is to generate
+              defined in FAU_GEN.1. If the job of this Host Agent is to generate
               or collect events for an enterprise security management server it is not expected 
               that those events will be stored in the platform provided logging mechanism.
             </note>
@@ -618,7 +618,7 @@
             <note role="application">
               Select the appropriate management system that is intended to be paired with 
               this Host Agent. Currently, a NIAP PP only exists for EDR, Systems Management and Audit Server will be added later. By selecting EDR 
-              the additional <linkref linkend="FHA_CHA_EXT.1"/> and <linkref linkend="FHA_COL_EXT.1"/>
+              the additional FHA_CHA_EXT.1 and FHA_COL_EXT.1
               requirements shall be included in the ST. 
               <h:br/>
             </note>
@@ -629,6 +629,8 @@
               <Guidance>   
               The evaluator shall check the administrative guide and ensure
               that guidence exists for enrollment with all compatible ESM products.
+  
+            </Guidance>
               
               <Tests>
                 <testlist>
@@ -639,8 +641,6 @@
                   </test>
                 </testlist>
               </Tests>
-  
-            </Guidance>
 </aactivity>
           </f-element>    
           <f-element id="fil-age-net"> <!--fha_had_ext.1.2">-->
@@ -653,7 +653,7 @@
             </title>
             <note role="application">
               By selecting another Host Agent 
-              the additional <linkref linkend="FTP_DIT_EXT.2"/>
+              the additional FTP_DIT_EXT.2
               requirements must be included in the ST for peer-to-peer communication. 
             </note>
             <aactivity>
@@ -707,7 +707,7 @@
               </management-function-set>
             </title>
             <note role="application"> This requirement captures all the configuration functionality
-              the <abbr linkend="TSF"/> provides the administrator to configure the Host Agent. The configuration of
+              the TSF provides the administrator to configure the Host Agent. The configuration of
               these management functions can be achieved by either local configuration of the Host Agent or by 
               remote configuration using the ESM Server.
               The frequency for sending data to an ESM can be specified as a time value, but does not have
@@ -729,8 +729,7 @@
                   <test>
                     The evaluator shall test the ability to configure the Host Agent and test each option 
                     from above. The evaluator is expected to test these functions in all the ways in which 
-                    the <abbr title="Security Target" linkend="ST">ST</abbr> and guidance documentation state
-                    the configuration can be managed.
+                    the ST and guidance documentation state    the configuration can be managed.
                   </test>
                 </testlist>
               </Tests>
@@ -886,7 +885,7 @@
             set of endpoint data that the Host Agent for an ESM EDR system must be capable of 
             collecting. This requirement only applies to Host Agents used with the 
             <cite linkend="bibEDRPP"/> PP per
-            the selection from <linkref linkend="FHA_HAD_EXT.1"/>.
+            the selection from FHA_HAD_EXT.1.
           </note>
           <aactivity>
             
@@ -949,9 +948,7 @@
                   The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
                   while capturing packets from the Host Agent. The evaluator shall verify from the packet
                   capture that the traffic is 
-                  encrypted with <h:abbr title="Transport Layer Security">TLS</h:abbr> or 
-                  in accordance with the selections in the <abbr title="Security Target" linkend="ST">ST
-                  </abbr>.
+                  encrypted with TLS or in accordance with the selections in the ST. 
                 </test>
               </testlist>
             </Tests>
