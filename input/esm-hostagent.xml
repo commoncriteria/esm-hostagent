@@ -13,7 +13,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-11-06</PPPubDate>
+      <PPPubDate>2019-11-25</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -21,7 +21,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2019-11-06</date>
+      <date>2019-11-25</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
@@ -213,7 +213,13 @@
             In accordance with CC Part 1, dependencies are not included when they are addressed by other SFRs.
             The evaluation activities provide adequate proof that any dependencies are also satisfied.
           </h:p>
+          <h:br/><h:br/>
+          If claiming compliance to a PP-Configuration that includes multiple PP-Modules, the ST author must ensure 
+          any duplicative SFRs are iterated using unique identifiers. This will allow the reader to easily determine 
+          which iteration applies to each TOE component.
         </description>
+        
+        
       </cclaim>
     </cclaims>
   </chapter>
@@ -279,6 +285,9 @@
           </objective-refer>
         </assumption>
       </assumptions>
+    </section>
+    <section title="Organizational Security Policies" id="OSPs">
+      This PP-Module defines no additional organizational security policies beyond those defined in the Base-PP.
     </section>
   </chapter>
   
@@ -389,7 +398,43 @@
       name="Application Software" short="App" 
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&amp;id=394"
       xmlurl="https://raw.githubusercontent.com/commoncriteria/application/c51970161d3a47fe8a7c23552f372745a638ba7d/input/application.xml">
-      <modified-sfrs/>
+      <sec-func-req-dir>
+        In a PP-Configuration that includes App PP, the TOE is expected to rely on some of the security functions implemented by the application 
+        as a whole and evaluated against the Base-PP.
+        The SFRs listed in this section are defined in the Base-PP and relevant to the secure operation of the Host Agent.
+        This section describes any modifications that the ST author must make to the Base-PP SFRs to satisfy the required Host Agent functionality.
+      </sec-func-req-dir>
+      
+      <modified-sfrs>
+        <subsection title="User Data Protection" id="FDP">
+        <f-component name="Network Communications" id="FDP_NET_EXT.1">
+          <consistency-rationale></consistency-rationale>
+           
+        <f-element id="fil-age-net"> <!--fha_had_ext.1.2">-->
+          <title> 
+            The Host Agent shall restrict network communications to; 
+            <selectables linebreak="yes">
+              <selectable id="AGT_MGMT">an ESM Server</selectable>
+              <selectable id="AGT_PEER">another Host Agent</selectable>
+            </selectables>
+          </title>
+          <note role="application">
+            By selecting another Host Agent 
+            the additional FTP_DIT_EXT.2
+            requirements must be included in the ST for peer-to-peer communication. <h:br/>
+            This restricts the selections in the Base-PP to a specific list of communications that may be user or application initiated.
+          </note>
+          <aactivity>
+            <TSS>The TSS is unchanged from the Base-PP.</TSS>
+            <Guidance>The guidance is unchanged from the Base-PP.</Guidance>
+            <Tests>The tests are unchanged from the Base-PP.</Tests>
+            
+          </aactivity>
+        </f-element>    
+        
+        </f-component>
+        </subsection>
+      </modified-sfrs>
       <additional-sfrs>
 
      
@@ -466,7 +511,7 @@
             
 </aactivity>
           </f-element>
-          <f-element id="fel-audit-rec">
+          <f-element>
             <title> The 
               <selectables>
                 <selectable>Host Agent</selectable>
@@ -483,7 +528,7 @@
               .
             </title>
             <note role="application">
-              All audits must contain at least the information mentioned in <linkref linkend="fel-audit-rec"/>,
+              All audits must contain at least the information mentioned in FAU_GEN.1.2,
               but may contain more information. The term <h:i>subject</h:i> here is understood 
               to be the user that the process is acting on behalf of. The subject identity can
               be blank if not applicable for a given process.
@@ -637,40 +682,9 @@
                 </testlist>
               </Tests>
 </aactivity>
-          </f-element>    
-          <f-element id="fil-age-net"> <!--fha_had_ext.1.2">-->
-            <title> 
-              The Host Agent shall restrict network communications to; 
-              <selectables linebreak="yes">
-                <selectable id="AGT_MGMT">an ESM Server</selectable>
-                <selectable id="AGT_PEER">another Host Agent</selectable>
-              </selectables>
-            </title>
-            <note role="application">
-              By selecting another Host Agent 
-              the additional FTP_DIT_EXT.2
-              requirements must be included in the ST for peer-to-peer communication. 
-            </note>
-            <aactivity>
-              
-              <TSS>There are no TSS activities for this requirement.</TSS>
-              
-              <Guidance>There are is no associated guidance for this requirement.</Guidance>
-              
-              <Tests>
-                <testlist>
-                  <test>
-                    While the Host Agent is running, the evaluator shall sniff 
-                    network traffic ignoring all non-application associated traffic 
-                    and verify that any network communications witnessed are documented in the TSS.
-                  </test>
-                </testlist>
-              </Tests>
-              
-            </aactivity>
-          </f-element>    
-          
+          </f-element>
         </f-component>
+        
 
       </subsection>
       
