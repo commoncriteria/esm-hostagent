@@ -929,7 +929,7 @@
               <selectable>Host Agent</selectable>
               <selectable>Host Agent Platform</selectable>
             </selectables> 
-            shall only accept policies or commands that are digitally signed.
+            shall only accept policies or commands that are digitally signed in accordance with FCS_COP.1.1(3).
           </title>
           <note role="application">
             The intent of this requirement is to cryptographically tie any policy updates or
