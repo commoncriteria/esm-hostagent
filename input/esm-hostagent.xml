@@ -258,32 +258,9 @@
     <section id="Assumptions" title="Assumptions">
       <assumptions>
         
-        <assumption id="A.PLATFORM">
-          <description>The TOE relies upon a trustworthy computing platform for its execution. 
-            This includes the underlying platform and whatever runtime environment it provides to the TOE.</description>
-          <objective-refer ref="OE.PLATFORM">
-            <rationale>The operational environment objective OE.PLATFORM is realized through
-              A.PLATFORM.</rationale>
-          </objective-refer>
-        </assumption>
         
-        <assumption id="A.PROPER_USER">
-          <description>The user of the application software is not willfully negligent or hostile, 
-            and uses the software in compliance with the applied enterprise security policy.</description>
-          <objective-refer ref="OE.PROPER_USER">
-            <rationale>The eperational environment objective OE.PROPER_USER is realized through
-              A.PROPER_USER.</rationale>
-          </objective-refer>
-        </assumption>
-        
-        <assumption id="A.PROPER_ADMIN">
-          <description>The administrator of the application software is not careless, willfully negligent or hostile, 
-            and administers the software in compliance with the applied enterprise security policy.</description>
-          <objective-refer ref="OE.PROPER_ADMIN">
-            <rationale>The operational environment objective OE.PROPER_ADMIN is realized through
-              A.PROPER_ADMIN.</rationale>
-          </objective-refer>
-        </assumption>
+       
+      
       </assumptions>
     </section>
     <section title="Organizational Security Policies" id="OSPs">
@@ -360,30 +337,7 @@
       environment assist the Host Agent in correctly providing its security functionality.
       These track with the assumptions about the environment. 
       <SOEs>
-        <SOE id="OE.PLATFORM">
-          <description>The Host Agent relies on being installed on a trusted
-            platform.</description>
-          <consistency-rationale>
-            This objective is inherited from the Base-PP. 
-          </consistency-rationale>
-        </SOE>
-        <SOE id="OE.PROPER_USER">
-          <description> The user of the Host Agent is not willfully negligent or hostile,
-            and uses the software within compliance of the applied enterprise security policy.
-           </description>
-          <consistency-rationale>
-            This objective is inherited from the Base-PP. 
-          </consistency-rationale>
-        </SOE>
-        <SOE id="OE.PROPER_ADMIN">
-          <description> The administrator of the Host Agent is not careless, willfully
-            negligent or hostile, and administers the Host Agent within compliance of the applied enterprise
-            security policy. 
-          </description>
-          <consistency-rationale>
-            This objective is inherited from the Base-PP. 
-          </consistency-rationale>
-        </SOE>
+        
       </SOEs>
     </section>
     <section id="secconrat" title="Security Objectives Rationale">
