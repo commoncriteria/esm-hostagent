@@ -588,8 +588,8 @@
               <!--<selectables linebreak="yes">
                 <selectable id="AGT_EDR">>--><h:br/>Endpoint Detection and Response (EDR) <!--</selectable>
                 <selectable id="AGT_SM">Systems Management</selectable>
-                <selectable id="AGT_AUD">Audit Server</selectable>>-->
-              </selectables>
+                <selectable id="AGT_AUD">Audit Server</selectable>
+              </selectables>>-->
             </title>
             <note role="application">
               Select the appropriate management system that is intended to be paired with 
