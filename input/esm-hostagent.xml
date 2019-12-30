@@ -871,19 +871,17 @@
           FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
         
         <f-element>
-          <title>The Host Agent shall encrypt all transmitted data with TLS as defined in the TLS package 
-          between itself and another Host Agent.
+          <title>The Host Agent shall encrypt all transmitted data according to FPT_DIT_EXT.1 between itself and another Host Agent.
           </title>
           <note role="application">
             This requirement is designed to protect the communications with other Host Agents 
             in a peer-to-peer scenario where Host Agents are sending/receiving data from each other.
-            If "encrypts all transmitted data with TLS" is selected the appropriate TLSC and TLSS requirements
-            must be included in the ST.
+            
           </note>  
           <aactivity>
             
             <TSS>The evaluator shall verify that the TSS contains a description of all data transmitted to other Host Agents and 
-            that all such data is protected by TLS.</TSS>
+            that all such data is protected by according to FPT_DIT_EXT.1.</TSS>
             <Guidance>The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
             to other Host Agents is protected by TLS.</Guidance> 
             
@@ -893,7 +891,7 @@
                   The evaluator shall exercise the Host Agent (attempting to cause transmission of data)
                   while capturing packets from the Host Agent. The evaluator shall verify from the packet
                   capture that the traffic is 
-                  encrypted with TLS or in accordance with the selections in the ST. 
+                  encrypted in accordance with the selections in the ST. 
                 </test>
               </testlist>
             </Tests>
