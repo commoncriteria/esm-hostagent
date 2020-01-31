@@ -13,7 +13,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-01-24</PPPubDate>
+      <PPPubDate>2020-01-31</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -21,7 +21,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2020-01-24</date>
+      <date>2020-01-31</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
@@ -427,27 +427,6 @@
               API's available from the platform if needed to generate the audit events.  For the selection one or both options may be selected.
               The assignment may be empty, a single item, or multiple items.
             </note>
-            <aactivity>
-           <TSS>The evaluator shall verify the TSS lists all record types that are recorded.</TSS>
-            
-              <Guidance>
-              The evaluator shall check the administrative guide and ensure
-              that it lists all of the auditable events.  The evaluator shall
-              check to make sure that every audit event type selected in the ST
-              is included.</Guidance>
-              
-              <Tests>
-                <testlist>
-                  <test>
-                    The evaluator shall test the Host Agent's ability to correctly generate
-                    audit records by having the Host Agent generate audit records for each type of 
-                    event listed in the ST.
-                  </test>
-                </testlist>
-              </Tests>
-             
-            
-</aactivity>
           </f-element>
           <f-element>
             <title> The 
@@ -473,10 +452,16 @@
               be blank if not applicable for a given process. The assignment may be empty, a single item, or multiple items.
             </note>
             <aactivity>
-              
-              <TSS>The evaluator shall verify that the TSS lists all the auditable event types and all audit information that the TOE records.</TSS>
+      
+              <TSS>The evaluator shall verify the TSS lists all record types that are recorded. <h:br/><h:br/>
+                The evaluator shall verify that the TSS lists all the auditable event types and all audit information that the TOE records.</TSS>
                
               <Guidance>
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the auditable events.  The evaluator shall
+                check to make sure that every audit event type selected in the ST
+                is included.<h:br/><h:br/>
+                
               The evaluator shall check the administrative guide and ensure
               that it provides a format
               for audit records. Each audit record format type must be covered,
@@ -487,6 +472,11 @@
               
               <Tests>
                 <testlist>
+                  <test>
+                    The evaluator shall test the Host Agent's ability to correctly generate
+                    audit records by having the Host Agent generate audit records for each type of 
+                    event listed in the ST.
+                  </test>
                   <test>
                     The evaluator shall
                     ensure the audit records generated during testing match the
