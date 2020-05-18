@@ -213,7 +213,7 @@
       
       
       <threats>
-          <threat id="T.DATA_LOSS">
+          <threat name="T.DATA_LOSS">
           <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the Enterprise Security Management (ESM) system is not present. 
           </description>
@@ -224,7 +224,7 @@
             </rationale>
           </objective-refer>
         </threat>
-        <threat id="T.TAMPER">
+        <threat name="T.TAMPER">
           <description>A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall
             or disrupt the Host Agent's ability to function properly.
           </description>
@@ -261,56 +261,61 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.ACCOUNTABILITY">
+        <SO name="O.ACCOUNTABILITY">
           <description>Conformant Host Agents ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the Host Agent.</description>
           <addressed-by>FAU_GEN.1, FAU_STO_EXT.1</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>
             This objective relates to the TOE's generation and storage of audit data that is used to detect potential configuration or operational issues on host systems. This functionality is defined by the PP-Module
             and does not affect the ability of the TOE to enforce the Base-PP's security objectives.
           </consistency-rationale>
         </SO>
-        <SO id="O.DATA_RECORDER">
+        <SO name="O.DATA_RECORDER">
           <description>
             Conformant Host Agents ensure that specific security information is cached or queued during periods
             when the trusted channel is not available. This will prevent data loss of Host Agent data and allow for proper remediation.
           </description>
           <addressed-by>FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based), FHA_HAD_EXT.1</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>
             This objective relates to the availability of data collected by the TSF. This data is specified to ESM Host Agent
             functionailty and does not affect the functionality defined by the Base-PP.
           </consistency-rationale>
         </SO>
-        <SO id="O.INTEGRITY">
+        <SO name="O.INTEGRITY">
           <description>
             Conformant Host Agents will ensure the integrity of policy and/or commands sent to 
             the Host Agent and also leverage execution environment or platform-based mitigations
             to protect the Host Agent.
           </description>
           <addressed-by>FMT_POL_EXT.1 (objective), FMT_UNR_EXT.1</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
-        <SO id="O.MANAGEMENT">
+        <SO name="O.MANAGEMENT">
           <description>To facilitate management by the enterprise, conformant Host Agents
             provide consistent and supported interfaces for their
             security-relevant configuration and maintenance.
           </description>
           <addressed-by>FMT_SMF.1/1</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
           </consistency-rationale>
         </SO>
-        <SO id="O.PROTECTED_COMMS">
+        <SO name="O.PROTECTED_COMMS">
           <description> To address both passive (eavesdropping) and active (packet modification)
             network attack threats, conformant Host Agents will use a trusted channel 
             for sending and receiving data.
           </description>
           <addressed-by>FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements to satisfy the objective that relate to the specific functionality described by the PP-Module.
@@ -347,7 +352,7 @@
         <f-component name="Network Communications" id="FDP_NET_EXT.1">
           <consistency-rationale></consistency-rationale>
            
-        <f-element id="fil-age-net"> <!--fha_had_ext.1.2">-->
+        <f-element>
           <title> 
             The Host Agent shall restrict network communications to: 
             <selectables linebreak="yes">
@@ -628,7 +633,7 @@
               following management functions:
               <h:br/>
               <management-function-set default="O">
-                <manager id="a">Administrator</manager>
+                <manager cid="a">Administrator</manager>
                 <management-function>
                   <text>
                     Configure the frequency for sending Host Agent data to an ESM
@@ -979,7 +984,7 @@
     <entry id="bibAppPP">
       <tag>AppPP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/pp/PP_APP_v1.1/">Protection Profile for Application Software</h:a>
+        <h:a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application Software</h:a>
       </description>
     </entry>
     <entry id="bibEDRPP">
