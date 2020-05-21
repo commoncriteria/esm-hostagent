@@ -242,11 +242,10 @@
       </threats>
     </section>
     <section id="Assumptions" title="Assumptions">
+      
+      This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
       <assumptions>
         
-        
-       
-      
       </assumptions>
     </section>
     <section title="Organizational Security Policies" id="OSPs">
