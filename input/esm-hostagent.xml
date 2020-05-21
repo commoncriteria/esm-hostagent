@@ -349,7 +349,7 @@
       
       <modified-sfrs>
         <subsection title="User Data Protection" id="FDP">
-        <f-component name="Network Communications" id="FDP_NET_EXT.1">
+        <f-component name="Network Communications" id="fdp_net_ext.1">
           <consistency-rationale></consistency-rationale>
            
         <f-element>
