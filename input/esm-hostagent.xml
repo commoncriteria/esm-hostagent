@@ -223,6 +223,12 @@
               system.
             </rationale>
           </objective-refer>
+            <objective-refer ref="O.MANAGEMENT">
+              <rationale>The threat T.DATA_LOSS is countered by O.MANAGEMENT as this
+                provides for the management of sending data and tracking of enrolled hosts.
+              </rationale>
+            </objective-refer>
+            
         </threat>
         <threat name="T.TAMPER">
           <description>A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall
@@ -273,8 +279,10 @@
         </SO>
         <SO name="O.DATA_RECORDER">
           <description>
-            Conformant Host Agents ensure that specific security information is cached or queued during periods
-            when the trusted channel is not available. This will prevent data loss of Host Agent data and allow for proper remediation.
+            Conformant Host Agents will collect security-relevant data from a target entity in the 
+            Operational Environment and transmit it to a trusted entity for further processing. 
+            They will also implement mechanisms to ensure that collected data is retained in the event 
+            that the trusted channel is unavailable to prevent data loss.
           </description>
           <addressed-by>FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based), FHA_HAD_EXT.1</addressed-by>
           <rationale>PUT IN SOMETHING QQQQ</rationale>
@@ -313,7 +321,7 @@
             network attack threats, conformant Host Agents will use a trusted channel 
             for sending and receiving data.
           </description>
-          <addressed-by>FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based), FDP_NET_EXT.1</addressed-by>
+          <addressed-by>FDP_NET_EXT.1, FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)</addressed-by>
           <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
