@@ -596,7 +596,7 @@
               </selectables>>-->
             </title>
             <note role="application">
-              Currently, a NIAP PP-Module only exists for EDR; Systems Management and Audit Server will be added later. By including EDR 
+              Currently, a NIAP PP-Module only exists for EDR; Systems Management and Audit Server will be added later. These specific modules are ESM servers as refered to elsewhere in the document.By including EDR 
               the additional FHA_CHA_EXT.1 and FHA_COL_EXT.1
               requirements shall be included in the ST. 
               <h:br/>
