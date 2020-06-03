@@ -783,7 +783,7 @@
           </note>
           <aactivity>
             
-            <TSS>The evalutator shall verify the TSS details how data is cached, any rules that would effect data caching, 
+            <TSS>The evalutator shall verify the TSS details how data is cached, any rules that would affect data caching, 
               and how cached data will be effected if storage limit are reached.</TSS>
             <Guidance>The evalutor shall verify that any configuration options related to data caching is listed in the guidance.</Guidance>
             
@@ -892,7 +892,7 @@
             <TSS>The evaluator shall verify that the TSS contains a description of all data transmitted to other Host Agents and 
             that all such data is protected by according to FPT_DIT_EXT.1.</TSS>
             <Guidance>The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
-            to other Host Agents is protected by TLS.</Guidance> 
+            to other Host Agents is protected by according to FPT_DIT_EXT.1.</Guidance> 
             
             <Tests>
               <testlist>
