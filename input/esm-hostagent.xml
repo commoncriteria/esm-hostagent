@@ -329,9 +329,7 @@
       </SOs>
     </section>
     <section title="Security Objectives for the Operational Environment"
-      id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
-      environment assist the Host Agent in correctly providing its security functionality.
-      These track with the assumptions about the environment. 
+      id="SecurityObjectivesTOEorEnvironment">
     </section>
     <section id="secconrat" title="Security Objectives Rationale">
     </section>
