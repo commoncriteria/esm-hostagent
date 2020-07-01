@@ -351,36 +351,6 @@
       </sec-func-req-dir>
       
       <modified-sfrs>
-        <subsection title="User Data Protection" id="FDP">
-        <f-component name="Network Communications" cc-id="fdp_net_ext.1">
-          <consistency-rationale> The Base-PP does not define specific network communications for EDR - HA communications. 
-            This function does not interfere with the Base-PP.
-          </consistency-rationale>
-           
-          <f-element id="fil-age-net">
-          <title> 
-            The Host Agent shall restrict network communications to: 
-            <selectables linebreak="yes">
-              <selectable id="AGT_MGMT">an ESM server</selectable>
-              <selectable id="AGT_PEER">another Host Agent</selectable>
-            </selectables>
-          </title>
-          <note role="application">
-            By selecting another Host Agent 
-            the additional FTP_DIT_EXT.2
-            requirements must be included in the ST for peer-to-peer communication. <h:br/>
-            This restricts the selections in the Base-PP to a specific list of communications that may be user or application initiated.
-          </note>
-          <aactivity>
-            <TSS>The TSS is unchanged from the Base-PP.</TSS>
-            <Guidance>The guidance is unchanged from the Base-PP.</Guidance>
-            <Tests>The tests are unchanged from the Base-PP.</Tests>
-            
-          </aactivity>
-        </f-element>    
-        
-        </f-component>
-        </subsection>
       </modified-sfrs>
       <additional-sfrs>
 
@@ -566,6 +536,44 @@
       <!-- SME: note that FHA is an extended class. To satisfy APE_ECD, there should also be a definition for the
       class itself and not just the components in it. I don't know if there is currently a way to do that in the template
       so it has been left out for now. -->
+        <subsection title="User Data Protection" id="FDP">
+        <f-component name="Network Communications" cc-id="fdp_net_ext.2">
+          <consistency-rationale> The Base-PP does not define specific network communications for EDR - HA communications. 
+            This function does not interfere with the Base-PP.
+          </consistency-rationale>
+           
+          <f-element id="fil-age-net">
+          <title> 
+            The Host Agent shall restrict network communications to: 
+            <selectables linebreak="yes">
+              <selectable id="AGT_MGMT">an ESM server</selectable>
+              <selectable id="AGT_PEER">another Host Agent</selectable>
+            </selectables>
+          </title>
+          <note role="application">
+            By selecting another Host Agent 
+            the additional FTP_DIT_EXT.2
+            requirements must be included in the ST for peer-to-peer communication. <h:br/>
+            This restricts the selections in the Base-PP to a specific list of communications that may be user or application initiated.
+          </note>
+          <aactivity>
+            <TSS>The evaluator shall confirm the TSS lists network communication destinations and that it matches the seleections made in the SFR.</TSS>
+            <Guidance>The evaluator shall confirm that guidance is provided for any configuartion needed to limit network comminications.</Guidance>
+           
+              <Tests>
+                    The evaluator shall run the application.  While the application is running,
+                    the evaluator shall sniff network traffic ignoring all non-application 
+                    associated traffic
+                    and verify that any network communications witnessed are limited to the selection made in the SFR. 
+                  
+              </Tests>
+            
+            
+          </aactivity>
+        </f-element>    
+        
+        </f-component>
+        </subsection>
       <subsection title="Host Agent (FHA)" id="fha">
         
         <ext-comp-def fam-id="FHA_HAD_EXT" title="Host Agent Declaration">
