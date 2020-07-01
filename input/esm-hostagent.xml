@@ -352,7 +352,7 @@
       
       <modified-sfrs>
         <subsection title="User Data Protection" id="FDP">
-        <f-component name="Network Communications" id="fdp_net_ext.1">
+        <f-component name="Network Communications" cc-id="fdp_net_ext.1">
           <consistency-rationale> The Base-PP does not define specific network communications for EDR - HA communications. 
             This function does not interfere with the Base-PP.
           </consistency-rationale>
@@ -414,7 +414,7 @@
        
        <!-- SME: this was changed from FAU_GEN.1/HA because the iteration convention defines the (1) notation
        and that is a fixed part of the module template. -->
-        <f-component id="fau_gen.1" name="Audit Data Generation (Refined)">
+        <f-component cc-id="fau_gen.1" name="Audit Data Generation (Refined)">
           <consistency-rationale>
             The Base-PP does not define an audit mechanism for its own functionality. This function does not interfere with the Base-PP.
           </consistency-rationale>
@@ -502,7 +502,7 @@
                <mod-def>Components in this family define requirements for the location and method of audit storage.</mod-def>
              </ext-comp-def>
       
-        <f-component id="fau_sto_ext.1" name="Audit Data Storage">
+        <f-component cc-id="fau_sto_ext.1" name="Audit Data Storage">
           <consistency-rationale>
             The Base-PP does not define an audit mechanism for its own functionality. This function does not interfere with the Base-PP.
           </consistency-rationale>
@@ -572,7 +572,7 @@
           <mod-def>Components in this family define requirements for the ESM functionality that the TOE is compatible with.</mod-def>
         </ext-comp-def>
        
-        <f-component id="fha_had_ext.1" name="Host Agent Declaration">
+        <f-component cc-id="fha_had_ext.1" name="Host Agent Declaration">
           <consistency-rationale>
             This SFR defines the type of software the Host Agent is intended to operate 
             and communicate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
@@ -627,7 +627,7 @@
       
       <subsection title="Security Management (FMT)" id="fmt">
         
-        <f-component id="fmt_smf.1" iteration="1"
+        <f-component cc-id="fmt_smf.1" iteration="1"
 		     name="Specification of Management Functions (Configuration of Host Agent)">
           <consistency-rationale>
             This SFR defines management functions for the SFRs defined in this PP-Module. It does not affect the management functions defined in the Base-PP.
@@ -692,7 +692,7 @@
            cannot remove the TOE from management by another ESM component.</mod-def>
         </ext-comp-def>
         
-        <f-component id="fmt_unr_ext.1" name="User Unenrollment Prevention">
+        <f-component cc-id="fmt_unr_ext.1" name="User Unenrollment Prevention">
           <consistency-rationale>
             This SFR defines protections to prevent users from tampering with the Host Agent. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
           </consistency-rationale>
@@ -750,7 +750,7 @@
          <mod-def>Components in this family define requirements for the location and duration of storage for its collected data.</mod-def>
        </ext-comp-def>
        
-      <f-component id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
+      <f-component cc-id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
         <selection-depends req="fil-decl" ids="AGT_EDR"/>
         <consistency-rationale>
           This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
@@ -810,7 +810,7 @@
            its Operational Environment as audit data.</mod-def>
        </ext-comp-def>
       
-      <f-component id="fha_col_ext.1" name="Collected Audit" >
+      <f-component cc-id="fha_col_ext.1" name="Collected Audit" >
         <selection-depends req="fil-decl" ids="AGT_EDR"/>
         <consistency-rationale>
           This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
@@ -863,7 +863,7 @@
          to the existing family definition.</mod-def>
        </ext-comp-def>
        
-      <f-component id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
+      <f-component cc-id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
         <selection-depends req="fil-age-net" ids="AGT_PEER"/>
         <consistency-rationale>
           This SFR defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
@@ -914,7 +914,7 @@
          <mod-def>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</mod-def>
        </ext-comp-def>
        
-      <f-component id="fmt_pol_ext.1" name="Trusted Policy Update">
+      <f-component cc-id="fmt_pol_ext.1" name="Trusted Policy Update">
         <consistency-rationale>
           This SFR defines protections for the integrity of commands sent to the Host Agent. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
