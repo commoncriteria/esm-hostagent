@@ -146,7 +146,7 @@
               <figure entity="images/Host_Agent_sample.png" title="Sample Host Agent TOE" id="toe"/>
             </h:td>
             <h:td>
-              <figure entity="images/Host_Agent_sample2.png" title="Sample Host Agent TOE" id="toe"/>
+              <figure entity="images/Host_Agent_sample2.png" title="Sample Host Agent TOE" id="toe2"/>
             </h:td>
           </h:tr>
         </h:table>
@@ -753,7 +753,7 @@
     <opt-sfrs></opt-sfrs>
     
     <sel-sfrs>
-     <subsection title="Host Agent (FHA)" id="fha">
+     <subsection title="Host Agent (FHA)" id="fha-sel">
        
        <ext-comp-def fam-id="FHA_CHA_EXT" title="Cache Host Agent Collected Data">
          <mod-def>Components in this family define requirements for the location and duration of storage for its collected data.</mod-def>
@@ -917,7 +917,7 @@
     </sel-sfrs>
     
     <obj-sfrs>
-     <subsection title="Security Management (FMT)" id="fmt">
+     <subsection title="Security Management (FMT)" id="fmt-obj">
        
        <ext-comp-def fam-id="FMT_POL_EXT" title="Trusted Policy Update">
          <mod-def>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</mod-def>
