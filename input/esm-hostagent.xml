@@ -220,7 +220,7 @@
                 provides for the management of sending data and tracking of enrolled hosts.
               </rationale>
             </objective-refer>
-            
+           <consistency-rationale>QQQQQ</consistency-rationale> 
         </threat>
         <threat name="T.TAMPER">
           <description>A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall
@@ -236,6 +236,7 @@
               the Host Agent and report artifact up to the ESM system that could help to discover tampering.
             </rationale>
           </objective-refer>
+          <consistency-rationale>QQQQQ</consistency-rationale> 
         </threat>
       </threats>
     </section>
