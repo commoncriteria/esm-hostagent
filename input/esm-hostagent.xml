@@ -218,7 +218,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
           SFRs (dated May 2017).<h:p/> 
           The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
           <h:ul>
-            <h:li>Protection Profile for Application Software, Version 1.3.</h:li>
+            
             <h:li>PP-Module for Endpoint Detection and Response (EDR), Version 1.0.</h:li>
           </h:ul><h:p/>
         </description>
@@ -238,7 +238,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
   <chapter title="Security Problem Description" id="spd">The security problem is described in terms
     of the threats that the Host Agent is expected to address, assumptions about the
     Operational Environment, and any organizational security policies that the Host Agent
-    is expected to enforce. 
+    is expected to enforce. These extend any threats, assumptions, and organizational security policies defined by the Base-PP.
     <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the <cite linkend="bibAppPP"/>, though they all apply given the conformance and hence dependence of this PP-Module on the <cite linkend="bibAppPP"/>.
       
       
@@ -436,7 +436,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
           </consistency-rationale>
           <f-element>
             <title> 
-              The <h:b>Host Agent</h:b> shall generate an audit record of the following auditable events:
+              <h:b>Refinement:</h:b> The <h:b>Host Agent</h:b> shall generate an audit record of the following auditable events:
               <h:ol type='a'>
                 <h:li><h:del>Start-up and shutdown of the audit functions;</h:del></h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
@@ -459,7 +459,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             </note>
           </f-element>
           <f-element>
-            <title> The <h:b>
+            <title> <h:b>Refinement:</h:b> The <h:b>
               <selectables>
                 <selectable>Host Agent</selectable>
                 <selectable>Host Agent Platform</selectable>
@@ -469,7 +469,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
                 <h:li>Date and time of the event,</h:li>
                 <h:li>Type of event,</h:li>
                 <h:li>Subject identity,</h:li>
-                <h:li>Outcome (success or failure) of the event, <h:b>if relevant</h:b>,</h:li>
+                <h:li>Outcome (success or failure) of the event,</h:li>
                 <h:li>For each audit type, based on the auditable event definitions of the functional components included in the PP/ST, <assignable>Other audit relevant information</assignable>.</h:li>
               </h:ol>
               
