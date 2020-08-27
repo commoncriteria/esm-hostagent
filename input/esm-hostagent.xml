@@ -247,6 +247,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
           <description>A Host Agent can be susceptible to data loss during periods when connectivity
             to the ESM system is not present. 
           </description>
+            <consistency-rationale>TESTTEXT</consistency-rationale>
           <objective-refer ref="O.DATA_RECORDER">
             <rationale>The threat T.DATA_LOSS is countered by O.DATA_RECORDER as this
               provides for caching of data by a Host Agent during periods when not connected to the ESM 
@@ -264,6 +265,7 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
           <description>A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall
             or disrupt the Host Agent's ability to function properly.
           </description>
+          <consistency-rationale>TESTTEXT</consistency-rationale>
           <objective-refer ref="O.ACCOUNTABILITY">
             <rationale>The threat T.TAMPER is countered by O.ACCOUNTABILITY which protect
               the Host Agent and report artifact up to the ESM system that could help to discover tampering.I
@@ -303,13 +305,13 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             administrators to discover unintentional issues with the configuration and operation of
             the Host Agent.<h:p/>
           Addressed by: FAU_GEN.1/HA, FAU_STO_EXT.1</description>
+          <consistency-rationale>
+            This objective relates to the TOE's generation and storage of audit data that is used to detect potential configuration or operational issues on host systems. This functionality is defined by the PP-Module
+            and does not affect the ability of the TOE to enforce the Base-PP's security objectives.</consistency-rationale>
           <addressed-by>FAU_GEN.1/HA, FAU_STO_EXT.1</addressed-by>
           <rationale>The PP-Module includes FAU_GEN.1/HA to ensure that the TOE provides accountability through the generation of audit records for security-relevant events. <h:br/><h:br/>
             The PP-Module includes FAU_STO_EXT.1 to ensure that the TOE provides accountability by ensuring that audit records are stored using an appropriate mechanism.</rationale>
-          <consistency-rationale>
-            This objective relates to the TOE's generation and storage of audit data that is used to detect potential configuration or operational issues on host systems. This functionality is defined by the PP-Module
-            and does not affect the ability of the TOE to enforce the Base-PP's security objectives.
-          </consistency-rationale>
+         
         </SO>
         <SO name="O.DATA_RECORDER">
           <description>
@@ -319,14 +321,14 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             that the trusted channel is unavailable to prevent data loss. <h:p/>
             Addressed by: FHA_HAD_EXT.1, FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based)
           </description>
+          <consistency-rationale>
+            This objective relates to the availability of data collected by the TSF. This data is specified to ESM Host Agent
+            functionailty and does not affect the functionality defined by the Base-PP.</consistency-rationale>
           <addressed-by>FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based), FHA_HAD_EXT.1</addressed-by>
           <rationale>The PP-Module includes FHA_HAD_EXT.1 to define the interface between the Host Agent and the intended destination for the data it transmits.
             <h:br/><h:br/>The PP-Module includes FHA_CHA_EXT.1 to define the ability of the Host Agent to maintain collected data during periods of communications outage.
             <h:br/><h:br/>The PP-Module includes FHA_COL_EXT.1 to define the data that the Host Agent can collect from its Operational Environment.</rationale>
-          <consistency-rationale>
-            This objective relates to the availability of data collected by the TSF. This data is specified to ESM Host Agent
-            functionailty and does not affect the functionality defined by the Base-PP.
-          </consistency-rationale>
+ 
         </SO>
         <SO name="O.INTEGRITY">
           <description>
@@ -335,13 +337,13 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             to protect the Host Agent.<h:p/>
             Addressed by: FMT_UNR_EXT.1, FMT_POL_EXT.1 (objective)
           </description>
+          <consistency-rationale>
+            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
+            by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.</consistency-rationale>
           <addressed-by>FMT_POL_EXT.1 (objective), FMT_UNR_EXT.1</addressed-by>
           <rationale>The PP-Module includes FMT_UNR_EXT.1 to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.
             <h:br/><h:br/>The PP-Module includes FMT_POL_EXT.1 to optionally ensure that policy and/or command data sent to the Host Agent has its integrity proven with a verifiable digital signature before being accepted.</rationale>
-          <consistency-rationale>
-            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
-            by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.
-          </consistency-rationale>
+
         </SO>
         <SO name="O.MANAGEMENT">
           <description>To facilitate management by the enterprise, conformant Host Agents
@@ -349,12 +351,13 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             security-relevant configuration and maintenance.<h:p/>
             Addressed by: FMT_SMF.1/HA
           </description>
-          <addressed-by>FMT_SMF.1/HA</addressed-by>
-          <rationale>The PP-Module includes FMT_SMF.1/HA to define the management functions that are configurable on the Host Agent.</rationale>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.
           </consistency-rationale>
+          <addressed-by>FMT_SMF.1/HA</addressed-by>
+          <rationale>The PP-Module includes FMT_SMF.1/HA to define the management functions that are configurable on the Host Agent.</rationale>
+          
         </SO>
         <SO name="O.PROTECTED_COMMS">
           <description> To address both passive (eavesdropping) and active (packet modification)
@@ -362,14 +365,15 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             for sending and receiving data.<h:p/>
             Addressed by: FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)
           </description>
-          <addressed-by>FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)</addressed-by>
-          <rationale>The PP-Module includes FTP_DIT_EXT.1 by reference to show that the Host Agent is capable of using a trusted channel defined by the Base-PP for its own specific use.
-            <!-- <h:br/><h:br/>The PP-Module modifies FDP_NET_EXT.1 from its Base-PP definition to define the specific external interfaces the Host Agent has that require the use of a trusted channel.  -->
-            <h:br/><h:br/>The PP-Module includes FTP_DIT_EXT.2 to optionally define the trusted communications channel between multiple Host Agents.</rationale>
           <consistency-rationale>
             This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
             by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.
           </consistency-rationale>
+          <addressed-by>FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)</addressed-by>
+          <rationale>The PP-Module includes FTP_DIT_EXT.1 by reference to show that the Host Agent is capable of using a trusted channel defined by the Base-PP for its own specific use.
+            <!-- <h:br/><h:br/>The PP-Module modifies FDP_NET_EXT.1 from its Base-PP definition to define the specific external interfaces the Host Agent has that require the use of a trusted channel.  -->
+            <h:br/><h:br/>The PP-Module includes FTP_DIT_EXT.2 to optionally define the trusted communications channel between multiple Host Agents.</rationale>
+         
         </SO>
       </SOs>
     </section>
