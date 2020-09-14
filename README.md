@@ -18,7 +18,7 @@ See the [release](#Release-Version) section if you are looking for the officiall
 * [Supporting Document for Host Agent](https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-sd.pdf) (pdf)
 
 ## Release Version
-* Protection Profile Module for Host Agent (coming soon)
+* Protection Profile Module for Host Agent (coming soon).
 
 ## Contributing
 
