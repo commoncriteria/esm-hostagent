@@ -561,7 +561,6 @@ and so it is recommended that the intro text and associated table heading be upd
               <h:p/></Guidance>
               
               <Tests>
-                  <test>
                     The evaluator shall test the Host Agent's ability to correctly generate
                     audit records by having the TOE generate audit records for the
                     events listed in the ST.  This should include all instance types
@@ -574,7 +573,6 @@ and so it is recommended that the intro text and associated table heading be upd
                     platforms this would be the Windows Event Log.
                     <h:p/>
                     No specific locations are defined for other platforms.
-                  </test>
               </Tests>
           
 </aactivity>
@@ -673,11 +671,9 @@ and so it is recommended that the intro text and associated table heading be upd
             <h:p/></Guidance>
               
               <Tests>
-                  <test>
                     Conditional: If "EDR" is selected, the evaluator shall install the Host Agent and enroll it with the EDR 
                     management system. The evaluator shall verify that enrollment was successful and 
                     that the Host Agent is communicating with the EDR.
-                  </test>
               </Tests>
 </aactivity>
           </f-element>
@@ -735,11 +731,9 @@ and so it is recommended that the intro text and associated table heading be upd
               management function.<h:p/></Guidance>
               
               <Tests>
-                  <test>
                     The evaluator shall test the ability to configure the Host Agent and test each function 
                     listed in the SFR. The evaluator is expected to test these functions in all the ways in which 
                     the ST and guidance documentation state    the configuration can be managed.
-                  </test>
               </Tests>
              
             </aactivity>
@@ -784,11 +778,9 @@ and so it is recommended that the intro text and associated table heading be upd
               <Guidance>There are no guidance EAs for this component.<h:p/></Guidance> 
               
               <Tests>
-                  <test>
                     The evaluator shall attempt to unenroll the Host Agent from the ESM system
                     as an unprivileged user and verify that the attempt fails, by trying to kill the process
                     or stop the Service or Daemon that is running the Host Agent.
-                  </test>
               </Tests>
               
             </aactivity>
@@ -843,7 +835,6 @@ and so it is recommended that the intro text and associated table heading be upd
             <Guidance>The evalutor shall verify that any configuration options related to data caching are listed in the guidance.<h:p/></Guidance>
             
             <Tests>
-                <test>
                   The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
                   from the network for a period of 72 hours to simulate a network connectivity failure, 
                   these should be actual hours not via changing system time. The evaluator shall
@@ -852,7 +843,6 @@ and so it is recommended that the intro text and associated table heading be upd
                   software, or sample test cases provided by the vendor to generate Host Agent data.
                   The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
                   that the missing data from the 72 hour time frame is available on the ESM management portal.
-                </test>
             </Tests>
             
           </aactivity>
@@ -952,9 +942,7 @@ and so it is recommended that the intro text and associated table heading be upd
             to other Host Agents is protected according to FPT_DIT_EXT.1.<h:p/></Guidance> 
             
             <Tests>
-                <test>
                   The tests in FTP_DIT_EXT.1.1 shall be repeated for data trasmitted between two Host Agents.
-                </test>
             </Tests>
             
           </aactivity>
