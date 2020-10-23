@@ -38,7 +38,7 @@ and so it is recommended that the intro text and associated table heading be upd
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-10-13</PPPubDate>
+      <PPPubDate>2020-10-23</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -46,8 +46,8 @@ and so it is recommended that the intro text and associated table heading be upd
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2020-10-13</date>
-      <subject>Draft - first version released</subject>
+      <date>2020-10-23</date>
+      <subject>First version released</subject>
     </entry>
   </RevisionHistory>
   
@@ -151,15 +151,13 @@ and so it is recommended that the intro text and associated table heading be upd
     </tech-terms>
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      
-The combined requirements 
-in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be paired with an evaluation using 
-      an Enterprise Security Management (ESM)  PP-Module. The ESM PP-Module covers the security 
-      functionality needed on the server or cloud service, and the paired Host Agent PP-Module
-      covers the security functionality needed on the endpoint device (desktop, mobile device, 
-      etc.). At this time only the ESM <cite linkend="bibEDRPP"/> PP-Module is published and ready for use with
-      this Host Agent PP-Module. Future
-      versions of this PP-Module will include requirements for other classes of ESM software.
+      The requirements for the EDR are not covered in this PP-Module, however it is expected that an ESM system 
+	    will evaluate against a PP-Configuration that includes both the <cite linkend="bibEDRPP"/> PP-Module  and the Host AgentPP-Module. 
+	    The EDR PP-Module covers the security functionality needed on the server or cloud service, and the paired 
+	    Host Agent PP-Module covers the security functionality needed on the endpoint device (desktop, mobile device, etc.). 
+	    At this time only the <cite linkend="bibEDRPP"/> PP-Module is published and ready for use with this Host Agent PP-Module. 
+	    Future versions of this PP-Module will include requirements for other classes of ESM software.
+	    
       
       
       <subsection title="TOE Boundary" id="toeboundary">
@@ -563,7 +561,6 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
               <h:p/></Guidance>
               
               <Tests>
-                <testlist>
                   <test>
                     The evaluator shall test the Host Agent's ability to correctly generate
                     audit records by having the TOE generate audit records for the
@@ -578,7 +575,6 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
                     <h:p/>
                     No specific locations are defined for other platforms.
                   </test>
-                </testlist>
               </Tests>
           
 </aactivity>
@@ -677,13 +673,11 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             <h:p/></Guidance>
               
               <Tests>
-                <testlist>
                   <test>
                     Conditional: If "EDR" is selected, the evaluator shall install the Host Agent and enroll it with the EDR 
                     management system. The evaluator shall verify that enrollment was successful and 
                     that the Host Agent is communicating with the EDR.
                   </test>
-                </testlist>
               </Tests>
 </aactivity>
           </f-element>
@@ -741,13 +735,11 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
               management function.<h:p/></Guidance>
               
               <Tests>
-                <testlist>
                   <test>
                     The evaluator shall test the ability to configure the Host Agent and test each function 
                     listed in the SFR. The evaluator is expected to test these functions in all the ways in which 
                     the ST and guidance documentation state    the configuration can be managed.
                   </test>
-                </testlist>
               </Tests>
              
             </aactivity>
@@ -792,13 +784,11 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
               <Guidance>There are no guidance EAs for this component.<h:p/></Guidance> 
               
               <Tests>
-                <testlist>
                   <test>
                     The evaluator shall attempt to unenroll the Host Agent from the ESM system
                     as an unprivileged user and verify that the attempt fails, by trying to kill the process
                     or stop the Service or Daemon that is running the Host Agent.
                   </test>
-                </testlist>
               </Tests>
               
             </aactivity>
@@ -853,7 +843,6 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             <Guidance>The evalutor shall verify that any configuration options related to data caching are listed in the guidance.<h:p/></Guidance>
             
             <Tests>
-              <testlist>
                 <test>
                   The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
                   from the network for a period of 72 hours to simulate a network connectivity failure, 
@@ -864,7 +853,6 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
                   The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
                   that the missing data from the 72 hour time frame is available on the ESM management portal.
                 </test>
-              </testlist>
             </Tests>
             
           </aactivity>
@@ -964,11 +952,9 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
             to other Host Agents is protected according to FPT_DIT_EXT.1.<h:p/></Guidance> 
             
             <Tests>
-              <testlist>
                 <test>
                   The tests in FTP_DIT_EXT.1.1 shall be repeated for data trasmitted between two Host Agents.
                 </test>
-              </testlist>
             </Tests>
             
           </aactivity>
@@ -1086,13 +1072,13 @@ in this Host Agent PP-Module with the <cite linkend="bibAppPP"/> is meant to be 
       <tag>AppPP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
-          Software</h:a>, Version 1.3, March 1, 2020
+          Software</h:a>, Version 1.3, March 1, 2019
       </description>
     </entry>
     <entry id="bibEDRPP">
       <tag>EDR</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</h:a>, Version 1.0, TBD 2020
+        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</h:a>, Version 1.0, October 23rd. 2020
       </description>
     </entry>
   </bibliography>
