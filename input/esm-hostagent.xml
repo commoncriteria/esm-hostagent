@@ -252,8 +252,8 @@ and so it is recommended that the intro text and associated table heading be upd
               system.
             </rationale>
           </objective-refer>
-            <objective-refer ref="O.MANAGEMENT">
-              <rationale>The threat T.DATA_LOSS is countered by O.MANAGEMENT as this
+            <objective-refer ref="O.HA.MANAGEMENT">
+              <rationale>The threat T.DATA_LOSS is countered by O.HA.MANAGEMENT as this
                 provides for the management of sending data and tracking of enrolled hosts.
               </rationale>
             </objective-refer>
@@ -343,8 +343,8 @@ and so it is recommended that the intro text and associated table heading be upd
             <h:br/><h:br/>The PP-Module includes FMT_POL_EXT.1 to optionally ensure that policy and/or command data sent to the Host Agent has its integrity proven with a verifiable digital signature before being accepted.</rationale>
 
         </SO>
-        <SO name="O.MANAGEMENT">
-          <description>To facilitate management by the enterprise, conformant Host Agents
+        <SO name="O.HA.MANAGEMENT">
+          <description>To facilitate authorized management by the enterprise, conformant Host Agents
             provide consistent and supported interfaces for their
             security-relevant configuration and maintenance.<h:p/>
             Addressed by: FMT_SMF.1/HA
