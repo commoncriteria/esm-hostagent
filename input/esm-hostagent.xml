@@ -30,15 +30,16 @@ and so it is recommended that the intro text and associated table heading be upd
 
 <Module xmlns="https://niap-ccevs.org/cc/v1"
     xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:sec="https://niap-ccevs.org/cc/v1/section"
     name="Host Agent"
     boilerplate="yes"
     target-products="Host Agent">
 
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.0</PPVersion>
+      <PPVersion>2.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-10-23</PPPubDate>
+      <PPPubDate>2025-05-27</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -49,15 +50,20 @@ and so it is recommended that the intro text and associated table heading be upd
       <date>2020-10-23</date>
       <subject>First version released</subject>
     </entry>
+     <entry>
+      <version>2.0</version>
+      <date>2025-05-27</date>
+      <subject>CC2022 Conversion</subject>
+    </entry>
   </RevisionHistory>
   
-  <chapter title="Introduction" id="int">
+  <section title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      The scope of this PP-Module is to describe the security functionality of a Host Agent in terms of [<abbr linkend="CC"/>] 
+      The scope of this PP-Module is to describe the security functionality of a Host Agent in terms of [CC] 
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       
       <h:ul>
-        <h:li>Protection Profile for Application Software <cite linkend="bibAppPP"/>, Version 1.3.</h:li>
+        <h:li>Protection Profile for Application Software Version 2.0</h:li>
       </h:ul>
       
       This Base-PP is valid because a Host Agent is deployed as a software application on a general-purpose operating system.
@@ -205,9 +211,9 @@ and so it is recommended that the intro text and associated table heading be upd
         </usecase>
       </usecases>
     </section>
-  </chapter>
+  </section>
   
-  <chapter title="Conformance Claims" id="conf">
+  <section title="Conformance Claims" id="conf">
     <cclaims>
       <cclaim title="Conformance Statement">
         <description> This <abbr linkend="PP-Module"/> inherits exact conformance as required from
@@ -231,9 +237,9 @@ and so it is recommended that the intro text and associated table heading be upd
           conformant.</description>
       </cclaim>
     </cclaims>
-  </chapter>
+  </section>
 
-  <chapter title="Security Problem Description" id="spd">The security problem is described in terms
+  <section title="Security Problem Description" id="spd">The security problem is described in terms
     of the threats that the Host Agent is expected to address, assumptions about the
     Operational Environment, and any organizational security policies that the Host Agent
     is expected to enforce. These extend any threats, assumptions, and organizational security policies defined by the Base-PP.
@@ -289,13 +295,13 @@ and so it is recommended that the intro text and associated table heading be upd
     <section title="Organizational Security Policies" id="OSPs">
       This PP-Module defines no additional organizational security policies beyond those defined in the Base-PP.
     </section>
-  </chapter>
+  </section>
   
   
   <!-- SME: right now not all objectives in the Module are mapped to threats because the template requires these
   to be defined with respect to the threats. Some objectives in the Module mitigate threats inherited from the Base-PP
   and are not restated in the Module. As a result the mappings are incomplete. This will need to be resolved. -->
-  <chapter title="Security Objectives" id="obj">
+  <section title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
         <SO name="O.ACCOUNTABILITY">
@@ -380,9 +386,9 @@ and so it is recommended that the intro text and associated table heading be upd
     </section>
     <section id="secconrat" title="Security Objectives Rationale">
     </section>
-  </chapter>
+  </section>
   
-  <chapter title="Security Requirements" id="req">
+  <section title="Security Requirements" id="req">
     
     <base-pp 
       product="application"
@@ -1034,7 +1040,7 @@ and so it is recommended that the intro text and associated table heading be upd
      </subsection>
     </obj-sfrs>
     
-  </chapter>
+  </section>
   
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
     <h:table>
