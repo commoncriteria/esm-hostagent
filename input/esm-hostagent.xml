@@ -166,7 +166,7 @@ and so it is recommended that the intro text and associated table heading be upd
 	    
       
       
-      <subsection title="TOE Boundary" id="toeboundary">
+      <section title="TOE Boundary" id="toeboundary">
         The boundary for the Host Agent includes 
         all processes, all modules, and libraries bundled with the Host Agent.  The Host 
         Agent can run as a daemon or service on the platform but is not required to. The Host Agent is
@@ -189,12 +189,12 @@ and so it is recommended that the intro text and associated table heading be upd
           </h:tr>
         </h:table>
         
-      </subsection>
-      <subsection title="TOE Platform" id="TOEplatform">
+      </section>
+      <section title="TOE Platform" id="TOEplatform">
         The TOE platform consists of a general purpose OS, a mobile device 
         OS, a network device OS, or an Execution Environment on top of which 
         the Host Agent software executes.
-      </subsection>
+      </section>
     </section>
     
     <section title="Use Cases" id="usecases">Requirements in this  PP-Module are designed to
@@ -433,7 +433,7 @@ and so it is recommended that the intro text and associated table heading be upd
     </base-pp>
     
       <man-sfrs>
-           <subsection title="Security Audit (FAU)" id="fau">
+           <section title="Security Audit (FAU)" id="fau">
        
        <!-- SME: this was changed from FAU_GEN.1/HA because the iteration convention defines the (1) notation
        and that is a fixed part of the module template. -->
@@ -586,12 +586,12 @@ and so it is recommended that the intro text and associated table heading be upd
        
         </f-component>
             
-      </subsection>
+      </section>
       
       <!-- SME: note that FHA is an extended class. To satisfy APE_ECD, there should also be a definition for the
       class itself and not just the components in it. I don't know if there is currently a way to do that in the template
       so it has been left out for now. -->
-        <subsection title="User Data Protection" id="FDP">
+        <section title="User Data Protection" id="FDP">
         <f-component name="Network Communications" cc-id="fdp_net_ext.2">
           <consistency-rationale> The Base-PP does not define specific network communications for EDR - HA communications. 
             This function does not interfere with the Base-PP.
@@ -628,8 +628,8 @@ and so it is recommended that the intro text and associated table heading be upd
         </f-element>    
         
         </f-component>
-        </subsection>
-      <subsection title="Host Agent (FHA)" id="fha">
+        </section>
+      <section title="Host Agent (FHA)" id="fha">
         
         <ext-comp-def fam-id="FHA_HAD_EXT" title="Host Agent Declaration">
           <mod-def>Components in this family define requirements for the ESM functionality that the TOE is compatible with.</mod-def>
@@ -686,9 +686,9 @@ and so it is recommended that the intro text and associated table heading be upd
         </f-component>
         
 
-      </subsection>
+      </section>
       
-      <subsection title="Security Management (FMT)" id="fmt">
+      <section title="Security Management (FMT)" id="fmt">
         
         <f-component cc-id="fmt_smf.1" iteration="HA"
 		     name="Specification of Management Functions (Configuration of Host Agent)">
@@ -793,13 +793,13 @@ and so it is recommended that the intro text and associated table heading be upd
           </f-element>        
         </f-component>
         
-      </subsection>
+      </section>
     </man-sfrs>
     
     <opt-sfrs></opt-sfrs>
     
     <sel-sfrs>
-     <subsection title="Host Agent (FHA)" id="fha-sel">
+     <section title="Host Agent (FHA)" id="fha-sel">
        
        <ext-comp-def fam-id="FHA_CHA_EXT" title="Cache Host Agent Collected Data">
          <mod-def>Components in this family define requirements for the location and duration of storage for its collected data.</mod-def>
@@ -905,9 +905,9 @@ and so it is recommended that the intro text and associated table heading be upd
           </aactivity>
         </f-element>
       </f-component>
-     </subsection>
+     </section>
       
-     <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+     <section title="Trusted Path/Channels (FTP)" id="ftp">
        
        <ext-comp-def fam-id="FTP_DIT_EXT" title="Protection of Data in Transit">
          <mod-def>This family is defined in the <cite linkend="bibAppPP"/>. This PP-Module adds a component
@@ -954,12 +954,12 @@ and so it is recommended that the intro text and associated table heading be upd
           </aactivity>
         </f-element>
       </f-component>
-     </subsection>
+     </section>
       
     </sel-sfrs>
     
     <obj-sfrs>
-     <subsection title="Security Management (FMT)" id="fmt-obj">
+     <section title="Security Management (FMT)" id="fmt-obj">
        
        <ext-comp-def fam-id="FMT_POL_EXT" title="Trusted Policy Update">
          <mod-def>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</mod-def>
@@ -1037,7 +1037,7 @@ and so it is recommended that the intro text and associated table heading be upd
 </aactivity>
         </f-element>        
       </f-component>
-     </subsection>
+     </section>
     </obj-sfrs>
     
   </section>
