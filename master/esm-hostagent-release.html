@@ -629,10 +629,10 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Host Agents</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Host Agents</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2025-05-27<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr>
 <tr><td>2.0</td><td>2025-05-27</td><td>CC2022 Conversion</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#toeboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#obj" style="text-indent:0px">3<span>Security Objectives</span></a><a href="#SecurityObjectivesTOE" style="text-indent:10px">3.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">3.2<span>Security Objectives for the Operational Environment</span></a><a href="#secconrat" style="text-indent:10px">3.3<span>Security Objectives Rationale</span></a><a href="#req" style="text-indent:0px">4<span>Security Requirements</span></a><a href="#secreq-" style="text-indent:10px">4.1<span>
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#toeboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#obj" style="text-indent:0px">3<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">3.1<span>Security Objectives for the Operational Environment</span></a><a href="#secconrat" style="text-indent:10px">3.2<span>Security Objectives Rationale</span></a><a href="#req" style="text-indent:0px">4<span>Security Requirements</span></a><a href="#secreq-" style="text-indent:10px">4.1<span>
     Protection Profile for Application Software
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-" style="text-indent:20px">4.1.1<span> Modified SFRs </span></a><a href="#man-sfrs" style="text-indent:10px">4.2<span>TOE Security Functional Requirements</span></a><a href="#fau" style="text-indent:20px">4.2.1<span>Security Audit (FAU)</span></a><a href="#FDP" style="text-indent:20px">4.2.2<span>User Data Protection</span></a><a href="#fha" style="text-indent:20px">4.2.3<span>Host Agent (FHA)</span></a><a href="#fmt" style="text-indent:20px">4.2.4<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">4.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">5<span>Consistency Rationale</span></a><a href="#conrat-" style="text-indent:10px">5.1<span>
@@ -787,52 +787,26 @@ The following sections list Common Criteria and technology terms used in this do
 					any Protection Profile.
 				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
 					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>:
-					<ul><li>Protection Profile for Application Software Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>), Version Update version</li></ul></dd><dt>Package Claim</dt><p></p><dd>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is not conformant to any 
-						Functional or Assurance Packages.</dd></dl>	
+					<ul><li>Protection Profile for Application Software Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>), Version update version</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					    Functional Package for TLS Version 2.0confirm version conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
+						assurance packages.</li></ul></dd><p></p><dd>
+		The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory 
+		to claim for the sake of conformance. An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> that claims one or more of these functional 
+		packages may include any non-mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are appropriate to claim based on the 
+		capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and on any triggers for their inclusion based inherently on the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> 
+		selections made. 
+	</dd></dl>	
 		
 	<h1 class="indexable" data-level="1" id="obj">3 Security Objectives</h1>
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOE">3.1 Security Objectives for the TOE</h2>
-      <dl><dt class="SO defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt><dd><span class="description">Conformant Host Agents ensure that information exists that allows
-            administrators to discover unintentional issues with the configuration and operation of
-            the Host Agent.<p></p>
-          Addressed by: <a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a>, <a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></span></dd><dt class="SO defined" id="O.DATA_RECORDER">O.DATA_RECORDER</dt><dd><span class="description">
-            Conformant Host Agents will collect security-relevant data from a target entity in the 
-            Operational Environment and transmit it to a trusted entity for further processing. 
-            They will also implement mechanisms to ensure that collected data is retained in the event 
-            that the trusted channel is unavailable to prevent data loss. <p></p>
-            Addressed by: <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a>, <a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a> (selection-based), <a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> (selection-based)
-          </span></dd><dt class="SO defined" id="O.INTEGRITY">O.INTEGRITY</dt><dd><span class="description">
-            Conformant Host Agents will ensure the integrity of policy and/or commands sent to 
-            the Host Agent and also leverage execution environment or platform-based mitigations
-            to protect the Host Agent.<p></p>
-            Addressed by: <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>, <a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a> (objective)
-          </span></dd><dt class="SO defined" id="O.HA_MANAGEMENT">O.HA_MANAGEMENT</dt><dd><span class="description">To facilitate authorized management by the enterprise, conformant Host Agents
-            provide consistent and supported interfaces for their
-            security-relevant configuration and maintenance.<p></p>
-            Addressed by: <a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a>
-          </span></dd><dt class="SO defined" id="O.PROTECTED_COMMS">O.PROTECTED_COMMS</dt><dd><span class="description"> To address both passive (eavesdropping) and active (packet modification)
-            network attack threats, conformant Host Agents will use a trusted channel 
-            for sending and receiving data.<p></p>
-            Addressed by: FTP_DIT_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>), <a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a> (selection-based)
-          </span></dd></dl>
     
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">3.2 Security Objectives for the Operational Environment</h2>
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">3.1 Security Objectives for the Operational Environment</h2>
 This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.
       
     
-    <h2 id="secconrat" class="indexable,h2" data-level="2">3.3 Security Objectives Rationale</h2>   
+    <h2 id="secconrat" class="indexable,h2" data-level="2">3.2 Security Objectives Rationale</h2>   
 		This section describes how the assumptions and organizational 
 		security policies map to operational environment security objectives.
-	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="2">T.DATA_​LOSS</td><td><a href="#O.DATA_RECORDER">O.DATA_​RECORDER</a></td><td>The threat T.DATA_LOSS is countered by <a href="#O.DATA_RECORDER">O.DATA_RECORDER</a> as this
-              provides for caching of data by a Host Agent during periods when not connected to the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> 
-              system.
-            </td></tr><tr><td><a href="#O.HA_MANAGEMENT">O.HA_​MANAGEMENT</a></td><td>The threat T.DATA_LOSS is countered by <a href="#O.HA_MANAGEMENT">O.HA_MANAGEMENT</a> as this
-                provides for the management of sending data and tracking of enrolled hosts.
-              </td></tr><tr class="major-row"><td rowspan="2">T.TAMPER</td><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The threat T.TAMPER is countered by <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> which protect
-              the Host Agent and report artifact up to the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system that could help to discover tampering.I
-            </td></tr><tr><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The threat T.TAMPER is countered by <a href="#O.INTEGRITY">O.INTEGRITY</a> which protect
-              the Host Agent and report artifact up to the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system that could help to discover tampering.
-            </td></tr></table>
+	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr></table>
   <h1 id="req" class="indexable" data-level="1">4 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
      Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
@@ -1053,7 +1027,20 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
       
     <h2 id="obj-req-map" class="indexable" data-level="2">4.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr></table></p><h1 id="mod-conrat" class="indexable" data-level="1">5 Consistency Rationale</h1><h2 id="conrat-" class="indexable" data-level="2">5.1 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="6">T.DATA_​LOSS</td><td><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> to define the interface between the Host Agent and the intended destination for the data it transmits.</td></tr>
+<tr><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> to define the data
+that the Host Agent can collect from its Operational Environment.</td></tr>
+<tr><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> to define the
+interface between the Host Agent and the intended destination
+for the data it transmits</td></tr>
+<tr><td><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a> to define the management functions that are configurable on the Host Agent.</td></tr>
+<tr><td>FTP_DIT_EXT.1 (from <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes FTP_DIT_EXT.1 by reference to show that the Host Agent is capable of using a trusted channel defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> for its own specific use.</td></tr>
+<tr><td><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a> to optionally define the trusted communications channel between multiple Host Agents.</td></tr>
+<tr class="major-row"><td rowspan="4">T.TAMPER</td><td><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a> to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability through the generation of audit records for security-relevant events.</td></tr>
+<tr><td><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a> to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability by ensuring that audit records are stored using an appropriate mechanism.</td></tr>
+<tr><td><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a> (objective)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</td></tr>
+<tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</td></tr>
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">5 Consistency Rationale</h1><h2 id="conrat-" class="indexable" data-level="2">5.1 
     Protection Profile for Application Software</h2><h3 id="contoe-" class="indexable" data-level="3">5.1.1 
 	Consistency of TOE Type
       </h3>
@@ -1129,9 +1116,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         
         <div class="element"><div class="reqid" id="FMT_POL_EXT.1.1"><a href="#FMT_POL_EXT.1.1" class="abbr">FMT_POL_EXT.1.1</a></div><div class="reqdesc">The 
-            [<b>selection</b>: <span class="selectable-content" id="_s_17">Host Agent</span>, <span class="selectable-content" id="_s_18">Host Agent Platform</span>] 
+            [<b>selection</b>: <span class="selectable-content" id="_s_19">Host Agent</span>, <span class="selectable-content" id="_s_20">Host Agent Platform</span>] 
             shall only accept policies or commands that are digitally signed using 
-            [<b>selection</b>: <span class="selectable-content" id="_s_19"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="_s_20"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>] signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-4.
+            [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>] signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-5.
           <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1161,21 +1148,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         
         <div class="element"><div class="reqid" id="FHA_CHA_EXT.1.1"><a href="#FHA_CHA_EXT.1.1" class="abbr">FHA_CHA_EXT.1.1</a></div><div class="reqdesc"> 
-            Absent storage space exhaustion the <b>Host Agent</b> shall cache and manage collected data for a 
-            minimum of [<b>assignment</b>: 
-     <span class="assignable-content">value greater than 72</span>] hours on 
-            [<b>selection</b>: <span class="selectable-content" id="_s_13">persistent storage</span>, <span class="selectable-content" id="_s_14">non-persistent storage</span>]
-            if the trusted channel is not available.
+            The <b>Host Agent</b> shall cache collected data up to [<b>assignment</b>: 
+     <span class="assignable-content">size of cache storage capacity</span>] on [<b>selection</b>: <span class="selectable-content" id="_s_13">persistent storage</span>, <span class="selectable-content" id="_s_14">non-persistent storage</span>] if the trusted channel is not available.
           <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-            The term <i>collected data</i> here is understood to be any type of collected endpoint data by the Host Agent
-            destined for an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server. The term <i>manage</i> here is understood to be a ruleset for what is done if storage limits are reached.
-            To meet this requirement a Host Agent must be
-            capable of locally caching or queuing data for a minimum value that is greater than 72 hours (3 days) during periods of network
-            dis-connectivity. In a future revision, the selection of non-persistent storage will be removed.
+            The term collected data here is understood to be any type of collected endpoint data by the Host Agent destined for an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author specifies the size of the cache storage and whether it is implemented in persistent or non-persistent storage.
           </span></div></div></div>
-        
+        <div class="element"><div class="reqid" id="FHA_CHA_EXT.1.2"><a href="#FHA_CHA_EXT.1.2" class="abbr">FHA_CHA_EXT.1.2</a></div><div class="reqdesc">The Host Agent shall [<b>selection</b>: <span class="selectable-content" id="_s_15">overwrite previous data according to the following rule: [<b>assignment</b>: 
+     <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="_s_16">other actions</span>]when the local cache is full.<div class="appnote"><span class="note-header">Application
+      Note:
+    </span><span class="note">This requirement addresses how the Host Agent handles collected data while the trusted path is not available and the local cache is full.</span></div></div></div>
       </div>  
        
        
@@ -1225,7 +1208,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         
         <div class="element"><div class="reqid" id="FTP_DIT_EXT.2.1"><a href="#FTP_DIT_EXT.2.1" class="abbr">FTP_DIT_EXT.2.1</a></div><div class="reqdesc">The Host Agent shall 
-            [<b>selection</b>: <span class="selectable-content" id="_s_15">encrypt</span>, <span class="selectable-content" id="_s_16">invoke platform-provided functionality to encrypt</span>] all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
+            [<b>selection</b>: <span class="selectable-content" id="_s_17">encrypt</span>, <span class="selectable-content" id="_s_18">invoke platform-provided functionality to encrypt</span>] all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
           <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1257,12 +1240,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              Cache Host Agent Collected Data,
               requires either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store audit data using the platform's logging mechanism.</p><h4>Management: FHA_CHA_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FHA_CHA_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> Collected Audit<br/>
           <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration</td></tr></table><h4 id="ext-comp-FHA_CHA_EXT.1.1">FHA_CHA_EXT.1.1</h4> 
-            Absent storage space exhaustion the <b>Host Agent</b> shall cache and manage collected data for a 
-            minimum of [<b>assignment</b>: 
-     <span class="assignable-content">value greater than 72</span>] hours on 
-            [<b>selection</b>: <span class="selectable-content" id="_s_13">persistent storage</span>, <span class="selectable-content" id="_s_14">non-persistent storage</span>]
-            if the trusted channel is not available.
-          </div></div><h3 id="ext-comp-FHA_COL_EXT" class="indexable" data-level="4">C.2.1.3 FHA_COL_EXT Collected Audit</h3><div style="margin-left: 1em;">Components in this family define requirements for the collection of data the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> collects from 
+            The <b>Host Agent</b> shall cache collected data up to [<b>assignment</b>: 
+     <span class="assignable-content">size of cache storage capacity</span>] on [<b>selection</b>: <span class="selectable-content" id="_s_13">persistent storage</span>, <span class="selectable-content" id="_s_14">non-persistent storage</span>] if the trusted channel is not available.
+          <h4 id="ext-comp-FHA_CHA_EXT.1.2">FHA_CHA_EXT.1.2</h4>The Host Agent shall [<b>selection</b>: <span class="selectable-content" id="_s_15">overwrite previous data according to the following rule: [<b>assignment</b>: 
+     <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="_s_16">other actions</span>]when the local cache is full.</div></div><h3 id="ext-comp-FHA_COL_EXT" class="indexable" data-level="4">C.2.1.3 FHA_COL_EXT Collected Audit</h3><div style="margin-left: 1em;">Components in this family define requirements for the collection of data the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> collects from 
            its Operational Environment as audit data.<p><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a>,
              Collected Audit,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to collect a specified set of data from its Operational Environment.</p><h4>Management: FHA_COL_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FHA_COL_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FHA_COL_EXT.1 Collected Audit</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration</td></tr></table><h4 id="ext-comp-FHA_COL_EXT.1.1">FHA_COL_EXT.1.1</h4>The Host Agent shall collect the following minimum set of
@@ -1296,9 +1277,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             </div></div><h3 id="ext-comp-FMT_POL_EXT" class="indexable" data-level="4">C.2.3.2 FMT_POL_EXT Trusted Policy Update</h3><div style="margin-left: 1em;">Components in this family define requirements for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s verification of policies or commands transmitted to it.<p><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a>,
              Trusted Policy Update,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to reject any unsigned management policies or commands sent to it.</p><h4>Management: FMT_POL_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FMT_POL_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FMT_POL_EXT.1 Trusted Policy Update</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_COP.1 Cryptographic Operation</td></tr></table><h4 id="ext-comp-FMT_POL_EXT.1.1">FMT_POL_EXT.1.1</h4>The 
-            [<b>selection</b>: <span class="selectable-content" id="_s_17">Host Agent</span>, <span class="selectable-content" id="_s_18">Host Agent Platform</span>] 
+            [<b>selection</b>: <span class="selectable-content" id="_s_19">Host Agent</span>, <span class="selectable-content" id="_s_20">Host Agent Platform</span>] 
             shall only accept policies or commands that are digitally signed using 
-            [<b>selection</b>: <span class="selectable-content" id="_s_19"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="_s_20"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>] signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-4.
+            [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>] signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-5.
           </div></div></span><span data-sortkey="Trusted Path/Channels (FTP)"><h3 id="ext-comp-FTP" class="indexable" data-level="3">C.2.4 Trusted Path/Channels (FTP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FTP class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FTP_DIT_EXT" class="indexable" data-level="4">C.2.4.1 FTP_DIT_EXT Protection of Data in Transit</h3><div style="margin-left: 1em;">This family is defined in the <a onclick="showTarget('bibAppPP')" href="#bibAppPP" class="bibAppPP-ref"> <span class="counter">bibAppPP</span></a>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a component
@@ -1307,7 +1288,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to secure data in transit between itself and another <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> Host Agent using a <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-provided or platform-provided trusted channel.</p><h4>Management: FTP_DIT_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FTP_DIT_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
           <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration<br/>
         FTP_DIT_EXT.1 Protection of Data in Transit</td></tr></table><h4 id="ext-comp-FTP_DIT_EXT.2.1">FTP_DIT_EXT.2.1</h4>The Host Agent shall 
-            [<b>selection</b>: <span class="selectable-content" id="_s_15">encrypt</span>, <span class="selectable-content" id="_s_16">invoke platform-provided functionality to encrypt</span>] all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
+            [<b>selection</b>: <span class="selectable-content" id="_s_17">encrypt</span>, <span class="selectable-content" id="_s_18">invoke platform-provided functionality to encrypt</span>] all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
           </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
