@@ -227,11 +227,13 @@ and so it is recommended that the intro text and associated table heading be upd
 				<Mod-cc-ref>PP-Module for Host Agent, Version 1.0</Mod-cc-ref>  
 				 --> 
         <PP-cc-ref>Protection Profile for Application Software Version 2.0</PP-cc-ref>
-				<Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version <comment>Update version</comment></Mod-cc-ref>
+				<Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version <comment>update version</comment></Mod-cc-ref>
 
 	
 			</cc-pp-config-with>
-			<cc-pkg-claim/>
+			<cc-pkg-claim>
+        <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0<comment>confirm version</comment></FP-cc-ref>
+      </cc-pkg-claim>
 			
 		</CClaimsInfo>	
 		
@@ -250,34 +252,30 @@ and so it is recommended that the intro text and associated table heading be upd
             to the ESM system is not present. 
           </description>
             <consistency-rationale>This threat is consistent with the Base-PP because a lack of network availability could be a specific consequence of the T.NETWORK_ATTACK threat.</consistency-rationale>
-          <objective-refer ref="O.DATA_RECORDER">
-            <rationale>The threat T.DATA_LOSS is countered by O.DATA_RECORDER as this
-              provides for caching of data by a Host Agent during periods when not connected to the ESM 
-              system.
-            </rationale>
-          </objective-refer>
-            <objective-refer ref="O.HA_MANAGEMENT">
-              <rationale>The threat T.DATA_LOSS is countered by O.HA_MANAGEMENT as this
-                provides for the management of sending data and tracking of enrolled hosts.
-              </rationale>
-            </objective-refer>
-        <!--   <consistency-rationale>QQQQQ</consistency-rationale> --> 
+           <addressed-by>FHA_CHA_EXT.1 (selection-based)</addressed-by>
+          <rationale>The PP-Module includes FHA_HAD_EXT.1 to define the interface between the Host Agent and the intended destination for the data it transmits.</rationale>
+          <addressed-by>FHA_COL_EXT.1 (selection-based)</addressed-by><rationale>The PP-Module includes FHA_COL_EXT.1 to define the data
+that the Host Agent can collect from its Operational Environment.</rationale>
+          <addressed-by>FHA_HAD_EXT.1</addressed-by><rationale>The PP-Module includes FHA_HAD_EXT.1 to define the
+interface between the Host Agent and the intended destination
+for the data it transmits</rationale>
+         <addressed-by>FMT_SMF.1/HA</addressed-by>
+          <rationale>The PP-Module includes FMT_SMF.1/HA to define the management functions that are configurable on the Host Agent.</rationale>
+           <addressed-by>FTP_DIT_EXT.1 (from Base-PP)</addressed-by>
+          <rationale>The PP-Module includes FTP_DIT_EXT.1 by reference to show that the Host Agent is capable of using a trusted channel defined by the Base-PP for its own specific use.</rationale>
+           <addressed-by>FTP_DIT_EXT.2 (selection-based)</addressed-by><rationale>The PP-Module includes FTP_DIT_EXT.2 to optionally define the trusted communications channel between multiple Host Agents.</rationale>
         </threat>
         <threat name="T.TAMPER">
           <description>A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall
             or disrupt the Host Agent's ability to function properly.
           </description>
           <consistency-rationale>This threat is consistent with the Base-PP because tampering with the application is a specific example of the T.LOCAL_ATTACK threat.</consistency-rationale>
-          <objective-refer ref="O.ACCOUNTABILITY">
-            <rationale>The threat T.TAMPER is countered by O.ACCOUNTABILITY which protect
-              the Host Agent and report artifact up to the ESM system that could help to discover tampering.I
-            </rationale>
-          </objective-refer>
-          <objective-refer ref="O.INTEGRITY">
-            <rationale>The threat T.TAMPER is countered by O.INTEGRITY which protect
-              the Host Agent and report artifact up to the ESM system that could help to discover tampering.
-            </rationale>
-          </objective-refer>
+          <addressed-by>FAU_GEN.1/HA</addressed-by>
+          <rationale>The PP-Module includes FAU_GEN.1/HA to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.</rationale>
+          <addressed-by>FAU_STO_EXT.1</addressed-by><rationale>The PP-Module includes FAU_STO_EXT.1 to ensure that the TOE provides accountability by ensuring that audit records are stored using an appropriate mechanism.</rationale>
+          <addressed-by>FMT_POL_EXT.1 (objective)</addressed-by>
+          <rationale>The PP-Module includes FMT_UNR_EXT.1 to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</rationale>
+          <addressed-by>FMT_UNR_EXT.1</addressed-by><rationale>The PP-Module includes FMT_UNR_EXT.1 to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</rationale>
           <!-- <consistency-rationale>QQQQQ</consistency-rationale> --> 
         </threat>
       </threats>
@@ -300,85 +298,7 @@ and so it is recommended that the intro text and associated table heading be upd
   to be defined with respect to the threats. Some objectives in the Module mitigate threats inherited from the Base-PP
   and are not restated in the Module. As a result the mappings are incomplete. This will need to be resolved. -->
   <section title="Security Objectives" id="obj">
-    <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      <SOs>
-        <SO name="O.ACCOUNTABILITY">
-          <description>Conformant Host Agents ensure that information exists that allows
-            administrators to discover unintentional issues with the configuration and operation of
-            the Host Agent.<h:p/>
-          Addressed by: FAU_GEN.1/HA, FAU_STO_EXT.1</description>
-          <consistency-rationale>
-            This objective relates to the TOE's generation and storage of audit data that is used to detect potential configuration or operational issues on host systems. This functionality is defined by the PP-Module
-            and does not affect the ability of the TOE to enforce the Base-PP's security objectives.</consistency-rationale>
-          <addressed-by>FAU_GEN.1/HA, FAU_STO_EXT.1</addressed-by>
-          <rationale>The PP-Module includes FAU_GEN.1/HA to ensure that the TOE provides accountability through the generation of audit records for security-relevant events. <h:br/><h:br/>
-            The PP-Module includes FAU_STO_EXT.1 to ensure that the TOE provides accountability by ensuring that audit records are stored using an appropriate mechanism.</rationale>
-         
-        </SO>
-        <SO name="O.DATA_RECORDER">
-          <description>
-            Conformant Host Agents will collect security-relevant data from a target entity in the 
-            Operational Environment and transmit it to a trusted entity for further processing. 
-            They will also implement mechanisms to ensure that collected data is retained in the event 
-            that the trusted channel is unavailable to prevent data loss. <h:p/>
-            Addressed by: FHA_HAD_EXT.1, FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based)
-          </description>
-          <consistency-rationale>
-            This objective relates to the availability of data collected by the TSF. This data is specified to ESM Host Agent
-            functionailty and does not affect the functionality defined by the Base-PP.</consistency-rationale>
-          <addressed-by>FHA_CHA_EXT.1 (selection-based), FHA_COL_EXT.1 (selection-based), FHA_HAD_EXT.1</addressed-by>
-          <rationale>The PP-Module includes FHA_HAD_EXT.1 to define the interface between the Host Agent and the intended destination for the data it transmits.
-            <h:br/><h:br/>The PP-Module includes FHA_CHA_EXT.1 to define the ability of the Host Agent to maintain collected data during periods of communications outage.
-            <h:br/><h:br/>The PP-Module includes FHA_COL_EXT.1 to define the data that the Host Agent can collect from its Operational Environment.</rationale>
- 
-        </SO>
-        <SO name="O.INTEGRITY">
-          <description>
-            Conformant Host Agents will ensure the integrity of policy and/or commands sent to 
-            the Host Agent and also leverage execution environment or platform-based mitigations
-            to protect the Host Agent.<h:p/>
-            Addressed by: FMT_UNR_EXT.1, FMT_POL_EXT.1 (objective)
-          </description>
-          <consistency-rationale>
-            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
-            by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.</consistency-rationale>
-          <addressed-by>FMT_POL_EXT.1 (objective), FMT_UNR_EXT.1</addressed-by>
-          <rationale>The PP-Module includes FMT_UNR_EXT.1 to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.
-            <h:br/><h:br/>The PP-Module includes FMT_POL_EXT.1 to optionally ensure that policy and/or command data sent to the Host Agent has its integrity proven with a verifiable digital signature before being accepted.</rationale>
-
-        </SO>
-        <SO name="O.HA_MANAGEMENT">
-          <description>To facilitate authorized management by the enterprise, conformant Host Agents
-            provide consistent and supported interfaces for their
-            security-relevant configuration and maintenance.<h:p/>
-            Addressed by: FMT_SMF.1/HA
-          </description>
-          <consistency-rationale>
-            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
-            by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.
-          </consistency-rationale>
-          <addressed-by>FMT_SMF.1/HA</addressed-by>
-          <rationale>The PP-Module includes FMT_SMF.1/HA to define the management functions that are configurable on the Host Agent.</rationale>
-          
-        </SO>
-        <SO name="O.PROTECTED_COMMS">
-          <description> To address both passive (eavesdropping) and active (packet modification)
-            network attack threats, conformant Host Agents will use a trusted channel 
-            for sending and receiving data.<h:p/>
-            Addressed by: FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)
-          </description>
-          <consistency-rationale>
-            This objective is the same as the Base-PP objective of the same name. This PP-Module extends the objective
-            by defining additional requirements that relate to the specific functionality described by the PP-Module and further satisfy the objective.
-          </consistency-rationale>
-          <addressed-by>FTP_DIT_EXT.1 (from Base-PP), FTP_DIT_EXT.2 (selection-based)</addressed-by>
-          <rationale>The PP-Module includes FTP_DIT_EXT.1 by reference to show that the Host Agent is capable of using a trusted channel defined by the Base-PP for its own specific use.
-            <!-- <h:br/><h:br/>The PP-Module modifies FDP_NET_EXT.1 from its Base-PP definition to define the specific external interfaces the Host Agent has that require the use of a trusted channel.  -->
-            <h:br/><h:br/>The PP-Module includes FTP_DIT_EXT.2 to optionally define the trusted communications channel between multiple Host Agents.</rationale>
-         
-        </SO>
-      </SOs>
-    </section>
+    
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">
     </section>
@@ -401,14 +321,8 @@ and so it is recommended that the intro text and associated table heading be upd
         This section describes any modifications that the ST author must make to the Base-PP SFRs to satisfy the required Host Agent functionality.
       </sec-func-req-dir>
       
-      <modified-sfrs>
-      </modified-sfrs>
-      <additional-sfrs>
-
-     
-      
-      
-      </additional-sfrs>
+      <modified-sfrs/>
+      <additional-sfrs/>
       
       <con-toe>
         If this PP-Module is used to extend the Application Software PP, the TOE type for the overall TOE is still a
@@ -617,8 +531,7 @@ and so it is recommended that the intro text and associated table heading be upd
                     The evaluator shall run the application.  While the application is running,
                     the evaluator shall sniff network traffic ignoring all non-application 
                     associated traffic
-                    and verify that any network communications witnessed are limited to the selection made in the SFR. 
-                  
+                    and verify that any network communications witnessed are limited to the selection made in the SFR.
               </Tests>
             
             
@@ -783,8 +696,7 @@ and so it is recommended that the intro text and associated table heading be upd
               
               <Tests>
                     The evaluator shall attempt to unenroll the Host Agent from the ESM system
-                    as an unprivileged user and verify that the attempt fails, by trying to kill the process
-                    or stop the Service or Daemon that is running the Host Agent.
+                    as an unprivileged user and verify that the attempt fails.
               </Tests>
               
             </aactivity>
@@ -815,22 +727,12 @@ and so it is recommended that the intro text and associated table heading be upd
         <dependencies>FHA_COL_EXT.1 Collected Audit<h:br/>
           FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
         
-        <f-element>
+        <f-element id="fha-cha-ext-1-1">
           <title> 
-            Absent storage space exhaustion the <h:b>Host Agent</h:b> shall cache and manage collected data for a 
-            minimum of <assignable>value greater than 72</assignable> hours on 
-            <selectables>
-              <selectable>persistent storage</selectable>
-              <selectable>non-persistent storage</selectable>
-            </selectables>
-            if the trusted channel is not available.
+            The <h:b>Host Agent</h:b> shall cache collected data up to <assignable>size of cache storage capacity</assignable> on <selectables><selectable>persistent storage</selectable><selectable>non-persistent storage</selectable></selectables> if the trusted channel is not available.
           </title>
           <note role="application">
-            The term <h:i>collected data</h:i> here is understood to be any type of collected endpoint data by the Host Agent
-            destined for an ESM server. The term <h:i>manage</h:i> here is understood to be a ruleset for what is done if storage limits are reached.
-            To meet this requirement a Host Agent must be
-            capable of locally caching or queuing data for a minimum value that is greater than 72 hours (3 days) during periods of network
-            dis-connectivity. In a future revision, the selection of non-persistent storage will be removed.
+            The term collected data here is understood to be any type of collected endpoint data by the Host Agent destined for an ESM server. The ST author specifies the size of the cache storage and whether it is implemented in persistent or non-persistent storage.
           </note>
           <aactivity>
             
@@ -840,18 +742,22 @@ and so it is recommended that the intro text and associated table heading be upd
             
             <Tests>
                   The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
-                  from the network for a period of 72 hours to simulate a network connectivity failure, 
+                  from the network to simulate a network connectivity failure, 
                   these should be actual hours not via changing system time. The evaluator shall
-                  exercise behaviors on the endpoint during the 72-hour time frame to generate Host Agent data.
+                  exercise behaviors on the endpoint during the outage to generate Host Agent data.
                   Example behaviors could be running programs, performing some authentications, installing/uninstalling 
                   software, or sample test cases provided by the vendor to generate Host Agent data.
                   The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
-                  that the missing data from the 72 hour time frame is available on the ESM management portal.
+                  that the missing data from the outage is available on the ESM management portal.
             </Tests>
             
           </aactivity>
         </f-element>
-        
+        <f-element id="fha-cha-ext-1-2">
+          <title>The Host Agent shall <selectables><selectable>overwrite previous data according to the following rule: <assignable>rule for overwriting previously cached data</assignable></selectable><selectable>other actions</selectable></selectables>when the local cache is full.</title>
+            <note role="application">This requirement addresses how the Host Agent handles collected data while the trusted path is not available and the local cache is full.</note>
+            <aactivity><no-tests/></aactivity>
+        </f-element>
       </f-component>  
        
        <ext-comp-def fam-id="FHA_COL_EXT" title="Collected Audit">
@@ -984,7 +890,7 @@ and so it is recommended that the intro text and associated table heading be upd
             <selectables>
               <selectable>RSA</selectable>
               <selectable>ECDSA</selectable>
-            </selectables> signatures that meet FIPS PUB 186-4.
+            </selectables> signatures that meet FIPS PUB 186-5.
           </title>
           <note role="application">
             The intent of this requirement is to cryptographically tie any policy updates or
