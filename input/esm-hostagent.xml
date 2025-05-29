@@ -159,10 +159,10 @@ and so it is recommended that the intro text and associated table heading be upd
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       The requirements for the EDR are not covered in this PP-Module, however it is expected that an ESM system 
-	    will evaluate against a PP-Configuration that includes both the <xref g="bibEDRPP"/> PP-Module  and the Host AgentPP-Module. 
+	    will evaluate against a PP-Configuration that includes both the <xref to="bibEDRPP"/> PP-Module  and the Host AgentPP-Module. 
 	    The EDR PP-Module covers the security functionality needed on the server or cloud service, and the paired 
 	    Host Agent PP-Module covers the security functionality needed on the endpoint device (desktop, mobile device, etc.). 
-	    At this time only the <xref g="bibEDRPP"/> PP-Module is published and ready for use with this Host Agent PP-Module. 
+	    At this time only the <xref to="bibEDRPP"/> PP-Module is published and ready for use with this Host Agent PP-Module. 
 	    Future versions of this PP-Module will include requirements for other classes of ESM software.
 	    
       
@@ -240,11 +240,11 @@ and so it is recommended that the intro text and associated table heading be upd
 		
 	</sec:Conformance_Claims>
 
-  <section title="Security Problem Description" id="spd">The security problem is described in terms
+  <section title="Security Problem Definition" id="spd">The security problem is described in terms
     of the threats that the Host Agent is expected to address, assumptions about the
     Operational Environment, and any organizational security policies that the Host Agent
     is expected to enforce. These extend any threats, assumptions, and organizational security policies defined by the Base-PP.
-    <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the <xref g="bibAppPP"/>, though they all apply given the conformance and hence dependence of this PP-Module on the <xref g="bibAppPP"/>.
+    <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the <xref to="bibAppPP"/>, though they all apply given the conformance and hence dependence of this PP-Module on the <xref to="bibAppPP"/>.
       
       
       <threats>
