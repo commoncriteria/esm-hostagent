@@ -6,6 +6,7 @@ output/esm-hostagent-release-linkable.html: CEM
 output/esm-hostagent-release-linkable.html: FCS
 output/esm-hostagent-release-linkable.html: Offboarding
 output/esm-hostagent-release-linkable.html: Onboarding
+output/esm-hostagent-release-linkable.html: SPD
 output/esm-hostagent-release-linkable.html: STM
 output/esm-hostagent-release-linkable.html: TODO
 output/esm-hostagent-release-linkable.html: Unenrolling
@@ -27,6 +28,7 @@ output/esm-hostagent-release.html: CEM
 output/esm-hostagent-release.html: FCS
 output/esm-hostagent-release.html: Offboarding
 output/esm-hostagent-release.html: Onboarding
+output/esm-hostagent-release.html: SPD
 output/esm-hostagent-release.html: STM
 output/esm-hostagent-release.html: Unenrolling
 output/esm-hostagent-release.html: Unenrollment
@@ -39,6 +41,7 @@ output/esm-hostagent-sd.html: CC2022
 output/esm-hostagent-sd.html: CEM
 output/esm-hostagent-sd.html: Offboarding
 output/esm-hostagent-sd.html: Onboarding
+output/esm-hostagent-sd.html: SPD
 output/esm-hostagent-sd.html: TODO
 output/esm-hostagent-sd.html: Unenrollment
 output/esm-hostagent-sd.html: collectable
@@ -58,6 +61,7 @@ output/esm-hostagent.html: CEM
 output/esm-hostagent.html: FCS
 output/esm-hostagent.html: Offboarding
 output/esm-hostagent.html: Onboarding
+output/esm-hostagent.html: SPD
 output/esm-hostagent.html: STM
 output/esm-hostagent.html: TODO
 output/esm-hostagent.html: Unenrolling
