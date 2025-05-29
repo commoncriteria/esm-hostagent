@@ -629,7 +629,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Host Agents</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Host Agents</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2025-05-27<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr>
 <tr><td>2.0</td><td>2025-05-27</td><td>CC2022 Conversion</td></tr>
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#toeboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#obj" style="text-indent:0px">3<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">3.1<span>Security Objectives for the Operational Environment</span></a><a href="#secconrat" style="text-indent:10px">3.2<span>Security Objectives Rationale</span></a><a href="#req" style="text-indent:0px">4<span>Security Requirements</span></a><a href="#secreq-" style="text-indent:10px">4.1<span>
@@ -793,7 +793,7 @@ The following sections list Common Criteria and technology terms used in this do
 					any Protection Profile.
 				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
 					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>:
-					<ul><li>Protection Profile for Application Software Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>), Version update version</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
+					<ul><li>Protection Profile for Application Software Version 2.0update URL</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>), Version update version/URL</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
 					    Functional Package for TLS Version 2.0confirm version conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
 						assurance packages.</li></ul></dd><p></p><dd>
 		The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory 
@@ -857,11 +857,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              
         <div class="comp" id="FAU_GEN.1/HA"><h4>FAU_GEN.1/HA Audit Data Generation</h4>
           
-          <div class="element"><div class="reqid" id="FAU_GEN.1.1/HA"><a href="#FAU_GEN.1.1/HA" class="abbr">FAU_GEN.1.1/HA</a></div><div class="reqdesc"> 
-              <b>Refinement:</b> The <b>Host Agent</b> shall generate an audit record of the following auditable events:
+          
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/HA"><a href="#FAU_GEN.1.1/HA" class="abbr">FAU_GEN.1.1/HA</a></div><div class="reqdesc">The <b>Host Agent</b> shall <b>be able to generate</b> an audit <b>data</b> of the following auditable events:
               <ol type="a">
                 <li><del>Start-up and shutdown of the audit functions;</del></li>
-                <li>All auditable events for the [<i>not specified</i>] level of audit; and</li>
+                <li>All auditable events for the [<i>not specified</i>] level of audit;</li>
               </ol>
               [<i>
               <ol type="a">
@@ -880,14 +880,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr>'s available from the platform if needed to generate the audit events.  For the selection one or both options may be selected.
               The assignment may be empty, a single item, or multiple items. Changes in enrollment include new enrollment and unenrollment.
             </span></div></div></div>
-          <div class="element"><div class="reqid" id="FAU_GEN.1.2/HA"><a href="#FAU_GEN.1.2/HA" class="abbr">FAU_GEN.1.2/HA</a></div><div class="reqdesc"> <b>Refinement:</b> The <b>
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/HA"><a href="#FAU_GEN.1.2/HA" class="abbr">FAU_GEN.1.2/HA</a></div><div class="reqdesc">The <b>
               [<b>selection</b>: <span class="selectable-content" id="_s_3">Host Agent</span>, <span class="selectable-content" id="_s_4">Host Agent Platform</span>] </b> 
-              shall record within each audit record at least the following information: 
+              shall record within each audit <b>data</b> at least the following information: 
               <ol type="a">
-                <li>Date and time of the event,</li>
-                <li>Type of event,</li>
-                <li>Subject identity,</li>
-                <li>Outcome (success or failure) of the event,</li>
+                <li>Date and time of the event, type of event, subject identity (if applicable), outcome (success or failure) of the event;</li>
                 <li>For each audit type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>/<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: 
      <span class="assignable-content">Other audit relevant information</span>].</li>
               </ol>
@@ -901,10 +898,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               The subject identity can
               be blank if not applicable for a given process. The assignment may be empty, a single item, or multiple items.
             </span></div></div></div>
+          
         </div>
              
              
-      
+             
         <div class="comp" id="FAU_STO_EXT.1"><h4>FAU_STO_EXT.1 Audit Data Storage</h4>
           
           
@@ -935,6 +933,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         <div class="comp" id="FDP_NET_EXT.2"><h4>FDP_NET_EXT.2 Network Communications</h4>
           
            
+            
+            
+            
           <div class="element"><div class="reqid" id="FDP_NET_EXT.2.1"><a href="#FDP_NET_EXT.2.1" class="abbr">FDP_NET_EXT.2.1</a></div><div class="reqdesc"> 
             The Host Agent shall restrict network communications to: 
             [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_MGMT">An <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server</span></li><li style=""><span class="selectable-content" id="AGT_PEER">Another Host Agent</span></li></ul>]
@@ -954,6 +955,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
        
         <div class="comp" id="FHA_HAD_EXT.1"><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4>
+
           
           
           
@@ -973,6 +975,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                
               <br/>
             </span></div></div></div>
+          
         </div>
         
 
@@ -982,17 +985,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         <div class="comp" id="FMT_SMF.1/HA"><h4>FMT_SMF.1/HA Specification of Management Functions (Configuration of Host Agent)</h4>
           
+      
           <div class="element"><div class="reqid" id="FMT_SMF.1.1/HA"><a href="#FMT_SMF.1.1/HA" class="abbr">FMT_SMF.1.1/HA</a></div><div class="reqdesc">The <b>Host Agent</b> shall be capable of performing the
-              following management functions:
-              <br/>
-              <table class="mfs" style="width: 100%;"><tr class="header"><td>#</td><td>Management Function</td><td>Administrator</td></tr>
-<tr id="_mf_1"><td>1</td><td style="text-align:left">
-                    Configure the frequency for sending Host Agent data to an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr>
-                  </td><td><div class="tooltipped">M<span class="tooltiptext">Mandatory</span></div></td></tr>
-<tr id="_mf_2"><td>2</td><td style="text-align:left">
-                    Assign at least one label or tag to categorize individual endpoint systems
-                  </td><td><div class="tooltipped">M<span class="tooltiptext">Mandatory</span></div></td></tr>
-</table>
+              following management functions: [<b>assignment</b>: 
+     <span class="assignable-content">list of management functions to be provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>].             
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> This requirement captures all the configuration functionality
@@ -1006,13 +1002,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <br/><br/>
               Chart legend: X = Mandatory
             </span></div></div></div>
+          
         </div>
         
         
         
         <div class="comp" id="FMT_UNR_EXT.1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4>
           
-          
+                    
           
           
           
@@ -1028,7 +1025,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               Unenrolling is the action of transitioning from the enrolled state to the
               unenrolled state. Preventing unprivileged users from unenrolling the Host Agent
               provides assurance that the enterprise can manage connected endpoints. 
-            </span></div></div></div>        
+            </span></div></div></div>   
+               
         </div>
         
       
@@ -1135,7 +1133,8 @@ for the data it transmits</td></tr>
             FCS_COP.1(3).
             
             
-          </span></div></div></div>        
+          </span></div></div></div> 
+               
       </div>
      
     <h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B -  Selection-based Requirements
@@ -1165,6 +1164,7 @@ for the data it transmits</td></tr>
      <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="_s_16">other actions</span>]when the local cache is full.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement addresses how the Host Agent handles collected data while the trusted path is not available and the local cache is full.</span></div></div></div>
+        
       </div>  
        
        
@@ -1197,6 +1197,7 @@ for the data it transmits</td></tr>
             <a onclick="showTarget('bibEDRPP')" href="#bibEDRPP" class="bibEDRPP-ref"> <span class="counter">bibEDRPP</span></a> <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> per
             the selection from <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a>. The assignment may be empty, a single item, or multiple items.
           </span></div></div></div>
+        
       </div>
      
       
@@ -1223,6 +1224,7 @@ for the data it transmits</td></tr>
             these communications should be consistent with any selections made in FTP_DIT_EXT.1
             
           </span></div></div></div>
+        
       </div>
      
       
@@ -1363,7 +1365,7 @@ for the data it transmits</td></tr>
                  Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022.</li>
           </ul></span></td></tr><tr><td><span id="bibAppPP">[AppPP]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
-          Software</a>, Version 1.3, March 1, 2019
+          Software</a>, Version 2.0, MMMM DD, YYYY
       </span></td></tr><tr><td><span id="bibEDRPP">[<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</a>, Version 1.0, October 23rd. 2020
       </span></td></tr></table></body></html>
