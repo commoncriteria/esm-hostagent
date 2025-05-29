@@ -33,7 +33,8 @@ and so it is recommended that the intro text and associated table heading be upd
     xmlns:sec="https://niap-ccevs.org/cc/v1/section"
     name="Host Agent"
     boilerplate="yes"
-    target-product="Host Agent">
+    target-product="Host Agent"
+	target-products="Host Agents">
 
   <PPReference>
     <ReferenceTable>
