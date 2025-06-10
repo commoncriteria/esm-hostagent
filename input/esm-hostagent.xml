@@ -227,13 +227,13 @@ and so it is recommended that the intro text and associated table heading be upd
 				<Mod-cc-ref>PP-Module for Endpoint Detection and Response, Version 1.0</Mod-cc-ref>  
 				<Mod-cc-ref>PP-Module for Host Agent, Version 1.0</Mod-cc-ref>  
 				 --> 
-        <PP-cc-ref>Protection Profile for Application Software Version 2.0<comment>update URL</comment></PP-cc-ref>
-				<Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version <comment>update version/URL</comment></Mod-cc-ref>
+        <PP-cc-ref>Protection Profile for Application Software Version 2.0 <comment>!update URL in bib!</comment></PP-cc-ref>
+				<Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version 2.0 <comment>!update version/URL!</comment></Mod-cc-ref>
 
 	
 			</cc-pp-config-with>
 			<cc-pkg-claim>
-        <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0<comment>confirm version</comment></FP-cc-ref>
+        <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0 <comment>!confirm version!</comment></FP-cc-ref>
       </cc-pkg-claim>
 			
 		</CClaimsInfo>	
@@ -284,10 +284,8 @@ for the data it transmits</rationale>
     <section id="Assumptions" title="Assumptions">
       
       
-      <h:br/><h:br/> This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
-      <assumptions>
-        
-      </assumptions> 
+      This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
+      <assumptions/> 
     </section>
     <section title="Organizational Security Policies" id="OSPs">
       This PP-Module defines no additional organizational security policies beyond those defined in the Base-PP.
@@ -303,8 +301,7 @@ for the data it transmits</rationale>
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">
     </section>
-    <section id="secconrat" title="Security Objectives Rationale">
-    </section>
+    <section id="secconrat" title="Security Objectives Rationale"/>
   </section>
   
   <section title="Security Requirements" id="req">
