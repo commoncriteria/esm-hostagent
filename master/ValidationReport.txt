@@ -3,5 +3,4 @@
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:236:86: error: element "comment" not allowed here; expected the element end-tag or text
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:39: error: text not allowed here; expected data
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:39: error: element "comment" not allowed here; expected data
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:71: error: element "branch" incomplete; expected data
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:317:25: error: element "sec-func-req-dir" not allowed yet; missing required element "url"
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:70: error: element "branch" incomplete; expected data
