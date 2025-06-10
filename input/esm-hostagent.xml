@@ -312,8 +312,9 @@ that the Host Agent can collect from its Operational Environment.</rationale>
    <base-pp id="AppPP" name="Application Software" product="Application" short="App" version="2.0" >
       <git>
           <url>https://github.com/commoncriteria/application</url>
-          <branch>release-1.4<comment> update later</comment></branch>
+          <branch>release-1.4<comment>update later</comment></branch>
         </git>
+         <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
       <sec-func-req-dir>
         In a PP-Configuration that includes App PP, the TOE is expected to rely on some of the security functions implemented by the application 
         as a whole and evaluated against the Base-PP.
