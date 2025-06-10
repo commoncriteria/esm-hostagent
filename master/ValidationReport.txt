@@ -1,8 +1,7 @@
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:230:85: error: element "comment" not allowed here; expected the element end-tag or text
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:231:91: error: element "comment" not allowed here; expected the element end-tag or text
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:236:86: error: element "comment" not allowed here; expected the element end-tag or text
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:293:78: error: text not allowed here; expected element "OSPs"
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:293:113: error: text not allowed here; expected element "OSPs"
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:294:15: error: element "section" incomplete; missing required element "OSPs"
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:314:78: error: element "base-pp" missing required attribute "id"
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:25: error: element "sec-func-req-dir" not allowed yet; missing required element "url"
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:39: error: text not allowed here; expected data
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:39: error: element "comment" not allowed here; expected data
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:71: error: element "branch" incomplete; expected data
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:317:25: error: element "sec-func-req-dir" not allowed yet; missing required element "url"
