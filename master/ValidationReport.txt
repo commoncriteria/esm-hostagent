@@ -6,5 +6,3 @@
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:294:15: error: element "section" incomplete; missing required element "OSPs"
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:314:78: error: element "base-pp" missing required attribute "id"
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:25: error: element "sec-func-req-dir" not allowed yet; missing required element "url"
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:758:51: error: element "depends-on" not allowed here; expected the element end-tag or element "audit", "audit-event", "comp-lev", "consistency-rationale", "dependencies", "depends", "description", "exportable", "f-element", "importable", "management" or "note"
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:812:55: error: element "depends-on" not allowed here; expected the element end-tag or element "audit", "audit-event", "comp-lev", "consistency-rationale", "dependencies", "depends", "description", "exportable", "f-element", "importable", "management" or "note"
