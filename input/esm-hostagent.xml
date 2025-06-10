@@ -755,7 +755,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
        </ext-comp-def>
       
       <f-component cc-id="fha_col_ext.1" name="Collected Audit" >
-        <depends-on req="fil-decl" ids="AGT_EDR"/>
+        <depends req="fil-decl" ids="AGT_EDR"/>
         <consistency-rationale>
           This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
@@ -809,7 +809,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
        </ext-comp-def>
        
       <f-component cc-id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
-        <depends-on req="fil-age-net" ids="AGT_PEER"/>
+        <depends req="fil-age-net" ids="AGT_PEER"/>
         <consistency-rationale>
           This SFR defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
