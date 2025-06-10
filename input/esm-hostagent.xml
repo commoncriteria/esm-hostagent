@@ -439,7 +439,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
         </f-component>
              
              <ext-comp-def fam-id="FAU_STO_EXT" title="Audit Data Storage">
-               <mod-def>Components in this family define requirements for the location and method of audit storage.</mod-def>
+               <fam-behavior>Components in this family define requirements for the location and method of audit storage.</fam-behavior>
              </ext-comp-def>
              
         <f-component cc-id="fau_sto_ext.1" name="Audit Data Storage">
@@ -545,7 +545,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
       <section title="Host Agent (FHA)" id="fha">
         
         <ext-comp-def fam-id="FHA_HAD_EXT" title="Host Agent Declaration">
-          <mod-def>Components in this family define requirements for the ESM functionality that the TOE is compatible with.</mod-def>
+          <fam-behavior>Components in this family define requirements for the ESM functionality that the TOE is compatible with.</fam-behavior>
         </ext-comp-def>
        
         <f-component cc-id="fha_had_ext.1" name="Host Agent Declaration">
@@ -648,8 +648,8 @@ that the Host Agent can collect from its Operational Environment.</rationale>
         </f-component>
         
         <ext-comp-def fam-id="FMT_UNR_EXT" title="User Unenrollment Prevention">
-          <mod-def>Components in this family define requirements for ensuring that an unprivileged user
-           cannot remove the TOE from management by another ESM component.</mod-def>
+          <fam-behavior>Components in this family define requirements for ensuring that an unprivileged user
+           cannot remove the TOE from management by another ESM component.</fam-behavior>
         </ext-comp-def>
         
         <f-component cc-id="fmt_unr_ext.1" name="User Unenrollment Prevention">
@@ -703,7 +703,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
      <section title="Host Agent (FHA)" id="fha-sel">
        
        <ext-comp-def fam-id="FHA_CHA_EXT" title="Cache Host Agent Collected Data">
-         <mod-def>Components in this family define requirements for the location and duration of storage for its collected data.</mod-def>
+         <fam-behavior>Components in this family define requirements for the location and duration of storage for its collected data.</fam-behavior>
        </ext-comp-def>
        
       <f-component cc-id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
@@ -753,8 +753,8 @@ that the Host Agent can collect from its Operational Environment.</rationale>
       </f-component>  
        
        <ext-comp-def fam-id="FHA_COL_EXT" title="Collected Audit">
-         <mod-def>Components in this family define requirements for the collection of data the TOE collects from 
-           its Operational Environment as audit data.</mod-def>
+         <fam-behavior>Components in this family define requirements for the collection of data the TOE collects from 
+           its Operational Environment as audit data.</fam-behavior>
        </ext-comp-def>
       
       <f-component cc-id="fha_col_ext.1" name="Collected Audit" >
@@ -807,8 +807,8 @@ that the Host Agent can collect from its Operational Environment.</rationale>
      <section title="Trusted Path/Channels (FTP)" id="ftp">
        
        <ext-comp-def fam-id="FTP_DIT_EXT" title="Protection of Data in Transit">
-         <mod-def>This family is defined in the <xref to="bibAppPP"/>. This PP-Module adds a component
-         to the existing family definition.</mod-def>
+         <fam-behavior>This family is defined in the <xref to="bibAppPP"/>. This PP-Module adds a component
+         to the existing family definition.</fam-behavior>
        </ext-comp-def>
        
       <f-component cc-id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
@@ -860,7 +860,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
      <section title="Security Management (FMT)" id="fmt-obj">
        
        <ext-comp-def fam-id="FMT_POL_EXT" title="Trusted Policy Update">
-         <mod-def>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</mod-def>
+         <fam-behavior>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</fam-behavior>
        </ext-comp-def>
        
       <f-component cc-id="fmt_pol_ext.1" name="Trusted Policy Update">
