@@ -12,8 +12,6 @@ output/esm-hostagent-release-linkable.html: TODO
 output/esm-hostagent-release-linkable.html: Unenrolling
 output/esm-hostagent-release-linkable.html: Unenrollment
 output/esm-hostagent-release-linkable.html: YYYY
-output/esm-hostagent-release-linkable.html: bibAppPP
-output/esm-hostagent-release-linkable.html: bibEDRPP
 output/esm-hostagent-release-linkable.html: collectable
 output/esm-hostagent-release-linkable.html: configuartion
 output/esm-hostagent-release-linkable.html: evalutor
@@ -34,8 +32,6 @@ output/esm-hostagent-release.html: STM
 output/esm-hostagent-release.html: Unenrolling
 output/esm-hostagent-release.html: Unenrollment
 output/esm-hostagent-release.html: YYYY
-output/esm-hostagent-release.html: bibAppPP
-output/esm-hostagent-release.html: bibEDRPP
 output/esm-hostagent-release.html: unenrolling
 output/esm-hostagent-release.html: unenrollment
 output/esm-hostagent-sd.html: AGD
@@ -71,8 +67,6 @@ output/esm-hostagent.html: TODO
 output/esm-hostagent.html: Unenrolling
 output/esm-hostagent.html: Unenrollment
 output/esm-hostagent.html: YYYY
-output/esm-hostagent.html: bibAppPP
-output/esm-hostagent.html: bibEDRPP
 output/esm-hostagent.html: collectable
 output/esm-hostagent.html: configuartion
 output/esm-hostagent.html: evalutor
