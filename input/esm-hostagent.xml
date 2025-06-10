@@ -356,7 +356,7 @@ for the data it transmits</rationale>
           </consistency-rationale>
           
           <f-element id="fau-gen-1-1">
-            <title>The <h:b>Host Agent</h:b> shall <h:b>be able to generate</h:b> an audit <h:b>data</h:b> of the following auditable events:
+            <title>The TSF shall <h:b>be able to generate</h:b> an audit <h:b>data</h:b> of the following auditable events:
               <h:ol type='a'>
                 <h:li><h:del>Start-up and shutdown of the audit functions;</h:del></h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
@@ -379,11 +379,11 @@ for the data it transmits</rationale>
             </note>
           </f-element>
           <f-element id="fau-gen-1-2">
-            <title>The <h:b>
+            <title>The 
               <selectables>
-                <selectable>Host Agent</selectable>
-                <selectable>Host Agent Platform</selectable>
-              </selectables> </h:b> 
+                <selectable>TSF</selectable>
+                <selectable>TOE Platform</selectable>
+              </selectables> 
               shall record within each audit <h:b>data</h:b> at least the following information: 
               <h:ol type='a'>
                 <h:li>Date and time of the event, type of event, subject identity (if applicable), outcome (success or failure) of the event;</h:li>
@@ -455,8 +455,8 @@ for the data it transmits</rationale>
             <title> 
               The
               <selectables>
-                <selectable>Host Agent</selectable>
-                <selectable>Host Agent Platform</selectable>
+                <selectable>TSF</selectable>
+                <selectable>TOE Platform</selectable>
               </selectables> 
               shall store audit events in the platform-provided logging mechanism.
             </title>
@@ -512,7 +512,7 @@ for the data it transmits</rationale>
             <dependencies/>
           <f-element id="fil-age-net">
           <title> 
-            The Host Agent shall restrict network communications to: 
+            The TSF shall restrict network communications to: 
             <selectables linebreak="yes">
               <selectable id="AGT_MGMT">An ESM server</selectable>
               <selectable id="AGT_PEER">Another Host Agent</selectable>
@@ -562,7 +562,7 @@ for the data it transmits</rationale>
           
           <f-element id="fil-decl"><!--fha_had_ext.1.1">-->
             <title> 
-              The Host Agent shall operate with the following ESM Software:
+              The TSF shall operate with the following ESM Software:
               <selectables linebreak="yes">
                 <selectable id="AGT_EDR">Endpoint Detection and Response (EDR)</selectable>
                 <selectable><assignable>Other NIAP-approved ESM servers</assignable></selectable>
@@ -611,7 +611,7 @@ for the data it transmits</rationale>
           </consistency-rationale>
       
           <f-element><!-- id="FMT_SMF.1.1(1)">-->
-            <title>The <h:b>Host Agent</h:b> shall be capable of performing the
+            <title>The TSF shall be capable of performing the
               following management functions: <assignable>list of management functions to be provided by the TSF</assignable>.             
             </title>
             <note role="application"> This requirement captures all the configuration functionality
@@ -664,8 +664,8 @@ for the data it transmits</rationale>
           <f-element>
             <title>The 
               <selectables>
-                <selectable>Host Agent</selectable>
-                <selectable>Host Agent Platform</selectable>
+                <selectable>TSF</selectable>
+                <selectable>TOE Platform</selectable>
               </selectables> 
               shall enforce a mechanism to prevent unprivileged users of the platform from
               unenrolling the Host Agent with the ESM system.
@@ -719,7 +719,7 @@ for the data it transmits</rationale>
         
         <f-element id="fha-cha-ext-1-1">
           <title> 
-            The <h:b>Host Agent</h:b> shall cache collected data up to <assignable>size of cache storage capacity</assignable> on <selectables><selectable>persistent storage</selectable><selectable>non-persistent storage</selectable></selectables> if the trusted channel is not available.
+            The TSF shall cache collected data up to <assignable>size of cache storage capacity</assignable> on <selectables><selectable>persistent storage</selectable><selectable>non-persistent storage</selectable></selectables> if the trusted channel is not available.
           </title>
           <note role="application">
             The term collected data here is understood to be any type of collected endpoint data by the Host Agent destined for an ESM server. The ST author specifies the size of the cache storage and whether it is implemented in persistent or non-persistent storage.
@@ -744,7 +744,7 @@ for the data it transmits</rationale>
           </aactivity>
         </f-element>
         <f-element id="fha-cha-ext-1-2">
-          <title>The Host Agent shall <selectables><selectable>overwrite previous data according to the following rule: <assignable>rule for overwriting previously cached data</assignable></selectable><selectable>other actions</selectable></selectables>when the local cache is full.</title>
+          <title>The TSF shall <selectables><selectable>overwrite previous data according to the following rule: <assignable>rule for overwriting previously cached data</assignable></selectable><selectable>other actions</selectable></selectables>when the local cache is full.</title>
             <note role="application">This requirement addresses how the Host Agent handles collected data while the trusted path is not available and the local cache is full.</note>
             <aactivity><no-tests/></aactivity>
         </f-element>
@@ -768,7 +768,7 @@ for the data it transmits</rationale>
         <dependencies>FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
         
         <f-element>
-          <title>The Host Agent shall collect the following minimum set of
+          <title>The TSF shall collect the following minimum set of
             endpoint event data: <h:ol type="a">
               <h:li>Operating System (OS) version, architecture, and IP Address,</h:li>
               <h:li>Privileged and unprivileged endpoint account login activity,</h:li>
@@ -824,7 +824,7 @@ for the data it transmits</rationale>
         FTP_DIT_EXT.1 Protection of Data in Transit</dependencies>
         
         <f-element>
-          <title>The Host Agent shall 
+          <title>The TSF shall 
             <selectables>
               <selectable>encrypt</selectable>
               <selectable>invoke platform-provided functionality to encrypt</selectable>
@@ -876,8 +876,8 @@ for the data it transmits</rationale>
         <f-element>
           <title>The 
             <selectables>
-              <selectable>Host Agent</selectable>
-              <selectable>Host Agent Platform</selectable>
+              <selectable>TSF</selectable>
+              <selectable>TOE Platform</selectable>
             </selectables> 
             shall only accept policies or commands that are digitally signed using 
             <selectables>
