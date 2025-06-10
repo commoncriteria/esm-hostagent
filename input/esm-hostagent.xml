@@ -704,7 +704,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
        </ext-comp-def>
        
       <f-component cc-id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
-        <depends-on req="fil-decl" ids="AGT_EDR"/>
+        <depends req="fil-decl" ids="AGT_EDR"/>
         <consistency-rationale>
           This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
         </consistency-rationale>
