@@ -984,7 +984,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
     <entry id="bibEDRPP">
       <tag>EDR</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</h:a>, Version 1.0, October 23rd. 2020
+        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</h:a>, Version 2.0, MMMM DD, YYYY
       </description>
     </entry>
   </bibliography>
