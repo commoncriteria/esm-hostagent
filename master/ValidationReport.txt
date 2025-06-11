@@ -1,6 +1,6 @@
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:230:85: error: element "comment" not allowed here; expected the element end-tag or text
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:231:91: error: element "comment" not allowed here; expected the element end-tag or text
 /home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:236:86: error: element "comment" not allowed here; expected the element end-tag or text
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:39: error: text not allowed here; expected data
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:39: error: element "comment" not allowed here; expected data
-/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:315:70: error: element "branch" incomplete; expected data
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:313:39: error: text not allowed here; expected data
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:313:39: error: element "comment" not allowed here; expected data
+/home/runner/work/esm-hostagent/esm-hostagent/input/esm-hostagent.xml:313:70: error: element "branch" incomplete; expected data
