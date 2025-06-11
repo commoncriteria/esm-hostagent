@@ -925,14 +925,15 @@ that the Host Agent can collect from its Operational Environment.</rationale>
             <Tests>
               <testlist>
                 <test>
+                  <h:p>
                   The evaluator shall perform or wait for a policy update or commands 
                   from an ESM server to be sent to a Host Agent. The evaluator shall verify the
                   policy or command is signed and is provided to the Host Agent. The evaluator shall
                   verify the Host Agent accepts the digitally signed policy.
-                  <h:p/>
+                </h:p><h:p>
                   The execution of this test may require some configuration or a test version of either
                   the Host Agent of the ESM system in order to view the incoming policy or command
-                  and verify that the content is digitally signed.
+                  and verify that the content is digitally signed.</h:p>
                 </test>
                 <test>
                   The evaluator shall alter a policy update or command and verify the Host Agent rejects the altered policy.
