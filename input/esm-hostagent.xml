@@ -262,8 +262,6 @@ for the data it transmits</rationale>
           <rationale>The PP-Module includes FHA_HAD_EXT.1 to define the interface between the Host Agent and the intended destination for the data it transmits.</rationale>
           <addressed-by>FHA_COL_EXT.1 (selection-based)</addressed-by><rationale>The PP-Module includes FHA_COL_EXT.1 to define the data
 that the Host Agent can collect from its Operational Environment.</rationale>         
-           <addressed-by>FTP_DIT_EXT.1 (from Base-PP)</addressed-by>
-          <rationale>The PP-Module includes FTP_DIT_EXT.1 by reference to show that the Host Agent is capable of using a trusted channel defined by the Base-PP for its own specific use.</rationale>
            <addressed-by>FTP_DIT_EXT.2 (selection-based)</addressed-by><rationale>The PP-Module includes FTP_DIT_EXT.2 to optionally define the trusted communications channel between multiple Host Agents.</rationale>
         </threat>
         <threat name="T.TAMPER">
