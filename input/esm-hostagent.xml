@@ -282,10 +282,8 @@ that the Host Agent can collect from its Operational Environment.</rationale>
     <section id="Assumptions" title="Assumptions">
       
       
-      <h:br/><h:br/> This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
-      <assumptions>
-        
-      </assumptions> 
+      This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
+      <assumptions/> 
     </section>
    
           <sec:Organizational_Security_Policies>
