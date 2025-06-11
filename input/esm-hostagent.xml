@@ -253,7 +253,7 @@ and so it is recommended that the intro text and associated table heading be upd
             to the ESM system is not present. 
           </description>
             <consistency-rationale>This threat is consistent with the Base-PP because a lack of network availability could be a specific consequence of the T.NETWORK_ATTACK threat.</consistency-rationale>
-           
+           <addressed-by>FDP_NET_EXT.2</addressed-by><rationale>The PP-Module includes FDP_NET_EXT.2 to define the trust network connection to another host.</rationale>
            <addressed-by>FHA_HAD_EXT.1</addressed-by><rationale>The PP-Module includes FHA_HAD_EXT.1 to define the
 interface between the Host Agent and the intended destination
 for the data it transmits</rationale>
@@ -346,6 +346,9 @@ that the Host Agent can collect from its Operational Environment.</rationale>
     </base-pp>
     
       <man-sfrs>
+        <section id="sec-sel-audit-table" title="Auditable Events for Mandatory SFRs">
+			<audit-table id="at-Man" table="mandatory"/>
+	 </section>
            <section title="Security Audit (FAU)" id="fau">
        
        <!-- SME: this was changed from FAU_GEN.1/HA because the iteration convention defines the (1) notation
@@ -703,6 +706,10 @@ that the Host Agent can collect from its Operational Environment.</rationale>
     <opt-sfrs></opt-sfrs>
     
     <sel-sfrs>
+      	<section id="sec-sel-audit-table" title="Auditable Events for Selection-based SFRs">
+           <audit-table id="at-sel-based" table="sel-based"/>
+	</section>
+
      <section title="Host Agent (FHA)" id="fha-sel">
        
        <ext-comp-def fam-id="FHA_CHA_EXT" title="Cache Host Agent Collected Data">
@@ -860,6 +867,9 @@ that the Host Agent can collect from its Operational Environment.</rationale>
     </sel-sfrs>
     
     <obj-sfrs>
+      <section id="sec-obj-audit-table" title="Auditable Events for Objective SFRs">
+           <audit-table id="at-objective" table="objective"/>
+      </section>
      <section title="Security Management (FMT)" id="fmt-obj">
        
        <ext-comp-def fam-id="FMT_POL_EXT" title="Trusted Policy Update">
