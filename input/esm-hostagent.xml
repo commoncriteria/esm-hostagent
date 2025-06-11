@@ -159,7 +159,7 @@ and so it is recommended that the intro text and associated table heading be upd
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       The requirements for the EDR are not covered in this PP-Module, however it is expected that an ESM system 
-	    will evaluate against a PP-Configuration that includes both the <xref to="bibEDRPP"/> PP-Module  and the Host AgentPP-Module. 
+	    will evaluate against a PP-Configuration that includes both the <xref to="bibEDRPP"/> PP-Module  and the Host Agent PP-Module. 
 	    The EDR PP-Module covers the security functionality needed on the server or cloud service, and the paired 
 	    Host Agent PP-Module covers the security functionality needed on the endpoint device (desktop, mobile device, etc.). 
 	    At this time only the <xref to="bibEDRPP"/> PP-Module is published and ready for use with this Host Agent PP-Module. 
@@ -502,7 +502,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
       <!-- SME: note that FHA is an extended class. To satisfy APE_ECD, there should also be a definition for the
       class itself and not just the components in it. I don't know if there is currently a way to do that in the template
       so it has been left out for now. -->
-        <section title="User Data Protection" id="FDP">
+        <section title="User Data Protection (FDP)" id="FDP">
           <ext-comp-def fam-id="FDP_NET_EXT" title="Network Communications">
                <fam-behavior>TBD<comment>Not mentioned in the orignal ECD section of the mod PP- should we remove this.</comment></fam-behavior>
              </ext-comp-def>
@@ -530,7 +530,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
           </note>
           <aactivity>
             <TSS>The evaluator shall confirm the TSS lists network communication destinations and that it matches the selections made in the SFR.<h:p/></TSS>
-            <Guidance>The evaluator shall confirm that guidance is provided for any configuartion needed to limit network communications.<h:p/></Guidance>
+            <Guidance>The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<h:p/></Guidance>
            
               <Tests>
                     The evaluator shall run the application.  While the application is running,
@@ -732,7 +732,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
             
             <TSS>The evaluator shall verify the TSS details how data is cached, any rules that would affect data caching, 
               and how cached data will be affected if storage limits are reached.<h:p/></TSS>
-            <Guidance>The evalutor shall verify that any configuration options related to data caching are listed in the guidance.<h:p/></Guidance>
+            <Guidance>The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<h:p/></Guidance>
             
             <Tests>
                   The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
@@ -848,7 +848,7 @@ that the Host Agent can collect from its Operational Environment.</rationale>
             to other Host Agents is protected according to FPT_DIT_EXT.1.<h:p/></Guidance> 
             
             <Tests>
-                  The tests in FTP_DIT_EXT.1.1 shall be repeated for data trasmitted between two Host Agents.
+                  The tests in FTP_DIT_EXT.1.1 shall be repeated for data transmitted between two Host Agents.
             </Tests>
             
           </aactivity>
