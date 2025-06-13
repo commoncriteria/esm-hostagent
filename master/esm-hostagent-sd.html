@@ -484,43 +484,12 @@ The following sections list Common Criteria and technology terms used in this do
             
            
               
-            
-            
           <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall confirm the TSS lists network communication destinations and that it matches the selections made in the SFR.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                     The evaluator shall run the application.  While the application is running,
                     the evaluator shall sniff network traffic ignoring all non-application 
                     associated traffic
                     and verify that any network communications witnessed are limited to the selection made in the SFR.
-              </div></div></span></div><h2 class="indexable" data-level="2" id="fha">2.2.3 Host Agent (FHA)</h2><div class="comp" id=""><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_CHA_EXT.1</div>
-                  
-                  
-                  
-                  
-                  
-                  
-                <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS details how data is cached, any rules that would affect data caching, 
-                    and how cached data will be affected if storage limits are reached.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
-                    from the network to simulate a network connectivity failure, 
-                    these should be actual hours not via changing system time. The evaluator shall
-                    exercise behaviors on the endpoint during the outage to generate Host Agent data.
-                    Example behaviors could be running programs, performing some authentications, installing/uninstalling 
-                    software, or sample test cases provided by the vendor to generate Host Agent data.
-                    The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
-                    that the missing data from the outage is available on the ESM management portal.
-                  </div></div></span></div><div class="comp" id=""><h4>FHA_COL_EXT.1 Collected Audit</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_COL_EXT.1</div>
-                  
-                  
-                   
-                  
-                  
-                <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains a full list of endpoint data that can be collected.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
-                    The evaluator shall check the administrative guide and ensure
-                    that it lists all of the collectable types of endpoint event data.  
-                    The evaluator shall check to make sure that every endpoint event 
-                    type listed in the ST is included in the administrative guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall run the systems causing multiple events to occur and then review the items collected by the Host Agent to verify that all items in the minimum set are included.
-                  </div></div></span></div><div class="comp" id=""><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_HAD_EXT.1</div>
+              </div></div></span></div><h2 class="indexable" data-level="2" id="fha">2.2.3 Host Agent (FHA)</h2><div class="comp" id=""><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_HAD_EXT.1</div>
                 
                 
                 
