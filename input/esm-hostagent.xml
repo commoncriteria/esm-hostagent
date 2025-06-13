@@ -646,9 +646,6 @@ and so it is recommended that the intro text and associated table heading be upd
               <audit-event/>
             </f-component>
           
-          
-          
-          
           <f-component cc-id="fha_had_ext.1" name="Host Agent Declaration">
             
             <consistency-rationale>
@@ -805,15 +802,119 @@ and so it is recommended that the intro text and associated table heading be upd
            <audit-table id="at-sel-based" table="sel-based"/>
 	</section>
 
-     
+      <section title="Host Agent (FHA)" id="fha">
+        <ext-comp-def fam-id="FHA_CHA_EXT" title="Cache Host Agent Collected Data">
+          <fam-behavior>Components in this family define requirements for the location and duration of storage for its collected data.</fam-behavior>
+        </ext-comp-def>
+        
+        <ext-comp-def fam-id="FHA_COL_EXT" title="Collected Audit">
+          <fam-behavior>Components in this family define requirements for the collection of data the TOE collects from 
+            its Operational Environment as audit data.</fam-behavior>
+        </ext-comp-def>
+        
+        <f-component cc-id="fha_cha_ext.1" name="Cache Host Agent Collected Data">
+          <depends req="fil-decl" ids="AGT_EDR"/>
+          <consistency-rationale>
+            This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
+          </consistency-rationale>
+          
+          <comp-lev> requires either the TOE or its platform to store audit data using the platform's logging mechanism.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>FHA_COL_EXT.1 Collected Audit<h:br/>
+            FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
+          
+          <f-element id="fha-cha-ext-1-1">
+            <title> 
+              The TSF shall cache collected data up to <assignable>size of cache storage capacity</assignable> on <selectables><selectable>persistent storage</selectable><selectable>non-persistent storage</selectable></selectables> if the trusted channel is not available.
+            </title>
+            <note role="application">
+              The term collected data here is understood to be any type of collected endpoint data by the Host Agent destined for an ESM server. The ST author specifies the size of the cache storage and whether it is implemented in persistent or non-persistent storage.
+            </note>
+            
+          </f-element>
+          <f-element id="fha-cha-ext-1-2">
+            <title>The TSF shall <selectables>
+              <selectable>overwrite previous data according to the following rule: <assignable>rule for overwriting previously cached data</assignable></selectable>
+              <selectable><assignable>other actions</assignable></selectable>
+            </selectables> when the local cache is full.</title>
+            <note role="application">This requirement addresses how the Host Agent handles collected data while the trusted path is not available and the local cache is full.</note>
+            <aactivity>
+              
+              <TSS>The evaluator shall verify the TSS details how data is cached, any rules that would affect data caching, 
+                and how cached data will be affected if storage limits are reached.<h:p/></TSS>
+              <Guidance>The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<h:p/></Guidance>
+              
+              <Tests>
+                The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
+                from the network to simulate a network connectivity failure, 
+                these should be actual hours not via changing system time. The evaluator shall
+                exercise behaviors on the endpoint during the outage to generate Host Agent data.
+                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
+                software, or sample test cases provided by the vendor to generate Host Agent data.
+                The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
+                that the missing data from the outage is available on the ESM management portal.
+              </Tests>
+              
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>  
+        
+        <f-component cc-id="fha_col_ext.1" name="Collected Audit" >
+          <depends req="fil-decl" ids="AGT_EDR"/>
+          <consistency-rationale>
+            This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.
+          </consistency-rationale>
+          
+          <comp-lev> requires the TOE to collect a specified set of data from its Operational Environment.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>FHA_HAD_EXT.1 Host Agent Declaration</dependencies>
+          
+          <f-element>
+            <title>The TSF shall collect the following minimum set of
+              endpoint event data: <h:ol type="a">
+                <h:li>Operating System (OS) version, architecture, and IP Address,</h:li>
+                <h:li>Privileged and unprivileged endpoint account login activity,</h:li>
+                <h:li>Process creation,</h:li>
+                <h:li>Libraries and modules loaded by processes,</h:li>
+                <h:li>Network connection activity, including destination IP,</h:li>
+                <h:li>Files created on persistent storage,</h:li>
+                <h:li><assignable>other host data</assignable>.</h:li>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the minimum
+              set of endpoint data that the Host Agent for an ESM EDR system must be capable of 
+              collecting. This requirement only applies to Host Agents used with the 
+              <xref to="bibEDRPP"/> PP-Module per
+              the selection from FHA_HAD_EXT.1. The assignment may be empty, a single item, or multiple items.
+            </note>
+            <aactivity>
+              
+              <TSS>The evaluator shall verify the TSS contains a full list of endpoint data that can be collected.<h:p/></TSS>
+              <Guidance> 
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the collectable types of endpoint event data.  
+                The evaluator shall check to make sure that every endpoint event 
+                type listed in the ST is included in the administrative guidance.<h:p/></Guidance> 
+              <Tests>
+                The evaluator shall run the systems causing multiple events to occur and then review the items collected by the Host Agent to verify that all items in the minimum set are included.
+              </Tests>
+              
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component>
+      </section>
       
      <section title="Trusted Path/Channels (FTP)" id="ftp">
        
        <ext-comp-def fam-id="FTP_DIT_EXT" title="Protection of Data in Transit">
          <fam-behavior>This family is defined in the <xref to="bibAppPP"/>. This PP-Module adds a component
          to the existing family definition.</fam-behavior>
-       </ext-comp-def>
-       
+       </ext-comp-def>       
+            
       <f-component cc-id="ftp_dit_ext.2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
         <depends req="fil-age-net" ids="AGT_PEER"/>
         <consistency-rationale>
