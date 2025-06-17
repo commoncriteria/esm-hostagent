@@ -299,7 +299,7 @@ and so it is recommended that the intro text and associated table heading be upd
           <url>https://github.com/commoncriteria/application</url>
           <branch>release-1.4</branch>
         </git>
-         <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=462&amp;id=462</url>
+     <url>https://www.niap-ccevs.org/protectionprofiles/516</url>
       <sec-func-req-dir>
         In a PP-Configuration that includes App PP, the TOE is expected to rely on some of the security functions implemented by the application 
         as a whole and evaluated against the Base-PP.
@@ -964,8 +964,8 @@ and so it is recommended that the intro text and associated table heading be upd
     <entry id="bibAppPP">
       <tag>AppPP</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
-          Software</h:a>, Version 2.0, MMMM DD, YYYY
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516"
+          >Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a>
       </description>
     </entry>
     <entry id="bibEDRPP">
