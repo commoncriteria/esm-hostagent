@@ -8,9 +8,10 @@ output/esm-hostagent-release-linkable.html: Offboarding
 output/esm-hostagent-release-linkable.html: Onboarding
 output/esm-hostagent-release-linkable.html: SPD
 output/esm-hostagent-release-linkable.html: STM
+output/esm-hostagent-release-linkable.html: SigGen
+output/esm-hostagent-release-linkable.html: SigVer
 output/esm-hostagent-release-linkable.html: Unenrolling
 output/esm-hostagent-release-linkable.html: Unenrollment
-output/esm-hostagent-release-linkable.html: Ver
 output/esm-hostagent-release-linkable.html: YYYY
 output/esm-hostagent-release-linkable.html: collectable
 output/esm-hostagent-release-linkable.html: unenroll
@@ -26,9 +27,10 @@ output/esm-hostagent-release.html: Offboarding
 output/esm-hostagent-release.html: Onboarding
 output/esm-hostagent-release.html: SPD
 output/esm-hostagent-release.html: STM
+output/esm-hostagent-release.html: SigGen
+output/esm-hostagent-release.html: SigVer
 output/esm-hostagent-release.html: Unenrolling
 output/esm-hostagent-release.html: Unenrollment
-output/esm-hostagent-release.html: Ver
 output/esm-hostagent-release.html: YYYY
 output/esm-hostagent-release.html: unenrolling
 output/esm-hostagent-release.html: unenrollment
@@ -57,9 +59,10 @@ output/esm-hostagent.html: Offboarding
 output/esm-hostagent.html: Onboarding
 output/esm-hostagent.html: SPD
 output/esm-hostagent.html: STM
+output/esm-hostagent.html: SigGen
+output/esm-hostagent.html: SigVer
 output/esm-hostagent.html: Unenrolling
 output/esm-hostagent.html: Unenrollment
-output/esm-hostagent.html: Ver
 output/esm-hostagent.html: YYYY
 output/esm-hostagent.html: collectable
 output/esm-hostagent.html: unenroll
