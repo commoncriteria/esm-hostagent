@@ -893,7 +893,7 @@ and so it is recommended that the intro text and associated table heading be upd
             protect the policies in transit as they are already protected by FTP_ITC.1 in the
             PP-Module for EDR, FTP_DIT_EXT.2.1, or both. If the TSF implements this function,
             any signature algorithms used should be consistent with any selections made in 
-            FCS_COP.1/Sig Gen and FCS_COP.1/Sig Ver in the Protection Profile for Application Software, Version 2.0.
+            FCS_COP.1/SigGen and FCS_COP.1/SigVer in the Protection Profile for Application Software, Version 2.0.
             
             <!-- The digital signature used to sign policies or commands
             must be selected in FCS_COP.1.1(3). The use of this requirement makes FCS_COP.1.1(3)
@@ -974,7 +974,8 @@ and so it is recommended that the intro text and associated table heading be upd
     <entry id="bibEDRPP">
       <tag>EDR</tag>
       <description>
-        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</h:a>, Version 2.0, MMMM DD, YYYY
+        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and
+          Response</h:a>, Version 2.0, MMMM DD, YYYY <comment>Adjust date once finalized</comment>
       </description>
     </entry>
   </bibliography>
