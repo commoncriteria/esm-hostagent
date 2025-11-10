@@ -962,23 +962,9 @@ and so it is recommended that the intro text and associated table heading be upd
   </appendix>
   
   
-  <bibliography>
-    <cc-entry/>
-    <entry id="bibAppPP">
-      <tag>AppPP</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516"
-          >Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a>
-      </description>
-    </entry>
-    <entry id="bibEDRPP">
-      <tag>EDR</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and
-          Response</h:a>, Version 2.0, MMMM DD, YYYY <comment>Adjust date once finalized</comment>
-      </description>
-    </entry>
-  </bibliography>
+  <bibliography/>
+   
+  
   
    
 </Module>
