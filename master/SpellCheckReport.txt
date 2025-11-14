@@ -1,5 +1,4 @@
 output/esm-hostagent-release-linkable.html: Adleman
-output/esm-hostagent-release-linkable.html: CC2022
 output/esm-hostagent-release-linkable.html: CEM
 output/esm-hostagent-release-linkable.html: FCS
 output/esm-hostagent-release-linkable.html: FDN
@@ -16,7 +15,6 @@ output/esm-hostagent-release-linkable.html: unenroll
 output/esm-hostagent-release-linkable.html: unenrolling
 output/esm-hostagent-release-linkable.html: unenrollment
 output/esm-hostagent-release.html: Adleman
-output/esm-hostagent-release.html: CC2022
 output/esm-hostagent-release.html: CEM
 output/esm-hostagent-release.html: FCS
 output/esm-hostagent-release.html: FDN
@@ -31,7 +29,6 @@ output/esm-hostagent-release.html: Unenrollment
 output/esm-hostagent-release.html: unenrolling
 output/esm-hostagent-release.html: unenrollment
 output/esm-hostagent-sd.html: AGD
-output/esm-hostagent-sd.html: CC2022
 output/esm-hostagent-sd.html: CEM
 output/esm-hostagent-sd.html: Offboarding
 output/esm-hostagent-sd.html: Onboarding
@@ -44,7 +41,6 @@ output/esm-hostagent-sd.html: pass’
 output/esm-hostagent-sd.html: unenroll
 output/esm-hostagent-sd.html: unenrolling
 output/esm-hostagent.html: Adleman
-output/esm-hostagent.html: CC2022
 output/esm-hostagent.html: CEM
 output/esm-hostagent.html: FCS
 output/esm-hostagent.html: FDN
