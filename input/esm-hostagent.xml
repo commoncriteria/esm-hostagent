@@ -40,7 +40,7 @@ and so it is recommended that the intro text and associated table heading be upd
     <ReferenceTable>
       <PPVersion>2.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2025-06-13</PPPubDate>
+      <PPPubDate>2026-01-13</PPPubDate>
       <Keywords>Host Agent, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -53,7 +53,7 @@ and so it is recommended that the intro text and associated table heading be upd
     </entry>
      <entry>
       <version>2.0</version>
-       <date>2025-06-13</date>
+       <date>2026-01-13</date>
       <subject>CC:2022 Conversion</subject>
     </entry>
   </RevisionHistory>
@@ -213,7 +213,6 @@ and so it is recommended that the intro text and associated table heading be upd
   </section>
   
   <sec:Conformance_Claims boilerplate="no">
-		<!-- The new CClaimsInfo construct --><comment>Update URLs in Bib. for pp and mod cc refs</comment>
 		<CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
 			<cc-st-conf>exact</cc-st-conf>       
 			<cc-pt2-conf>extended</cc-pt2-conf>
@@ -232,7 +231,7 @@ and so it is recommended that the intro text and associated table heading be upd
 	
 			</cc-pp-config-with>
 			<cc-pkg-claim>
-			  <FP-cc-ref conf="conformant">Functional Package for SSH, Version 1.0</FP-cc-ref>
+			  <FP-cc-ref conf="conformant">Functional Package for SSH, Version 2.0</FP-cc-ref>
         <FP-cc-ref conf="conformant">Functional Package for TLS, Version 2.1</FP-cc-ref>
 			  <FP-cc-ref conf="conformant">Functional Package for X.509, Version 1.0</FP-cc-ref>
       </cc-pkg-claim>
@@ -296,11 +295,10 @@ and so it is recommended that the intro text and associated table heading be upd
   </section>
   
   <section title="Security Requirements" id="req">
-    <comment>Update URLs once new versions published</comment>
    <base-pp id="AppPP" name="Application Software" product="Application" short="App" version="2.0" >
       <git>
           <url>https://github.com/commoncriteria/application</url>
-          <branch>release-1.4</branch>
+          <branch>release-2.0</branch>
         </git>
      <url>https://www.niap-ccevs.org/protectionprofiles/516</url>
       <sec-func-req-dir>
@@ -962,9 +960,23 @@ and so it is recommended that the intro text and associated table heading be upd
   </appendix>
   
   
-  <bibliography/>
-   
-  
+  <bibliography>
+    <cc-entry/>
+    <entry id="bibAppPP">
+      <tag>AppPP</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516"
+          >Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a>
+      </description>
+    </entry>
+    <entry id="bibEDRPP">
+      <tag>EDR</tag>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/pp/"> PP-Module for Endpoint Detection and Response</h:a>, Version 2.0, January 13, 2026
+      </description>
+    </entry>
+  </bibliography>
+
   
    
 </Module>
