@@ -294,7 +294,7 @@
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-AppPP" style="text-indent:10px">2.1<span>Application Software</span></a><a href="#qq-sfrs-AppPP-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
-        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#FDP" style="text-indent:20px">2.2.2<span>User Data Protection (FDP)</span></a><a href="#fha" style="text-indent:20px">2.2.3<span>Host Agent (FHA)</span></a><a href="#fmt" style="text-indent:20px">2.2.4<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#fha" style="text-indent:20px">2.4.1<span>Host Agent (FHA)</span></a><a href="#ftp" style="text-indent:20px">2.4.2<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#fmt-obj" style="text-indent:20px">2.5.1<span>Security Management (FMT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#fau-mandatory" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#fdp-mandatory" style="text-indent:20px">2.2.2<span>User Data Protection (FDP)</span></a><a href="#fha-mandatory" style="text-indent:20px">2.2.3<span>Host Agent (FHA)</span></a><a href="#fmt-mandatory" style="text-indent:20px">2.2.4<span>Security Management (FMT)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#fha-selectionBased" style="text-indent:20px">2.4.1<span>Host Agent (FHA)</span></a><a href="#ftp-selectionBased" style="text-indent:20px">2.4.2<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#fmt-objective" style="text-indent:20px">2.5.1<span>Security Management (FMT)</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for Host Agent is
     to describe the security functionality of 
     Host Agent
@@ -332,7 +332,7 @@ Although Evaluation Activities are defined mainly for the evaluators to follow, 
     from the evaluator as to why the Evaluation Activities were not sufficient for that TOE. 
     </p><div class="no-link"><h2 id="glossary" class="indexable" data-level="1">1.3 Terms</h2>
 The following sections list Common Criteria and technology terms used in this document.
-    <h3 id="cc-terms" class="indexable" data-level="2">1.3.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a>.</td></tr>
+    <h3 id="cc-terms" class="indexable" data-level="2">1.3.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <span href="#bibCC">[CC]</span>.</td></tr>
 <tr><td><div id="Base_Protection_Profile">Base Protection Profile (Base-PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration.</td></tr>
 <tr><td><div id="Collaborative_Protection_Profile">Collaborative Protection Profile (cPP)</div></td><td>A Protection Profile developed by
     international technical communities and approved by multiple schemes.</td></tr>
@@ -364,31 +364,23 @@ The following sections list Common Criteria and technology terms used in this do
 <tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation.</td></tr>
 <tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST.</td></tr>
 </table><h3 id="tech-terms" class="indexable" data-level="2">1.3.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Endpoint">Endpoint</div></td><td>A computing device that runs a general purpose OS, mobile device OS, or network device OS. Endpoints can 
-      include desktops, servers, and mobile devices.
-      </td></tr>
+      include desktops, servers, and mobile devices.</td></tr>
 <tr><td><div id="Endpoint_Detection_and_Response">Endpoint Detection and Response (EDR)</div></td><td>A system that analyzes collected EDR Host Agent data for detecting, 
-      investigating, and remediating unauthorized activities on endpoints. 
-      </td></tr>
+      investigating, and remediating unauthorized activities on endpoints.</td></tr>
 <tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which an endpoint with a running Host Agent is managed by an ESM.
-      Also, referred to as Onboarding.
-      </td></tr>
-<tr><td><div id="Enrollment">Enrollment</div></td><td>The process of transitioning an endpoint from an unenrolled to an enrolled state.
-      </td></tr>
+      Also, referred to as Onboarding.</td></tr>
+<tr><td><div id="Enrollment">Enrollment</div></td><td>The process of transitioning an endpoint from an unenrolled to an enrolled state.</td></tr>
 <tr><td><div id="Enterprise_Security_Management">Enterprise Security Management (ESM)</div></td><td>A type of application hosted on a server or cloud service that provides 
       support for security management, information flows, reporting, policy, and data analytics 
-      in complex enterprise environments.
-      </td></tr>
+      in complex enterprise environments.</td></tr>
 <tr><td><div id="Host_Agent">Host Agent</div></td><td>A logical piece of software that executes on endpoints to collect data about the endpoint and
       executes commands sent to the endpoint from an ESM server
       or service. An example command sent to an endpoint could be to enforce a policy from an 
-      ESM, to collect some files, or to run an OS command.
-      </td></tr>
+      ESM, to collect some files, or to run an OS command.</td></tr>
 <tr><td><div id="Operating_System">Operating System (OS)</div></td><td>Software that manages physical and logical resources and provides services
-      for applications.
-      </td></tr>
+      for applications.</td></tr>
 <tr><td><div id="Unenrolled_State">Unenrolled State</div></td><td>The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
-      Also, referred to as Offboarding.
-      </td></tr>
+      Also, referred to as Offboarding.</td></tr>
 </table></div><h1 id="sfr" class="indexable" data-level="0">2 Evaluation Activities for SFRs</h1><p>The EAs presented in this section capture the actions the evaluator performs 
     to address technology specific aspects covering specific SARs (e.g. ASE_TSS.1, 
     ADV_FSP.1, AGD_OPE.1, and ATE_IND.1) – this is in addition to the CEM workunits 
@@ -418,200 +410,135 @@ The following sections list Common Criteria and technology terms used in this do
         </h3>
 	  The PP-Module does not modify any requirements when the 
 	  App PP is the base.
-	<h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="fau">2.2.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_GEN.1/HA Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/HA</div>
-      
-              
-               
-              
-              
-              
-<div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS lists all record types that are recorded. <br/><br/>
-                The evaluator shall verify that the TSS lists all the auditable event types and all audit information that the TOE records.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-                The evaluator shall check the administrative guide and ensure
-                that it lists all of the auditable events.  The evaluator shall
-                check to make sure that every audit event type selected in the ST
-                is included.<br/><br/>
-                
-              The evaluator shall check the administrative guide and ensure
-              that it provides a format
-              for audit records. Each audit record format type must be covered,
-              along with a brief description of each field. The evaluator shall
-              ensure that the fields contain the information required.
-                
-            <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_GEN.1/HA:1</a>:
-      
-                    The evaluator shall test the Host Agent's ability to correctly generate
-                    audit records by having the Host Agent generate audit records for each type of 
-                    event listed in the ST.
-                  </li>
-                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FAU_GEN.1/HA:2</a>:
-      
-                    The evaluator shall
-                    ensure the audit records generated during testing match the
-                    format specified in the administrative guide, and that the fields
-                    in each audit record provide the required information.
-                  </li>
-                </ul></span>
-              </div></div></span></div><div class="comp" id=""><h4>FAU_STO_EXT.1 Audit Data Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STO_EXT.1</div>
-              
-              
-              
-              
-              
-              
-          
-<div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains details of where all audit data is stored.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-              The evaluator shall check the administrative guide and ensure
-              that the list of auditable events are stored in the platform-provided logging 
-              mechanism.
-              <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall test the Host Agent's ability to correctly generate
-                    audit records by having the TOE generate audit records for the
-                    events listed in the ST.  This should include all instance types
-                    of an event specified.  
-                    When verifying the test results, the evaluator shall ensure the
-                    audit records generated during testing are stored in the platform-provided logging
-                    mechanism. 
-                    <p></p>
-                    On Linux based platforms this would be in var/logs. On Windows based 
-                    platforms this would be the Windows Event Log.
-                    <p></p>
-                    No specific locations are defined for other platforms.
-              </div></div></span></div><h2 class="indexable" data-level="2" id="FDP">2.2.2 User Data Protection (FDP)</h2><div class="comp" id="FDP-NET-EXT-2"><h4>FDP_NET_EXT.2 Network Communications</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_NET_EXT.2</div>
-            
-            
-           
-              
-          <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall confirm the TSS lists network communication destinations and that it matches the selections made in the SFR.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall run the application.  While the application is running,
-                    the evaluator shall sniff network traffic ignoring all non-application 
-                    associated traffic
-                    and verify that any network communications witnessed are limited to the selection made in the SFR.
-              </div></div></span></div><h2 class="indexable" data-level="2" id="fha">2.2.3 Host Agent (FHA)</h2><div class="comp" id=""><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_HAD_EXT.1</div>
-                
-                
-                
-                
-                
-                
-              <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS lists all classes of products the Host Agent is designed to function with.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">   
-                  The evaluator shall check the administrative guide and ensure
-                  that guidance exists for enrollment with all compatible ESM products identified in the ST.
-                  
-                  <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                  Conditional: If "EDR" is selected, the evaluator shall install the Host Agent and enroll it with the EDR 
-                  management system. The evaluator shall verify that enrollment was successful and 
-                  that the Host Agent is communicating with the EDR.
-                </div></div></span></div><h2 class="indexable" data-level="2" id="fmt">2.2.4 Security Management (FMT)</h2><div class="comp" id=""><h4>FMT_SMF.1/HA Specification of Management Functions (Configuration of Host Agent)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/HA</div>
-              
-              
- 
-              
-              
-              
-             
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains all frequencies for sending Host Agent data to an ESM and all labels that are permitted.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">   
-              The evaluator shall verify that every management function 
-              mandated by the PP-Module is described in the operational guidance and that the description 
-              contains the information required to perform the management duties associated with the 
-              management function.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall test the ability to configure the Host Agent and test each function 
-                    listed in the SFR. The evaluator is expected to test these functions in all the ways in which 
-                    the ST and guidance documentation state    the configuration can be managed.
-              </div></div></span></div><div class="comp" id=""><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_UNR_EXT.1</div>
-                         
-              
-              
-               
+	<h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="fau-mandatory">2.2.1 Security Audit (FAU)</h2><div class="comp" id="FAU-GEN-1-HA"><h4>FAU_GEN.1/HA Audit Data Generation</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_GEN.1/HA</div>
               
               
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">
-              The evaluator shall ensure that the TSS describes the mechanism used to
-              prevent users from unenrolling the Host Agent.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall attempt to unenroll the Host Agent from the ESM system
-                    as an unprivileged user and verify that the attempt fails.
-              </div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.3 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.4 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="fha">2.4.1 Host Agent (FHA)</h2><div class="comp" id=""><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_CHA_EXT.1</div>
+                The evaluator shall verify the TSS lists all record types that are recorded.
+                <br/>
+                <br/>
+                The evaluator shall verify that the TSS lists all the auditable event types and all audit information that the TOE records.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the auditable events.  The evaluator shall
+                check to make sure that every audit event type selected in the ST
+                is included.
+                <br/>
+                <br/>
+                The evaluator shall check the administrative guide and ensure
+              that it provides a format
+              for audit records. Each audit record format type must be covered,
+              along with a brief description of each field. The evaluator shall
+              ensure that the fields contain the information required.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_GEN.1/HA:1</a>:
+      The evaluator shall test the Host Agent's ability to correctly generate audit records by having the Host Agent generate audit records for each type of event listed in the ST.</li>
+                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FAU_GEN.1/HA:2</a>:
+      The evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record provide the required information.</li>
+                </ul></span>
+              </div></div></span></div><div class="comp" id="FAU-STO-EXT-1"><h4>FAU_STO_EXT.1 Audit Data Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STO_EXT.1</div>
               
               
               
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains details of where all audit data is stored.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall check the administrative guide and ensure
+              that the list of auditable events are stored in the platform-provided logging 
+              mechanism.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to correctly generate audit records by having the TOE generate audit records for the events listed in the ST. This should include all instance types of an event specified. When verifying the test results, the evaluator shall ensure the audit records generated during testing are stored in the platform-provided logging mechanism. <p></p>On Linux based platforms this would be in var/logs. On Windows based platforms this would be the Windows Event Log. <p></p>No specific locations are defined for other platforms.</div></div></span></div><h2 class="indexable" data-level="2" id="fdp-mandatory">2.2.2 User Data Protection (FDP)</h2><div class="comp" id="FDP-NET-EXT-2"><h4>FDP_NET_EXT.2 Network Communications</h4><span class="activity_pane_body"><div class="component-activity-header">FDP_NET_EXT.2</div>
               
               
               
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS details how data is cached, any rules that would affect data caching, 
-                and how cached data will be affected if storage limits are reached.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
-                from the network to simulate a network connectivity failure, 
-                these should be actual hours not via changing system time. The evaluator shall
-                exercise behaviors on the endpoint during the outage to generate Host Agent data.
-                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
-                software, or sample test cases provided by the vendor to generate Host Agent data.
-                The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
-                that the missing data from the outage is available on the ESM management portal.
-              </div></div></span></div><div class="comp" id=""><h4>FHA_COL_EXT.1 Collected Audit</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_COL_EXT.1</div>
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall confirm the TSS lists network communication destinations and that it matches the selections made in the SFR.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are limited to the selection made in the SFR.</div></div></span></div><h2 class="indexable" data-level="2" id="fha-mandatory">2.2.3 Host Agent (FHA)</h2><div class="comp" id="FHA-HAD-EXT-1"><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_HAD_EXT.1</div>
               
               
-               
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS lists all classes of products the Host Agent is designed to function with.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall check the administrative guide and ensure
+                  that guidance exists for enrollment with all compatible ESM products identified in the ST.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: If "EDR" is selected, the evaluator shall install the Host Agent and enroll it with the EDR management system. The evaluator shall verify that enrollment was successful and that the Host Agent is communicating with the EDR.</div></div></span></div><h2 class="indexable" data-level="2" id="fmt-mandatory">2.2.4 Security Management (FMT)</h2><div class="comp" id="FMT-SMF-1-HA"><h4>FMT_SMF.1/HA Specification of Management Functions (Configuration of Host Agent)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/HA</div>
               
               
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains a full list of endpoint data that can be collected.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains all frequencies for sending Host Agent data to an ESM and all labels that are permitted.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall verify that every management function 
+              mandated by the PP-Module is described in the operational guidance and that the description 
+              contains the information required to perform the management duties associated with the 
+              management function.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the ability to configure the Host Agent and test each function listed in the SFR. The evaluator is expected to test these functions in all the ways in which the ST and guidance documentation state the configuration can be managed.</div></div></span></div><div class="comp" id="FMT-UNR-EXT-1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_UNR_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall ensure that the TSS describes the mechanism used to
+              prevent users from unenrolling the Host Agent.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to unenroll the Host Agent from the ESM system as an unprivileged user and verify that the attempt fails.</div></div></span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.3 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.4 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="fha-selectionBased">2.4.1 Host Agent (FHA)</h2><div class="comp" id="FHA-CHA-EXT-1"><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_CHA_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall verify the TSS details how data is cached, any rules that would affect data caching, 
+                and how cached data will be affected if storage limits are reached.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint from the network to simulate a network connectivity failure, these should be actual hours not via changing system time. The evaluator shall exercise behaviors on the endpoint during the outage to generate Host Agent data. Example behaviors could be running programs, performing some authentications, installing/uninstalling software, or sample test cases provided by the vendor to generate Host Agent data. The evaluator will then reconnect the endpoint to the network and verify on the ESM system that the missing data from the outage is available on the ESM management portal.</div></div></span></div><div class="comp" id="FHA-COL-EXT-1"><h4>FHA_COL_EXT.1 Collected Audit</h4><span class="activity_pane_body"><div class="component-activity-header">FHA_COL_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS contains a full list of endpoint data that can be collected.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 The evaluator shall check the administrative guide and ensure
                 that it lists all of the collectable types of endpoint event data.  
                 The evaluator shall check to make sure that every endpoint event 
-                type listed in the ST is included in the administrative guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                The evaluator shall run the systems causing multiple events to occur and then review the items collected by the Host Agent to verify that all items in the minimum set are included.
-              </div></div></span></div><h2 class="indexable" data-level="2" id="ftp">2.4.2 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_DIT_EXT.2</div>
-            
-            
-             
-            
-            
-            
-          <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify that the TSS contains a description of all data transmitted to other Host Agents and 
-              that all such data is protected according to FPT_DIT_EXT.1.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
-            to other Host Agents is protected according to FPT_DIT_EXT.1.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                  The tests in FTP_DIT_EXT.1.1 shall be repeated for data transmitted between two Host Agents.
-            </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="fmt-obj">2.5.1 Security Management (FMT)</h2><div class="comp" id=""><h4>FMT_POL_EXT.1 Trusted Policy Update</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_POL_EXT.1</div>
-            
-            
-            
-            
-            
-            
-  
-           
-<div class="eacategory">TSS</div><div class="ea"><div class="ea">
-            The evaluator shall ensure that the TSS describes how the candidate 
+                type listed in the ST is included in the administrative guidance.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the systems causing multiple events to occur and then review the items collected by the Host Agent to verify that all items in the minimum set are included.</div></div></span></div><h2 class="indexable" data-level="2" id="ftp-selectionBased">2.4.2 Trusted Path/Channels (FTP)</h2><div class="comp" id="FTP-DIT-EXT-2"><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_DIT_EXT.2</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall verify that the TSS contains a description of all data transmitted to other Host Agents and 
+              that all such data is protected according to FPT_DIT_EXT.1.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
+            to other Host Agents is protected according to FPT_DIT_EXT.1.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The tests in FTP_DIT_EXT.1.1 shall be repeated for data transmitted between two Host Agents.</div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2><h2 class="indexable" data-level="2" id="fmt-objective">2.5.1 Security Management (FMT)</h2><div class="comp" id="FMT-POL-EXT-1"><h4>FMT_POL_EXT.1 Trusted Policy Update</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_POL_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall ensure that the TSS describes how the candidate 
             policies or commands are sent to the Host Agent; the
             processing associated with verifying the digital signature of the policies or
             commands; and the actions that take place for successful (signature was
             verified) and unsuccessful (signature could not be verified) cases. The
             software components that are performing the processing must also be
             identified in the TSS and verified by the evaluators (this could be the Host Agent
-            or the underlying platform).<p></p>
-            
-            </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-              <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FMT_POL_EXT.1:1</a>:
+            or the underlying platform).
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FMT_POL_EXT.1:1</a>:
       
-                  <p>
-                  The evaluator shall perform or wait for a policy update or commands 
+                    <p>The evaluator shall perform or wait for a policy update or commands 
                   from an ESM server to be sent to a Host Agent. The evaluator shall verify the
                   policy or command is signed and is provided to the Host Agent. The evaluator shall
-                  verify the Host Agent accepts the digitally signed policy.
-                </p><p>
-                  The execution of this test may require some configuration or a test version of either
+                  verify the Host Agent accepts the digitally signed policy.</p>
+                    <p>The execution of this test may require some configuration or a test version of either
                   the Host Agent of the ESM system in order to view the incoming policy or command
                   and verify that the content is digitally signed.</p>
-                </li>
-                <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FMT_POL_EXT.1:2</a>:
-      
-                  The evaluator shall alter a policy update or command and verify the Host Agent rejects the altered policy.
-                </li>
-              </ul></span>
-            </div></div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.6 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
+                  </li>
+                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FMT_POL_EXT.1:2</a>:
+      The evaluator shall alter a policy update or command and verify the Host Agent rejects the altered policy.</li>
+                </ul></span>
+              </div></div></span></div><h2 class="indexable" data-level="1" id="impl-sfrs-">2.6 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
 	base App PP to which it must claim conformance.
 	It is important to note that a TOE that is evaluated against the PP-Module is
@@ -625,13 +552,6 @@ The following sections list Common Criteria and technology terms used in this do
     and supplement that evaluation with the necessary SFRs that are taken from the PP-Module.
     </p><h1 id="sup-info" class="indexable" data-level="0">4 Required Supplementary Information</h1><p>This Supporting Document has no required supplementary information beyond the ST, operational
 guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appendix A -  References</h1><table><tr class="header"><th>Identifier</th><th>Title</th></tr>
-    <tr><td><span id="bibCC"> [CC] </span></td><td>Common Criteria for Information Technology Security Evaluation - <ul><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
-                1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5,
-              April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
-                2: Security Functional Components</a>, CCMB-2017-04-002, Version 3.1 Revision 5,
-              April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
-                3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
-              April 2017.</li></ul></td></tr>
     <tr><td><span id="bibAppPP"></span>[AppPP]</td><td>
         <a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a>
       </td></tr>
