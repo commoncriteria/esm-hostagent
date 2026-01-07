@@ -1,0 +1,4 @@
+* https://commoncriteria.github.io/esm-hostagent/xml-builder-review/esm-hostagent-release-linkable.html[esm-hostagent-release-linkable.html]
+* https://commoncriteria.github.io/esm-hostagent/xml-builder-review/esm-hostagent-release.html[esm-hostagent-release.html]
+* https://commoncriteria.github.io/esm-hostagent/xml-builder-review/esm-hostagent-sd.html[esm-hostagent-sd.html]
+* https://commoncriteria.github.io/esm-hostagent/xml-builder-review/esm-hostagent.html[esm-hostagent.html]
