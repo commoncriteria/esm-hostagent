@@ -175,6 +175,7 @@
     </sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
+      This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
       <assumptions/>
     </sec:Assumptions>
     <!-- 3.3 Organizational Security Policies -->
