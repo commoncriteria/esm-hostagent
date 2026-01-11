@@ -510,7 +510,7 @@
         </ext-comp-def>
         <!-- FHA_CHA_EXT.1 Cache Host Agent Collected Data -->
         <f-component cc-id="fha_cha_ext.1" id="fha-cha-ext-1" name="Cache Host Agent Collected Data">
-          <depends req="fil-decl"/>
+          <depends req="fil-decl" ids="AGT_EDR"/>
           <consistency-rationale>This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.</consistency-rationale>
           <comp-lev> requires either the TOE or its platform to store audit data using the platform's logging mechanism.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -550,7 +550,7 @@
         </f-component>
         <!-- FHA_COL_EXT.1 Collected Audit -->
         <f-component cc-id="fha_col_ext.1" id="fha-col-ext-1" name="Collected Audit">
-          <depends req="fil-decl"/>
+          <depends req="fil-decl" ids="AGT_EDR"/>
           <consistency-rationale>This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.</consistency-rationale>
           <comp-lev> requires the TOE to collect a specified set of data from its Operational Environment.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -600,7 +600,7 @@
         </ext-comp-def>
         <!-- FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents -->
         <f-component cc-id="ftp_dit_ext.2" id="ftp-dit-ext-2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
-          <depends req="fil-age-net"/>
+          <depends req="fil-age-net" ids="AGT_PEER"/>
           <consistency-rationale>This SFR defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.</consistency-rationale>
           <comp-lev> requires the TSF to secure data in transit between itself and another ESM Host Agent using a TSF-provided or platform-provided trusted channel.</comp-lev>
           <management>No specific management functions are identified.</management>
