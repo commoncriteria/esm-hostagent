@@ -1,6 +1,6 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="..\transformspp2html.xsl"?>
-<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xsl-stylesheet type="text/xsl" href="../transforms/xsl/module/module2html.xsl"?>
+<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Module name="Host Agent" boilerplate="yes" target-product="Host Agent" target-products="Host Agents" xmlns="https://niap-ccevs.org/cc/v1" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
     <ReferenceTable>
@@ -166,10 +166,10 @@
           <rationale>The PP-Module includes FAU_GEN.1/HA to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.</rationale>
           <addressed-by>FAU_STO_EXT.1</addressed-by>
           <rationale>The PP-Module includes FAU_STO_EXT.1 to ensure that the TOE provides accountability by ensuring that audit records are stored using an appropriate mechanism.</rationale>
-          <addressed-by>FMT_POL_EXT.1 (objective)</addressed-by>
-          <rationale>The PP-Module includes FMT_UNR_EXT.1 to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</rationale>
           <addressed-by>FMT_UNR_EXT.1</addressed-by>
           <rationale>The PP-Module includes FMT_UNR_EXT.1 to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</rationale>
+          <addressed-by>FMT_POL_EXT.1 (objective)</addressed-by>
+          <rationale>The PP-Module includes FMT_POL_EXT.1 to ensure that the Host Agent will only accept policy data with valid signatures.</rationale>
         </threat>
       </threats>
     </sec:Threats>
