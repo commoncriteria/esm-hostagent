@@ -632,10 +632,10 @@ function showTarget(id){
     </style></head><body onLoad="init()"><h1 class="title" style="page-break-before:auto;">PP-Module for Host Agent</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2026-01-13<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr>
 <tr><td>2.0</td><td>2026-01-13</td><td><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022 Conversion</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#toeboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#obj" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#req" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-AppPP" style="text-indent:10px">5.1<span>
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOE_Boundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOE_Platform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#Use_Cases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-AppPP" style="text-indent:10px">5.1<span>
     Protection Profile for Application Software
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-AppPP" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#sec-sel-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#FDP" style="text-indent:20px">5.2.3<span>User Data Protection (FDP)</span></a><a href="#fha" style="text-indent:20px">5.2.4<span>Host Agent (FHA)</span></a><a href="#fmt" style="text-indent:20px">5.2.5<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-AppPP" style="text-indent:10px">6.1<span>
+    </span></a><a href="#modsfr-AppPP" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#sec-sel-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#fau-mandatory" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#fdp-mandatory" style="text-indent:20px">5.2.3<span>User Data Protection (FDP)</span></a><a href="#fha-mandatory" style="text-indent:20px">5.2.4<span>Host Agent (FHA)</span></a><a href="#fmt-mandatory" style="text-indent:20px">5.2.5<span>Security Management (FMT)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-AppPP" style="text-indent:10px">6.1<span>
     Protection Profile for Application Software</span></a><a href="#contoe-AppPP" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
       </span></a><a href="#consecprob-AppPP" style="text-indent:20px">6.1.2<span>
@@ -646,17 +646,15 @@ function showTarget(id){
 	Consistency of Requirements
       </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
     </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
-    </span></a><a href="#sec-obj-audit-table" style="text-indent:20px">A.2.1<span>Auditable Events for Objective SFRs</span></a><a href="#fmt-obj" style="text-indent:20px">A.2.2<span>Security Management (FMT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
+    </span></a><a href="#sec-obj-audit-table" style="text-indent:20px">A.2.1<span>Auditable Events for Objective SFRs</span></a><a href="#fmt-objective" style="text-indent:20px">A.2.2<span>Security Management (FMT)</span></a><a href="#impl-dep-sfrs" style="text-indent:10px">A.3<span>Implementation-dependent Requirements
     </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
-    </span></a><a href="#sec-sel-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#fha" style="text-indent:10px">B.2<span>Host Agent (FHA)</span></a><a href="#ftp" style="text-indent:10px">B.3<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FHA" style="text-indent:20px">C.2.1<span>Host Agent (FHA)</span></a><a href="#ext-comp-FHA_CHA_EXT" style="text-indent:30px">C.2.1.1<span>FHA_CHA_EXT Cache Host Agent Collected Data</span></a><a href="#ext-comp-FHA_COL_EXT" style="text-indent:30px">C.2.1.2<span>FHA_COL_EXT Collected Audit</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.2<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_STO_EXT" style="text-indent:30px">C.2.2.1<span>FAU_STO_EXT Audit Data Storage</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.3<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_UNR_EXT" style="text-indent:30px">C.2.3.1<span>FMT_UNR_EXT User Unenrollment Prevention</span></a><a href="#ext-comp-FMT_POL_EXT" style="text-indent:30px">C.2.3.2<span>FMT_POL_EXT Trusted Policy Update</span></a><a href="#ext-comp-FTP" style="text-indent:20px">C.2.4<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-FTP_DIT_EXT" style="text-indent:30px">C.2.4.1<span>FTP_DIT_EXT Protection of Data in Transit</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.5<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_NET_EXT" style="text-indent:30px">C.2.5.1<span>FDP_NET_EXT Network Communications</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="int">1 Introduction</h1>
-    <h2 class="indexable" data-level="2" id="ppoverview">1.1 Overview</h2> 
+    </span></a><a href="#sec-sel-audit-table" style="text-indent:10px">B.1<span>Auditable Events for Selection-based SFRs</span></a><a href="#fha-selectionBased" style="text-indent:10px">B.2<span>Host Agent (FHA)</span></a><a href="#ftp-selectionBased" style="text-indent:10px">B.3<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FHA" style="text-indent:20px">C.2.1<span>Host Agent (FHA)</span></a><a href="#ext-comp-FHA_CHA_EXT" style="text-indent:30px">C.2.1.1<span>FHA_CHA_EXT Cache Host Agent Collected Data</span></a><a href="#ext-comp-FHA_COL_EXT" style="text-indent:30px">C.2.1.2<span>FHA_COL_EXT Collected Audit</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.2<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_STO_EXT" style="text-indent:30px">C.2.2.1<span>FAU_STO_EXT Audit Data Storage</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.3<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_UNR_EXT" style="text-indent:30px">C.2.3.1<span>FMT_UNR_EXT User Unenrollment Prevention</span></a><a href="#ext-comp-FMT_POL_EXT" style="text-indent:30px">C.2.3.2<span>FMT_POL_EXT Trusted Policy Update</span></a><a href="#ext-comp-FTP" style="text-indent:20px">C.2.4<span>Trusted Path/Channels (FTP)</span></a><a href="#ext-comp-FTP_DIT_EXT" style="text-indent:30px">C.2.4.1<span>FTP_DIT_EXT Protection of Data in Transit</span></a><a href="#ext-comp-FDP" style="text-indent:20px">C.2.5<span>User Data Protection (FDP)</span></a><a href="#ext-comp-FDP_NET_EXT" style="text-indent:30px">C.2.5.1<span>FDP_NET_EXT Network Communications</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+    <h2 class="indexable" data-level="2" id="ppoverview">1.1 Overview</h2>
       The scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is to describe the security functionality of a Host Agent in terms of [<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>] 
       and to define functional and assurance requirements for such products. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>:
-      
       <ul>
         <li>Protection Profile for Application Software Version 2.0</li>
       </ul>
-      
       This <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> is valid because a Host Agent is deployed as a software application on a general-purpose operating system.
     
     <div class="no-link"><h2 id="glossary" class="indexable" data-level="2">1.2 Terms</h2>
@@ -693,33 +691,24 @@ The following sections list Common Criteria and technology terms used in this do
 <tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation.</td></tr>
 <tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST.</td></tr>
 </table><h3 id="tech-terms" class="indexable" data-level="3">1.2.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Endpoint">Endpoint</div></td><td>A computing device that runs a general purpose OS, mobile device OS, or network device OS. Endpoints can 
-      include desktops, servers, and mobile devices.
-      </td></tr>
+      include desktops, servers, and mobile devices.</td></tr>
 <tr><td><div id="Endpoint_Detection_and_Response">Endpoint Detection and Response (EDR)</div></td><td>A system that analyzes collected EDR Host Agent data for detecting, 
-      investigating, and remediating unauthorized activities on endpoints. 
-      </td></tr>
+      investigating, and remediating unauthorized activities on endpoints.</td></tr>
 <tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which an endpoint with a running Host Agent is managed by an ESM.
-      Also, referred to as Onboarding.
-      </td></tr>
-<tr><td><div id="Enrollment">Enrollment</div></td><td>The process of transitioning an endpoint from an unenrolled to an enrolled state.
-      </td></tr>
+      Also, referred to as Onboarding.</td></tr>
+<tr><td><div id="Enrollment">Enrollment</div></td><td>The process of transitioning an endpoint from an unenrolled to an enrolled state.</td></tr>
 <tr><td><div id="Enterprise_Security_Management">Enterprise Security Management (ESM)</div></td><td>A type of application hosted on a server or cloud service that provides 
       support for security management, information flows, reporting, policy, and data analytics 
-      in complex enterprise environments.
-      </td></tr>
+      in complex enterprise environments.</td></tr>
 <tr><td><div id="Host_Agent">Host Agent</div></td><td>A logical piece of software that executes on endpoints to collect data about the endpoint and
       executes commands sent to the endpoint from an ESM server
       or service. An example command sent to an endpoint could be to enforce a policy from an 
-      ESM, to collect some files, or to run an OS command.
-      </td></tr>
+      ESM, to collect some files, or to run an OS command.</td></tr>
 <tr><td><div id="Operating_System">Operating System (OS)</div></td><td>Software that manages physical and logical resources and provides services
-      for applications.
-      </td></tr>
+      for applications.</td></tr>
 <tr><td><div id="Unenrolled_State">Unenrolled State</div></td><td>The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
-      Also, referred to as Offboarding.
-      </td></tr>
+      Also, referred to as Offboarding.</td></tr>
 </table></div>
-    
     <h2 class="indexable" data-level="2" id="TOEdescription">1.3 Compliant Targets of Evaluation</h2>
       The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Host Agent covers the security functionality needed on the endpoint device
       (desktop, mobile device, etc.) for <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software products in general. This version of the
@@ -727,8 +716,7 @@ The following sections list Common Criteria and technology terms used in this do
       include requirements for other classes of <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software. It is expected that an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system 
       will evaluate against a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes both the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Host Agent and
       at least one other <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>; currently, this only includes the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>.
-      
-      <h3 class="indexable" data-level="3" id="toeboundary">1.3.1 TOE Boundary</h3>
+      <h3 class="indexable" data-level="3" id="TOE_Boundary">1.3.1 TOE Boundary</h3>
         The boundary for the Host Agent includes 
         all processes, all modules, and libraries bundled with the Host Agent.  The Host 
         Agent can run as a daemon or service on the platform but is not required to. The Host Agent is
@@ -738,8 +726,7 @@ The following sections list Common Criteria and technology terms used in this do
         The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary includes the communications channel with other Host Agents, an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server, or a cloud 
         service. The platform operating system or execution environment
         upon which the Host Agent is executing is outside the scope of a Host Agent evaluation. The figures
-        below show some sample Host Agents but are not inclusive of every possible Host Agent design. 
-               
+        below show some sample Host Agents but are not inclusive of every possible Host Agent design.
         <table>
           <tr>
             <td>
@@ -752,27 +739,23 @@ The following sections list Common Criteria and technology terms used in this do
             </td>
           </tr>
         </table>
-        
       
-      <h3 class="indexable" data-level="3" id="TOEplatform">1.3.2 TOE Platform</h3>
-        The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform consists of a general purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, a mobile device 
+      <h3 class="indexable" data-level="3" id="TOE_Platform">1.3.2 TOE Platform</h3>The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform consists of a general purpose <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, a mobile device 
         <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, a network device <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>, or an Execution Environment on top of which 
         the Host Agent software executes.
-      
     
-    
-    <h2 class="indexable" data-level="2" id="usecases">1.4 Use Cases</h2>Requirements in this  <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are designed to
+    <h2 class="indexable" data-level="2" id="Use_Cases">1.4 Use Cases</h2>
+      Requirements in this  <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are designed to
       address the security problem for the following use cases. These use cases are intentionally
       very broad, as many different types of <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> Host Agent products may exist. As this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is revised to allow for more specific types of <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> Host Agent products, additional use cases
-      may be devised. 
+      may be devised.
       <dl><dt id="comms"> [USE CASE 1] Communication</dt><dd><span class="description">The Host Agent allows for communication interactively or
             non-interactively with other <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software over a communications channel.
             Example communications include but are not limited to; receiving policy, sending data, and running tasks 
-            or commands.
-          </span></dd></dl>
+            or commands.</span></dd></dl>
     
   <h1 class="indexable" data-level="1" id="Conformance_Claims">2 Conformance Claims</h1>
-		<dl><dt>Conformance Statement</dt><p></p><dd>An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must claim exact conformance 
+    <dl><dt>Conformance Statement</dt><p></p><dd>An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> must claim exact conformance 
 		 to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.</dd><p></p><dd>The evaluation methods used for evaluating the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are a combination of the workunits 
 			defined in <a href="#bibCEM">[CEM]</a> as well as the Evaluation Activities for ensuring that individual <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> 
 			and <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr> have a sufficient level of supporting evidence in the Security Target and guidance 
@@ -801,41 +784,42 @@ The following sections list Common Criteria and technology terms used in this do
 		packages may include any non-mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are appropriate to claim based on the 
 		capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and on any triggers for their inclusion based inherently on the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> 
 		selections made. 
-	</dd></dl>	
-		
-	<h1 class="indexable" data-level="1" id="spd">3 Security Problem Definition</h1>The security problem is described in terms
+	</dd></dl>
+  <h1 class="indexable" data-level="1" id="spd">3 Security Problem Definition</h1>
+    The security problem is described in terms
     of the threats that the Host Agent is expected to address, assumptions about the
     Operational Environment, and any organizational security policies that the Host Agent
     is expected to enforce. These extend any threats, assumptions, and organizational security policies defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-    <h2 class="indexable" data-level="2" id="threats">3.1 Threats</h2>Note that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not repeat the threats identified in the <a href="#bibAppPP">[AppPP]</a>, though they all apply given the conformance and hence dependence of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> on the <a href="#bibAppPP">[AppPP]</a>.
-      
-      
+    
+    <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>
+      Note that this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not repeat the threats identified in the
+      <a href="#bibAppPP">[AppPP]</a>, though they all apply given the conformance and hence dependence of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> on the
+      <a href="#bibAppPP">[AppPP]</a>.
       <dl><dt class="threat defined" id="T.DATA_LOSS">T.DATA_LOSS</dt><dd><span class="description">A Host Agent can be susceptible to data loss during periods when connectivity to the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system is not present. </span></dd><dt class="threat defined" id="T.TAMPER">T.TAMPER</dt><dd><span class="description">A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall or disrupt the Host Agent's ability to function properly. </span></dd></dl>
     
+    
     <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
-      
-      
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines no additional assumptions beyond those defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
       
       This document does not define any additional assumptions.
-     
     
-   
-          <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
+    
+    
+    <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
       expected to satisfy the organizational security policy listed below in addition to all
       organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
-        
+      
       This document does not define any additional OSPs.
     
-     
-  <h1 class="indexable" data-level="1" id="obj">4 Security Objectives</h1>
+    
+  <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
+    
     
     <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2>
 This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.
       
     
-
-  <h1 id="req" class="indexable" data-level="1">5 Security Requirements</h1>
+  <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
      Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
        <a href="#bibCC">[CC]</a>.
@@ -862,249 +846,208 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
    <h2 id="secreq-AppPP" class="indexable" data-level="2">5.1 
     Protection Profile for Application Software
        Security Functional Requirements Direction
-    </h2>
-        In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the application 
+    </h2>In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the application 
         as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
         The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and relevant to the secure operation of the Host Agent.
-        This section describes any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> to satisfy the required Host Agent functionality.
-      <h3 id="modsfr-AppPP" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
+        This section describes any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> to satisfy the required Host Agent functionality.<h3 id="modsfr-AppPP" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
     <h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
 	The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 	These <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
         
-        <h3 class="indexable" data-level="3" id="sec-sel-audit-table">5.2.1 Auditable Events for Mandatory SFRs</h3>
-			<table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-Man" data-counter-type="ct-Table" id="at-Man">Table <span class="counter">1</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_GEN.1/HA"><td rowspan="2"><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/HA#"><td></td></tr><tr data-sortkey="FAU_GEN.1/HA.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_STO_EXT.1"><td rowspan="2"><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_STO_EXT.1#"><td></td></tr><tr data-sortkey="FAU_STO_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FDP_NET_EXT.2"><td rowspan="2"><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_NET_EXT.2#"><td></td></tr><tr data-sortkey="FDP_NET_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FHA_HAD_EXT.1"><td rowspan="2"><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FHA_HAD_EXT.1#"><td></td></tr><tr data-sortkey="FHA_HAD_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_SMF.1/HA"><td rowspan="2"><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF.1/HA#"><td></td></tr><tr data-sortkey="FMT_SMF.1/HA.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
-	 
-           <h3 id="fau" class="indexable" data-level="3">5.2.2 Security Audit (FAU)</h3>
-       
-       
-             
+      <h3 class="indexable" data-level="3" id="sec-sel-audit-table">5.2.1 Auditable Events for Mandatory SFRs</h3>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-Man" data-counter-type="ct-Table" id="at-Man">Table <span class="counter">1</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_GEN.1/HA"><td rowspan="2"><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/HA#"><td></td></tr><tr data-sortkey="FAU_GEN.1/HA.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_STO_EXT.1"><td rowspan="2"><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_STO_EXT.1#"><td></td></tr><tr data-sortkey="FAU_STO_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FDP_NET_EXT.2"><td rowspan="2"><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FDP_NET_EXT.2#"><td></td></tr><tr data-sortkey="FDP_NET_EXT.2.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FHA_HAD_EXT.1"><td rowspan="2"><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FHA_HAD_EXT.1#"><td></td></tr><tr data-sortkey="FHA_HAD_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_SMF.1/HA"><td rowspan="2"><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF.1/HA#"><td></td></tr><tr data-sortkey="FMT_SMF.1/HA.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_UNR_EXT.1"><td rowspan="2"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_UNR_EXT.1#"><td></td></tr><tr data-sortkey="FMT_UNR_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
+      
+      
+      <h3 id="fau-mandatory" class="indexable" data-level="3">5.2.2 Security Audit (FAU)</h3>
+        
+        
         <div class="comp" id="FAU_GEN.1/HA"><h4>FAU_GEN.1/HA Audit Data Generation</h4>
           
-          
-          <div class="element"><div class="reqid" id="FAU_GEN.1.1/HA"><a href="#FAU_GEN.1.1/HA" class="abbr">FAU_GEN.1.1/HA</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable events:
+          <div class="element"><div class="reqid" id="FAU_GEN.1.1/HA"><a href="#FAU_GEN.1.1/HA" class="abbr">FAU_GEN.1.1/HA</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to generate audit data of the following auditable events:
               <ol type="a">
-                <li><s>Start-up and shutdown of the audit functions;</s></li>
-                <li>All auditable events for the [<i>not specified</i>] level of audit;</li></ol>
-              [<i><ol type="a">
-                <li>Change in enrollment state with an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system,</li>
                 <li>
-                  [<b>selection</b>: <span class="selectable-content" id="_s_1">Receiving</span>, <span class="selectable-content" id="_s_2">Generating</span>] periodic heartbeat events,
+                  <s>Start-up and shutdown of the audit functions;</s>
                 </li>
-                <li>[<b>assignment</b>: 
-     <span class="assignable-content">Other specifically defined auditable events</span>]</li>
-              </ol></i>].
+                <li>All auditable events for the [<i>not specified</i>] level of audit;</li>
+              </ol>
+              [<i>
+                <ol type="a">
+                  <li>Change in enrollment state with an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system,</li>
+                  <li> [<b>selection</b>: <span class="selectable-content" id="fau_gen.1.1_HA_1">Receiving</span>, <span class="selectable-content" id="fau_gen.1.1_HA_2">Generating</span>] periodic heartbeat events, </li>
+                  <li>
+                    [<b>assignment</b>: 
+     <span class="assignable-content">Other specifically defined auditable events</span>]
+                  </li>
+                </ol>
+              </i>].
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">
-              The required audit events must be generated by the Host Agent, but can leverage
+    </span><span class="note">The required audit events must be generated by the Host Agent, but can leverage
               <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr>'s available from the platform if needed to generate the audit events.  For the selection one or both options may be selected.
-              The assignment may be empty, a single item, or multiple items. Changes in enrollment include new enrollment and unenrollment.
-            </span></div></div></div>
-          <div class="element"><div class="reqid" id="FAU_GEN.1.2/HA"><a href="#FAU_GEN.1.2/HA" class="abbr">FAU_GEN.1.2/HA</a></div><div class="reqdesc">The 
-              <b>[<b>selection</b>: <span class="selectable-content" id="_s_3"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_4"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]</b>
-              shall record within the audit data at least the following information: 
+              The assignment may be empty, a single item, or multiple items. Changes in enrollment include new enrollment and unenrollment.</span></div></div></div>
+          <div class="element"><div class="reqid" id="FAU_GEN.1.2/HA"><a href="#FAU_GEN.1.2/HA" class="abbr">FAU_GEN.1.2/HA</a></div><div class="reqdesc">
+              The
+              <b>
+                [<b>selection</b>: <span class="selectable-content" id="fau_gen.1.2_HA_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fau_gen.1.2_HA_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]</b>
+              shall record within the audit data at least the following information:
               <ol type="a">
-                <li>Date and time of the event, type of event, subject identity (if applicable),
-                  and the outcome (success or failure) of the event;</li>
-                <li>For each audit type, based on the auditable event definitions of the
-                  functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package, or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>,
-                  [<b>assignment</b>: 
+                <li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</li>
+                <li>For each audit type, based on the auditable event definitions of the functional components included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, functional package, or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>, [<b>assignment</b>: 
      <span class="assignable-content">other audit relevant information</span>].</li>
               </ol>
-              
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
               All audits must contain at least the information mentioned in <a href="#FAU_GEN.1.2/HA">FAU_GEN.1.2/HA</a>,
-              but may contain more information. The term <i>subject</i> here is understood 
+              but may contain more information. The term
+              <i>subject</i>
+              here is understood 
               to be the user that the process is acting on behalf of or for network communication related events the server name/address. 
               The subject identity can
               be blank if not applicable for a given process. The assignment may be empty, a single item, or multiple items.
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></div>
-      
-              
-               
               
               
               
-<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all record types that are recorded. <br/><br/>
-                The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all the auditable event types and all audit information that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> records.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
+                The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all record types that are recorded.
+                <br/>
+                <br/>
+                The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all the auditable event types and all audit information that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> records.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 The evaluator shall check the administrative guide and ensure
                 that it lists all of the auditable events.  The evaluator shall
                 check to make sure that every audit event type selected in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>
-                is included.<br/><br/>
-                
-              The evaluator shall check the administrative guide and ensure
+                is included.
+                <br/>
+                <br/>
+                The evaluator shall check the administrative guide and ensure
               that it provides a format
               for audit records. Each audit record format type must be covered,
               along with a brief description of each field. The evaluator shall
               ensure that the fields contain the information required.
-                
-            <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_GEN.1/HA:1</a>:
-      
-                    The evaluator shall test the Host Agent's ability to correctly generate
-                    audit records by having the Host Agent generate audit records for each type of 
-                    event listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-                  </li>
+      The evaluator shall test the Host Agent's ability to correctly generate audit records by having the Host Agent generate audit records for each type of event listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.</li>
                   <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FAU_GEN.1/HA:2</a>:
-      
-                    The evaluator shall
-                    ensure the audit records generated during testing match the
-                    format specified in the administrative guide, and that the fields
-                    in each audit record provide the required information.
-                  </li>
+      The evaluator shall ensure the audit records generated during testing match the format specified in the administrative guide, and that the fields in each audit record provide the required information.</li>
                 </ul></span>
               </div></div></div></div></div>
-             
-             
-             
+        
         <div class="comp" id="FAU_STO_EXT.1"><h4>FAU_STO_EXT.1 Audit Data Storage</h4>
           
           
           
           
           
-          
-          
-          <div class="element"><div class="reqid" id="FAU_STO_EXT.1.1"><a href="#FAU_STO_EXT.1.1" class="abbr">FAU_STO_EXT.1.1</a></div><div class="reqdesc"> 
+          <div class="element"><div class="reqid" id="FAU_STO_EXT.1.1"><a href="#FAU_STO_EXT.1.1" class="abbr">FAU_STO_EXT.1.1</a></div><div class="reqdesc">
               The
-              [<b>selection</b>: <span class="selectable-content" id="_s_5"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_6"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>] 
+              [<b>selection</b>: <span class="selectable-content" id="fau_sto_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fau_sto_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]
               shall store audit events in the platform-provided logging mechanism.
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-              The term <i>audit events</i> here is understood to be only the set of events
+              The term
+              <i>audit events</i>
+              here is understood to be only the set of events
               defined in <a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a>. If the job of this Host Agent is to generate
               or collect events for an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server it is not expected 
               that those events will be stored in the platform-provided logging mechanism.
             </span></div></div></div>
-       
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></div>
               
               
               
-              
-              
-              
-          
-<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains details of where all audit data is stored.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-              The evaluator shall check the administrative guide and ensure
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains details of where all audit data is stored.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall check the administrative guide and ensure
               that the list of auditable events are stored in the platform-provided logging 
               mechanism.
-              <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall test the Host Agent's ability to correctly generate
-                    audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records for the
-                    events listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.  This should include all instance types
-                    of an event specified.  
-                    When verifying the test results, the evaluator shall ensure the
-                    audit records generated during testing are stored in the platform-provided logging
-                    mechanism. 
-                    <p></p>
-                    On Linux based platforms this would be in var/logs. On Windows based 
-                    platforms this would be the Windows Event Log.
-                    <p></p>
-                    No specific locations are defined for other platforms.
-              </div></div></div></div></div>
-            
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to correctly generate audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records for the events listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. This should include all instance types of an event specified. When verifying the test results, the evaluator shall ensure the audit records generated during testing are stored in the platform-provided logging mechanism. <p></p>On Linux based platforms this would be in var/logs. On Windows based platforms this would be the Windows Event Log. <p></p>No specific locations are defined for other platforms.</div></div></div></div></div>
       
       
-      
-        <h3 id="FDP" class="indexable" data-level="3">5.2.3 User Data Protection (FDP)</h3>
-          
+      <h3 id="fdp-mandatory" class="indexable" data-level="3">5.2.3 User Data Protection (FDP)</h3>
+        
+        
         <div class="comp" id="FDP_NET_EXT.2"><h4>FDP_NET_EXT.2 Network Communications</h4>
           
           
-            
-            
-            
-          <div class="element"><div class="reqid" id="FDP_NET_EXT.2.1"><a href="#FDP_NET_EXT.2.1" class="abbr">FDP_NET_EXT.2.1</a></div><div class="reqdesc"> 
-            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict network communications to: 
-            [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_MGMT">An <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server</span></li><li style=""><span class="selectable-content" id="AGT_PEER">Another Host Agent</span></li></ul>]
-          <div class="appnote"><span class="note-header">Application
+          
+          <div class="element"><div class="reqid" id="FDP_NET_EXT.2.1"><a href="#FDP_NET_EXT.2.1" class="abbr">FDP_NET_EXT.2.1</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict network communications to:
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_MGMT">An <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server</span></li><li style=""><span class="selectable-content" id="AGT_PEER">Another Host Agent</span></li></ul>]
+            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-            By selecting another Host Agent 
+              By selecting another Host Agent 
             the additional <a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a>
-            requirements must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> for peer-to-peer communication. <br/>
-            This restricts the selections in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to a specific list of communications that may be user or application initiated.
-          </span></div></div></div>    
-        
-        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></div>
-            
-            
-           
-              
-          <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists network communication destinations and that it matches the selections made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall run the application.  While the application is running,
-                    the evaluator shall sniff network traffic ignoring all non-application 
-                    associated traffic
-                    and verify that any network communications witnessed are limited to the selection made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.
-              </div></div></div></div></div>
-        
-        
-        <h3 id="fha" class="indexable" data-level="3">5.2.4 Host Agent (FHA)</h3>
-            
+            requirements must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> for peer-to-peer communication.
+              <br/>
+              This restricts the selections in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> to a specific list of communications that may be user or application initiated.
+            </span></div></div></div>
           
-          <div class="comp" id="FHA_HAD_EXT.1"><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4>
-            
-            
-            
-            
-            
-            
-            
-            
-            <div class="element"><div class="reqid" id="FHA_HAD_EXT.1.1"><a href="#FHA_HAD_EXT.1.1" class="abbr">FHA_HAD_EXT.1.1</a></div><div class="reqdesc"> 
-                The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall operate with the following <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software:
-                [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_EDR">Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>)</span></li><li style=""><span class="selectable-content" id="_s_10">[<b>assignment</b>: 
-     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]</span></li></ul>].
-              <div class="appnote"><span class="note-header">Application
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists network communication destinations and that it matches the selections made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are limited to the selection made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.</div></div></div></div></div>
+      
+      
+      <h3 id="fha-mandatory" class="indexable" data-level="3">5.2.4 Host Agent (FHA)</h3>
+        
+        <div class="comp" id="FHA_HAD_EXT.1"><h4>FHA_HAD_EXT.1 Host Agent Declaration</h4>
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FHA_HAD_EXT.1.1"><a href="#FHA_HAD_EXT.1.1" class="abbr">FHA_HAD_EXT.1.1</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall operate with the following <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software:
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_EDR">Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>)</span></li><li style=""><span class="selectable-content" id="fha_had_ext.1.1_2">
+                  [<b>assignment</b>: 
+     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]
+                </span></li></ul>].
+            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
-                Currently, the only <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server is <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>; <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules for other <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers (Systems Management and Audit Server) will be added in the future. 
+              Currently, the only <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server is <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>; <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules for other <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers (Systems Management and Audit Server) will be added in the future. 
                 By including <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>, the additional <a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a> and <a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> requirements must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-                 
-                <br/>
-              </span></div></div></div>
-            
-          <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></div>
-                
-                
-                
-                
-                
-                
-              <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all classes of products the Host Agent is designed to function with.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">   
-                  The evaluator shall check the administrative guide and ensure
+              <br/>
+            </span></div></div></div>
+          
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all classes of products the Host Agent is designed to function with.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall check the administrative guide and ensure
                   that guidance exists for enrollment with all compatible <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> products identified in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
-                  
-                  <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                  Conditional: If "<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>" is selected, the evaluator shall install the Host Agent and enroll it with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> 
-                  management system. The evaluator shall verify that enrollment was successful and 
-                  that the Host Agent is communicating with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>.
-                </div></div></div></div></div>
-          
-          
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: If "<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>" is selected, the evaluator shall install the Host Agent and enroll it with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> management system. The evaluator shall verify that enrollment was successful and that the Host Agent is communicating with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>.</div></div></div></div></div>
+      
+      
+      <h3 id="fmt-mandatory" class="indexable" data-level="3">5.2.5 Security Management (FMT)</h3>
         
-      
-      
-      <h3 id="fmt" class="indexable" data-level="3">5.2.5 Security Management (FMT)</h3>
         
         <div class="comp" id="FMT_SMF.1/HA"><h4>FMT_SMF.1/HA Specification of Management Functions (Configuration of Host Agent)</h4>
           
-      
-          <div class="element"><div class="reqid" id="FMT_SMF.1.1/HA"><a href="#FMT_SMF.1.1/HA" class="abbr">FMT_SMF.1.1/HA</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the
-              following management functions: [<b>assignment</b>: 
-     <span class="assignable-content">list of management functions to be provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>].             
+          <div class="element"><div class="reqid" id="FMT_SMF.1.1/HA"><a href="#FMT_SMF.1.1/HA" class="abbr">FMT_SMF.1.1/HA</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the
+              following management functions:
+              [<b>assignment</b>: 
+     <span class="assignable-content">list of management functions to be provided by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>].
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note"> This requirement captures all the configuration functionality
+    </span><span class="note">
+              This requirement captures all the configuration functionality
               the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provides the administrator to configure the Host Agent. The configuration of
               these management functions can be achieved by either local configuration of the Host Agent or by 
               remote configuration using the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server.
@@ -1112,85 +1055,67 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               to be. A value like Aggressive, Normal, Low Bandwidth is a measure of control of frequency and meets
               the requirement.
               Host Agent data refers to the data collected in the requirements in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, such as <a href="#FHA_COL_EXT.1.1">FHA_COL_EXT.1.1</a>.
-              <br/><br/>              
+              <br/>
+              <br/>
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></div>
               
               
- 
               
-              
-              
-             
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains all frequencies for sending Host Agent data to an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> and all labels that are permitted.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">   
-              The evaluator shall verify that every management function 
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains all frequencies for sending Host Agent data to an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> and all labels that are permitted.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall verify that every management function 
               mandated by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is described in the operational guidance and that the description 
               contains the information required to perform the management duties associated with the 
-              management function.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall test the ability to configure the Host Agent and test each function 
-                    listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. The evaluator is expected to test these functions in all the ways in which 
-                    the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and guidance documentation state    the configuration can be managed.
-              </div></div></div></div></div>
-        
-        
+              management function.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the ability to configure the Host Agent and test each function listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. The evaluator is expected to test these functions in all the ways in which the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and guidance documentation state the configuration can be managed.</div></div></div></div></div>
         
         <div class="comp" id="FMT_UNR_EXT.1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4>
           
-                    
           
           
           
           
-          
-          <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">The 
-              [<b>selection</b>: <span class="selectable-content" id="_s_11"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_12"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>] 
+          <div class="element"><div class="reqid" id="FMT_UNR_EXT.1.1"><a href="#FMT_UNR_EXT.1.1" class="abbr">FMT_UNR_EXT.1.1</a></div><div class="reqdesc">
+              The
+              [<b>selection</b>: <span class="selectable-content" id="fmt_unr_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fmt_unr_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]
               shall enforce a mechanism to prevent unprivileged users of the platform from
               unenrolling the Host Agent with the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system.
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">
-              Unenrolling is the action of transitioning from the enrolled state to the
+    </span><span class="note">Unenrolling is the action of transitioning from the enrolled state to the
               unenrolled state. Preventing unprivileged users from unenrolling the Host Agent
-              provides assurance that the enterprise can manage connected endpoints. 
-            </span></div></div></div>   
-               
+              provides assurance that the enterprise can manage connected endpoints.</span></div></div></div>
+          
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></div>
-                         
-              
-              
-               
               
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
-              The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the mechanism used to
-              prevent users from unenrolling the Host Agent.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                    The evaluator shall attempt to unenroll the Host Agent from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system
-                    as an unprivileged user and verify that the attempt fails.
-              </div></div></div></div></div>
-        
+                The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the mechanism used to
+              prevent users from unenrolling the Host Agent.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to unenroll the Host Agent from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system as an unprivileged user and verify that the attempt fails.</div></div></div></div></div>
       
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="6"><a href="#T.DATA_LOSS">T.DATA_​LOSS</a></td><td><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a> to define the trust network connection to another host.</td></tr>
+<tr><td><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> to define the interface between the Host Agent and the intended destination for the data it transmits.</td></tr>
+<tr><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> to define the data that the Host Agent can collect from its Operational Environment.</td></tr>
 <tr><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> to define the interface between the Host Agent and the intended destination
                 for the data it transmits</td></tr>
 <tr><td><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a> to define the management functions that are configurable on the Host Agent.</td></tr>
-<tr><td><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> to define the interface between the Host Agent and the intended destination for the data it transmits.</td></tr>
-<tr><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> to define the data that the Host Agent can collect from its Operational Environment.</td></tr>
 <tr><td><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a> (selection-based)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a> to optionally define the trusted communications channel between multiple Host Agents.</td></tr>
 <tr class="major-row"><td rowspan="4"><a href="#T.TAMPER">T.TAMPER</a></td><td><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a> to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability through the generation of audit records for security-relevant events.</td></tr>
 <tr><td><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a> to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability by ensuring that audit records are stored using an appropriate mechanism.</td></tr>
-<tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</td></tr>
 <tr><td><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a> (objective)</td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</td></tr>
+<tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a> to ensure that the Host Agent is protected from unenrollment actions that would result in it being unable to receive or enforce policy and/or commands sent to it.</td></tr>
 </table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-AppPP" class="indexable" data-level="2">6.1 
     Protection Profile for Application Software</h2><h3 id="contoe-AppPP" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
-      </h3>
-        If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the Application Software <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a
+      </h3>If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the Application Software <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a
         software-based application. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended to include the Host Agent functionality 
-        that is built into the application so that additional security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-      <h3 id="consecprob-AppPP" class="indexable" data-level="3">6.1.2 
+        that is built into the application so that additional security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.<h3 id="consecprob-AppPP" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
       </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">3</span></span>: Consistency of Security Problem Definition (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.DATA_LOSS">T.DATA_LOSS</a></td><td>This threat relates to the loss of data that is collected by the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> Host Agent.
@@ -1198,9 +1123,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       of tampering as applied to the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> exists in addition to the local attacks that are possible on the capabilities
       defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr></table><h3 id="conobj-AppPP" class="indexable" data-level="3">6.1.3 
 			Consistency of OE Objectives
-		</h3><p>
-        This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s Operational Environment. 
-      </p><h3 id="conreq-AppPP" class="indexable" data-level="3">6.1.4 
+		</h3><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s Operational Environment.</p><h3 id="conreq-AppPP" class="indexable" data-level="3">6.1.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
@@ -1219,118 +1142,85 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		  </td></tr><tr><th colspan="2"> Additional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th></tr><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not add any requirements when the
 	      App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is the base.
-	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></td><td>
-            The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define an audit mechanism for its own functionality. This function does not interfere with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-          </td></tr><tr><td><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></td><td>
-            The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define an audit mechanism for its own functionality. This function does not interfere with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-          </td></tr><tr><td><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td> The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define specific network communications for <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> - HA communications. 
-            This function does not interfere with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-          </td></tr><tr><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></td><td>
-              This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the type of software the Host Agent is intended to operate 
-              and communicate with. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-            </td></tr><tr><td><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></td><td>
-            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines management functions for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. It does not affect the management functions defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-          </td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>
-            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines protections to prevent users from tampering with the Host Agent. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-          </td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	    </td></tr><tr><th colspan="2"> Mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FAU_GEN.1/HA">FAU_GEN.1/HA</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define an audit mechanism for its own functionality. This function does not interfere with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define an audit mechanism for its own functionality. This function does not interfere with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> does not define specific network communications for <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> - HA communications. 
+            This function does not interfere with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the type of software the Host Agent is intended to operate 
+              and communicate with. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</td></tr><tr><td><a href="#FMT_SMF.1/HA">FMT_SMF.1/HA</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines management functions for the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. It does not affect the management functions defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines protections to prevent users from tampering with the Host Agent. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</td></tr></tr><tr><th colspan="2"> Optional <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Optional requirements.
-	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a></td><td>
-          This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines protections for the integrity of commands sent to the Host Agent. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-        </td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
+	    </td></tr></tr><tr><th colspan="2"> Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines protections for the integrity of commands sent to the Host Agent. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</td></tr></tr><tr><th colspan="2"> Implementation-dependent <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td colspan="2" style="text-align:center">
 	      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Implementation-dependent requirements.
-	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a></td><td>
-            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines how the Host Agent shall cache data locally. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-          </td></tr><tr><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a></td><td>
-            This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-          </td></tr><tr><td><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a></td><td>
-          This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-        </td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
+	    </td></tr></tr><tr><th colspan="2"> Selection-based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr></th><tr><td><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines how the Host Agent shall cache data locally. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</td></tr><tr><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</td></tr><tr><td><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a></td><td>This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and does not affect the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s ability to satisfy the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>'s <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</td></tr></tr></table><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h2 id="opt-sfrs" class="indexable" data-level="2">A.1 Strictly Optional Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
        Strictly Optional        <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_SAR">SARs</a></abbr>.</p><h2 id="obj-sfrs" class="indexable" data-level="2">A.2 Objective Requirements
     </h2>
       <h3 class="indexable" data-level="3" id="sec-obj-audit-table">A.2.1 Auditable Events for Objective SFRs</h3>
-           <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-objective" data-counter-type="ct-Table" id="at-objective">Table <span class="counter">5</span></span>: Auditable Events for Objective Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FMT_POL_EXT.1"><td rowspan="2"><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.1#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-objective" data-counter-type="ct-Table" id="at-objective">Table <span class="counter">5</span></span>: Auditable Events for Objective Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FMT_POL_EXT.1"><td rowspan="2"><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_POL_EXT.1#"><td></td></tr><tr data-sortkey="FMT_POL_EXT.1.1"><td>No events specified</td><td>N/A</td></tr></table>
       
-     <h3 id="fmt-obj" class="indexable" data-level="3">A.2.2 Security Management (FMT)</h3>
-       
-       
-       
-      <div class="comp" id="FMT_POL_EXT.1"><h4>FMT_POL_EXT.1 Trusted Policy Update</h4>
+      
+      <h3 id="fmt-objective" class="indexable" data-level="3">A.2.2 Security Management (FMT)</h3>
         
         
-        
-        
-        
-        
-        
-        
-        <div class="element"><div class="reqid" id="FMT_POL_EXT.1.1"><a href="#FMT_POL_EXT.1.1" class="abbr">FMT_POL_EXT.1.1</a></div><div class="reqdesc">The 
-            [<b>selection</b>: <span class="selectable-content" id="_s_19"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_20"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>] 
-            shall only accept policies or commands that are digitally signed using 
-            [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>] signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-5.
-          <div class="appnote"><span class="note-header">Application
+        <div class="comp" id="FMT_POL_EXT.1"><h4>FMT_POL_EXT.1 Trusted Policy Update</h4>
+          
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FMT_POL_EXT.1.1"><a href="#FMT_POL_EXT.1.1" class="abbr">FMT_POL_EXT.1.1</a></div><div class="reqdesc">
+              The
+              [<b>selection</b>: <span class="selectable-content" id="fmt_pol_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fmt_pol_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]
+              shall only accept policies or commands that are digitally signed using
+              [<b>selection</b>: <span class="selectable-content" id="fmt_pol_ext.1.1_3"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="fmt_pol_ext.1.1_4"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>]
+              signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-5.
+            <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">
-            The intent of this requirement is to cryptographically tie any policy updates or
+    </span><span class="note">The intent of this requirement is to cryptographically tie any policy updates or
             commands sent to the Host Agent as being from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server. This is not to 
             protect the policies in transit as they are already protected by FTP_ITC.1 in the
             <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>, <a href="#FTP_DIT_EXT.2.1">FTP_DIT_EXT.2.1</a>, or both. If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements this function,
             any signature algorithms used should be consistent with any selections made in 
-            FCS_COP.1/SigGen and FCS_COP.1/SigVer in the Protection Profile for Application Software, Version 2.0.
-            
-            
-          </span></div></div></div> 
-               
-      <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a></div>
-            
-            
-            
-            
-            
-            
-  
-           
-<div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
-            The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the candidate 
+            FCS_COP.1/SigGen and FCS_COP.1/SigVer in the Protection Profile for Application Software, Version 2.0.</span></div></div></div>
+          
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
+                The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes how the candidate 
             policies or commands are sent to the Host Agent; the
             processing associated with verifying the digital signature of the policies or
             commands; and the actions that take place for successful (signature was
             verified) and unsuccessful (signature could not be verified) cases. The
             software components that are performing the processing must also be
             identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and verified by the evaluators (this could be the Host Agent
-            or the underlying platform).<p></p>
-            
-            </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-              <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FMT_POL_EXT.1:1</a>:
+            or the underlying platform).
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FMT_POL_EXT.1:1</a>:
       
-                  <p>
-                  The evaluator shall perform or wait for a policy update or commands 
+                    <p>The evaluator shall perform or wait for a policy update or commands 
                   from an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server to be sent to a Host Agent. The evaluator shall verify the
                   policy or command is signed and is provided to the Host Agent. The evaluator shall
-                  verify the Host Agent accepts the digitally signed policy.
-                </p><p>
-                  The execution of this test may require some configuration or a test version of either
+                  verify the Host Agent accepts the digitally signed policy.</p>
+                    <p>The execution of this test may require some configuration or a test version of either
                   the Host Agent of the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system in order to view the incoming policy or command
                   and verify that the content is digitally signed.</p>
-                </li>
-                <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FMT_POL_EXT.1:2</a>:
+                  </li>
+                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FMT_POL_EXT.1:2</a>:
+      The evaluator shall alter a policy update or command and verify the Host Agent rejects the altered policy.</li>
+                </ul></span>
+              </div></div></div></div></div>
       
-                  The evaluator shall alter a policy update or command and verify the Host Agent rejects the altered policy.
-                </li>
-              </ul></span>
-            </div></div></div></div></div>
-     
     <h2 id="impl-dep-sfrs" class="indexable" data-level="2">A.3 Implementation-dependent Requirements
     </h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any 
        Implementation-dependent       <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.</p><h1 id="sel-sfrs" class="indexable" data-level="1">Appendix B -  Selection-based Requirements
     </h1>
-      	<h2 class="indexable" data-level="2" id="sec-sel-audit-table">B.1 Auditable Events for Selection-based SFRs</h2>
-           <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-sel-based" data-counter-type="ct-Table" id="at-sel-based">Table <span class="counter">6</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FHA_CHA_EXT.1"><td rowspan="2"><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FHA_CHA_EXT.1#"><td></td></tr><tr data-sortkey="FHA_CHA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FHA_COL_EXT.1"><td rowspan="2"><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FHA_COL_EXT.1#"><td></td></tr><tr data-sortkey="FHA_COL_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTP_DIT_EXT.2"><td rowspan="2"><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_DIT_EXT.2#"><td></td></tr><tr data-sortkey="FTP_DIT_EXT.2.1"><td>No events specified</td><td>N/A</td></tr></table>
-	
-
-      <h2 id="fha" class="indexable" data-level="2">B.2 Host Agent (FHA)</h2>
-        
+      <h2 class="indexable" data-level="2" id="sec-sel-audit-table">B.1 Auditable Events for Selection-based SFRs</h2>
+        <table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-sel-based" data-counter-type="ct-Table" id="at-sel-based">Table <span class="counter">6</span></span>: Auditable Events for Selection-based Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FHA_CHA_EXT.1"><td rowspan="2"><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FHA_CHA_EXT.1#"><td></td></tr><tr data-sortkey="FHA_CHA_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FHA_COL_EXT.1"><td rowspan="2"><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FHA_COL_EXT.1#"><td></td></tr><tr data-sortkey="FHA_COL_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTP_DIT_EXT.2"><td rowspan="2"><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_DIT_EXT.2#"><td></td></tr><tr data-sortkey="FTP_DIT_EXT.2.1"><td>No events specified</td><td>N/A</td></tr></table>
+      
+      
+      <h2 id="fha-selectionBased" class="indexable" data-level="2">B.2 Host Agent (FHA)</h2>
         
         
         
@@ -1344,18 +1234,19 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
-          
-          <div class="element"><div class="reqid" id="FHA_CHA_EXT.1.1"><a href="#FHA_CHA_EXT.1.1" class="abbr">FHA_CHA_EXT.1.1</a></div><div class="reqdesc"> 
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall cache collected data up to [<b>assignment</b>: 
-     <span class="assignable-content">size of cache storage capacity</span>] on [<b>selection</b>: <span class="selectable-content" id="_s_13">persistent storage</span>, <span class="selectable-content" id="_s_14">non-persistent storage</span>] if the trusted channel is not available.
+          <div class="element"><div class="reqid" id="FHA_CHA_EXT.1.1"><a href="#FHA_CHA_EXT.1.1" class="abbr">FHA_CHA_EXT.1.1</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall cache collected data up to
+              [<b>assignment</b>: 
+     <span class="assignable-content">size of cache storage capacity</span>]
+              on
+              [<b>selection</b>: <span class="selectable-content" id="fha_cha_ext.1.1_2">persistent storage</span>, <span class="selectable-content" id="fha_cha_ext.1.1_3">non-persistent storage</span>]
+              if the trusted channel is not available.
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">
-              The term collected data here is understood to be any type of collected endpoint data by the Host Agent destined for an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author specifies the size of the cache storage and whether it is implemented in persistent or non-persistent storage.
-            </span></div></div></div>
-          <div class="element"><div class="reqid" id="FHA_CHA_EXT.1.2"><a href="#FHA_CHA_EXT.1.2" class="abbr">FHA_CHA_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_15">overwrite previous data according to the following rule: [<b>assignment</b>: 
-     <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="_s_16">[<b>assignment</b>: 
-     <span class="assignable-content">other actions</span>]</span>] when the local cache is full.<div class="appnote"><span class="note-header">Application
+    </span><span class="note">The term collected data here is understood to be any type of collected endpoint data by the Host Agent destined for an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author specifies the size of the cache storage and whether it is implemented in persistent or non-persistent storage.</span></div></div></div>
+          <div class="element"><div class="reqid" id="FHA_CHA_EXT.1.2"><a href="#FHA_CHA_EXT.1.2" class="abbr">FHA_CHA_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="fha_cha_ext.1.2_1">overwrite previous data according to the following rule: [<b>assignment</b>: 
+     <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="fha_cha_ext.1.2_4">[<b>assignment</b>: 
+     <span class="assignable-content">other actions</span>]</span>]  when the local cache is full.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement addresses how the Host Agent handles collected data while the trusted path is not available and the local cache is full.</span></div></div></div>
           
@@ -1363,20 +1254,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               
               
               
-              
-              
-              
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> details how data is cached, any rules that would affect data caching, 
-                and how cached data will be affected if storage limits are reached.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
-                from the network to simulate a network connectivity failure, 
-                these should be actual hours not via changing system time. The evaluator shall
-                exercise behaviors on the endpoint during the outage to generate Host Agent data.
-                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
-                software, or sample test cases provided by the vendor to generate Host Agent data.
-                The evaluator will then reconnect the endpoint to the network and verify on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system 
-                that the missing data from the outage is available on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> management portal.
-              </div></div></div></div></div>  
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
+                The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> details how data is cached, any rules that would affect data caching, 
+                and how cached data will be affected if storage limits are reached.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint from the network to simulate a network connectivity failure, these should be actual hours not via changing system time. The evaluator shall exercise behaviors on the endpoint during the outage to generate Host Agent data. Example behaviors could be running programs, performing some authentications, installing/uninstalling software, or sample test cases provided by the vendor to generate Host Agent data. The evaluator will then reconnect the endpoint to the network and verify on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system that the missing data from the outage is available on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> management portal.</div></div></div></div></div>
         
         <div class="comp" id="FHA_COL_EXT.1"><h4>FHA_COL_EXT.1 Collected Audit</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
            <a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a>.
@@ -1388,9 +1270,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           
           
-          
-          <div class="element"><div class="reqid" id="FHA_COL_EXT.1.1"><a href="#FHA_COL_EXT.1.1" class="abbr">FHA_COL_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall collect the following minimum set of
-              endpoint event data: <ol type="a">
+          <div class="element"><div class="reqid" id="FHA_COL_EXT.1.1"><a href="#FHA_COL_EXT.1.1" class="abbr">FHA_COL_EXT.1.1</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall collect the following minimum set of
+              endpoint event data:
+              <ol type="a">
                 <li>Operating System (<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>) version, architecture, and <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> Address,</li>
                 <li>Privileged and unprivileged endpoint account login activity,</li>
                 <li>Process creation,</li>
@@ -1402,67 +1285,64 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               </ol>
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">The intent of this requirement is to specify the minimum
+    </span><span class="note">
+              The intent of this requirement is to specify the minimum
               set of endpoint data that the Host Agent for an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> system must be capable of 
-              collecting. This requirement only applies to Host Agents used with the 
-              <a href="#bibEDRPP">[EDR]</a> <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> per
+              collecting. This requirement only applies to Host Agents used with the
+              <a href="#bibEDRPP">[EDR]</a>
+              <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> per
               the selection from <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a>. The assignment may be empty, a single item, or multiple items.
             </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a></div>
               
               
-               
               
-              
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains a full list of endpoint data that can be collected.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains a full list of endpoint data that can be collected.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 The evaluator shall check the administrative guide and ensure
                 that it lists all of the collectable types of endpoint event data.  
                 The evaluator shall check to make sure that every endpoint event 
-                type listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> is included in the administrative guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                The evaluator shall run the systems causing multiple events to occur and then review the items collected by the Host Agent to verify that all items in the minimum set are included.
-              </div></div></div></div></div>
+                type listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> is included in the administrative guidance.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the systems causing multiple events to occur and then review the items collected by the Host Agent to verify that all items in the minimum set are included.</div></div></div></div></div>
       
       
-     <h2 id="ftp" class="indexable" data-level="2">B.3 Trusted Path/Channels (FTP)</h2>
-       
-              
-            
-      <div class="comp" id="FTP_DIT_EXT.2"><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
+      <h2 id="ftp-selectionBased" class="indexable" data-level="2">B.3 Trusted Path/Channels (FTP)</h2>
+        
+        
+        <div class="comp" id="FTP_DIT_EXT.2"><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
            <a href="#FDP_NET_EXT.2.1">FDP_NET_EXT.2.1</a>.
            </i></b></div>
-        
-        
-        
-        
-        
-        
-        
-        
-        <div class="element"><div class="reqid" id="FTP_DIT_EXT.2.1"><a href="#FTP_DIT_EXT.2.1" class="abbr">FTP_DIT_EXT.2.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-            [<b>selection</b>: <span class="selectable-content" id="_s_17">encrypt</span>, <span class="selectable-content" id="_s_18">invoke platform-provided functionality to encrypt</span>] all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
-          <div class="appnote"><span class="note-header">Application
+          
+          
+          
+          
+          
+          
+          
+          <div class="element"><div class="reqid" id="FTP_DIT_EXT.2.1"><a href="#FTP_DIT_EXT.2.1" class="abbr">FTP_DIT_EXT.2.1</a></div><div class="reqdesc">
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              [<b>selection</b>: <span class="selectable-content" id="ftp_dit_ext.2.1_1">encrypt</span>, <span class="selectable-content" id="ftp_dit_ext.2.1_2">invoke platform-provided functionality to encrypt</span>]
+              all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
+            <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">
-            This requirement is designed to protect the communications with other Host Agents 
+    </span><span class="note">This requirement is designed to protect the communications with other Host Agents 
             in a peer-to-peer scenario where Host Agents are sending and receiving data from each other. The selection of whether the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform encrypts 
-            these communications should be consistent with any selections made in FTP_DIT_EXT.1
-            
-          </span></div></div></div>
-        
-      <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a></div>
-            
-            
-             
-            
-            
-            
-          <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains a description of all data transmitted to other Host Agents and 
-              that all such data is protected according to FPT_DIT_EXT.1.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
-            to other Host Agents is protected according to FPT_DIT_EXT.1.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                  The tests in FTP_DIT_EXT.1.1 shall be repeated for data transmitted between two Host Agents.
-            </div></div></div></div></div>
-     
+            these communications should be consistent with any selections made in FTP_DIT_EXT.1</span></div></div></div>
+          
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a></div>
+              
+              
+              
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
+                The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> contains a description of all data transmitted to other Host Agents and 
+              that all such data is protected according to FPT_DIT_EXT.1.
+                <p></p>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall ensure the guidance contains any configuration details required for ensuring data transmitted
+            to other Host Agents is protected according to FPT_DIT_EXT.1.
+                <p></p>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The tests in FTP_DIT_EXT.1.1 shall be repeated for data transmitted between two Host Agents.</div></div></div></div></div>
       
     <h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix C -  Extended Component Definitions</h1>
 	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
@@ -1475,17 +1355,25 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	 FHA class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FHA_CHA_EXT" class="indexable" data-level="4">C.2.1.1 FHA_CHA_EXT Cache Host Agent Collected Data</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the location and duration of storage for its collected data.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FHA_CHA_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FHA_CHA_EXT.1">FHA_CHA_EXT.1</a>,
              Cache Host Agent Collected Data,
-              requires either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store audit data using the platform's logging mechanism.</p><h4>Management: FHA_CHA_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FHA_CHA_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> Collected Audit<br/>
-            <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration</td></tr></table><h4 id="ext-comp-FHA_CHA_EXT.1.1">FHA_CHA_EXT.1.1</h4> 
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall cache collected data up to [<b>assignment</b>: 
-     <span class="assignable-content">size of cache storage capacity</span>] on [<b>selection</b>: <span class="selectable-content" id="_s_13">persistent storage</span>, <span class="selectable-content" id="_s_14">non-persistent storage</span>] if the trusted channel is not available.
-            <h4 id="ext-comp-FHA_CHA_EXT.1.2">FHA_CHA_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_15">overwrite previous data according to the following rule: [<b>assignment</b>: 
-     <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="_s_16">[<b>assignment</b>: 
-     <span class="assignable-content">other actions</span>]</span>] when the local cache is full.</div></div><h3 id="ext-comp-FHA_COL_EXT" class="indexable" data-level="4">C.2.1.2 FHA_COL_EXT Collected Audit</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the collection of data the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> collects from 
-            its Operational Environment as audit data.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FHA_COL_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a>,
+              requires either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store audit data using the platform's logging mechanism.</p><h4>Management: FHA_CHA_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FHA_CHA_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+            <a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a> Collected Audit
+            <br/>
+            <a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration
+          </td></tr></table><h4 id="ext-comp-FHA_CHA_EXT.1.1">FHA_CHA_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall cache collected data up to
+              [<b>assignment</b>: 
+     <span class="assignable-content">size of cache storage capacity</span>]
+              on
+              [<b>selection</b>: <span class="selectable-content" id="fha_cha_ext.1.1_2">persistent storage</span>, <span class="selectable-content" id="fha_cha_ext.1.1_3">non-persistent storage</span>]
+              if the trusted channel is not available.
+            <h4 id="ext-comp-FHA_CHA_EXT.1.2">FHA_CHA_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall  [<b>selection</b>: <span class="selectable-content" id="fha_cha_ext.1.2_1">overwrite previous data according to the following rule: [<b>assignment</b>: 
+     <span class="assignable-content">rule for overwriting previously cached data</span>]</span>, <span class="selectable-content" id="fha_cha_ext.1.2_4">[<b>assignment</b>: 
+     <span class="assignable-content">other actions</span>]</span>]  when the local cache is full.</div></div><h3 id="ext-comp-FHA_COL_EXT" class="indexable" data-level="4">C.2.1.2 FHA_COL_EXT Collected Audit</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the collection of data the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> collects from its Operational Environment as audit data.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FHA_COL_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FHA_COL_EXT.1">FHA_COL_EXT.1</a>,
              Collected Audit,
-              requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to collect a specified set of data from its Operational Environment.</p><h4>Management: FHA_COL_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FHA_COL_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FHA_COL_EXT.1 Collected Audit</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration</td></tr></table><h4 id="ext-comp-FHA_COL_EXT.1.1">FHA_COL_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall collect the following minimum set of
-              endpoint event data: <ol type="a">
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to collect a specified set of data from its Operational Environment.</p><h4>Management: FHA_COL_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FHA_COL_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FHA_COL_EXT.1 Collected Audit</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FHA_HAD_EXT.1">FHA_HAD_EXT.1</a> Host Agent Declaration</td></tr></table><h4 id="ext-comp-FHA_COL_EXT.1.1">FHA_COL_EXT.1.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall collect the following minimum set of
+              endpoint event data:
+              <ol type="a">
                 <li>Operating System (<abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>) version, architecture, and <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> Address,</li>
                 <li>Privileged and unprivileged endpoint account login activity,</li>
                 <li>Process creation,</li>
@@ -1499,44 +1387,48 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	 FAU class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FAU_STO_EXT" class="indexable" data-level="4">C.2.2.1 FAU_STO_EXT Audit Data Storage</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the location and method of audit storage.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_STO_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_STO_EXT.1">FAU_STO_EXT.1</a>,
              Audit Data Storage,
-              requires either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store audit data using the platform's audit mechanism.</p><h4>Management: FAU_STO_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FAU_STO_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FAU_STO_EXT.1 Audit Data Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FAU_STO_EXT.1.1">FAU_STO_EXT.1.1</h4> 
+              requires either the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or its platform to store audit data using the platform's audit mechanism.</p><h4>Management: FAU_STO_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FAU_STO_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FAU_STO_EXT.1 Audit Data Storage</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FAU_STO_EXT.1.1">FAU_STO_EXT.1.1</h4>
               The
-              [<b>selection</b>: <span class="selectable-content" id="_s_5"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_6"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>] 
+              [<b>selection</b>: <span class="selectable-content" id="fau_sto_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fau_sto_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]
               shall store audit events in the platform-provided logging mechanism.
             </div></div></span><span data-sortkey="Security Management (FMT)"><h3 id="ext-comp-FMT" class="indexable" data-level="3">C.2.3 Security Management (FMT)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FMT class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FMT_UNR_EXT" class="indexable" data-level="4">C.2.3.1 FMT_UNR_EXT User Unenrollment Prevention</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for ensuring that an unprivileged user
-           cannot remove the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from management by another <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> component.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_UNR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>,
+	<h3 id="ext-comp-FMT_UNR_EXT" class="indexable" data-level="4">C.2.3.1 FMT_UNR_EXT User Unenrollment Prevention</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for ensuring that an unprivileged user cannot remove the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> from management by another <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> component.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_UNR_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_UNR_EXT.1">FMT_UNR_EXT.1</a>,
              User Unenrollment Prevention,
-              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to prevent its unenrollment by an unauthorized user.</p><h4>Management: FMT_UNR_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FMT_UNR_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>The 
-              [<b>selection</b>: <span class="selectable-content" id="_s_11"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_12"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>] 
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to prevent its unenrollment by an unauthorized user.</p><h4>Management: FMT_UNR_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FMT_UNR_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FMT_UNR_EXT.1.1">FMT_UNR_EXT.1.1</h4>
+              The
+              [<b>selection</b>: <span class="selectable-content" id="fmt_unr_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fmt_unr_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]
               shall enforce a mechanism to prevent unprivileged users of the platform from
               unenrolling the Host Agent with the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system.
             </div></div><h3 id="ext-comp-FMT_POL_EXT" class="indexable" data-level="4">C.2.3.2 FMT_POL_EXT Trusted Policy Update</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s verification of policies or commands transmitted to it.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FMT_POL_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FMT_POL_EXT.1">FMT_POL_EXT.1</a>,
              Trusted Policy Update,
-              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to reject any unsigned management policies or commands sent to it.</p><h4>Management: FMT_POL_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FMT_POL_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FMT_POL_EXT.1 Trusted Policy Update</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_COP.1 Cryptographic Operation</td></tr></table><h4 id="ext-comp-FMT_POL_EXT.1.1">FMT_POL_EXT.1.1</h4>The 
-            [<b>selection</b>: <span class="selectable-content" id="_s_19"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_20"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>] 
-            shall only accept policies or commands that are digitally signed using 
-            [<b>selection</b>: <span class="selectable-content" id="_s_21"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="_s_22"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>] signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-5.
-          </div></div></span><span data-sortkey="Trusted Path/Channels (FTP)"><h3 id="ext-comp-FTP" class="indexable" data-level="3">C.2.4 Trusted Path/Channels (FTP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+              requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to reject any unsigned management policies or commands sent to it.</p><h4>Management: FMT_POL_EXT.1</h4><p>No specific management functions are identified.</p><h4>Audit: FMT_POL_EXT.1</h4><p>There are no auditable events foreseen.</p><h4>FMT_POL_EXT.1 Trusted Policy Update</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>FCS_COP.1 Cryptographic Operation</td></tr></table><h4 id="ext-comp-FMT_POL_EXT.1.1">FMT_POL_EXT.1.1</h4>
+              The
+              [<b>selection</b>: <span class="selectable-content" id="fmt_pol_ext.1.1_1"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="fmt_pol_ext.1.1_2"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Platform</span>]
+              shall only accept policies or commands that are digitally signed using
+              [<b>selection</b>: <span class="selectable-content" id="fmt_pol_ext.1.1_3"><abbr class="dyn-abbr"><a href="#abbr_RSA">RSA</a></abbr></span>, <span class="selectable-content" id="fmt_pol_ext.1.1_4"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span>]
+              signatures that meet <abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr> PUB 186-5.
+            </div></div></span><span data-sortkey="Trusted Path/Channels (FTP)"><h3 id="ext-comp-FTP" class="indexable" data-level="3">C.2.4 Trusted Path/Channels (FTP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FTP class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FTP_DIT_EXT" class="indexable" data-level="4">C.2.4.1 FTP_DIT_EXT Protection of Data in Transit</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family is defined in the <a href="#bibAppPP">[AppPP]</a>. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a component
-         to the existing family definition.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FTP_DIT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a>,
+	<h3 id="ext-comp-FTP_DIT_EXT" class="indexable" data-level="4">C.2.4.1 FTP_DIT_EXT Protection of Data in Transit</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family is defined in the. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> adds a component to the existing family definition.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FTP_DIT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FTP_DIT_EXT.2">FTP_DIT_EXT.2</a>,
              Protection of Data in Transit for Peer-to-Peer Host Agents,
               requires the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to secure data in transit between itself and another <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> Host Agent using a <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-provided or platform-provided trusted channel.</p><h4>Management: FTP_DIT_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FTP_DIT_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
-          FDN_NET_EXT.2 Network Communications <br/><br/>
-          FTP_DIT_EXT.1 Protection of Data in Transit
-        </td></tr></table><h4 id="ext-comp-FTP_DIT_EXT.2.1">FTP_DIT_EXT.2.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-            [<b>selection</b>: <span class="selectable-content" id="_s_17">encrypt</span>, <span class="selectable-content" id="_s_18">invoke platform-provided functionality to encrypt</span>] all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
-          </div></div></span><span data-sortkey="User Data Protection (FDP)"><h3 id="ext-comp-FDP" class="indexable" data-level="3">C.2.5 User Data Protection (FDP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+            FDN_NET_EXT.2 Network Communications
+            <br/>
+            <br/>
+            FTP_DIT_EXT.1 Protection of Data in Transit
+          </td></tr></table><h4 id="ext-comp-FTP_DIT_EXT.2.1">FTP_DIT_EXT.2.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
+              [<b>selection</b>: <span class="selectable-content" id="ftp_dit_ext.2.1_1">encrypt</span>, <span class="selectable-content" id="ftp_dit_ext.2.1_2">invoke platform-provided functionality to encrypt</span>]
+              all transmitted data according to FTP_DIT_EXT.1 between itself and another Host Agent.
+            </div></div></span><span data-sortkey="User Data Protection (FDP)"><h3 id="ext-comp-FDP" class="indexable" data-level="3">C.2.5 User Data Protection (FDP)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FDP class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
-	<h3 id="ext-comp-FDP_NET_EXT" class="indexable" data-level="4">C.2.5.1 FDP_NET_EXT Network Communications</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for recording the occurrence
-              of security relevant events.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_NET_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a>,
+	<h3 id="ext-comp-FDP_NET_EXT" class="indexable" data-level="4">C.2.5.1 FDP_NET_EXT Network Communications</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>Components in this family define requirements for recording the occurrence of security relevant events.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FDP_NET_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a>,
              Network Communications,
-              requires either the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> restrict network communications.</p><h4>Management: FDP_NET_EXT.2</h4><p>There are no management functions foreseen.</p><h4>Audit: FDP_NET_EXT.2</h4><p>There are no audit events foreseen.</p><h4>FDP_NET_EXT.2 Network Communications</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FDP_NET_EXT.2.1">FDP_NET_EXT.2.1</h4> 
-            The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict network communications to: 
-            [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_MGMT">An <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server</span></li><li style=""><span class="selectable-content" id="AGT_PEER">Another Host Agent</span></li></ul>]
-          </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
+              requires either the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> restrict network communications.</p><h4>Management: FDP_NET_EXT.2</h4><p>There are no management functions foreseen.</p><h4>Audit: FDP_NET_EXT.2</h4><p>There are no audit events foreseen.</p><h4>FDP_NET_EXT.2 Network Communications</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies.</td></tr></table><h4 id="ext-comp-FDP_NET_EXT.2.1">FDP_NET_EXT.2.1</h4>
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall restrict network communications to:
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_MGMT">An <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server</span></li><li style=""><span class="selectable-content" id="AGT_PEER">Another Host Agent</span></li></ul>]
+            </div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Implicitly Satisfied Requirements</h1><p>This appendix lists requirements that should be considered satisfied by products
 			successfully evaluated against this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. These requirements are not featured
 			explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. They are not included as 
 			standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would increase the time, cost, and complexity of evaluation.
@@ -1550,13 +1442,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       </tr>
       <tr>
         <td>FPT_STM.1 - Reliable Time Stamps</td>
-        <td>
-          <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 specifies FPT_STM.1 as a dependency of FAU_GEN.1 because the audit records require a reliable timestamp to satisfy FAU_GEN.1.2. 
-          This dependency is implicitly addressed through the A.PLATFORM assumption of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because a "trustworthy computing platform" is assumed to include a reliable system clock.
-        </td>
+        <td><abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 specifies FPT_STM.1 as a dependency of FAU_GEN.1 because the audit records require a reliable timestamp to satisfy FAU_GEN.1.2. 
+          This dependency is implicitly addressed through the A.PLATFORM assumption of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because a "trustworthy computing platform" is assumed to include a reliable system clock.</td>
       </tr>
     </table>
-    
   <h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">8</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_Base-PP" data-plural="Base-PPs"><abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span></td><td><span id="long_abbr_Base-PP">Base Protection Profile</span></td></tr>
