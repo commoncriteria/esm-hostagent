@@ -91,6 +91,9 @@
           </h:tr>
         </h:table>
       </sec:TOE_Boundary>
+      <sec:TOE_Platform>The TOE platform consists of a general purpose OS, a mobile device 
+        OS, a network device OS, or an Execution Environment on top of which 
+        the Host Agent software executes.</sec:TOE_Platform>
     </section>
     <sec:Use_Cases>
       Requirements in this  PP-Module are designed to
@@ -172,6 +175,7 @@
     </sec:Threats>
     <!-- 3.2 Assumptions -->
     <sec:Assumptions>
+      This PP-Module defines no additional assumptions beyond those defined in the Base-PP.
       <assumptions/>
     </sec:Assumptions>
     <!-- 3.3 Organizational Security Policies -->
@@ -217,6 +221,9 @@
     </base-pp>
     <!-- 5.2 TOE Security Functional Requirements -->
     <man-sfrs>
+      <section id="sec-sel-audit-table" title="Auditable Events for Mandatory SFRs">
+        <audit-table id="at-Man" table="mandatory"/>
+      </section>
       <!-- 5.2.1 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="fau-mandatory">
         <ext-comp-def title="Audit Data Storage" fam-id="FAU_STO_EXT">
@@ -237,7 +244,7 @@
               [<h:i>
                 <h:ol type="a">
                   <h:li>Change in enrollment state with an ESM system,</h:li>
-                  <h:li><selectables><selectable id="fau_gen.1.1_HA_1">Receiving</selectable><selectable id="fau_gen.1.1_HA_2">Generating</selectable></selectables> periodic heartbeat events, </h:li>
+                  <h:li> <selectables><selectable id="fau_gen.1.1_HA_1">Receiving</selectable><selectable id="fau_gen.1.1_HA_2">Generating</selectable></selectables> periodic heartbeat events, </h:li>
                   <h:li>
                     <assignable>Other specifically defined auditable events</assignable>
                   </h:li>
@@ -255,8 +262,7 @@
                 <selectables>
                   <selectable id="fau_gen.1.2_HA_1">TSF</selectable>
                   <selectable id="fau_gen.1.2_HA_2">TOE Platform</selectable>
-                </selectables>
-              </h:b>
+                </selectables></h:b>
               shall record within the audit data at least the following information:
               <h:ol type="a">
                 <h:li>Date and time of the event, type of event, subject identity (if applicable), and the outcome (success or failure) of the event;</h:li>
@@ -492,6 +498,9 @@
     </man-sfrs>
     <opt-sfrs/>
     <sel-sfrs>
+      <section id="sec-sel-audit-table" title="Auditable Events for Selection-based SFRs">
+        <audit-table id="at-sel-based" table="sel-based"/>
+      </section>
       <!-- 5.2.5 Host Agent (FHA) -->
       <section title="Host Agent (FHA)" id="fha-selectionBased">
         <ext-comp-def title="Cache Host Agent Collected Data" fam-id="FHA_CHA_EXT">
@@ -502,6 +511,8 @@
         </ext-comp-def>
         <!-- FHA_CHA_EXT.1 Cache Host Agent Collected Data -->
         <f-component cc-id="fha_cha_ext.1" id="fha-cha-ext-1" name="Cache Host Agent Collected Data">
+          <depends on-sel="fil-decl"/>
+          <depends on-sel="AGT_EDR"/>
           <consistency-rationale>This SFR defines how the Host Agent shall cache data locally. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.</consistency-rationale>
           <comp-lev> requires either the TOE or its platform to store audit data using the platform's logging mechanism.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -541,6 +552,8 @@
         </f-component>
         <!-- FHA_COL_EXT.1 Collected Audit -->
         <f-component cc-id="fha_col_ext.1" id="fha-col-ext-1" name="Collected Audit">
+          <depends on-sel="fil-decl"/>
+          <depends on-sel="AGT_EDR"/>
           <consistency-rationale>This SFR defines the type of software the Host Agent is intended to operate with. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.</consistency-rationale>
           <comp-lev> requires the TOE to collect a specified set of data from its Operational Environment.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -590,6 +603,8 @@
         </ext-comp-def>
         <!-- FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents -->
         <f-component cc-id="ftp_dit_ext.2" id="ftp-dit-ext-2" name="Protection of Data in Transit for Peer-to-Peer Host Agents">
+          <depends on-sel="fil-age-net"/>
+          <depends on-sel="AGT_PEER"/>
           <consistency-rationale>This SFR defines the communication channel for Host Agents communicating with other Host Agents. This relates to functionality not present in the Base-PP and does not affect the TOE's ability to satisfy the Base-PP's SFRs.</consistency-rationale>
           <comp-lev> requires the TSF to secure data in transit between itself and another ESM Host Agent using a TSF-provided or platform-provided trusted channel.</comp-lev>
           <management>No specific management functions are identified.</management>
@@ -631,6 +646,9 @@
       </section>
     </sel-sfrs>
     <obj-sfrs>
+      <section id="sec-obj-audit-table" title="Auditable Events for Objective SFRs">
+        <audit-table id="at-objective" table="objective"/>
+      </section>
       <!-- 5.2.7 Security Management (FMT) -->
       <section title="Security Management (FMT)" id="fmt-objective">
         <ext-comp-def title="Trusted Policy Update" fam-id="FMT_POL_EXT">
