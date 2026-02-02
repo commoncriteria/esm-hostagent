@@ -872,14 +872,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 </li>
                 <li>All auditable events for the [<i>not specified</i>] level of audit;</li>
               </ol>
-              [<i>
-                <ol type="a">
+              [<i><ol type="a">
                   <li>Change in enrollment state with an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system,</li>
                   <li> [<b>selection</b>: <span class="selectable-content" id="fau_gen.1.1_HA_1">Receiving</span>, <span class="selectable-content" id="fau_gen.1.1_HA_2">Generating</span>] periodic heartbeat events, </li>
                   <li>
                     [<b>assignment</b>: 
-     <span class="assignable-content">Other specifically defined auditable events</span>]
-                  </li>
+     <span class="assignable-content">Other specifically defined auditable events</span>]</li>
                 </ol>
               </i>].
             <div class="appnote"><span class="note-header">Application
@@ -971,7 +969,20 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               that the list of auditable events are stored in the platform-provided logging 
               mechanism.
                 <p></p>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to correctly generate audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records for the events listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. This should include all instance types of an event specified. When verifying the test results, the evaluator shall ensure the audit records generated during testing are stored in the platform-provided logging mechanism. <p></p>On Linux based platforms this would be in var/logs. On Windows based platforms this would be the Windows Event Log. <p></p>No specific locations are defined for other platforms.</div></div></div></div></div>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                The evaluator shall test the Host Agent's ability to correctly generate
+                    audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records for the
+                    events listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.  This should include all instance types
+                    of an event specified.  
+                    When verifying the test results, the evaluator shall ensure the
+                    audit records generated during testing are stored in the platform-provided logging
+                    mechanism.
+                <p></p>
+                On Linux based platforms this would be in var/logs. On Windows based 
+                    platforms this would be the Windows Event Log.
+                <p></p>
+                No specific locations are defined for other platforms.
+              </div></div></div></div></div>
       
       
       <h3 id="fdp-mandatory" class="indexable" data-level="3">5.2.3 User Data Protection (FDP)</h3>
@@ -998,7 +1009,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists network communication destinations and that it matches the selections made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are limited to the selection made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.</div></div></div></div></div>
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists network communication destinations and that it matches the selections made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the application.  While the application is running,
+                    the evaluator shall sniff network traffic ignoring all non-application 
+                    associated traffic
+                    and verify that any network communications witnessed are limited to the selection made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.</div></div></div></div></div>
       
       
       <h3 id="fha-mandatory" class="indexable" data-level="3">5.2.4 Host Agent (FHA)</h3>
@@ -1013,8 +1027,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall operate with the following <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software:
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_EDR">Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>)</span></li><li style=""><span class="selectable-content" id="fha_had_ext.1.1_2">
                   [<b>assignment</b>: 
-     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]
-                </span></li></ul>].
+     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]</span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1031,7 +1044,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 The evaluator shall check the administrative guide and ensure
                   that guidance exists for enrollment with all compatible <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> products identified in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.
                 <p></p>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: If "<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>" is selected, the evaluator shall install the Host Agent and enroll it with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> management system. The evaluator shall verify that enrollment was successful and that the Host Agent is communicating with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>.</div></div></div></div></div>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: If "<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>" is selected, the evaluator shall install the Host Agent and enroll it with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> 
+                  management system. The evaluator shall verify that enrollment was successful and 
+                  that the Host Agent is communicating with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>.</div></div></div></div></div>
       
       
       <h3 id="fmt-mandatory" class="indexable" data-level="3">5.2.5 Security Management (FMT)</h3>
@@ -1069,7 +1084,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               contains the information required to perform the management duties associated with the 
               management function.
                 <p></p>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the ability to configure the Host Agent and test each function listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. The evaluator is expected to test these functions in all the ways in which the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and guidance documentation state the configuration can be managed.</div></div></div></div></div>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the ability to configure the Host Agent and test each function 
+                    listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. The evaluator is expected to test these functions in all the ways in which 
+                    the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and guidance documentation state    the configuration can be managed.</div></div></div></div></div>
         
         <div class="comp" id="FMT_UNR_EXT.1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4>
           
@@ -1096,7 +1113,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the mechanism used to
               prevent users from unenrolling the Host Agent.
                 <p></p>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to unenroll the Host Agent from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system as an unprivileged user and verify that the attempt fails.</div></div></div></div></div>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to unenroll the Host Agent from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system
+                    as an unprivileged user and verify that the attempt fails.</div></div></div></div></div>
       
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="6"><a href="#T.DATA_LOSS">T.DATA_​LOSS</a></td><td><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a> to define the trust network connection to another host.</td></tr>
@@ -1258,7 +1276,14 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> details how data is cached, any rules that would affect data caching, 
                 and how cached data will be affected if storage limits are reached.
                 <p></p>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint from the network to simulate a network connectivity failure, these should be actual hours not via changing system time. The evaluator shall exercise behaviors on the endpoint during the outage to generate Host Agent data. Example behaviors could be running programs, performing some authentications, installing/uninstalling software, or sample test cases provided by the vendor to generate Host Agent data. The evaluator will then reconnect the endpoint to the network and verify on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system that the missing data from the outage is available on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> management portal.</div></div></div></div></div>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
+                from the network to simulate a network connectivity failure, 
+                these should be actual hours not via changing system time. The evaluator shall
+                exercise behaviors on the endpoint during the outage to generate Host Agent data.
+                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
+                software, or sample test cases provided by the vendor to generate Host Agent data.
+                The evaluator will then reconnect the endpoint to the network and verify on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system 
+                that the missing data from the outage is available on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> management portal.</div></div></div></div></div>
         
         <div class="comp" id="FHA_COL_EXT.1"><h4>FHA_COL_EXT.1 Collected Audit</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
            <a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a>.

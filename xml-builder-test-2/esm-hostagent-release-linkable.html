@@ -842,14 +842,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 </li>
                 <li>All auditable events for the [<i>not specified</i>] level of audit;</li>
               </ol>
-              [<i>
-                <ol type="a">
+              [<i><ol type="a">
                   <li>Change in enrollment state with an <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system,</li>
                   <li> [<b>selection</b>: <span class="selectable-content" id="fau_gen.1.1_HA_1">Receiving</span>, <span class="selectable-content" id="fau_gen.1.1_HA_2">Generating</span>] periodic heartbeat events, </li>
                   <li>
                     [<b>assignment</b>: 
-     <span class="assignable-content">Other specifically defined auditable events</span>]
-                  </li>
+     <span class="assignable-content">Other specifically defined auditable events</span>]</li>
                 </ol>
               </i>]<a id="period_88" href="#period_88">. </a>            <div class="appnote"><span class="note-header">Application
       Note:
@@ -931,7 +929,17 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 The evaluator shall check the administrative guide and ensure
               that the list of auditable events are stored in the platform-provided logging 
               mechanism<a id="period_111" href="#period_111">. </a>                <p></p>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to correctly generate audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records for the events listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_112" href="#period_112">. </a>This should include all instance types of an event specified<a id="period_113" href="#period_113">. </a>When verifying the test results, the evaluator shall ensure the audit records generated during testing are stored in the platform-provided logging mechanism<a id="period_114" href="#period_114">. </a><p></p>On Linux based platforms this would be in var/logs<a id="period_115" href="#period_115">. </a>On Windows based platforms this would be the Windows Event Log<a id="period_116" href="#period_116">. </a><p></p>No specific locations are defined for other platforms<a id="period_117" href="#period_117">. </a></div></div></div></div></div>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                The evaluator shall test the Host Agent's ability to correctly generate
+                    audit records by having the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> generate audit records for the
+                    events listed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_112" href="#period_112">. </a> This should include all instance types
+                    of an event specified<a id="period_113" href="#period_113">. </a> 
+                    When verifying the test results, the evaluator shall ensure the
+                    audit records generated during testing are stored in the platform-provided logging
+                    mechanism<a id="period_114" href="#period_114">. </a>                <p></p>
+                On Linux based platforms this would be in var/logs<a id="period_115" href="#period_115">. </a>On Windows based 
+                    platforms this would be the Windows Event Log<a id="period_116" href="#period_116">. </a>                <p></p>
+                No specific locations are defined for other platforms<a id="period_117" href="#period_117">. </a>              </div></div></div></div></div>
       
       
       <h3 id="fdp-mandatory" class="indexable" data-level="3">5.2.3 User Data Protection (FDP)</h3>
@@ -956,7 +964,10 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists network communication destinations and that it matches the selections made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_120" href="#period_120">. </a><p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications<a id="period_121" href="#period_121">. </a><p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the application<a id="period_122" href="#period_122">. </a>While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are limited to the selection made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_123" href="#period_123">. </a></div></div></div></div></div>
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall confirm the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists network communication destinations and that it matches the selections made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_120" href="#period_120">. </a><p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications<a id="period_121" href="#period_121">. </a><p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall run the application<a id="period_122" href="#period_122">. </a> While the application is running,
+                    the evaluator shall sniff network traffic ignoring all non-application 
+                    associated traffic
+                    and verify that any network communications witnessed are limited to the selection made in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_123" href="#period_123">. </a></div></div></div></div></div>
       
       
       <h3 id="fha-mandatory" class="indexable" data-level="3">5.2.4 Host Agent (FHA)</h3>
@@ -971,8 +982,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall operate with the following <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software:
               [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_EDR">Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>)</span></li><li style=""><span class="selectable-content" id="fha_had_ext.1.1_2">
                   [<b>assignment</b>: 
-     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]
-                </span></li></ul>]<a id="period_124" href="#period_124">. </a>            <div class="appnote"><span class="note-header">Application
+     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]</span></li></ul>]<a id="period_124" href="#period_124">. </a>            <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
               Currently, the only <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> server is <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>; <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules for other <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers (Systems Management and Audit Server) will be added in the future<a id="period_125" href="#period_125">. </a>
@@ -986,7 +996,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> lists all classes of products the Host Agent is designed to function with<a id="period_127" href="#period_127">. </a><p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
                 The evaluator shall check the administrative guide and ensure
                   that guidance exists for enrollment with all compatible <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> products identified in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_128" href="#period_128">. </a>                <p></p>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: If "<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>" is selected, the evaluator shall install the Host Agent and enroll it with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> management system<a id="period_129" href="#period_129">. </a>The evaluator shall verify that enrollment was successful and that the Host Agent is communicating with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr><a id="period_130" href="#period_130">. </a></div></div></div></div></div>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">Conditional: If "<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>" is selected, the evaluator shall install the Host Agent and enroll it with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> 
+                  management system<a id="period_129" href="#period_129">. </a>The evaluator shall verify that enrollment was successful and 
+                  that the Host Agent is communicating with the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr><a id="period_130" href="#period_130">. </a></div></div></div></div></div>
       
       
       <h3 id="fmt-mandatory" class="indexable" data-level="3">5.2.5 Security Management (FMT)</h3>
@@ -1019,7 +1031,9 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               mandated by the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is described in the operational guidance and that the description 
               contains the information required to perform the management duties associated with the 
               management function<a id="period_138" href="#period_138">. </a>                <p></p>
-              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the ability to configure the Host Agent and test each function listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_139" href="#period_139">. </a>The evaluator is expected to test these functions in all the ways in which the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and guidance documentation state the configuration can be managed<a id="period_140" href="#period_140">. </a></div></div></div></div></div>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the ability to configure the Host Agent and test each function 
+                    listed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_139" href="#period_139">. </a>The evaluator is expected to test these functions in all the ways in which 
+                    the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> and guidance documentation state    the configuration can be managed<a id="period_140" href="#period_140">. </a></div></div></div></div></div>
         
         <div class="comp" id="FMT_UNR_EXT.1"><h4>FMT_UNR_EXT.1 User Unenrollment Prevention</h4>
           
@@ -1044,7 +1058,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
                 The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the mechanism used to
               prevent users from unenrolling the Host Agent<a id="period_144" href="#period_144">. </a>                <p></p>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component<a id="period_145" href="#period_145">. </a><p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to unenroll the Host Agent from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system as an unprivileged user and verify that the attempt fails<a id="period_146" href="#period_146">. </a></div></div></div></div></div>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">There are no guidance EAs for this component<a id="period_145" href="#period_145">. </a><p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to unenroll the Host Agent from the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system
+                    as an unprivileged user and verify that the attempt fails<a id="period_146" href="#period_146">. </a></div></div></div></div></div>
       
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="6"><a href="#T.DATA_LOSS">T.DATA_&#8203;LOSS</a></td><td><a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FDP_NET_EXT.2">FDP_NET_EXT.2</a> to define the trust network connection to another host<a id="period_147" href="#period_147">. </a></td></tr>
@@ -1194,7 +1209,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">
                 The evaluator shall verify the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> details how data is cached, any rules that would affect data caching, 
                 and how cached data will be affected if storage limits are reached<a id="period_209" href="#period_209">. </a>                <p></p>
-              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance<a id="period_210" href="#period_210">. </a><p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint from the network to simulate a network connectivity failure, these should be actual hours not via changing system time<a id="period_211" href="#period_211">. </a>The evaluator shall exercise behaviors on the endpoint during the outage to generate Host Agent data<a id="period_212" href="#period_212">. </a>Example behaviors could be running programs, performing some authentications, installing/uninstalling software, or sample test cases provided by the vendor to generate Host Agent data<a id="period_213" href="#period_213">. </a>The evaluator will then reconnect the endpoint to the network and verify on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system that the missing data from the outage is available on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> management portal<a id="period_214" href="#period_214">. </a></div></div></div></div></div>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall verify that any configuration options related to data caching are listed in the guidance<a id="period_210" href="#period_210">. </a><p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
+                from the network to simulate a network connectivity failure, 
+                these should be actual hours not via changing system time<a id="period_211" href="#period_211">. </a>The evaluator shall
+                exercise behaviors on the endpoint during the outage to generate Host Agent data<a id="period_212" href="#period_212">. </a>                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
+                software, or sample test cases provided by the vendor to generate Host Agent data<a id="period_213" href="#period_213">. </a>                The evaluator will then reconnect the endpoint to the network and verify on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system 
+                that the missing data from the outage is available on the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> management portal<a id="period_214" href="#period_214">. </a></div></div></div></div></div>
         
         <div class="comp" id="FHA_COL_EXT.1"><h4>FHA_COL_EXT.1 Collected Audit</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
            <a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a><a id="period_215" href="#period_215">. </a>           </i></b></div>
