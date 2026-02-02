@@ -1,6 +1,30 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="..\transformspp2html.xsl"?>
-<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="..\transforms\module2html.xsl"?>
+<?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!-- TODO/To consider items from tech editor:
+1. EDR added an 'implicitly satisfied requirements' appendix to address missing dependency of FIA_UID.1. Unclear whether we should also add a 'blank' one here for layout consistency
+or leave it blank because this Module is not missing any dependencies.
+
+2. This Module has no assumptions but it's not possible so ideally the intro text for the Assumptions section (3.2) should not auto-populate 
+(i.e. the same behavior that the OE objectives and OSPs sections have). That is not possible for the Assumptions section because it requires at least one set of <assumption></assumption> tags
+to be present, which means it's impossible to define a null set of assumptions and trigger the null set intro text. Recommend updating schema to allow for this.
+
+3. "Addressed by: " text added back in under the TOE objectives (mapped SFRs without rationale) at NIAP request. 
+This used to be part of the schema with the <component-refer> tag but that is no longer supported.
+Recommend updating the <addressed-by> tag to auto-populate the "Addressed by:" list under the objectives (so that the objective definition includes the mapping but the mapping table later on still
+has the rationale).
+
+4. Newer PPs are getting rid of the objective SFRs appendix and making it so that "strictly optional", "objective", and "implementation-dependent" SFRs are all sub-categories of optional SFRs.
+This is done using the 'status' parameter in the f-component tag. However, this appears to only be supported for standalone PPs at the moment and not Modules.
+
+5. The Module schema doesn't currently support mapping TOE objectives to arbitrary threats originally defined in a Base-PP. The O.PROTECTED_COMMS objective in this Module would most appropriately map
+to the T.NETWORK_ATTACK and T.NETWORK_EAVESDROP threats from the App PP but there's currently no way to express that in a Module.
+
+6. There is currently a glitch of some sort that is preventing the 'consistency of security problem definition' table from rendering. The TOE/OE objectives are also not displaying in their respective consistency
+tables though the rationales do display correctly. This will need to be updated in the build script. Also note that the security problem definition technically includes all of threats/assumptions/OSPs
+and so it is recommended that the intro text and associated table heading be updated accordingly (as well as any schema updates that would be needed to include assumptions and OSPs in the existing table).
+
+-->
 <Module name="Host Agent" boilerplate="yes" target-product="Host Agent" target-products="Host Agents" xmlns="https://niap-ccevs.org/cc/v1" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:sec="https://niap-ccevs.org/cc/v1/section">
   <PPReference>
     <ReferenceTable>
@@ -241,13 +265,11 @@
                 </h:li>
                 <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li>
               </h:ol>
-              [<h:i>
-                <h:ol type="a">
+              [<h:i><h:ol type="a">
                   <h:li>Change in enrollment state with an ESM system,</h:li>
                   <h:li> <selectables><selectable id="fau_gen.1.1_HA_1">Receiving</selectable><selectable id="fau_gen.1.1_HA_2">Generating</selectable></selectables> periodic heartbeat events, </h:li>
                   <h:li>
-                    <assignable>Other specifically defined auditable events</assignable>
-                  </h:li>
+                    <assignable>Other specifically defined auditable events</assignable></h:li>
                 </h:ol>
               </h:i>].
             </title>
@@ -342,7 +364,20 @@
               mechanism.
                 <h:p/>
               </Guidance>
-              <Tests>The evaluator shall test the Host Agent's ability to correctly generate audit records by having the TOE generate audit records for the events listed in the ST. This should include all instance types of an event specified. When verifying the test results, the evaluator shall ensure the audit records generated during testing are stored in the platform-provided logging mechanism. <h:p/>On Linux based platforms this would be in var/logs. On Windows based platforms this would be the Windows Event Log. <h:p/>No specific locations are defined for other platforms.</Tests>
+              <Tests>
+                The evaluator shall test the Host Agent's ability to correctly generate
+                    audit records by having the TOE generate audit records for the
+                    events listed in the ST.  This should include all instance types
+                    of an event specified.  
+                    When verifying the test results, the evaluator shall ensure the
+                    audit records generated during testing are stored in the platform-provided logging
+                    mechanism.
+                <h:p/>
+                On Linux based platforms this would be in var/logs. On Windows based 
+                    platforms this would be the Windows Event Log.
+                <h:p/>
+                No specific locations are defined for other platforms.
+              </Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -377,7 +412,10 @@
             <aactivity>
               <TSS>The evaluator shall confirm the TSS lists network communication destinations and that it matches the selections made in the SFR.<h:p/></TSS>
               <Guidance>The evaluator shall confirm that guidance is provided for any configuration needed to limit network communications.<h:p/></Guidance>
-              <Tests>The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are limited to the selection made in the SFR.</Tests>
+              <Tests>The evaluator shall run the application.  While the application is running,
+                    the evaluator shall sniff network traffic ignoring all non-application 
+                    associated traffic
+                    and verify that any network communications witnessed are limited to the selection made in the SFR.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -400,8 +438,7 @@
               <selectables linebreak="yes">
                 <selectable id="AGT_EDR">Endpoint Detection and Response (EDR)</selectable>
                 <selectable id="fha_had_ext.1.1_2">
-                  <assignable>Other NIAP-approved ESM servers</assignable>
-                </selectable>
+                  <assignable>Other NIAP-approved ESM servers</assignable></selectable>
               </selectables>.
             </title>
             <note role="application">
@@ -416,7 +453,9 @@
                   that guidance exists for enrollment with all compatible ESM products identified in the ST.
                 <h:p/>
               </Guidance>
-              <Tests>Conditional: If "EDR" is selected, the evaluator shall install the Host Agent and enroll it with the EDR management system. The evaluator shall verify that enrollment was successful and that the Host Agent is communicating with the EDR.</Tests>
+              <Tests>Conditional: If "EDR" is selected, the evaluator shall install the Host Agent and enroll it with the EDR 
+                  management system. The evaluator shall verify that enrollment was successful and 
+                  that the Host Agent is communicating with the EDR.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -457,7 +496,9 @@
               management function.
                 <h:p/>
               </Guidance>
-              <Tests>The evaluator shall test the ability to configure the Host Agent and test each function listed in the SFR. The evaluator is expected to test these functions in all the ways in which the ST and guidance documentation state the configuration can be managed.</Tests>
+              <Tests>The evaluator shall test the ability to configure the Host Agent and test each function 
+                    listed in the SFR. The evaluator is expected to test these functions in all the ways in which 
+                    the ST and guidance documentation state    the configuration can be managed.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -489,7 +530,8 @@
                 <h:p/>
               </TSS>
               <Guidance>There are no guidance EAs for this component.<h:p/></Guidance>
-              <Tests>The evaluator shall attempt to unenroll the Host Agent from the ESM system as an unprivileged user and verify that the attempt fails.</Tests>
+              <Tests>The evaluator shall attempt to unenroll the Host Agent from the ESM system
+                    as an unprivileged user and verify that the attempt fails.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="mandatory"/>
@@ -545,7 +587,14 @@
                 <h:p/>
               </TSS>
               <Guidance>The evaluator shall verify that any configuration options related to data caching are listed in the guidance.<h:p/></Guidance>
-              <Tests>The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint from the network to simulate a network connectivity failure, these should be actual hours not via changing system time. The evaluator shall exercise behaviors on the endpoint during the outage to generate Host Agent data. Example behaviors could be running programs, performing some authentications, installing/uninstalling software, or sample test cases provided by the vendor to generate Host Agent data. The evaluator will then reconnect the endpoint to the network and verify on the ESM system that the missing data from the outage is available on the ESM management portal.</Tests>
+              <Tests>The evaluator shall test the Host Agent's ability to cache data by disconnecting the endpoint
+                from the network to simulate a network connectivity failure, 
+                these should be actual hours not via changing system time. The evaluator shall
+                exercise behaviors on the endpoint during the outage to generate Host Agent data.
+                Example behaviors could be running programs, performing some authentications, installing/uninstalling 
+                software, or sample test cases provided by the vendor to generate Host Agent data.
+                The evaluator will then reconnect the endpoint to the network and verify on the ESM system 
+                that the missing data from the outage is available on the ESM management portal.</Tests>
             </aactivity>
           </f-element>
           <audit-event table="sel-based"/>
