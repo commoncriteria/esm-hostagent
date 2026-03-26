@@ -224,7 +224,7 @@
         <audit-table id="at-Man" table="mandatory"/>
       </section>
       <!-- 5.2.1 Security Audit (FAU) -->
-      <section title="Security Audit (FAU)" id="fau-mandatory">
+      <section title="Class FAU: Security Audit" id="fau-mandatory">
         <ext-comp-def title="Audit Data Storage" fam-id="FAU_STO_EXT">
           <fam-behavior>Components in this family define requirements for the location and method of audit storage.</fam-behavior>
         </ext-comp-def>
@@ -348,7 +348,7 @@
         </f-component>
       </section>
       <!-- 5.2.2 User Data Protection (FDP) -->
-      <section title="User Data Protection (FDP)" id="fdp-mandatory">
+      <section title="Call FDP: User Data Protection" id="fdp-mandatory">
         <ext-comp-def title="Network Communications" fam-id="FDP_NET_EXT">
           <fam-behavior>Components in this family define requirements for recording the occurrence of security relevant events.</fam-behavior>
         </ext-comp-def>
@@ -383,7 +383,7 @@
         </f-component>
       </section>
       <!-- 5.2.3 Host Agent (FHA) -->
-      <section title="Host Agent (FHA)" id="fha-mandatory">
+      <section title="Call FHA: Host Agent" id="fha-mandatory">
         <!-- FHA_HAD_EXT.1 Host Agent Declaration -->
         <f-component cc-id="fha_had_ext.1" id="fha-had-ext-1" name="Host Agent Declaration">
           <consistency-rationale>This SFR defines the type of software the Host Agent is intended to operate 
@@ -422,7 +422,7 @@
         </f-component>
       </section>
       <!-- 5.2.4 Security Management (FMT) -->
-      <section title="Security Management (FMT)" id="fmt-mandatory">
+      <section title="Call FMT: Security Management" id="fmt-mandatory">
         <ext-comp-def title="User Unenrollment Prevention" fam-id="FMT_UNR_EXT">
           <fam-behavior>Components in this family define requirements for ensuring that an unprivileged user cannot remove the TOE from management by another ESM component.</fam-behavior>
         </ext-comp-def>
@@ -501,7 +501,7 @@
         <audit-table id="at-sel-based" table="sel-based"/>
       </section>
       <!-- 5.2.5 Host Agent (FHA) -->
-      <section title="Host Agent (FHA)" id="fha-selectionBased">
+      <section title="Class FHA: Host Agent" id="fha-selectionBased">
         <ext-comp-def title="Cache Host Agent Collected Data" fam-id="FHA_CHA_EXT">
           <fam-behavior>Components in this family define requirements for the location and duration of storage for its collected data.</fam-behavior>
         </ext-comp-def>
@@ -596,7 +596,7 @@
         </f-component>
       </section>
       <!-- 5.2.6 Trusted Path/Channels (FTP) -->
-      <section title="Trusted Path/Channels (FTP)" id="ftp-selectionBased">
+      <section title="Class FTP: Trusted Path/Channels (FTP)" id="ftp-selectionBased">
         <ext-comp-def title="Protection of Data in Transit" fam-id="FTP_DIT_EXT">
           <fam-behavior>This family is defined in the. This PP-Module adds a component to the existing family definition.</fam-behavior>
         </ext-comp-def>
@@ -649,7 +649,7 @@
         <audit-table id="at-objective" table="objective"/>
       </section>
       <!-- 5.2.7 Security Management (FMT) -->
-      <section title="Security Management (FMT)" id="fmt-objective">
+      <section title="Class FMT: Security Management" id="fmt-objective">
         <ext-comp-def title="Trusted Policy Update" fam-id="FMT_POL_EXT">
           <fam-behavior>Components in this family define requirements for the TOE's verification of policies or commands transmitted to it.</fam-behavior>
         </ext-comp-def>
