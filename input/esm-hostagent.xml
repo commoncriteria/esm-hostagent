@@ -348,7 +348,7 @@
         </f-component>
       </section>
       <!-- 5.2.2 User Data Protection (FDP) -->
-      <section title="Call FDP: User Data Protection" id="fdp-mandatory">
+      <section title="Class FDP: User Data Protection" id="fdp-mandatory">
         <ext-comp-def title="Network Communications" fam-id="FDP_NET_EXT">
           <fam-behavior>Components in this family define requirements for recording the occurrence of security relevant events.</fam-behavior>
         </ext-comp-def>
@@ -383,7 +383,7 @@
         </f-component>
       </section>
       <!-- 5.2.3 Host Agent (FHA) -->
-      <section title="Call FHA: Host Agent" id="fha-mandatory">
+      <section title="Class FHA: Host Agent" id="fha-mandatory">
         <!-- FHA_HAD_EXT.1 Host Agent Declaration -->
         <f-component cc-id="fha_had_ext.1" id="fha-had-ext-1" name="Host Agent Declaration">
           <consistency-rationale>This SFR defines the type of software the Host Agent is intended to operate 
@@ -422,7 +422,7 @@
         </f-component>
       </section>
       <!-- 5.2.4 Security Management (FMT) -->
-      <section title="Call FMT: Security Management" id="fmt-mandatory">
+      <section title="Class FMT: Security Management" id="fmt-mandatory">
         <ext-comp-def title="User Unenrollment Prevention" fam-id="FMT_UNR_EXT">
           <fam-behavior>Components in this family define requirements for ensuring that an unprivileged user cannot remove the TOE from management by another ESM component.</fam-behavior>
         </ext-comp-def>
