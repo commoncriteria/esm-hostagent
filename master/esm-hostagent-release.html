@@ -798,25 +798,17 @@ The following sections list Common Criteria and technology terms used in this do
       <dl><dt class="threat defined" id="T.DATA_LOSS">T.DATA_LOSS</dt><dd><span class="description">A Host Agent can be susceptible to data loss during periods when connectivity to the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> system is not present. </span></dd><dt class="threat defined" id="T.TAMPER">T.TAMPER</dt><dd><span class="description">A Host Agent can be susceptible to tampering by unprivileged users who may try to uninstall or disrupt the Host Agent's ability to function properly. </span></dd></dl>
     
     
-    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
+    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Assumptions beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
       
-      This document does not define any additional assumptions.
     
     
-    
-    <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
-      expected to satisfy the organizational security policy listed below in addition to all
-      organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
+    <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Organizational Security Policies beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
       
-      This document does not define any additional OSPs.
-    
     
   <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     
     
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2>
-This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>.
-      
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any Security Objectives for the Operational Environment beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
     
   <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
@@ -967,10 +959,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
           <div class="element"><div class="reqid" id="FHA_HAD_EXT.1.1"><a href="#FHA_HAD_EXT.1.1" class="abbr">FHA_HAD_EXT.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall operate with the following <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> software:
-              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_EDR">Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>)</span></li><li style=""><span class="selectable-content" id="fha_had_ext.1.1_2">
-                  [<b>assignment</b>: 
-     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]
-                </span></li></ul>].
+              [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="AGT_EDR">Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>)</span></li><li style=""><span class="selectable-content" id="fha_had_ext.1.1_2">[<b>assignment</b>: 
+     <span class="assignable-content">Other <abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr>-approved <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> servers</span>]</span></li></ul>].
             <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1125,9 +1115,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         
         
-        <div class="comp" id="FHA_CHA_EXT.1"><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a>.
-           </i></b></div>
+        <div class="comp" id="FHA_CHA_EXT.1"><h4>FHA_CHA_EXT.1 Cache Host Agent Collected Data</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a></i></b></li></ul></div>
           
           
           
@@ -1153,9 +1141,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           
         </div>
         
-        <div class="comp" id="FHA_COL_EXT.1"><h4>FHA_COL_EXT.1 Collected Audit</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a>.
-           </i></b></div>
+        <div class="comp" id="FHA_COL_EXT.1"><h4>FHA_COL_EXT.1 Collected Audit</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FHA_HAD_EXT.1.1">FHA_HAD_EXT.1.1</a></i></b></li></ul></div>
           
           
           
@@ -1193,9 +1179,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <h2 id="ftp-selectionBased" class="indexable" data-level="2">B.3 Class FTP: Trusted Path/Channels (FTP)</h2>
         
         
-        <div class="comp" id="FTP_DIT_EXT.2"><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FDP_NET_EXT.2.1">FDP_NET_EXT.2.1</a>.
-           </i></b></div>
+        <div class="comp" id="FTP_DIT_EXT.2"><h4>FTP_DIT_EXT.2 Protection of Data in Transit for Peer-to-Peer Host Agents</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in:</i></b><ul><li><b><i><a href="#FDP_NET_EXT.2.1">FDP_NET_EXT.2.1</a></i></b></li></ul></div>
           
           
           
